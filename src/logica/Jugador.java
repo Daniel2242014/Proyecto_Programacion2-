@@ -12,6 +12,7 @@ package logica;
 public class Jugador {
     
     private String cedula;
+    private String nombre;
     public Jugador(){
         
     }
