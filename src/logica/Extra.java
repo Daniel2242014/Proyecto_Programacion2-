@@ -7,7 +7,7 @@ package logica;
 
 /**
  *
- * @author Daniel Padron
+ * @author Daniel Padron COMUNISTA
  */
 public class Extra {
     
