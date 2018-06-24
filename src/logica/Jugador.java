@@ -10,7 +10,7 @@ package logica;
  * @author Daniel Padron
  */
 public class Jugador {
-    
+    private int edad;
     private String cedula;
     public Jugador(){
         
