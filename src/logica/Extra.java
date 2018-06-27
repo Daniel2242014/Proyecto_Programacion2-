@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 public class Extra extends Acciones
 {
-    private ArrayList<Acciones> eventos=new ArrayList<>();
+    private ArrayList<Acciones> eventos;
     private int terminar;
-    private ArrayList<Jugador> tiradores=new ArrayList<>();
+    private ArrayList<Jugador> tiradores;
     public static int TERMINAR_PRIMER_TIEMPO;
     public static int TERMINAR_PENALES;
            
     public Extra (int a, int b, boolean bool, ArrayList<Acciones> arr)
     {
+        this.tiradores = new ArrayList<>();
+        this.eventos = new ArrayList<>();
         
     }
     
