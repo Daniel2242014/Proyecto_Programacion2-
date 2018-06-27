@@ -1,6 +1,10 @@
 package logica;
 
-
-public class Extra {
-    
+//PRUEBAAAAAAA DANI COMUNISTA
+public class Extra 
+{
+    Extra ()
+    {
+        
+    }
 }
