@@ -1,7 +1,7 @@
 
-package partefacu;
+package logica;
 
-public class PARTIDO {
+public class Partido {
     private String fecha;
     private int tiempo_total;
     private int tiempo_agregado;

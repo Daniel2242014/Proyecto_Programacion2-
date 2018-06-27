@@ -1,8 +1,8 @@
 
-package partefacu;
+package logica;
 
 
-    public class FASE {
+    public class Face {
         private partidos : ArrayList<Partido>;  //no se que falta
         private String letra_posicion;
         private boolean grupo_eliminacion;
