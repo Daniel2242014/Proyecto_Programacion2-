@@ -1,14 +1,14 @@
 package logica;
-import java.util.ArrayList;
+import java.util.*;
 public class Acciones {
   
     private Jugador personaje;
-    private int amarilias, cant_goles, faltasTotales;
-    private static final int TOTAL=2;
-    private static final int PARCIAL=1;
-    private static final int NULA=0;
+    private int amarilias, cant_goles, faltasInsignificantes;
+    public static final int TOTAL=2;
+    public static final int PARCIAL=1;
+    public static final int NULA=0;
     private boolean roja, estadoInicial, estadoFinal;
-    private double tiempo_actualizacion;
+    private String tiempo_actualizacion;
     private ArrayList <Boolean> penales = new ArrayList();
     private ArrayList <String> momento_goles = new ArrayList();
     
@@ -29,23 +29,26 @@ public class Acciones {
     }
 
     public void setAmarilias(int amarilias) {
-        this.amarilias = amarilias;
-    }
+        if(amarilias<=2){
+            this.amarilias = amarilias;
+        }
+     }
 
     public int getCant_goles() {
         return cant_goles;
     }
 
-    public void setCant_goles(int cant_goles) {
+    public void setCant_goles(int cant_goles,ArrayList <String> momentos) {
         this.cant_goles = cant_goles;
+        this.momento_goles=momentos;
     }
 
-    public int getFaltasTotales() {
-        return faltasTotales;
+    public int getFaltasInsignificantes() {
+        return faltasInsignificantes;
     }
 
-    public void setFaltasTotales(int faltasTotales) {
-        this.faltasTotales = faltasTotales;
+    public void setFaltasInsignificantes(int faltasInsignificantes) {
+        this.faltasInsignificantes = faltasInsignificantes;
     }
 
     public boolean isRoja() {
@@ -70,14 +73,20 @@ public class Acciones {
 
     public void setEstadoFinal(boolean estadoFinal) {
         this.estadoFinal = estadoFinal;
+        /* Talvez se deberia modificar la variable "momentoCambio" a 0, pero este puede producir errores
+             a la hora de cargar los datos, por ejemplo primero modificar "estadoFinal" antes de "estado inicial"
+             ¿Ustedes que opinan?
+        */
     }
 
-    public double getTiempo_actualizacion() {
+    public String getTiempo_actualizacion() {
         return tiempo_actualizacion;
     }
 
-    public void setTiempo_actualizacion(double tiempo_actualizacion) {
+    public void setTiempo_actualizacion(String tiempo_actualizacion) {
         this.tiempo_actualizacion = tiempo_actualizacion;
+        /*Talves deberiamos de restringir que este datos solo de modifique en el caso de que los dos estados 
+        sean diferentes ¿que opinan?*/
     }
 
     public ArrayList<Boolean> getPenales() {
@@ -94,28 +103,43 @@ public class Acciones {
 
     public void setMomento_goles(ArrayList<String> momento_goles) {
         this.momento_goles = momento_goles;
+        this.cant_goles=momento_goles.size();
     }
     
     public void cambio(boolean t,String tiempo){
-    //  falta    
+        this.tiempo_actualizacion=tiempo;
+        this.estadoFinal=t;
     }
     
-    public void falta(int numero){
-        // falta
+    public void falta(int numero,int tipo) throws ErrorException{
+        ErrorException error = new ErrorException("no se pueden ingresar mas de"
+                + " una targeta roja, si ingresa una targeta roja el valor del primer parameto es 1");
+        
+        if(numero !=1 && tipo==Acciones.TOTAL){ 
+            throw error;
+        }else if(tipo==Acciones.TOTAL){
+            this.roja=!roja;   /*Tiene que ser lo puesto a lo que estaba antes de la modificacion*/
+        }else if(tipo==Acciones.NULA){
+            this.faltasInsignificantes+=numero;
+        }else if(tipo==Acciones.PARCIAL && (this.amarilias+numero)<=2 ){
+             this.amarilias+=numero;
+        } 
+        this.personaje.agregar_falta(numero, tipo);
     }
     
     public void gol(String momento){
-        //falta
+       this.cant_goles++;
+       this.momento_goles.add(momento);
     }
     
     public void penal (boolean j){
-        //falta
+       this.penales.add(new Boolean(j));
     }
 
     @Override
     public String toString() {
         return "Acciones{" + "personaje=" + personaje + ", amarilias=" + amarilias + ", cant_goles=" +
-                cant_goles + ", faltasTotales=" + faltasTotales + ", roja=" + roja + ", estadoInicial=" + 
+                cant_goles + ", faltasTotales=" + faltasInsignificantes + ", roja=" + roja + ", estadoInicial=" + 
                 estadoInicial + ", estadoFinal=" + estadoFinal + ", tiempo_actualizacion=" + 
                 tiempo_actualizacion + ", penales=" + penales + ", momento_goles=" + momento_goles + '}';
     }

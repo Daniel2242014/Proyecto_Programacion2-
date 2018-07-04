@@ -4,7 +4,7 @@ package logica;
 public class Jugador {
     private String primeraPosicion,segundaPosicion,fechaDebut,apellido,club,
             cedula,nombre,fechaNacimiento,pais;
-    private int edad,golesTotales,faltasTotales;
+    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales;
     private double altura;
   
     public Jugador(String nom,String apeli, String pai,String code ){
@@ -14,6 +14,26 @@ public class Jugador {
         this.pais=pai;
     }
 
+    public int getRojasTotales() {
+        return rojasTotales;
+    }
+
+    public void setRojasTotales(int rojasTotales) {
+        if(rojasTotales>0){
+            this.rojasTotales = rojasTotales;
+        }
+    }
+
+    public int getAmarillasTotales() {
+        return amarillasTotales;
+    }
+
+    public void setAmarillasTotales(int amarillasTotales) {
+        if(amarillasTotales>0){
+            this.amarillasTotales = amarillasTotales;
+        }
+    }
+    
     public String getPrimeraPosicion() {
         return primeraPosicion;
     }
@@ -26,8 +46,17 @@ public class Jugador {
         return segundaPosicion;
     }
 
-    public void setSegundaPosicion(String segundaPosicion) {
-        this.segundaPosicion = segundaPosicion;
+    public void setSegundaPosicion(String s) throws ErrorException{
+            if(this.primeraPosicion==null ||this.primeraPosicion.equalsIgnoreCase("Arquero")){
+                throw new ErrorException("Un Arquero no puede tener segunda posicion ");
+            }else if(primeraPosicion.equalsIgnoreCase(s)){
+                throw new ErrorException("La segunda posicion no puede ser igual que la primera");
+            }else if(s.equalsIgnoreCase("Defensa") || s.equalsIgnoreCase("Volante") || s.equalsIgnoreCase("Delantero") ){
+                this.segundaPosicion = s;
+            }else{
+                throw new ErrorException("La segunda posicion puede ser 'Defensa','Volante' o 'Delantero' ");
+            }
+            
     }
 
     public String getFechaDebut() {
@@ -60,6 +89,9 @@ public class Jugador {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
+        
+        /*AGUSTIN SI QUERES AGREGA TU METODO DE VERIFICACION*/ 
+        
     }
 
     public String getNombre() {
@@ -98,9 +130,13 @@ public class Jugador {
         return golesTotales;
     }
 
-    public void setGolesTotales(int golesTotales) {
-        this.golesTotales = golesTotales;
-    }
+   public void setGoles( int amarilia, int roja, int total){
+       if((amarilia+roja)<total){
+           this.amarillasTotales=amarilia;
+           this.rojasTotales=roja;
+           this.faltasTotales=total;
+       }
+   }
 
     public int getFaltasTotales() {
         return faltasTotales;
@@ -118,14 +154,17 @@ public class Jugador {
         this.altura = altura;
     }
     
-    
-    
     public void agregar_gol(int numero){
-        /*FALTA COMPLETAR*/
+        this.golesTotales+=numero;
     }
     
-    public void agregar_falta(int numero){
-        /*FALTA COMPLETAR*/
+    public void agregar_falta(int numero,int tipo) {
+         if(tipo==Acciones.TOTAL){
+            rojasTotales+=numero;
+        }else if(tipo==Acciones.PARCIAL){
+            amarillasTotales+=numero;
+        }
+        this.faltasTotales+=numero;
     }
 
     @Override
