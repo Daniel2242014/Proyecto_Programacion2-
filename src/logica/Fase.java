@@ -106,7 +106,7 @@ package logica;
             return eje;
           
         }
-        public int devolverGoles(Seleccion a){  //no se que falta
+        public int devolverGoles(Seleccion a){  
             return eje;  
             
         }
