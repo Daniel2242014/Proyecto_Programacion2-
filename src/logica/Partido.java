@@ -76,7 +76,7 @@ public class Partido {
       
     } 
     public Accion devolverEvento(int deveve){  
-        return null;
+        return deveve;
         //deveve=devolverEvento
     }
     public int cantidadEventos(){
