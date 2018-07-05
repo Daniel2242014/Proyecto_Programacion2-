@@ -1,4 +1,4 @@
-
+/* ANTES
 package logica;
 
 public class Partido {
@@ -48,6 +48,50 @@ public class Partido {
     }
         
     
+    
+           
+}
+*/
+//AHORA
+package logica;
+
+public class Partido {
+    private String fecha;
+    private int tiempo_total;
+    private int tiempo_agregado;
+    private String ciudad;
+    private String estadio;
+    private Seleccion equipo1;    
+    private Seleeccion equipo2;     
+    private ArrayList<Accion> eventos;  
+    private Extra parte_extra;          
+    private boolean tipo_fase;
+    
+    
+    public  Partido(Seleccion a,Seleccion b,boolean fac,int temptot){
+        //fac=tipo_fase, temptot=tiempo_total
+    }
+    public void agregarEvento(Accion acc){  
+      //acc=accion  
+      
+    } 
+    public Accion devolverEvento(int deveve){  
+        return null;
+        //deveve=devolverEvento
+    }
+    public int cantidadEventos(){
+        return 4; 
+    }
+    public void cearAlargue(){ 
+        
+    }
+    public int golesTotales(Seleccion){  
+        return 4; 
+    }
+    public String toString() {
+        return "Partido{" + "fecha=" + fecha + ", tiempo_total=" + tiempo_total + ", tiempo_agregado=" + tiempo_agregado + ", ciudad=" + ciudad + ", estadio=" + estadio + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", eventos=" + eventos + ", parte_extra=" + parte_extra + ", tipo_fase=" + tipo_fase + '}';
+    } //deje que lo hiciera netbeans como dijiste
+       
     
            
 }
