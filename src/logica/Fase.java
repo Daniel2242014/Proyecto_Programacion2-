@@ -1,4 +1,4 @@
-
+/* ANTES
 package logica;
 
 
@@ -66,4 +66,58 @@ package logica;
     
                     
     }
+  */ 
+      
+// ahora
+package logica;
+
+    public class Fase { 
+        private partidos = ArrayList<Partido>; //sigue tirando error
+        private String letra_posicion;
+        private boolean grupo_eliminacion;
+        public int eje;
+        
+        public void Fase(){ 
+           
+        }
+        public void agregarPartido(Partido part){ 
+       
+       
+        }
+       
+        
+        public Partido devolverPartido(int devpart){  
+            return null;
+            //devpart=devolverPartido
+            
+        }
+        public int cantidadPartidos(){
+            
+        }
+        public Seleccion[] ganadores(){  //no se que falta
+            return eje;
+           
+        }
+        public Seleccion[] devolverSelecciones(){  //no se que falta
+            return eje;
+        
+        }
+        public int devolverPunto(Seleccion a){ 
+            return eje;
+          
+        }
+        public int devolverGoles(Seleccion a){  //no se que falta
+            return eje;  
+            
+        }
+        public String toString() {
+            return "Fase{" + "letra_posicion=" + letra_posicion + ", grupo_eliminacion=" + grupo_eliminacion + ", eje=" + eje + '}';
+            //deje que lo haga netbeans como dijiste
+        
+        }
+        
+        
+        
     
+                    
+    }
