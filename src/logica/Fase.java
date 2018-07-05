@@ -70,9 +70,5 @@ package logica;
             //deje que lo haga netbeans como dijiste
         
         }
-        
-        
-        
-    
-                    
+               
     }

@@ -24,8 +24,10 @@ public class Partido {
       AL ARRAYLIST, UTILIZA EL METODO ADD(ACCIONES)
       DANIEL*/
     } 
+    
     public Acciones devolverEvento(int deveve){  
         return null;
+
         //deveve=devolverEvento
         /*UTILIZANDO EL METODO GET(INT) DEVOLBE LA ACCION QUE CORESPONDA AL NUMERO QUE TE
         PASARON POR PARAMETRO
