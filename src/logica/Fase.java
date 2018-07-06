@@ -1,16 +1,17 @@
 package logica;
 
     public class Fase { 
-        private Partidos /*EL NOMBRE*/ = ArrayList<Partido>;  /*ArrayList <Partido> nombre = new ArrayList<>(); DANIEL*/
+        private Partidos parti2 = ArrayList<Partido> parti2 = new Arraylisy<>();  
         private String letra_posicion;
         private boolean grupo_eliminacion;
-        public int eje; /*¿CUAL ES ESTA VARIABLE?*/
+        public int eje; /*¿CUAL ES ESTA VARIABLE?*/ //EJE
         
         public void Fase(){ 
            
         }
-        public void agregarPartido(Partido part){ 
-                /*AGREGA UNA UN OBJETO DE TIPO PARTIDO (EL QUE TENES EN EL PARAMETRO DEL METODO) 
+        public void agregarPartido(Partido part){
+            parti2.add(Partido);    
+            /*AGREGA UNA UN OBJETO DE TIPO PARTIDO (EL QUE TENES EN EL PARAMETRO DEL METODO) 
                         AL ARRAYLIST, UTILIZA EL METODO ADD (PARTIDO)
                         DANIEL*/
         }
@@ -19,20 +20,23 @@ package logica;
         public Partido devolverPartido(int devpart){  
             return null;
             //devpart=devolverPartido
+            
             /*UTILIZA LOS METODOS DE ARRAYLIST PARA DEVOLVE EL PARTIDO QUE ESTE EN EL ARRAYLIST
             QUE CONCUERDE CON LA POSICION DEL INT DEL PARAMETRO, USA EL METODO GET(INT)
             DANIEL*/
             
         }
         public int cantidadPartidos(){
+            return parti2.size();
             /*DEVOLVE LA CANTIDAD DE ELEMENTOS QUE TENGA EL ARRAYLIST (UTILIZA EL METODO SIZE()) */
-            return 0;
+            
         }
         public Selecion[] ganadores(){  //no se que falta
             return null; 
             /*EHH? QUIEN ES EJE Y ADEMAS UN INT NO ES UNA SELECION
              DANIEL*/
-             
+             //DANI EJE ES UN EJEMPLO
+            //aiuda como lo hago
             /*ESTE METODO LO QUE HACE ES DEVOLBER UN ARRAY DE LAS SELECIONES QUE
                  GANARON ESA FACE, UTILIZA LOS METODOS DE PARTIDO PARA CALCULAR LOS PUNTOS 
                  Y GOLES, CON ESO SACAS QUIENES GANARON LA FACE (NO IMPORTA QUE AUN NO 
@@ -52,7 +56,7 @@ package logica;
         }
         public int devolverPunto(Selecion a){ 
             return 0;
-          
+          //aiuda
             /*TIENE QUE DEVOLBER, LOS PUNTOS QUE TUBO LA SELECION ES ESA FACE, TE PUEDE SERVIR 
             REUTILIZAR ESTOS METODOS (ESTE Y EL SIGIENTE) EN LOS DOS ANTERIORES
             DANIEL*/
