@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m"CAMBIO"
+git commit -m"Cambio"
 git push origin master
