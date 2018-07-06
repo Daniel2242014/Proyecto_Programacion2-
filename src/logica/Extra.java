@@ -26,19 +26,13 @@ public class Extra
         {
             tiradores.add(p);
             gol=true;
-            int posicion=n;
-            
+          //  int posicion=n;
         }
     }
     
     public boolean devolverPenales()
     {
-        boolean[][] pos=new boolean[10][2];
-        for(int i=0; i<pos.length; i++)
-        {
-            
-        }
-        
+        //boolean[][] pos=new boolean[10][2];
     }
 
     @Override
