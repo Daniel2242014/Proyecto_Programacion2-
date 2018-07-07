@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class Extra
 {
     private ArrayList<Acciones> eventos;
-    private int terminar;
+    private boolean terminar;
     private ArrayList<Jugador> tiradores;
-    public static int TERMINAR_PRIMER_TIEMPO;
+   /* public static int TERMINAR_PRIMER_TIEMPO;
     public static int TERMINAR_SEGUNDO_TIEMPO;
     public static int ET_PRIMER_TIEMPO;
     public static int ET_SEGUNDO_TIEMPO;
-    public static int TIEMPO_TOTAL_JUEZ;
-    public static int TERMINAR_PENALES;
+    public static int TIEMPO_TOTAL_JUEZ;*/
+    public static boolean  TERMINAR_ALARGE=false;
+    public static boolean TERMINAR_PENALES=true;
     
     public Extra()
     {
