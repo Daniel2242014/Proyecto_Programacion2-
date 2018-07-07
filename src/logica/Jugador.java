@@ -1,5 +1,7 @@
 package logica;
 
+import java.util.Objects;
+
 
 public class Jugador {
     private String primeraPosicion,segundaPosicion,fechaDebut,apellido,club,
@@ -167,7 +169,15 @@ public class Jugador {
         this.faltasTotales+=numero;
     }
 
-    @Override
+    public boolean equals(Object obj) {
+        Jugador aux = (Jugador) obj;
+        if(this.cedula.equalsIgnoreCase(aux.getCedula()) && this.pais.equalsIgnoreCase(aux.getPais())){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     public String toString() {
         return "Jugador{" + "primeraPosicion=" + primeraPosicion + ", segundaPosicion=" + segundaPosicion 
                 +  ", fechaDebut=" + fechaDebut + ", apellido=" + apellido + ", club=" + club + ", cedula=" + cedula +
@@ -175,6 +185,8 @@ public class Jugador {
                 + edad + ", golesTotales=" + golesTotales + ", faltasTotales=" 
                 + faltasTotales + ", altura=" + altura + '}';
     }
+
+    
     
     
     

@@ -136,6 +136,15 @@ public class Acciones {
        this.penales.add(new Boolean(j));
     }
 
+    public boolean equals(Object o){
+        Acciones aux=(Acciones) o;
+        if(this.personaje.equals(aux.personaje)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+  
     @Override
     public String toString() {
         return "Acciones{" + "personaje=" + personaje + ", amarilias=" + amarilias + ", cant_goles=" +

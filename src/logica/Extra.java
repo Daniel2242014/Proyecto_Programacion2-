@@ -14,7 +14,8 @@ public class Extra
     public Extra()
     {
     }
-    public Extra (int a, int b, ArrayList<Acciones> arr)
+    public Extra (int a, int b, ArrayList<Acciones> arr)  /*AGUSTIN TE PIDO QUE "A" SEA EL TIEMPO TOTAL Y "B" SEA EL AGREGADO 
+                                                                                                        DANIEL*/
     {
         this.tiradores = new ArrayList<>();
         this.eventos = new ArrayList<>();

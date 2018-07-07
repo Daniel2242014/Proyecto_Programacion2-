@@ -1,51 +1,51 @@
 package logica;
-
+    import java.util.ArrayList;
     public class Fase { 
-        private Partidos parti2 = ArrayList<Partido> parti2 = new Arraylisy<>();  
+        private ArrayList<Partido> lista = new ArrayList<>();  
         private String letra_posicion;
-        private boolean grupo_eliminacion;
-        public int eje; /*¿CUAL ES ESTA VARIABLE?*/ //EJE
+        private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
         
         public void Fase(){ 
            
         }
         public void agregarPartido(Partido part){
-            parti2.add(Partido);    
-            /*AGREGA UNA UN OBJETO DE TIPO PARTIDO (EL QUE TENES EN EL PARAMETRO DEL METODO) 
-                        AL ARRAYLIST, UTILIZA EL METODO ADD (PARTIDO)
-                        DANIEL*/
+            lista.add(part);    
+           
         }
        
         
         public Partido devolverPartido(int devpart){  
-            return null;
-            //devpart=devolverPartido
-            
-            /*UTILIZA LOS METODOS DE ARRAYLIST PARA DEVOLVE EL PARTIDO QUE ESTE EN EL ARRAYLIST
-            QUE CONCUERDE CON LA POSICION DEL INT DEL PARAMETRO, USA EL METODO GET(INT)
-            DANIEL*/
+            return lista.get(devpart);
             
         }
         public int cantidadPartidos(){
-            return parti2.size();
-            /*DEVOLVE LA CANTIDAD DE ELEMENTOS QUE TENGA EL ARRAYLIST (UTILIZA EL METODO SIZE()) */
-            
+            return lista.size();       
         }
-        public Selecion[] ganadores(){  //no se que falta
+        public Seleccion[] ganadores(){  //no se que falta
+            
+            Seleccion [] arry; 
+            
+            if(grupo_eliminacion){ 
+                    arry=new Seleccion[lista.size()*2];
+                    int contador=0;
+                    for (Partido p:lista){
+                            arry[contador]=p.getEquipo1();
+                            arry[contador+1]=p.getEquipo2();
+                            contador+=2;
+                    }
+            
+            }else{
+                arry = new Seleccion[4];
+                for (Partido p:lista){
+                    /*FALTA*/
+                }
+            }
+            
             return null; 
-            /*EHH? QUIEN ES EJE Y ADEMAS UN INT NO ES UNA SELECION
-             DANIEL*/
-             //DANI EJE ES UN EJEMPLO
-            //aiuda como lo hago
-            /*ESTE METODO LO QUE HACE ES DEVOLBER UN ARRAY DE LAS SELECIONES QUE
-                 GANARON ESA FACE, UTILIZA LOS METODOS DE PARTIDO PARA CALCULAR LOS PUNTOS 
-                 Y GOLES, CON ESO SACAS QUIENES GANARON LA FACE (NO IMPORTA QUE AUN NO 
-                 TENGAS LO VALORES, SOLO IMPORTA EL ALGORITMO).
-                 PRIMERO SACA QUIENES SON LAS SELECIONES, TE ACONSEJO CREAR OTRO METODO PARA ESO.
-                 DANIEL */
+            
            
         }
-        public Selecion[] devolverSelecciones(){  //no se que falta
+        public Seleccion[] devolverSelecciones(){  //no se que falta
             return null;
             
             /*LO MISMO QUE EL ANTERIOR, PERO SOLO QUE ESTE DEVUELBE LOS QUE NO GANARON, 
@@ -54,7 +54,7 @@ package logica;
                 
         
         }
-        public int devolverPunto(Selecion a){ 
+        public int devolverPunto(Seleccion a){ 
             return 0;
           //aiuda
             /*TIENE QUE DEVOLBER, LOS PUNTOS QUE TUBO LA SELECION ES ESA FACE, TE PUEDE SERVIR 
@@ -62,7 +62,7 @@ package logica;
             DANIEL*/
             
         }
-        public int devolverGoles(Selecion a){  
+        public int devolverGoles(Seleccion a){  
             return 0;  
             
             /*TIENE QUE DEVOLBER LOS GOLES QUE HISO LA SELECION EN ESA FACE */
@@ -70,7 +70,7 @@ package logica;
         }
         public String toString() {
             return "Fase{" + "letra_posicion=" + letra_posicion + ", grupo_eliminacion=" + 
-                    grupo_eliminacion + ", eje=" + eje + '}';
+                    grupo_eliminacion + '}';
             //deje que lo haga netbeans como dijiste
         
         }
