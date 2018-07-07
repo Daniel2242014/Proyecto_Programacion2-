@@ -32,7 +32,12 @@ public class Seleccion
     {
       return 0;  
     }
-
+    
+    public boolean pertenece(Jugador j ){  /*TE AGREGO ESTO, LO NECESITO, LO QUE HACE ES DEVOLBER 
+        TRUE SI ESE JUGADOR PERTENECE AL ARRAYLIST, USA EL METODO CONTAIN */
+        return false;
+    }
+    
     @Override
     public String toString() {
         return "Seleccion{" + "nombre=" + nombre + ", ranking_FIFA=" + ranking_FIFA + ", posicion_grupo=" + posicion_grupo + ", estado=" + estado + ", fecha_salida=" + fecha_salida + ", confederacion=" + confederacion + ", jugadores=" + jugadores + '}';
