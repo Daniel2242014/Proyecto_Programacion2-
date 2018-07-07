@@ -14,7 +14,7 @@ public class Extra
                                                                                                         DANIEL*/
     {
         this.tiradores = new ArrayList<>();
-        this.eventos = new ArrayList<>();
+        this.eventos = arr;
         if((a-b)>120)
         {
             terminar=true;
@@ -23,9 +23,14 @@ public class Extra
     
     public void penal(Jugador p, boolean gol, int n)
     {
-        tiradores.add(p);
-        
-        //  int posicion=n;
+        tiradores.set(n, p);
+        for(Acciones buscar:eventos)
+        {
+            if(buscar.getPersonaje().equals(p))
+            {
+                buscar.penal(gol);
+            }
+        }
     }
     
     public boolean[] devolverPenales()
@@ -36,7 +41,7 @@ public class Extra
     
     public int getTiempoTotal()
     {
-        return null;
+        return 0;
     }
 
     public ArrayList<Acciones> getEventos() {
