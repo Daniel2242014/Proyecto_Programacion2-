@@ -10,14 +10,12 @@ package logica;
         }
         public void agregarPartido(Partido part){
             lista.add(part);    
-           
         }
        
-        
         public Partido devolverPartido(int devpart){  
-            return lista.get(devpart);
-            
+            return lista.get(devpart);     
         }
+        
         public int cantidadPartidos(){
             return lista.size();       
         }
@@ -103,18 +101,62 @@ package logica;
         
         
         public Seleccion[] SeleccionesGanadoras(){
-            return null; //POR AHORA
+           
+            Seleccion[] todas= this.devolverSelecciones();
+            Seleccion[] ganadoras= new Seleccion [todas.length/2];
+            Seleccion aux;
+            for(int i=0;i<todas.length;i++){   
+                for(int i2=1;i2<todas.length;i2++){
+                        if(this.devolverPunto(todas[i2]) >  this.devolverPunto(todas[i])){
+                            aux=todas[i];
+                            todas[i]=todas[i2];
+                            todas[i2]=aux;
+                        }else if(this.devolverPunto(todas[i]) == this.devolverPunto(todas[i2])){
+                            if(this.devolverGoles(todas[i2]) > this.devolverGoles(todas[i]) ){
+                                aux=todas[i];
+                                todas[i]=todas[i2];
+                                 todas[i2]=aux;
+                            }
+                        }    
+                }
+            }
+            
+            for(int i3=0;   i3<todas.length/2; i3++){
+                ganadoras[i3]=todas[i3];
+            }
+            return  ganadoras;
         }
         
           public Seleccion[] SeleccionesPerdedoras(){
-            return null; //POR AHORA
+            Seleccion [] todas = this.devolverSelecciones();
+            Seleccion [] ganadoras = this.SeleccionesGanadoras();
+            Seleccion [] perdedoras = new Seleccion[ganadoras.length];
+            int contador=0;
+          
+            for(int i=0; i<perdedoras.length;i++){
+                boolean j=true;
+                for(int i2=0; i2<ganadoras.length; i2++){
+                    if(todas[contador].equals(ganadoras[i2])){
+                        j=false;
+                    }
+                }
+                
+                if(j){
+                    perdedoras[i]=todas[contador];
+                }else{
+                    i--;
+                }
+                
+                contador++;
+            }
+              return perdedoras; 
         }
         
-        public String toString() {
+       
+          public String toString() {
             return "Fase{" + "letra_posicion=" + letra_posicion + ", grupo_eliminacion=" + 
                     grupo_eliminacion + '}';
-            //deje que lo haga netbeans como dijiste
-        
+
         }
                
     }
