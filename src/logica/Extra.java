@@ -7,48 +7,36 @@ public class Extra
     private ArrayList<Acciones> eventos;
     private boolean terminar;
     private ArrayList<Jugador> tiradores;
-   /* public static int TERMINAR_PRIMER_TIEMPO;
-    public static int TERMINAR_SEGUNDO_TIEMPO;
-    public static int ET_PRIMER_TIEMPO;
-    public static int ET_SEGUNDO_TIEMPO;
-    public static int TIEMPO_TOTAL_JUEZ;*/
-    public static boolean  TERMINAR_ALARGE=false;
+    public static boolean TERMINAR_ALARGUE=false;
     public static boolean TERMINAR_PENALES=true;
     
-    public Extra()
-    {
-    }
     public Extra (int a, int b, ArrayList<Acciones> arr)  /*AGUSTIN TE PIDO QUE "A" SEA EL TIEMPO TOTAL Y "B" SEA EL AGREGADO 
                                                                                                         DANIEL*/
     {
         this.tiradores = new ArrayList<>();
         this.eventos = new ArrayList<>();
-        this.terminar=a;
-        this.TIEMPO_TOTAL_JUEZ=b;
-       
+        if((a-b)>120)
+        {
+            terminar=true;
+        }
     }
     
     public void penal(Jugador p, boolean gol, int n)
     {
-        if (TERMINAR_SEGUNDO_TIEMPO<=15)
-        {
-            tiradores.add(p);
-            gol=true;
-          //  int posicion=n;
-        }
+        tiradores.add(p);
+        
+        //  int posicion=n;
     }
     
-    public boolean[][] devolverPenales()
+    public boolean[] devolverPenales()
     {
-        if(terminar-TIEMPO_TOTAL_JUEZ>90)
-        {
-            
-        }
+        
+        return null;
     }
     
     public int getTiempoTotal()
     {
-        return TERMINAR_PRIMER_TIEMPO+TERMINAR_SEGUNDO_TIEMPO+ET_PRIMER_TIEMPO+ET_SEGUNDO_TIEMPO+TERMINAR_PENALES;
+        return null;
     }
 
     public ArrayList<Acciones> getEventos() {
