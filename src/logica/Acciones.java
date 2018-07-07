@@ -106,6 +106,10 @@ public class Acciones {
         this.cant_goles=momento_goles.size();
     }
     
+    public boolean devolberPenal(int index){
+        return penales.get(index);
+    } 
+    
     public void cambio(boolean t,String tiempo){
         this.tiempo_actualizacion=tiempo;
         this.estadoFinal=t;

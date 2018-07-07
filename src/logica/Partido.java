@@ -14,6 +14,16 @@ public class Partido {
     private Extra parte_extra;          
     private boolean tipo_fase;
 
+    
+    public  Partido(Seleccion a,Seleccion b,int temptot){
+        equipo1=a;
+        equipo2=b;
+        tiempo_total=temptot;
+
+    }
+    
+    //----------------------------------------------------------------------------------------------------------------------------------------------------
+    
     public String getFecha() {
         return fecha;
     }
@@ -94,16 +104,8 @@ public class Partido {
         this.tipo_fase = tipo_fase;
     }
     
+    //-----------------------------------------------------------------------------------------------------------------------------------------
     
-    
-    
-    
-    public  Partido(Seleccion a,Seleccion b,int temptot){
-        equipo1=a;
-        equipo2=b;
-        tiempo_total=temptot;
-
-    }
     public void agregarEvento(Acciones acc){  
       eventos.add(acc);
     } 
@@ -112,15 +114,14 @@ public class Partido {
         return eventos.get(deveve);
          
     }
+    
+    
     public int cantidadEventos(){
         return eventos.size(); 
     }
     public Extra cearAlargue(){ 
        parte_extra=new Extra(tiempo_total,tiempo_agregado,eventos);
        return parte_extra;
-       //como se hace?
-       /*CREA UN OBJETO DE TIPO EXTRA Y PASALE LAS COSAS CORESPONDIENTES AL CONSTRUCTOR
-        DANIEL*/
     }
     public int golesTotales(Seleccion sele){  
         for ( Acciones a: eventos){
