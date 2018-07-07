@@ -21,9 +21,10 @@ package logica;
         public int cantidadPartidos(){
             return lista.size();       
         }
-        public Seleccion[] ganadores(){  //no se que falta
+       
+        public Seleccion[] devolverSelecciones(){  
             
-            Seleccion [] arry; 
+             Seleccion [] arry; 
             
             if(grupo_eliminacion){ 
                     arry=new Seleccion[lista.size()*2];
@@ -36,38 +37,79 @@ package logica;
             
             }else{
                 arry = new Seleccion[4];
+                int contador=0;
                 for (Partido p:lista){
-                    /*FALTA*/
+                    
+                    Seleccion aux1=p.getEquipo1();
+                    Seleccion aux2=p.getEquipo2();
+                    
+                    if(arry[0]!=null && arry[1]!=null && arry[2]!=null &&arry[3]!=null){
+                        continue;
+                    }
+                    
+                    if(!arry[0].equals(aux1) && !arry[1].equals(aux1) && !arry[2].equals(aux1) && !arry[3].equals(aux1)){
+                        arry[contador]=aux1;
+                        contador++;
+                    }else if(!arry[0].equals(aux2) && !arry[1].equals(aux2)  && !arry[2].equals(aux2)  && !arry[3].equals(aux2) ){
+                         arry[contador]=aux2;
+                        contador++;
+                    }  
                 }
             }
-            
-            return null; 
-            
-           
+    
+            return arry;
         }
-        public Seleccion[] devolverSelecciones(){  //no se que falta
-            return null;
-            
-            /*LO MISMO QUE EL ANTERIOR, PERO SOLO QUE ESTE DEVUELBE LOS QUE NO GANARON, 
-            IGUAL PARA OPTIMISAR CODIGO PODES UTILIZAR EL OTRO METODO Y VER CUALES SON 
-            LAS SELECIONES QUE NO ESTAN  */
-                
+      
+   
         
-        }
         public int devolverPunto(Seleccion a){ 
-            return 0;
-          //aiuda
-            /*TIENE QUE DEVOLBER, LOS PUNTOS QUE TUBO LA SELECION ES ESA FACE, TE PUEDE SERVIR 
-            REUTILIZAR ESTOS METODOS (ESTE Y EL SIGIENTE) EN LOS DOS ANTERIORES
-            DANIEL*/
+           
+          if(!grupo_eliminacion){  
+            int contador=0; //punto de cada partido
+                for(Partido p:lista){
+                    if(p.getEquipo1().equals(a) || p.getEquipo2().equals(a)){
+                        Seleccion otro;
+                        if(p.getEquipo1().equals(a)){
+                            otro=p.getEquipo2();
+                        }else{
+                            otro=p.getEquipo1();
+                        }
+                        if(p.golesTotales(a)>p.golesTotales(otro)){
+                            contador+=3;
+                        }else if(p.golesTotales(a)<p.golesTotales(otro)){
+                            contador+=0;
+                        }else{
+                            contador++;
+                        }
+                    }
+                }
+            return contador;    
+          }else{
+            return -1;
+          }
             
         }
         public int devolverGoles(Seleccion a){  
-            return 0;  
             
-            /*TIENE QUE DEVOLBER LOS GOLES QUE HISO LA SELECION EN ESA FACE */
-            
+            int contador=0;
+            for (Partido p : lista){
+                if(p.golesTotales(a) != -1){
+                    contador+=p.golesTotales(a);
+                }
+            } 
+            return contador;  
+        
         }
+        
+        
+        public Seleccion[] SeleccionesGanadoras(){
+            return null; //POR AHORA
+        }
+        
+          public Seleccion[] SeleccionesPerdedoras(){
+            return null; //POR AHORA
+        }
+        
         public String toString() {
             return "Fase{" + "letra_posicion=" + letra_posicion + ", grupo_eliminacion=" + 
                     grupo_eliminacion + '}';

@@ -126,6 +126,11 @@ public class Partido {
         for ( Acciones a: eventos){
             // la variable "a" es un objeto de tipo selecion
         }
+       
+        /*SI LA SELECION INGRESADA NO PERTENECE A ESE PARTIDO HACE QUE EL METODO DEBUELVA -1 POR FAVOR
+        DANIEL
+        */
+        
         /*MIRANDO EN LAS ACCIONES CALCULA CUANTOS FUERON LOS GOLES TOTALES DE CADA SELECION 
         EN EL PARTIDO, RECORDA QUE SABES CUALES SON LOS JUGADORES DE CADA SELECION, PORQUE LOS 
         TENES METIDOS EN UN ARRAYLIST EN LA CLASE SELECION
