@@ -106,7 +106,7 @@ public class Acciones {
         this.cant_goles=momento_goles.size();
     }
     
-    public boolean devolberPenal(int index){
+    public boolean devolverPenal(int index){
         return penales.get(index);
     } 
     

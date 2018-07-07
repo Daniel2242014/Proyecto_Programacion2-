@@ -35,8 +35,17 @@ public class Extra
     
     public boolean[] devolverPenales()
     {
-        
+        int cont=0;
+        boolean[] arr=new boolean[tiradores.size()];
+        for(Jugador a:tiradores)
+        {
+            for(Acciones b:eventos)
+            {
+                
+            }
+        }
         return null;
+        
     }
     
     public int getTiempoTotal()
