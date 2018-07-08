@@ -2,7 +2,6 @@ package logica;
 
 import java.util.ArrayList;
 
-
 public class Seleccion 
 {
     private String nombre;
@@ -36,6 +35,16 @@ public class Seleccion
     public boolean pertenece(Jugador j)
     {  
         if(jugadores.contains(j))
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean equals(Object a)
+    {
+        Seleccion verif=(Seleccion) a;
+        if(this.nombre.equals(verif.nombre) && this.confederacion.equals(verif.confederacion))
         {
             return true;
         }
