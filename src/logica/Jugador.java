@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class Jugador {
     private String primeraPosicion,segundaPosicion,fechaDebut,apellido,club,
-            cedula,nombre,fechaNacimiento,pais;
-    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales;
+            nombre,fechaNacimiento,pais;
+    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,cedula;
     private double altura;
   
-    public Jugador(String nom,String apeli, String pai,String code ){
+    public Jugador(String nom,String apeli, String pai,int code ){
         this.nombre=nom;
         this.apellido=apeli;
         this.cedula=code;
@@ -85,15 +85,13 @@ public class Jugador {
         this.club = club;
     }
 
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
-        
-        /*AGUSTIN SI QUERES AGREGA TU METODO DE VERIFICACION*/ 
-        
+           
     }
 
     public String getNombre() {
@@ -171,7 +169,7 @@ public class Jugador {
 
     public boolean equals(Object obj) {
         Jugador aux = (Jugador) obj;
-        if(this.cedula.equalsIgnoreCase(aux.getCedula()) && this.pais.equalsIgnoreCase(aux.getPais())){
+        if(cedula==aux.cedula && this.pais.equalsIgnoreCase(aux.getPais())){
             return true;
         }else{
             return false;

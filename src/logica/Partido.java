@@ -114,7 +114,6 @@ public class Partido {
         return eventos.get(deveve);     
     }
     
-    
     public int cantidadEventos(){
         return eventos.size(); 
     }

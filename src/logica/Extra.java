@@ -35,7 +35,7 @@ public class Extra
     
     public boolean[] devolverPenales()
     {
-        int contJug=0;
+        /*int contJug=0;
         int contPen=0;
         boolean[] arr=new boolean[tiradores.size()];
         ArrayList<Integer> arr2=new ArrayList<>();
@@ -55,7 +55,36 @@ public class Extra
                     contJug=0;
                 }
             }
+        }*/
+        boolean[] arr=new boolean[tiradores.size()];
+        int [][] lista = new int [tiradores.size()][2];
+        int contador1=0;
+        int contador2=0;
+        for(Acciones a:eventos){
+            if(tiradores.contains(a.getPersonaje())){
+                    lista[contador1][0]=a.getPersonaje().getCedula();
+                    lista[contador1][1]=0;
+                    contador1++;
+            }
         }
+        
+        for(Jugador j: tiradores){
+            for(Acciones a:eventos){
+                if(a.getPersonaje().equals(j)){
+                    int aux=0;
+                    for(int i=0;i<tiradores.size();i++){
+                        if(j.getCedula()==lista[i][0]){
+                            aux=i;
+                            continue;
+                        }
+                    }
+                    arr[contador2]=a.devolverPenal(lista[aux][1]);
+                    lista[aux][1]++;
+                    contador2++;
+                }
+            }
+        }
+        
         return arr;
     }
     
