@@ -15,34 +15,92 @@ public class Seleccion
     
     public Seleccion(String nombre)
     {
-        
+        this.nombre=nombre;
     }
     
     public void agregarJugador(Jugador jug)
     {
-        
+        jugadores.add(jug);
     }
     
     public Jugador devolverJugador(int a)
     {
-        return null;
+        return jugadores.get(a);
     }
     
     public int cantidadJugadores()
     {
-      return 0;  
+        return jugadores.size();
     }
     
-    public boolean pertenece(Jugador j ){  /*TE AGREGO ESTO, LO NECESITO, LO QUE HACE ES DEVOLBER 
-        TRUE SI ESE JUGADOR PERTENECE AL ARRAYLIST, USA EL METODO CONTAIN */
+    public boolean pertenece(Jugador j)
+    {  
+        if(jugadores.contains(j))
+        {
+            return true;
+        }
         return false;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getRanking_FIFA() {
+        return ranking_FIFA;
+    }
+
+    public void setRanking_FIFA(int ranking_FIFA) {
+        this.ranking_FIFA = ranking_FIFA;
+    }
+
+    public int getPosicion_grupo() {
+        return posicion_grupo;
+    }
+
+    public void setPosicion_grupo(int posicion_grupo) {
+        this.posicion_grupo = posicion_grupo;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public String getFecha_salida() {
+        return fecha_salida;
+    }
+
+    public void setFecha_salida(String fecha_salida) {
+        this.fecha_salida = fecha_salida;
+    }
+
+    public String getConfederacion() {
+        return confederacion;
+    }
+
+    public void setConfederacion(String confederacion) {
+        this.confederacion = confederacion;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }    
+ 
     @Override
     public String toString() {
         return "Seleccion{" + "nombre=" + nombre + ", ranking_FIFA=" + ranking_FIFA + ", posicion_grupo=" + posicion_grupo + ", estado=" + estado + ", fecha_salida=" + fecha_salida + ", confederacion=" + confederacion + ", jugadores=" + jugadores + '}';
     }
-    
-    
-    
+     
 }
