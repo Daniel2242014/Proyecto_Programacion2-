@@ -36,19 +36,27 @@ public class Extra
     public boolean[] devolverPenales()
     {
         int contJug=0;
+        int contPen=0;
         boolean[] arr=new boolean[tiradores.size()];
-        int[][] arr2=new int[tiradores.size()][1];
+        ArrayList<Integer> arr2=new ArrayList<>();
         for(Jugador a:tiradores)
         {
-            //VERIFICAR ACA
+            if(arr2.contains(contJug))
+            {
+                contPen++;
+            }
             for(Acciones b:eventos)
             {
-                b.devolverPenal(1);
-                arr2[contJug][1]=1;
+                b.devolverPenal(contPen);
+                arr2.add(contJug);
+                contJug++;
+                if(contJug==5)
+                {
+                    contJug=0;
+                }
             }
         }
-        return null;
-        
+        return arr;
     }
     
     public int getTiempoTotal()
