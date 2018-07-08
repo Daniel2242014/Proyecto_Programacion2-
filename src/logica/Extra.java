@@ -10,8 +10,7 @@ public class Extra
     public static boolean TERMINAR_ALARGUE=false;
     public static boolean TERMINAR_PENALES=true;
     
-    public Extra (int a, int b, ArrayList<Acciones> arr)  /*AGUSTIN TE PIDO QUE "A" SEA EL TIEMPO TOTAL Y "B" SEA EL AGREGADO 
-                                                                                                        DANIEL*/
+    public Extra (int a, int b, ArrayList<Acciones> arr)  
     {
         this.tiradores = new ArrayList<>();
         this.eventos = arr;
@@ -92,12 +91,6 @@ public class Extra
         }
         return arr;
     }
-    
-    public int getTiempoTotal()
-    {
-        return 0;
-    }
-
 
     @Override
     public String toString() 
