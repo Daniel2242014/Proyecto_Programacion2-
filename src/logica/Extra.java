@@ -10,8 +10,7 @@ public class Extra
     public static boolean TERMINAR_ALARGUE=false;
     public static boolean TERMINAR_PENALES=true;
     
-    public Extra (int a, int b, ArrayList<Acciones> arr)  /*AGUSTIN TE PIDO QUE "A" SEA EL TIEMPO TOTAL Y "B" SEA EL AGREGADO 
-                                                                                                        DANIEL*/
+    public Extra (int a, int b, ArrayList<Acciones> arr)  
     {
         this.tiradores = new ArrayList<>();
         this.eventos = arr;
@@ -57,23 +56,29 @@ public class Extra
             }
         }*/
         boolean[] arr=new boolean[tiradores.size()];
-        int [][] lista = new int [tiradores.size()][2];
+        int[][]lista=new int[tiradores.size()][2];
         int contador1=0;
         int contador2=0;
-        for(Acciones a:eventos){
-            if(tiradores.contains(a.getPersonaje())){
+        for(Acciones a:eventos)
+        {
+            if(tiradores.contains(a.getPersonaje()))
+            {
                     lista[contador1][0]=a.getPersonaje().getCedula();
                     lista[contador1][1]=0;
                     contador1++;
             }
         }
-        
-        for(Jugador j: tiradores){
-            for(Acciones a:eventos){
-                if(a.getPersonaje().equals(j)){
+        for(Jugador j: tiradores)
+        {
+            for(Acciones a:eventos)
+            {
+                if(a.getPersonaje().equals(j))
+                {
                     int aux=0;
-                    for(int i=0;i<tiradores.size();i++){
-                        if(j.getCedula()==lista[i][0]){
+                    for(int i=0;i<tiradores.size();i++)
+                    {
+                        if(j.getCedula()==lista[i][0])
+                        {
                             aux=i;
                             continue;
                         }
@@ -84,13 +89,9 @@ public class Extra
                 }
             }
         }
-        
         return arr;
     }
-    
 
-
-    @Override
     public String toString() 
     {
         return "Extra{" + "eventos=" + eventos + ", terminar=" + terminar + ", tiradores=" + tiradores + '}';

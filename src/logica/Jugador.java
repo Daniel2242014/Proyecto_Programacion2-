@@ -1,19 +1,21 @@
 package logica;
 
-import java.util.Objects;
-
-
 public class Jugador {
     private String primeraPosicion,segundaPosicion,fechaDebut,apellido,club,
             nombre,fechaNacimiento,pais;
     private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,cedula;
     private double altura;
   
-    public Jugador(String nom,String apeli, String pai,int code ){
+    public Jugador(String nom,String apeli, String pai,String code){
         this.nombre=nom;
         this.apellido=apeli;
-        this.cedula=code;
         this.pais=pai;
+        if(validacionCedula(code)!=-1)
+        {
+            this.cedula=validacionCedula(code);
+        }
+        else
+            throw new ErrorException("La cedula ingresada esta mal escrita o es incorrecta");
     }
 
     public int getRojasTotales() {
@@ -60,6 +62,7 @@ public class Jugador {
             }
             
     }
+    
 
     public String getFechaDebut() {
         return fechaDebut;
@@ -89,9 +92,13 @@ public class Jugador {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
-        this.cedula = cedula;
-           
+    public void setCedula(String cedula) {
+        if(validacionCedula(cedula)!=-1)
+        {
+            this.cedula=validacionCedula(cedula);
+        }
+        else
+            throw new ErrorException("La cedula ingresada esta mal escrita o es incorrecta");
     }
 
     public String getNombre() {
@@ -184,7 +191,40 @@ public class Jugador {
                 + faltasTotales + ", altura=" + altura + '}';
     }
 
-    
+    private int validacionCedula(String cedula)
+    {
+        try
+        {
+            if (cedula.length() != 11)
+            {
+                return -1;
+            }
+            int pos1=Character.getNumericValue(cedula.charAt(0));
+            int pos2=Character.getNumericValue(cedula.charAt(2));
+            int pos3=Character.getNumericValue(cedula.charAt(3));
+            int pos4=Character.getNumericValue(cedula.charAt(4));
+            int pos5=Character.getNumericValue(cedula.charAt(6));
+            int pos6=Character.getNumericValue(cedula.charAt(7));
+            int pos7=Character.getNumericValue(cedula.charAt(8));
+            int verificador=Character.getNumericValue(cedula.charAt(10));
+            int sumadigitos=(2*pos1)+(9*pos2)+(8*pos3)+(7*pos4)+(6*pos5)+(3*pos6)+(4*pos7);
+            int modulo10=sumadigitos%10;
+            int opverificadora=(10-modulo10)%10;
+            if (verificador==opverificadora)
+            {
+                String cedulacorrecta=cedula.charAt(0)+cedula.substring(6,8)+cedula.charAt(10);
+                return Integer.parseInt(cedulacorrecta);
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        catch(Exception e)
+        {
+            return -1;
+        }
+    }
     
     
     
