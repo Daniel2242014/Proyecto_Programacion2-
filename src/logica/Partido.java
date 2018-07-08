@@ -130,6 +130,27 @@ public class Partido {
         }
         return contador;
     }
+    
+    public int ferPlay (Seleccion s) {
+        int contador=0;
+        if(!this.equipo1.equals(s) && !this.equipo2.equals(s)){
+            return -1;
+        }else{
+            for(Acciones e:eventos){
+                if(s.pertenece(e.getPersonaje())){
+                    if(e.isRoja() && e.getAmarilias()<2){
+                        contador+=3;
+                    }else if(e.getAmarilias()==2){
+                        contador+=2;
+                    }else if(e.getAmarilias()==1){
+                        contador++;
+                    }
+                }
+            }
+        }
+        return contador;
+    }
+    
     public String toString() {
         return "Partido{" + "fecha=" + fecha + ", tiempo_total=" + tiempo_total + ", tiempo_agregado=" 
                 + tiempo_agregado + ", ciudad=" + ciudad + ", estadio=" + estadio + ", equipo1=" + equipo1

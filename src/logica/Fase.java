@@ -87,18 +87,36 @@ package logica;
           }
             
         }
-        public int devolverGoles(Seleccion a){  
+        public int devolverGoles(Seleccion a, boolean j){  
+             int contador=0;
             
-            int contador=0;
-            for (Partido p : lista){
-                if(p.golesTotales(a) != -1){
-                    contador+=p.golesTotales(a);
-                }
-            } 
-            return contador;  
-        
+                for (Partido p : lista){
+                    if(p.golesTotales(a) != -1){
+                        contador+=p.golesTotales(a);
+                    }
+                } 
+            if(!j){
+                 for(Partido p:lista){
+                     if(p.getEquipo1().equals(a) ){
+                         contador-=p.golesTotales(p.getEquipo2());
+                     }else if(p.getEquipo2().equals(a)){
+                         contador-=p.golesTotales(p.getEquipo1());
+                     }
+                 }
+            }
+             return contador;  
         }
         
+        public int ferPlay(Seleccion s){
+            int puntos=0;
+            for (Partido p: lista){
+                if(p.ferPlay(s)!=-1){
+                    puntos+=p.ferPlay(s);
+                }
+            }
+            
+            return puntos;
+        }
         
         public Seleccion[] SeleccionesGanadoras(){
            
@@ -112,10 +130,16 @@ package logica;
                             todas[i]=todas[i2];
                             todas[i2]=aux;
                         }else if(this.devolverPunto(todas[i]) == this.devolverPunto(todas[i2])){
-                            if(this.devolverGoles(todas[i2]) > this.devolverGoles(todas[i]) ){
+                            if( this.devolverGoles(todas[i2],false) > this.devolverGoles(todas[i],false) ){
                                 aux=todas[i];
                                 todas[i]=todas[i2];
-                                 todas[i2]=aux;
+                                todas[i2]=aux;
+                            }else if(this.devolverGoles(todas[i2],false) == this.devolverGoles(todas[i],false) ){   
+                                if(this.ferPlay(todas[i]) > this.ferPlay(todas[i2]) ){
+                                    aux=todas[i];
+                                    todas[i]=todas[i2];
+                                    todas[i2]=aux;
+                                }
                             }
                         }    
                 }
@@ -139,8 +163,7 @@ package logica;
                     if(todas[contador].equals(ganadoras[i2])){
                         j=false;
                     }
-                }
-                
+                }  
                 if(j){
                     perdedoras[i]=todas[contador];
                 }else{
