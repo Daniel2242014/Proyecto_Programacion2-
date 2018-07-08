@@ -111,8 +111,7 @@ public class Partido {
     } 
     
     public Acciones devolverEvento(int deveve){  
-        return eventos.get(deveve);
-         
+        return eventos.get(deveve);     
     }
     
     
@@ -123,21 +122,14 @@ public class Partido {
        parte_extra=new Extra(tiempo_total,tiempo_agregado,eventos);
        return parte_extra;
     }
-    public int golesTotales(Seleccion sele){  
+    public int golesTotales(Seleccion s){  
+        int contador=0;
         for ( Acciones a: eventos){
-            // la variable "a" es un objeto de tipo selecion
+            if(s.pertenece(a.getPersonaje())){
+                contador+=a.getCant_goles();
+            }
         }
-       
-        /*SI LA SELECION INGRESADA NO PERTENECE A ESE PARTIDO HACE QUE EL METODO DEBUELVA -1 POR FAVOR
-        DANIEL
-        */
-        
-        /*MIRANDO EN LAS ACCIONES CALCULA CUANTOS FUERON LOS GOLES TOTALES DE CADA SELECION 
-        EN EL PARTIDO, RECORDA QUE SABES CUALES SON LOS JUGADORES DE CADA SELECION, PORQUE LOS 
-        TENES METIDOS EN UN ARRAYLIST EN LA CLASE SELECION
-        DANIEL*/
-        
-        return 0;
+        return contador;
     }
     public String toString() {
         return "Partido{" + "fecha=" + fecha + ", tiempo_total=" + tiempo_total + ", tiempo_agregado=" 
