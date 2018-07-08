@@ -40,7 +40,9 @@ public class Seleccion
     
     @Override
     public String toString() {
-        return "Seleccion{" + "nombre=" + nombre + ", ranking_FIFA=" + ranking_FIFA + ", posicion_grupo=" + posicion_grupo + ", estado=" + estado + ", fecha_salida=" + fecha_salida + ", confederacion=" + confederacion + ", jugadores=" + jugadores + '}';
+        return "Seleccion{" + "nombre=" + nombre + ", ranking_FIFA=" + ranking_FIFA + ", posicion_grupo=" + 
+                posicion_grupo + ", estado=" + estado + ", fecha_salida=" + fecha_salida + ", confederacion=" + 
+                confederacion + ", jugadores=" + jugadores + '}';
     }
     
     

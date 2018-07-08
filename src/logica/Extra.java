@@ -88,10 +88,6 @@ public class Extra
         return arr;
     }
     
-    public int getTiempoTotal()
-    {
-        return 0;
-    }
 
 
     @Override
