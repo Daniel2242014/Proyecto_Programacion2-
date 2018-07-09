@@ -131,7 +131,7 @@ public class Partido {
         return contador;
     }
     
-    public int ferPlay (Seleccion s) {
+    public int fairPlay (Seleccion s) {
         int contador=0;
         if(!this.equipo1.equals(s) && !this.equipo2.equals(s)){
             return -1;

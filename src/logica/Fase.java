@@ -107,11 +107,11 @@ package logica;
              return contador;  
         }
         
-        public int ferPlay(Seleccion s){
+        public int fairPlay(Seleccion s){
             int puntos=0;
-            for (Partido p: lista){
-                if(p.ferPlay(s)!=-1){
-                    puntos+=p.ferPlay(s);
+            for(Partido p: lista){
+                if(p.fairPlay(s)!=-1){
+                    puntos+=p.fairPlay(s);
                 }
             }
             
@@ -135,7 +135,7 @@ package logica;
                                 todas[i]=todas[i2];
                                 todas[i2]=aux;
                             }else if(this.devolverGoles(todas[i2],false) == this.devolverGoles(todas[i],false) ){   
-                                if(this.ferPlay(todas[i]) > this.ferPlay(todas[i2]) ){
+                                if(this.fairPlay(todas[i]) > this.fairPlay(todas[i2]) ){
                                     aux=todas[i];
                                     todas[i]=todas[i2];
                                     todas[i2]=aux;

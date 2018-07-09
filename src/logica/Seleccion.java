@@ -7,6 +7,7 @@ public class Seleccion
     private String nombre;
     private int ranking_FIFA;
     private int posicion_grupo;
+    private char letra_grupo;
     private boolean estado;
     private String fecha_salida;
     private String confederacion;
@@ -69,6 +70,14 @@ public class Seleccion
 
     public int getPosicion_grupo() {
         return posicion_grupo;
+    }
+
+    public char getLetra_grupo() {
+        return letra_grupo;
+    }
+
+    public void setLetra_grupo(char letra_grupo) {
+        this.letra_grupo = letra_grupo;
     }
 
     public void setPosicion_grupo(int posicion_grupo) {
