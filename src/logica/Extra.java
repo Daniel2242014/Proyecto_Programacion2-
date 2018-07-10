@@ -8,14 +8,14 @@ public class Extra
     private ArrayList<Acciones> eventos;
     private boolean terminar;
     private ArrayList<Jugador> tiradores;
-    public static boolean TERMINAR_ALARGUE=false;
-    public static boolean TERMINAR_PENALES=true;
+    public final static boolean TERMINAR_ALARGUE=false;
+    public final static boolean TERMINAR_PENALES=true;
     
-    public Extra (int a, int b, ArrayList<Acciones> arr)  
+    public Extra (int a, ArrayList<Acciones> arr)  
     {
         this.tiradores = new ArrayList<>(6);
         this.eventos = arr;
-        if((a-b)>120)
+        if((a)>120)
         {
             terminar=true;
         }
@@ -49,23 +49,7 @@ public class Extra
         this.tiradores = tiradores;
     }
 
-    public static boolean isTERMINAR_ALARGUE() {
-        return TERMINAR_ALARGUE;
-    }
-
-    public static void setTERMINAR_ALARGUE(boolean TERMINAR_ALARGUE) {
-        Extra.TERMINAR_ALARGUE = TERMINAR_ALARGUE;
-    }
-
-    public static boolean isTERMINAR_PENALES() {
-        return TERMINAR_PENALES;
-    }
-
-    public static void setTERMINAR_PENALES(boolean TERMINAR_PENALES) {
-        Extra.TERMINAR_PENALES = TERMINAR_PENALES;
-    }
-    
-    
+ 
     
     public void penal(Jugador p, boolean gol)
     {
@@ -93,7 +77,6 @@ public class Extra
             {
                     lista[contador1][0]=a.getPersonaje().getCode();
                     lista[contador1][1]=0;
-                    System.out.println(a.getPersonaje().getCode());
                     contador1++;
             }
         }

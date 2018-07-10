@@ -31,6 +31,9 @@ public class Acciones {
     public void setAmarilias(int amarilias) {
         if(amarilias<=2){
             this.amarilias = amarilias;
+            if(this.amarilias==2){
+                this.roja=true;
+            }
         }
      }
 

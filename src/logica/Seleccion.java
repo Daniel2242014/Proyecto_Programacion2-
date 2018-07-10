@@ -49,7 +49,7 @@ public class Seleccion
            return false;
        }
         Seleccion verif=(Seleccion) a;
-        if(this.nombre.equals(verif.nombre)/* && this.confederacion.equals(verif.confederacion)*/)
+        if(this.nombre.equals(verif.nombre))
         {
             return true;
         }

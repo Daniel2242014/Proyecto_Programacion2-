@@ -119,7 +119,7 @@ public class Partido {
         return eventos.size(); 
     }
     public Extra cearAlargue(){ 
-       parte_extra=new Extra(tiempo_total,tiempo_agregado,eventos);
+       parte_extra=new Extra(tiempo_total,eventos);
        return parte_extra;
     }
     public int golesTotales(Seleccion s){  

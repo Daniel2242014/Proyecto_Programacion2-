@@ -2,11 +2,24 @@ package logica;
     import java.util.ArrayList;
     public class Fase { 
         private ArrayList<Partido> lista = new ArrayList<>();  
-        private String letra_posicion;
+        private char letra_posicion;
         private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
+        public final static  char GRUPO_A = 'a';
+        public final static char GRUPO_B = 'b';
+        public final static char GRUPO_C = 'c';
+        public final static char GRUPO_D = 'd';
+        public final static char GRUPO_E= 'e';
+        public final static char GRUPO_F = 'f';
+        public final static char GRUPO_G = 'g';
+        public final static char GRUPO_H = 'h';
+        public final static char OCTAVOS = '8';
+        public final static char CUARTOS = '4';
+        public final static char SEMI_FINAL = '2';
+        public final static char FINAL = '1';
         
-        public void Fase(){ 
+        public Fase(char r ){ 
            this.lista = new ArrayList<>();
+           letra_posicion=r;
         }
         public void agregarPartido(Partido part){
             lista.add(part);    
@@ -144,7 +157,7 @@ package logica;
             return puntos;
         }
         
-        public Seleccion[] SeleccionesGanadoras(){
+        public Seleccion[] SeleccionesGanadoras(boolean j){
           
             Seleccion[] todas= this.devolverSelecciones();
             Seleccion[] ganadoras= new Seleccion [todas.length/2];
@@ -171,15 +184,16 @@ package logica;
                 }
             }
             
-            for(int i3=0;   i3<todas.length/2; i3++){
-                ganadoras[i3]=todas[i3];
-            }
+         if(j){
             return  ganadoras;
+         }else{
+             return todas;
+         }
         }
         
           public Seleccion[] SeleccionesPerdedoras(){
             Seleccion [] todas = this.devolverSelecciones();
-            Seleccion [] ganadoras = this.SeleccionesGanadoras();
+            Seleccion [] ganadoras = this.SeleccionesGanadoras(true);
             Seleccion [] perdedoras = new Seleccion[ganadoras.length];
             int contador=0;
           
