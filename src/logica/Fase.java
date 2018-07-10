@@ -20,8 +20,42 @@ package logica;
         public Fase(char r ){ 
            this.lista = new ArrayList<>();
            letra_posicion=r;
+           if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
+                   letra_posicion=='f'||letra_posicion=='g'||letra_posicion=='h'){
+               grupo_eliminacion=false;
+           }else{
+               grupo_eliminacion=true;
+           }
+           
         }
-        public void agregarPartido(Partido part){
+
+    public ArrayList<Partido> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Partido> lista) {
+        this.lista = lista;
+    }
+
+    public char getLetra_posicion() {
+        return letra_posicion;
+    }
+
+    public void setLetra_posicion(char letra_posicion) {
+        this.letra_posicion = letra_posicion;
+    }
+
+    public boolean isGrupo_eliminacion() {
+        return grupo_eliminacion;
+    }
+
+    public void setGrupo_eliminacion(boolean grupo_eliminacion) {
+        this.grupo_eliminacion = grupo_eliminacion;
+    }
+        
+    
+    
+    public void agregarPartido(Partido part){
             lista.add(part);    
         }
        
@@ -155,6 +189,76 @@ package logica;
             }
             
             return puntos;
+        }
+        
+        public int partidosGanados(Seleccion s){
+            int contador=0;
+            for (Partido p:lista){
+                if(p.getEquipo1().equals(s) || p.getEquipo2().equals(s)){
+                    Seleccion otro;
+                    if(p.getEquipo1().equals(s)){
+                        otro=p.getEquipo2();
+                    }else{
+                        otro=p.getEquipo1();
+                    }
+                    if(p.golesTotales(s)>p.golesTotales(otro)){
+                        contador++;
+                    }else if(p.golesTotales(s)==p.golesTotales(otro)){
+                            if(p.getParte_extra()!=null && p.getTiempo_total()>120){        
+                                int cont1=0;
+                                    int cont2=0;
+                                    boolean [] penal1 = p.getParte_extra().devolverPenales(s);
+                                    boolean [] penal2 = p.getParte_extra().devolverPenales(otro);
+                                    for(int i=0;i<penal1.length;i++){
+                                        if(penal1[i]){
+                                            cont1++;
+                                        }
+                                        if(penal2[i]){
+                                            cont2++;
+                                        }
+                                    }
+                                    if(cont1>cont2){
+                                        contador++;
+                                    }
+                            }
+                    }
+                }
+            }
+            return contador;
+        }
+        
+        public int partidosEmpatados(Seleccion s){
+         
+            int contador=0;
+            for (Partido p:lista){
+                if(p.getEquipo1().equals(s) || p.getEquipo2().equals(s)){
+                    Seleccion otro;
+                    if(p.getEquipo1().equals(s)){
+                        otro=p.getEquipo2();
+                    }else{
+                        otro=p.getEquipo1();
+                    }
+                    if(p.golesTotales(s)==p.golesTotales(otro) && p.getParte_extra()==null){
+                        contador++;
+                    }
+                }
+            }
+            return contador;
+   
+        }
+        
+        public int partidosPerdidos(Seleccion s){
+            int contador=0;
+            if(grupo_eliminacion){
+                if(this.partidosGanados(s)==1){
+                    contador=0;
+                }else if(this.partidosGanados(s)==0){
+                    contador=1;
+                }
+            }else{
+                contador = 3-(this.partidosGanados(s)+this.partidosEmpatados(s));
+            }
+            return contador;
         }
         
         public Seleccion[] SeleccionesGanadoras(boolean j){
