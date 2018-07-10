@@ -1,6 +1,7 @@
 package logica;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Extra
 {
@@ -12,17 +13,63 @@ public class Extra
     
     public Extra (int a, int b, ArrayList<Acciones> arr)  
     {
-        this.tiradores = new ArrayList<>();
+        this.tiradores = new ArrayList<>(6);
         this.eventos = arr;
         if((a-b)>120)
         {
             terminar=true;
         }
+        else{
+            terminar=false;
+        }
+            
+    }
+
+    public ArrayList<Acciones> getEventos() {
+        return eventos;
+    }
+
+    public void setEventos(ArrayList<Acciones> eventos) {
+        this.eventos = eventos;
+    }
+
+    public boolean isTerminar() {
+        return terminar;
+    }
+
+    public void setTerminar(boolean terminar) {
+        this.terminar = terminar;
+    }
+
+    public ArrayList<Jugador> getTiradores() {
+        return tiradores;
+    }
+
+    public void setTiradores(ArrayList<Jugador> tiradores) {
+        this.tiradores = tiradores;
+    }
+
+    public static boolean isTERMINAR_ALARGUE() {
+        return TERMINAR_ALARGUE;
+    }
+
+    public static void setTERMINAR_ALARGUE(boolean TERMINAR_ALARGUE) {
+        Extra.TERMINAR_ALARGUE = TERMINAR_ALARGUE;
+    }
+
+    public static boolean isTERMINAR_PENALES() {
+        return TERMINAR_PENALES;
+    }
+
+    public static void setTERMINAR_PENALES(boolean TERMINAR_PENALES) {
+        Extra.TERMINAR_PENALES = TERMINAR_PENALES;
     }
     
-    public void penal(Jugador p, boolean gol, int n)
+    
+    
+    public void penal(Jugador p, boolean gol)
     {
-        tiradores.set(n, p);
+        tiradores.add(p);
         for(Acciones buscar:eventos)
         {
             if(buscar.getPersonaje().equals(p))
@@ -32,39 +79,21 @@ public class Extra
         }
     }
     
-    public boolean[] devolverPenales()
+    public boolean[] devolverPenales(Seleccion s)
     {
-        /*int contJug=0;
-        int contPen=0;
-        boolean[] arr=new boolean[tiradores.size()];
-        ArrayList<Integer> arr2=new ArrayList<>();
-        for(Jugador a:tiradores)
-        {
-            if(arr2.contains(contJug))
-            {
-                contPen++;
-            }
-            for(Acciones b:eventos)
-            {
-                b.devolverPenal(contPen);
-                arr2.add(contJug);
-                contJug++;
-                if(contJug==5)
-                {
-                    contJug=0;
-                }
-            }
-        }*/
-        boolean[] arr=new boolean[tiradores.size()];
-        int[][]lista=new int[tiradores.size()][2];
+    
+        boolean[] arr=new boolean[tiradores.size()/2];
+        int[][]lista=new int[tiradores.size()/2][2];
+      
         int contador1=0;
         int contador2=0;
         for(Acciones a:eventos)
         {
-            if(tiradores.contains(a.getPersonaje()))
+            if(tiradores.contains(a.getPersonaje()) && s.pertenece(a.getPersonaje()))
             {
-                    lista[contador1][0]=a.getPersonaje().getCedula();
+                    lista[contador1][0]=a.getPersonaje().getCode();
                     lista[contador1][1]=0;
+                    System.out.println(a.getPersonaje().getCode());
                     contador1++;
             }
         }
@@ -72,17 +101,19 @@ public class Extra
         {
             for(Acciones a:eventos)
             {
-                if(a.getPersonaje().equals(j))
+  
+                if(a.getPersonaje().equals(j) && s.pertenece(j) )
                 {
                     int aux=0;
-                    for(int i=0;i<tiradores.size();i++)
+                    for(int i=0;i<tiradores.size()/2;i++)
                     {
-                        if(j.getCedula()==lista[i][0])
+                        if(j.getCode()==lista[i][0])
                         {
                             aux=i;
                             continue;
                         }
                     }
+
                     arr[contador2]=a.devolverPenal(lista[aux][1]);
                     lista[aux][1]++;
                     contador2++;

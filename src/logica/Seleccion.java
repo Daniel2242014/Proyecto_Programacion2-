@@ -15,6 +15,7 @@ public class Seleccion
     
     public Seleccion(String nombre)
     {
+        this.jugadores=new ArrayList<>();
         this.nombre=nombre;
     }
     
@@ -44,8 +45,11 @@ public class Seleccion
     
     public boolean equals(Object a)
     {
+       if(a==null){
+           return false;
+       }
         Seleccion verif=(Seleccion) a;
-        if(this.nombre.equals(verif.nombre) && this.confederacion.equals(verif.confederacion))
+        if(this.nombre.equals(verif.nombre)/* && this.confederacion.equals(verif.confederacion)*/)
         {
             return true;
         }

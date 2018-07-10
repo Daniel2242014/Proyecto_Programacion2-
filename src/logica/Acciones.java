@@ -117,7 +117,7 @@ public class Acciones {
     
     public void falta(int numero,int tipo) throws ErrorException{
         ErrorException error = new ErrorException("no se pueden ingresar mas de"
-                + " una targeta roja, si ingresa una targeta roja el valor del primer parameto es 1");
+                + " una targeta roja, si ingresa una tarjeta roja el valor del primer parameto es 1");
         
         if(numero !=1 && tipo==Acciones.TOTAL){ 
             throw error;
@@ -127,6 +127,9 @@ public class Acciones {
             this.faltasInsignificantes+=numero;
         }else if(tipo==Acciones.PARCIAL && (this.amarilias+numero)<=2 ){
              this.amarilias+=numero;
+             if(this.amarilias==2){
+                 this.roja=true;
+             }
         } 
         this.personaje.agregar_falta(numero, tipo);
     }

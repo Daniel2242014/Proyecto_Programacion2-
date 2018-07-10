@@ -15,11 +15,12 @@ public class Partido {
     private boolean tipo_fase;
 
     
-    public  Partido(Seleccion a,Seleccion b,int temptot){
+    public  Partido(Seleccion a,Seleccion b,int temptot, int tiempoe){
         equipo1=a;
         equipo2=b;
         tiempo_total=temptot;
-
+        tiempo_agregado= tiempoe;
+        this.eventos=new ArrayList<>();
     }
     
     //----------------------------------------------------------------------------------------------------------------------------------------------------
