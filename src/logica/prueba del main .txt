@@ -1,10 +1,4 @@
-package logica;
-
-
-public class Principal {
-    
-    public static void main(String [] main) {
-       Jugador u_cabani = new Jugador("Edi" , "Cabani", "Uruguay " , 1 );
+Jugador u_cabani = new Jugador("Edi" , "Cabani", "Uruguay " , 1 );
         Jugador u_muslera = new Jugador("Fernando" , "Cabani", "Uruguay " , 2 );
         Jugador u_godin = new Jugador("###" , "Godin", "Uruguay " , 3 );
         Jugador u_suelres = new Jugador("Luiz" , "Suarez", "Uruguay " , 4 );
@@ -18,12 +12,12 @@ public class Principal {
         Jugador p_silva = new Jugador("###" , "Silva", "Portugal " , 11 );
         Jugador p_alves = new Jugador("###" , "Alves", "Portugal " , 12 );
         
-        Jugador e_reina = new Jugador("###" , "Reina", "EspaÃ±a " , 13 );
-        Jugador e_carabajal = new Jugador("###" , "Carabajal", "EspaÃ±a " , 14 );
-        Jugador e_gea = new Jugador("###" , "Fea", "EspaÃ±a " , 15 );
-        Jugador e_saul = new Jugador("###" , "SaÃºl", "EspaÃ±a " , 16);
-        Jugador e_vazques = new Jugador("Lucas" , "Vazques", "EspaÃ±a " , 17 );
-        Jugador e_costa = new Jugador("Diego" , "Costa", "EspaÃ±a " , 18 );
+        Jugador e_reina = new Jugador("###" , "Reina", "España " , 13 );
+        Jugador e_carabajal = new Jugador("###" , "Carabajal", "España " , 14 );
+        Jugador e_gea = new Jugador("###" , "Fea", "España " , 15 );
+        Jugador e_saul = new Jugador("###" , "Saúl", "España " , 16);
+        Jugador e_vazques = new Jugador("Lucas" , "Vazques", "España " , 17 );
+        Jugador e_costa = new Jugador("Diego" , "Costa", "España " , 18 );
         
         Jugador b_alisson = new Jugador("###" , "Alison", "Brasil" , 19 );
         Jugador b_Paulinio = new Jugador("###" , "Pauliniho", "Brasil" , 20);
@@ -35,7 +29,7 @@ public class Principal {
         
         Seleccion uruguay = new Seleccion("Uruguay");
         Seleccion portugal = new Seleccion("Portugal");
-        Seleccion espaÃ±a = new Seleccion("EspaÃ±a");
+        Seleccion españa = new Seleccion("España");
         Seleccion brasil = new Seleccion("Brasil");
         
         uruguay.agregarJugador(u_cabani);
@@ -52,12 +46,12 @@ public class Principal {
         portugal.agregarJugador(p_silva);
         portugal.agregarJugador(p_alves);
         
-        espaÃ±a.agregarJugador(e_reina);
-        espaÃ±a.agregarJugador(e_carabajal);
-        espaÃ±a.agregarJugador(e_gea);
-        espaÃ±a.agregarJugador(e_saul);
-        espaÃ±a.agregarJugador(e_vazques);
-        espaÃ±a.agregarJugador(e_costa);
+        españa.agregarJugador(e_reina);
+        españa.agregarJugador(e_carabajal);
+        españa.agregarJugador(e_gea);
+        españa.agregarJugador(e_saul);
+        españa.agregarJugador(e_vazques);
+        españa.agregarJugador(e_costa);
         
         brasil.agregarJugador(b_alisson);
         brasil.agregarJugador(b_Paulinio);
@@ -66,11 +60,11 @@ public class Principal {
         brasil.agregarJugador(b_fred);
         brasil.agregarJugador(b_danilo);
         
-        Partido uy_es = new Partido (uruguay,espaÃ±a,90,5);    
+        Partido uy_es = new Partido (uruguay,españa,90,5);    
         Partido uy_por = new Partido (uruguay,portugal,120,7);    
         Partido uy_br = new Partido (uruguay,brasil,135,5);    
-        Partido por_es = new Partido (portugal,espaÃ±a,120,5);    
-        Partido br_es = new Partido (brasil,espaÃ±a,90,2);    
+        Partido por_es = new Partido (portugal,españa,120,5);    
+        Partido br_es = new Partido (brasil,españa,90,2);    
         Partido por_br = new Partido(portugal,brasil,130,2);
         
         Acciones u_cabani_UyEs = new Acciones (u_cabani);
@@ -296,7 +290,7 @@ public class Principal {
        b_alisson_BrUy.falta(2, Acciones.PARCIAL);
        
        e_carabajal_EsUy.falta(2, Acciones.PARCIAL);
-       e_reina_EsUy.gol("89:20");
+       //e_reina_EsUy.gol("89:20");
        
        e_gea_EsPor.falta(1, Acciones.PARCIAL);
        e_costa_EsPor.falta(1, Acciones.PARCIAL);
@@ -316,15 +310,14 @@ public class Principal {
        p_pepe_PorBr.falta(1, Acciones.PARCIAL);
        p_alves_PorBr.gol("16:56");
        
-       Fase totoal = new Fase(Fase.SEMI_FINAL);
-       totoal.agregarPartido(por_br);
-      // totoal.agregarPartido(uy_por);
-       //totoal.agregarPartido(uy_es);
-       //totoal.agregarPartido(br_es);
-      // totoal.agregarPartido(por_br);
+       Fase totoal = new Fase(Fase.GRUPO_A);
+       totoal.agregarPartido(uy_br);
+       totoal.agregarPartido(uy_por);
        totoal.agregarPartido(uy_es);
+       totoal.agregarPartido(br_es);
+       totoal.agregarPartido(por_br);
+       totoal.agregarPartido(por_es);
        
-      
       Seleccion [] ganadoras = totoal.SeleccionesGanadoras(false);
       for(int i=0;i<ganadoras.length;i++){
           System.out.println(ganadoras[i].getNombre() + " / " + totoal.devolverPunto(ganadoras[i] )+ " / " +
@@ -353,6 +346,7 @@ public class Principal {
        for(int i=0;i<pentale_por.length;i++){
           System.out.print(pentale_por[i] + " / ");
       }
-    }
-    
-}
+      
+      
+       
+       

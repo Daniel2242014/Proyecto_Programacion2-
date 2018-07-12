@@ -112,8 +112,7 @@ package logica;
    
         
         public int devolverPunto(Seleccion a){ 
-           
-          if(!grupo_eliminacion){  
+            
             int contador=0; //punto de cada partido
                 for(Partido p:lista){
                     if(p.getEquipo1().equals(a) || p.getEquipo2().equals(a)){
@@ -155,10 +154,7 @@ package logica;
                     }
                 }
             return contador;    
-          }else{
-            return -1;
-          }
-            
+             
         }
         public int devolverGoles(Seleccion a, boolean j){  
              int contador=0;
