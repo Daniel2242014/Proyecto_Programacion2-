@@ -285,7 +285,11 @@ package logica;
             }
             
          if(j){
-            return  ganadoras;
+             for (int i=0;i<ganadoras.length;i++){
+                 ganadoras[i]=todas[i];
+             }
+             return  ganadoras;
+        
          }else{
              return todas;
          }
