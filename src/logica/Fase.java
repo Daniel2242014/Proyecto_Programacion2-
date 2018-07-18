@@ -14,6 +14,7 @@ package logica;
         public final static char GRUPO_H = 'h';
         public final static char OCTAVOS = '8';
         public final static char CUARTOS = '4';
+        public final static char TERCER_Y_CUARTO  = '3';
         public final static char SEMI_FINAL = '2';
         public final static char FINAL = '1';
         
@@ -53,7 +54,6 @@ package logica;
         this.grupo_eliminacion = grupo_eliminacion;
     }
         
-    
     
     public void agregarPartido(Partido part){
             lista.add(part);    
