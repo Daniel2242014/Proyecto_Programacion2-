@@ -1,6 +1,4 @@
-
 package logica;
-
 
 public class ErrorException extends RuntimeException {
     public ErrorException (){
