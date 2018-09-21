@@ -7,7 +7,7 @@ public class Jugador {
     private double altura;
   
     public Jugador(String nom,String apeli, String pai, int code){
-        this.nombre=nom;
+        this.nombre=nom; 
         this.apellido=apeli;
         this.pais=pai;
         this.code=code;   
