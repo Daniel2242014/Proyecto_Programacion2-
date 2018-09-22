@@ -12,11 +12,13 @@ public class Seleccion
     private String fecha_salida;
     private String confederacion;
     private ArrayList<Jugador> jugadores;
-    
-    public Seleccion(String nombre)
+    private Director maestro;
+
+    public Seleccion(String nombre,Director direc)
     {
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
+        maestro=direc;
     }
     
     public void agregarJugador(Jugador jug)
@@ -56,6 +58,14 @@ public class Seleccion
         return false;
     }
 
+     public Director getMaestro() {
+        return maestro;
+    }
+
+    public void setMaestro(Director maestro) {
+        this.maestro = maestro;
+    }
+    
     public String getNombre() {
         return nombre;
     }

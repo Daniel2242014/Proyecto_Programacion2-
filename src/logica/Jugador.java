@@ -1,17 +1,15 @@
 package logica;
 
-public class Jugador {
-    private String primeraPosicion,segundaPosicion,fechaDebut,apellido,club,
-            nombre,fechaNacimiento,pais;
-    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,code;
+import java.awt.Image;
+
+public class Jugador extends Persona {
+    private String primeraPosicion,segundaPosicion,fechaDebut,club;
+    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales;
     private double altura;
   
-    public Jugador(String nom,String apeli, String pai, int code){
-        this.nombre=nom; 
-        this.apellido=apeli;
-        this.pais=pai;
-        this.code=code;   
-        
+    public Jugador(String nom, String primPos,int edad, String pai, int code,Image img){
+        super(code,edad,nom,pai,img);
+        primeraPosicion=primPos;
     }
 
     public int getRojasTotales() {
@@ -68,13 +66,6 @@ public class Jugador {
         this.fechaDebut = fechaDebut;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public String getClub() {
         return club;
@@ -84,38 +75,6 @@ public class Jugador {
         this.club = club;
     }
 
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code=code;
-        
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
 
     public int getEdad() {
         return edad;
@@ -168,7 +127,7 @@ public class Jugador {
 
     public boolean equals(Object obj) {
         Jugador aux = (Jugador) obj;
-        if(code==aux.code && this.pais.equalsIgnoreCase(aux.getPais())){
+        if(super.getCode()==aux.getCode() && this.getPais().equalsIgnoreCase(aux.getPais())){
             return true;
         }else{
             return false;
@@ -176,11 +135,10 @@ public class Jugador {
     }
     
     public String toString() {
-        return "Jugador{" + "primeraPosicion=" + primeraPosicion + ", segundaPosicion=" + segundaPosicion 
-                +  ", fechaDebut=" + fechaDebut + ", apellido=" + apellido + ", club=" + club + ", cedula=" + code +
-                ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", pais=" + pais + ", edad="
-                + edad + ", golesTotales=" + golesTotales + ", faltasTotales=" 
-                + faltasTotales + ", altura=" + altura + '}';
+        return  super.toString() +"\nprimeraPosicion=" + primeraPosicion + ", segundaPosicion=" + segundaPosicion 
+                +  "\nfechaDebut=" + fechaDebut  + ", club=" + club +  "\nedad="
+                + edad + ", golesTotales=" + golesTotales + "\nfaltasTotales=" 
+                + faltasTotales + ", altura=" + altura ;
     }
 
     

@@ -13,13 +13,15 @@ public class Partido {
     private ArrayList<Acciones> eventos;  
     private Extra parte_extra;          
     private boolean tipo_fase;
+    private Juez juez;
 
     
-    public  Partido(Seleccion a,Seleccion b,int temptot, int tiempoe){
+    public  Partido(Seleccion a,Seleccion b,int temptot, int tiempoe, Juez j){
         equipo1=a;
         equipo2=b;
         tiempo_total=temptot;
         tiempo_agregado= tiempoe;
+        juez=j;
         this.eventos=new ArrayList<>();
     }
     
