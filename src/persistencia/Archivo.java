@@ -19,11 +19,7 @@ public class Archivo {
     
     public boolean abrirArchivo()
     {
-        JFileChooser a=new JFileChooser(); 
-            /*TODA GUI TIENE QUE ESTAR EN PRESENTACION, LO QUE PODEMOS 
-                 HACER ES QUE A ABIR ARCHIVO SE LE PASE UN FILE CON LA DIRECION A BUSCAR*/ 
-        
-    return false; //PARA QUE NO DE ERROR
+        return false;
     }
     
     

@@ -1,4 +1,5 @@
 package fachada;
+import java.io.File;
 import java.util.ArrayList;
 import logica.*;
 import persistencia.*;
@@ -36,9 +37,14 @@ public class Fachada {
     }
     
     
-    public boolean abrirMun()
+    public boolean abrirMun(File a)
     {
-        return false;//PARA QUE NO DE ERROR
+        
+    }
+    
+    public boolean guardarMun()
+    {
+        
     }
     
     public void cargarDatos(Mundial datos){
