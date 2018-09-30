@@ -1,6 +1,7 @@
 package presentacion;
 
 import java.awt.BorderLayout;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -196,16 +197,31 @@ public class Principal extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/selecion .png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setFocusable(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton10.setBackground(new java.awt.Color(197, 0, 0));
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscar.png"))); // NOI18N
         jButton10.setBorder(null);
         jButton10.setFocusable(false);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setBackground(new java.awt.Color(197, 0, 0));
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/partido.png"))); // NOI18N
         jButton11.setBorder(null);
         jButton11.setFocusable(false);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setBackground(new java.awt.Color(197, 0, 0));
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/jugador.png"))); // NOI18N
@@ -221,6 +237,11 @@ public class Principal extends javax.swing.JFrame {
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/face.png"))); // NOI18N
         jButton14.setBorder(null);
         jButton14.setFocusable(false);
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -315,10 +336,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -340,15 +364,18 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         a=new JFileChooser();
-        a.showSaveDialog(a);
-        if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile()))
+        if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION)
         {
-            JOptionPane.showMessageDialog(null, "Error al cargar el archvio, seleccione uno", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
+            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile()))
+            {
+                JOptionPane.showMessageDialog(null, "Error al cargar el archvio, seleccione uno o asegúrese que éste sea *.mun", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -358,11 +385,59 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    try {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (InstantiationException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IllegalAccessException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (UnsupportedLookAndFeelException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    break;
+                }
+            }
+        File f=new File("Mundial.mun");
+        a=new JFileChooser();
+        a.setSelectedFile(f);
+        if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION)
+        {
+            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile()))
+            {
+                JOptionPane.showMessageDialog(null, "Error al gaurdar el archvio, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+    }//GEN-LAST:event_jButton14ActionPerformed
 
    
     public static void main(String args[]) {

@@ -1,13 +1,11 @@
 package Persistencia;
 
+import java.io.File;
 import javax.swing.JFileChooser;
 
 public class Archivo {
-    /*AGUSTIN LA CLASE MUN (Mundial.java) ESTA EN LOGICA, ESTA ES LA CLASE ARCHIVO, QUIEN INTERATUCA 
-    CON EL S.O PARA GUARDAR Y ABRIR DOCUMENTOS .MUN*/
-    
+
     private static Archivo instancia;
-    
     public static Archivo getInstancia()
     {
         if (instancia==null)
@@ -17,10 +15,16 @@ public class Archivo {
         return instancia;
     }
     
-    public boolean abrirArchivo()
+    public boolean abrirArchivo(File a)
     {
         return false;
     }
+    
+    public boolean guardarArchivo(File a)
+    {
+        return false;
+    }
+    
     
     
 }

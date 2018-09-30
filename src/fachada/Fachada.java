@@ -1,4 +1,5 @@
 package fachada;
+import Persistencia.Archivo;
 import java.io.File;
 import java.util.ArrayList;
 import logica.*;
@@ -39,12 +40,12 @@ public class Fachada {
     
     public boolean abrirMun(File a)
     {
-        
+        return Archivo.getInstancia().abrirArchivo(a);
     }
     
-    public boolean guardarMun()
+    public boolean guardarMun(File a)
     {
-        
+        return Archivo.getInstancia().guardarArchivo(a);
     }
     
     public void cargarDatos(Mundial datos){
