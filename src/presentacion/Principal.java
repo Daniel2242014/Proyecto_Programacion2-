@@ -347,8 +347,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+        //Este método se encarga de guardar archivos del tipo mundial bajo la extensión *.mun
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
+        {
+                if ("Windows".equals(info.getName())) 
+                {
                     try {
                         javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     } catch (ClassNotFoundException ex) {
@@ -364,9 +367,9 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         a=new JFileChooser();
-        if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION)
+        if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile()))
+            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile())) //Comprueba que el archivo se haya cargado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al cargar el archvio, seleccione uno o asegúrese que éste sea *.mun", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
             }
@@ -385,8 +388,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+        //Este método se encarga del guardado de archivos bajo la extensión *.mun
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
+        {
+                if ("Windows".equals(info.getName())) 
+                {
                     try {
                         javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     } catch (ClassNotFoundException ex) {
@@ -401,12 +407,12 @@ public class Principal extends javax.swing.JFrame {
                     break;
                 }
             }
-        File f=new File("Mundial.mun");
-        a=new JFileChooser();
-        a.setSelectedFile(f);
-        if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION)
+        File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
+        a=new JFileChooser(); 
+        a.setSelectedFile(f); //Setea el nombre
+        if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile()))
+            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile())) //Comprueba que se haya guardado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al gaurdar el archvio, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
             }
