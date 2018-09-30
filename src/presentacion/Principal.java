@@ -8,16 +8,20 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class Principal extends javax.swing.JFrame {
 
     public static JFileChooser a;
+    private FileNameExtensionFilter mun;
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         display.setLayout(new BorderLayout());
+        mun=new FileNameExtensionFilter("Mundial","mun");
+        
     }
     
     public void cargarPanel(JPanel j){
@@ -367,6 +371,7 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         a=new JFileChooser();
+        a.setFileFilter(mun);
         if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
             if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile())) //Comprueba que el archivo se haya cargado en la clase Archivo
@@ -409,6 +414,7 @@ public class Principal extends javax.swing.JFrame {
             }
         File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
         a=new JFileChooser(); 
+        a.setFileFilter(mun);
         a.setSelectedFile(f); //Setea el nombre
         if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
