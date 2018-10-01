@@ -8,7 +8,6 @@ public class Persona implements Serializable {
     private int code,edad;
     private String apellido,nombre,fechaNacimiento,pais;
     private Image img;
-    private Juez primero,segundo,tercero,cuarto;
     
     public Persona (int code,int edad, String nombre, String pais, Image img){
         this.code=code;
