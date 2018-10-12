@@ -1,5 +1,6 @@
 package logica;
 
+import java.awt.Image;
 import java.util.ArrayList;
 
 public class Seleccion 
@@ -14,11 +15,14 @@ public class Seleccion
     private ArrayList<Jugador> jugadores;
     private Director maestro;
 
-    public Seleccion(String nombre,Director direc)
+
+    public Seleccion(String nombre,Director direc,String confederacion)
     {
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
+        this.confederacion=confederacion;
+        
     }
     
     public void agregarJugador(Jugador jug)

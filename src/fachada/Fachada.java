@@ -14,7 +14,6 @@ public class Fachada {
      private ArrayList<Partido> partidos;
      private ArrayList<Seleccion> seleciones;
      private ArrayList<Director> directores;
-      private ArrayList<Estadio> estadios;
       private ArrayList<Juez> jueces;
      private ArrayList<Extra> extras;
      
@@ -25,7 +24,6 @@ public class Fachada {
          partidos=new ArrayList();
          seleciones=new ArrayList();
          directores=new ArrayList();
-         estadios=new ArrayList();
          jueces=new ArrayList();
          extras=new ArrayList();
      }
@@ -56,7 +54,10 @@ public class Fachada {
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
     /*METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE */
     
-    public void sistemaCargadorDePruebas(){
+    public void sistemaBase(){
+        
+       // Jugador  Al_NEUER = new Jugador () 
+        
         
     }
     

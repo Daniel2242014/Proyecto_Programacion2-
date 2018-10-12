@@ -4,10 +4,10 @@ import java.awt.Image;
 
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
-    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales;
+    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
     private double altura;
   
-    public Jugador(String nom, String primPos,int edad, String pai, int code,Image img){
+    public Jugador(String nom,int numCamisa, String primPos,int edad, String pai, int code,Image img){
         super(code,edad,nom,pai,img);
         primeraPosicion=primPos;
     }
