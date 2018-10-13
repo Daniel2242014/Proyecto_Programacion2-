@@ -2,14 +2,15 @@ package logica;
 
 import java.awt.Image;
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 public class Persona implements Serializable {
 
     private int code,edad;
     private String apellido,nombre,fechaNacimiento,pais;
-    private Image img;
+    private ImageIcon img;
     
-    public Persona (int code,int edad, String nombre, String pais, Image img){
+    public Persona (int code,int edad, String nombre, String pais, ImageIcon img){
         this.code=code;
         this.edad=edad;
         this.nombre=nombre;
@@ -65,11 +66,11 @@ public class Persona implements Serializable {
         this.pais = pais;
     }
 
-    public Image getImg() {
+    public ImageIcon getImg() {
         return img;
     }
 
-    public void setImg(Image img) {
+    public void setImg(ImageIcon img) {
         this.img = img;
     }
 

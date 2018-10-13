@@ -1,13 +1,14 @@
 package logica;
 
 import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
     private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
     private double altura;
   
-    public Jugador(String nom,int numCamisa, String primPos,int edad, String pai, int code,Image img){
+    public Jugador(String nom,int numCamisa, String primPos,int edad, String pai, int code,ImageIcon img){
         super(code,edad,nom,pai,img);
         primeraPosicion=primPos;
     }

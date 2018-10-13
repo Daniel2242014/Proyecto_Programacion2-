@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import fachada.Fachada;
 
 
 public class Principal extends javax.swing.JFrame {
@@ -19,6 +20,7 @@ public class Principal extends javax.swing.JFrame {
    
     public Principal() {
         initComponents();
+        Fachada.getInstancia().sistemaBase();
         setLocationRelativeTo(null);
         setResizable(false);
         display.setLayout(new BorderLayout());
@@ -93,8 +95,8 @@ public class Principal extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(131, 0, 0));
         jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/home2.png"))); // NOI18N
-        jButton4.setText("    Home");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/nuevoMundial.png"))); // NOI18N
+        jButton4.setText(" Nuevo mundial");
         jButton4.setBorder(null);
         jButton4.setFocusable(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -119,8 +121,8 @@ public class Principal extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(131, 0, 0));
         jButton6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/reset.png"))); // NOI18N
-        jButton6.setText("    Reiniciar");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/nuevoJugador.png"))); // NOI18N
+        jButton6.setText(" Agregar Jugador");
         jButton6.setBorder(null);
         jButton6.setFocusable(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +265,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -435,12 +437,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.cargarPanel(new Menu_seleciones());
+        this.cargarPanel(Menu_seleciones.getInstancia());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        this.cargarPanel(Menu_busqueda.getInstancia(this));
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

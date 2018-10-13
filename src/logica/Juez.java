@@ -1,12 +1,13 @@
 package logica;
 
 import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class Juez extends Persona {
     
     private int targetasAmarilias,targetasRojas;
     
-    public Juez(int code,int edad, String nombre, String pais, Image img){
+    public Juez(int code,int edad, String nombre, String pais, ImageIcon img){
         super(code,edad,nombre,pais,img);
     }
 
