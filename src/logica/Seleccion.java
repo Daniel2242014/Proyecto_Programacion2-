@@ -2,6 +2,7 @@ package logica;
 
 import java.awt.Image;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 public class Seleccion 
 {
@@ -14,9 +15,10 @@ public class Seleccion
     private String confederacion;
     private ArrayList<Jugador> jugadores;
     private Director maestro;
+    private ImageIcon img;
 
 
-    public Seleccion(String nombre,Director direc,String confederacion)
+    public Seleccion(String nombre,Director direc,String confederacion, ImageIcon img)
     {
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
