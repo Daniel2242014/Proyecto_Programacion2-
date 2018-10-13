@@ -1,5 +1,5 @@
 package fachada;
-import Persistencia.Archivo;
+import persistencia.Archivo;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -37,7 +37,6 @@ public class Fachada {
         return instancia;
     }
     
-    
     public boolean abrirMun(File a)
     {
         return Archivo.getInstancia().abrirArchivo(a);
@@ -51,7 +50,6 @@ public class Fachada {
     public void cargarDatos(Mundial datos){
         //SE ENCARGA DE CARGAR LOS DATOS 
     }
-    
     
     /*----------------------------------------------------------------------------------------------------------------------------------------*/
     /*METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE */

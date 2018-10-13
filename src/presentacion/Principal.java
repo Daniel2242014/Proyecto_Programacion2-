@@ -25,7 +25,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         display.setLayout(new BorderLayout());
         mun=new FileNameExtensionFilter("Mundial","mun");
-        
+        cargarArchivo();
     }
     
     public void cargarPanel(JPanel j){
@@ -35,9 +35,46 @@ public class Principal extends javax.swing.JFrame {
         display.repaint();
         display.updateUI();
         this.repaint();
-        
     }
-
+    
+    public void cargarArchivo()
+    {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
+        {
+            if ("Windows".equals(info.getName())) 
+            {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
+        if(JOptionPane.showConfirmDialog(null, "Seleccione un archivo para cargar los datos básicos,\nsi no lo tiene, seleccione cancelar", "Seleccione Archivo",2, JOptionPane.INFORMATION_MESSAGE)==2)
+        {
+            jButton8ActionPerformed(null);
+            if(!a.isShowing())
+            {
+                //CONTINUAR
+            }
+        }
+        else
+        {
+            jButton5ActionPerformed(null);
+            if (!a.isShowing())
+            {
+                JOptionPane.showMessageDialog(null, "Se deberá crear un archivo con los datos básicos", "Crear nuevo", JOptionPane.INFORMATION_MESSAGE);
+                jButton8ActionPerformed(null);
+            }
+        }
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -345,7 +382,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
         
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -355,26 +391,25 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-      // TODO add your handling code here:
         //Este método se encarga de guardar archivos del tipo mundial bajo la extensión *.mun
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
         {
-                if ("Windows".equals(info.getName())) 
-                {
-                    try {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    } catch (ClassNotFoundException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (InstantiationException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IllegalAccessException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (UnsupportedLookAndFeelException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    break;
+            if ("Windows".equals(info.getName())) 
+            {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                break;
             }
+        }
         a=new JFileChooser();
         a.setFileFilter(mun);
         if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
@@ -387,36 +422,33 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_botonSalirActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
         //Este método se encarga del guardado de archivos bajo la extensión *.mun
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
         {
-                if ("Windows".equals(info.getName())) 
-                {
-                    try {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    } catch (ClassNotFoundException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (InstantiationException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (IllegalAccessException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (UnsupportedLookAndFeelException ex) {
-                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    break;
+            if ("Windows".equals(info.getName())) 
+            {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                break;
             }
+        }
         File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
         a=new JFileChooser(); 
         a.setFileFilter(mun);
@@ -432,7 +464,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -445,12 +476,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
     }//GEN-LAST:event_jButton14ActionPerformed
 
