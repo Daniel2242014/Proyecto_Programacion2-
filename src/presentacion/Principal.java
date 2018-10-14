@@ -1,7 +1,5 @@
 package presentacion;
-
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,19 +10,17 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import fachada.Fachada;
 
-
 public class Principal extends javax.swing.JFrame {
-
-    public static JFileChooser a;
-    private FileNameExtensionFilter mun;
+    public static JFileChooser a; //Ventana de guardado de Archivos
+    private FileNameExtensionFilter mun; //Filtro por extensión
    
     public Principal() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         display.setLayout(new BorderLayout());
-        mun=new FileNameExtensionFilter("Mundial","mun");
-        cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa.
+        mun=new FileNameExtensionFilter("Mundial","mun"); //Se crea el filtro por extensión para el archivo
+        cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa
     }
     
     public void cargarPanel(JPanel j){
@@ -36,9 +32,9 @@ public class Principal extends javax.swing.JFrame {
         this.repaint();
     }
     
-    public void cargarArchivo()
+    private void cargarArchivo()
     {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (para que no se vea horriblemente java)
         {
             if ("Windows".equals(info.getName())) 
             {
@@ -56,39 +52,45 @@ public class Principal extends javax.swing.JFrame {
                 break;
             }
         }
+        //Mensaje inicial
         int selecc=JOptionPane.showConfirmDialog(null, "Debe seleccionar un archivo del tipo *.mun para cargar los datos básicos\n¿Dispone de uno?", "Seleccione Archivo", JOptionPane.YES_NO_CANCEL_OPTION);
+        //Comprobaciones según el mensaje
         if(selecc==0)
         {
-            jButton5ActionPerformed(null);
+            //Opción abrir
+            AbrirActionPerformed(null); //Se llama al método abrir 
             try
             {
-                a.getSelectedFile().getAbsolutePath();
+                a.getSelectedFile().getAbsolutePath(); //Se comprueba que se haya cargado el archivo
             }
             catch (Exception e)
             {
+                //Mensaje de error y salida del programa
                 JOptionPane.showMessageDialog(null, "Debe abrir un archivo del tipo *.mun para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
-                e.printStackTrace();
                 System.exit(0);
             }
         }
         if (selecc==2)
         {
+            //Opción cancelar
             System.exit(0);
         }
         if(selecc==1)
         {
+            //Opcion de creación
             JOptionPane.showMessageDialog(null, "Se crearán los datos oficiales del mundial", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
-            Fachada.getInstancia().sistemaBase();
+            Fachada.getInstancia().sistemaBase(); //Crea los datos base oficiales del Mundial
             File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
-            a = new JFileChooser();
-            a.setFileFilter(mun);
-            a.setSelectedFile(f);
+            a = new JFileChooser(); //Se llama a la ventana de selección de archivos
+            a.setFileFilter(mun); //Se filtra según la extensión
+            a.setSelectedFile(f); //Asigna el nombre al campo de texto de la ventana de guardado
             if (a.showSaveDialog(a) == JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
             {
+                //Mensaje de error y salida del programa
                 JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder crear los datos básicos\ny así poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
             }
-            Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath());
+            Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath()); //Se le manda la ruta a el método guardarArchivo, de la clase Archivo, mediante Fachada
         }
     }
     
@@ -104,9 +106,9 @@ public class Principal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Abrir = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -158,16 +160,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(131, 0, 0));
-        jButton5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/abrir.png"))); // NOI18N
-        jButton5.setText("    Abrir");
-        jButton5.setBorder(null);
-        jButton5.setFocusable(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Abrir.setBackground(new java.awt.Color(131, 0, 0));
+        Abrir.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Abrir.setForeground(new java.awt.Color(255, 255, 255));
+        Abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/abrir.png"))); // NOI18N
+        Abrir.setText("    Abrir");
+        Abrir.setBorder(null);
+        Abrir.setFocusable(false);
+        Abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                AbrirActionPerformed(evt);
             }
         });
 
@@ -184,16 +186,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setBackground(new java.awt.Color(131, 0, 0));
-        jButton8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/guardar.png"))); // NOI18N
-        jButton8.setText("    Guardar");
-        jButton8.setBorder(null);
-        jButton8.setFocusable(false);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        Guardar.setBackground(new java.awt.Color(131, 0, 0));
+        Guardar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Guardar.setForeground(new java.awt.Color(255, 255, 255));
+        Guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/guardar.png"))); // NOI18N
+        Guardar.setText("    Guardar");
+        Guardar.setBorder(null);
+        Guardar.setFocusable(false);
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                GuardarActionPerformed(evt);
             }
         });
 
@@ -217,10 +219,10 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Guardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(botonSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
+                .addComponent(Abrir, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,13 +234,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(177, 177, 177)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Abrir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(443, Short.MAX_VALUE)))
         );
 
@@ -403,7 +405,7 @@ public class Principal extends javax.swing.JFrame {
       this.cargarPanel(new Home());
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
         //Este método se encarga de guardar archivos del tipo mundial bajo la extensión *.mun
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
         {
@@ -432,7 +434,7 @@ public class Principal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al cargar el archivo", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_AbrirActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
@@ -442,7 +444,7 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_botonSalirActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         //Este método se encarga del guardado de archivos bajo la extensión *.mun
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
         {
@@ -473,7 +475,7 @@ public class Principal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al guardar el archivo, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_GuardarActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
@@ -547,6 +549,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Abrir;
+    private javax.swing.JButton Guardar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel display;
     private javax.swing.JButton jButton1;
@@ -558,9 +562,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JPanel jPanel1;

@@ -1,15 +1,12 @@
 package fachada;
 import persistencia.Archivo;
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 import javax.swing.ImageIcon;
 import logica.*;
-import persistencia.*;
-public class Fachada{
 
+public class Fachada{
+    //---------- Arraylists de toda la información del programa ---------
     private static Fachada instancia;
-    
     public ArrayList<Acciones> acciones;
     public ArrayList<Fase> fases;
     public ArrayList<Jugador> jugadores;
@@ -30,27 +27,28 @@ public class Fachada{
          extras=new ArrayList();
      }
     
-    public static Fachada getInstancia() {
-        if (instancia == null) {
+    public static Fachada getInstancia() //Instancia de fachada
+    {
+        if (instancia == null) 
+        {
             instancia = new Fachada();
         }
         return instancia;
     }
     
-    public boolean abrirMun(String a)
+    public boolean abrirMun(String a) //Llama al método de Archivo, tal como lo dice el patrón Facade
     {
         return Archivo.getInstancia().abrirArchivo(a);
     }
     
-    public boolean guardarMun(String a)
+    public boolean guardarMun(String a) //Igual que el anterior
     {
         return Archivo.getInstancia().guardarArchivo(a);
     }
     
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/
-    /*METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE */
+    //-------------------------------- METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE ---------------------------------------
     
-    public void sistemaBase() {
+    public void sistemaBase() { //Se encarga de la creación y asignación de todos los datos base oficiales sobre el Mundial
         Director direcSuecia = new Director(0, "En su segunda etapa en el Alets IK, durante su primera"
                 + " temporada, ejerció el cargo de jugador-entrenador durante un año. Desde 1990 hasta "
                 + "1992, aun siendo jugador del Alets, se convirtió en el segundo entrenador del Halmstads "

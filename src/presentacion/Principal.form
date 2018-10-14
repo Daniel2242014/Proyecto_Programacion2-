@@ -114,10 +114,10 @@
                   <Component id="jButton3" max="32767" attributes="0"/>
                   <Component id="jButton4" max="32767" attributes="0"/>
                   <Component id="jButton6" alignment="0" pref="261" max="32767" attributes="0"/>
-                  <Component id="jButton8" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Guardar" alignment="0" max="32767" attributes="0"/>
                   <Component id="botonSalir" alignment="1" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="jButton5" alignment="0" pref="249" max="32767" attributes="0"/>
+                      <Component id="Abrir" alignment="0" pref="249" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -131,14 +131,14 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="jButton8" min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="Guardar" min="-2" pref="79" max="-2" attributes="0"/>
                       <EmptySpace pref="123" max="32767" attributes="0"/>
                       <Component id="botonSalir" min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
-                          <Component id="jButton5" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="Abrir" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace pref="443" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -194,7 +194,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="Abrir">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="83" type="rgb"/>
@@ -215,7 +215,7 @@
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbrirActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton6">
@@ -242,7 +242,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
+            <Component class="javax.swing.JButton" name="Guardar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="83" type="rgb"/>
@@ -263,7 +263,7 @@
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GuardarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonSalir">

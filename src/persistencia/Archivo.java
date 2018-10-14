@@ -1,19 +1,14 @@
 package persistencia;
-
-import logica.*;
+import logica.Mundial;
 import fachada.Fachada;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import javax.swing.JFileChooser;
 
 public class Archivo {
-
     private static Archivo instancia;
-    public static Archivo getInstancia()
+    public static Archivo getInstancia() //Instancia de Archivo
     {
         if (instancia==null)
         {
@@ -21,50 +16,41 @@ public class Archivo {
         }
         return instancia;
     }
-    
-    public boolean abrirArchivo(String ruta)
+    //------- MANEJO DE ARCHIVOS ----------
+    public boolean abrirArchivo(String ruta) //Ambos métodos de manejo de archivos son del tipo boolean para el manejo de errores
     {
         try
         {
-            Mundial m=new Mundial(Fachada.getInstancia().acciones, Fachada.getInstancia().fases, Fachada.getInstancia().jugadores, Fachada.getInstancia().partidos, Fachada.getInstancia().selecciones, Fachada.getInstancia().directores, Fachada.getInstancia().jueces, Fachada.getInstancia().extras);
-            FileInputStream fis=new FileInputStream(ruta);
-            ObjectInputStream ois=new ObjectInputStream(fis);
-            m=(Mundial) ois.readObject(); 
-            m.cargarFachada();
+            Mundial m=new Mundial(Fachada.getInstancia().acciones, Fachada.getInstancia().fases, Fachada.getInstancia().jugadores, Fachada.getInstancia().partidos, Fachada.getInstancia().selecciones, Fachada.getInstancia().directores, Fachada.getInstancia().jueces, Fachada.getInstancia().extras); //Crea un objeto del tipo Mundial para poder deserializar los datos para su correspondiente carga a Fachada
+            FileInputStream fis=new FileInputStream(ruta); //Toma los datos del Archivo
+            ObjectInputStream ois=new ObjectInputStream(fis); //Pasa los datos del archivo a un objeto
+            m=(Mundial) ois.readObject(); //Asigna los datos del InputStream a un objeto Mundial, el cual se va a encargar de pasar los datos a Fachada
+            m.cargarFachada(); //Llama al método de Mundial que carga los datos a Fachada
             fis.close();
             ois.close();
             return true;
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            return false;
         }
-        return false;
     }
     
-    public boolean guardarArchivo(String ruta)
+    public boolean guardarArchivo(String ruta) //Funciona igual que el método anterior, pero a la inversa
     {
         try
         {
             FileOutputStream fis=new FileOutputStream(ruta);
             ObjectOutputStream ois=new ObjectOutputStream(fis);
-            if(Fachada.getInstancia().selecciones.isEmpty())
-            {
-                Fachada.getInstancia().sistemaBase();
-            }
             Mundial s=new Mundial(Fachada.getInstancia().acciones, Fachada.getInstancia().fases, Fachada.getInstancia().jugadores, Fachada.getInstancia().partidos, Fachada.getInstancia().selecciones, Fachada.getInstancia().directores, Fachada.getInstancia().jueces, Fachada.getInstancia().extras);
-            ois.writeObject(s);
+            ois.writeObject(s); //Vuelca los datos serializados al archivo *.mun
             fis.close();
             ois.close();
             return true;
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            return false;
         }
-        return false;
     }
-    
-    
-    
 }
