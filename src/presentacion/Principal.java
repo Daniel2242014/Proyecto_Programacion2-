@@ -425,7 +425,7 @@ public class Principal extends javax.swing.JFrame {
         {
             if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que el archivo se haya cargado en la clase Archivo
             {
-                JOptionPane.showMessageDialog(null, "Error al cargar el archvio, seleccione uno o asegúrese que éste sea *.mun", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error al cargar el archivo", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
