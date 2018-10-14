@@ -77,6 +77,7 @@ public class Principal extends javax.swing.JFrame {
         }
         if(selecc==1)
         {
+            JOptionPane.showMessageDialog(null, "Se crearán los datos oficiales del mundial", "Advertencia", JOptionPane.INFORMATION_MESSAGE);
             Fachada.getInstancia().sistemaBase();
             File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
             a = new JFileChooser();
@@ -84,7 +85,7 @@ public class Principal extends javax.swing.JFrame {
             a.setSelectedFile(f);
             if (a.showSaveDialog(a) == JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
             {
-                JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder crear los datos básicos\ny así poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
             }
             Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath());
