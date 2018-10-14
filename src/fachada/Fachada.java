@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 import logica.*;
 
 public class Fachada{
-    //---------- Arraylists de toda la información del programa ---------
+    //--------- Arraylists de toda la información del programa ---------
     private static Fachada instancia;
     public ArrayList<Acciones> acciones;
     public ArrayList<Fase> fases;

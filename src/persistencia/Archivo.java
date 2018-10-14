@@ -43,7 +43,7 @@ public class Archivo {
             FileOutputStream fis=new FileOutputStream(ruta);
             ObjectOutputStream ois=new ObjectOutputStream(fis);
             Mundial s=new Mundial(Fachada.getInstancia().acciones, Fachada.getInstancia().fases, Fachada.getInstancia().jugadores, Fachada.getInstancia().partidos, Fachada.getInstancia().selecciones, Fachada.getInstancia().directores, Fachada.getInstancia().jueces, Fachada.getInstancia().extras);
-            ois.writeObject(s); //Vuelca los datos serializados al archivo *.mun
+            ois.writeObject(s); //Vuelca los datos serializados al archivo *.mun 
             fis.close();
             ois.close();
             return true;

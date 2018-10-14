@@ -12,7 +12,7 @@ import fachada.Fachada;
 
 public class Principal extends javax.swing.JFrame {
     public static JFileChooser a; //Ventana de guardado de Archivos
-    private FileNameExtensionFilter mun; //Filtro por extensión
+    private FileNameExtensionFilter mun; //Filtro por extensión 
    
     public Principal() {
         initComponents();
