@@ -1,10 +1,9 @@
 package logica;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-public class Seleccion 
+public class Seleccion
 {
     private String nombre;
     private int ranking_FIFA;

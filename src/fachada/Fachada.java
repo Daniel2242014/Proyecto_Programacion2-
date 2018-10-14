@@ -1,23 +1,23 @@
 package fachada;
 import persistencia.Archivo;
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.ImageIcon;
 import logica.*;
 import persistencia.*;
-public class Fachada {
+public class Fachada{
 
     private static Fachada instancia;
     
-    private ArrayList<Acciones> acciones;
-    private ArrayList<Fase> fases;
-    private ArrayList<Jugador> jugadores;
-    private ArrayList<Partido> partidos;
-    private ArrayList<Seleccion> selecciones;
-    private ArrayList<Director> directores;
-    private ArrayList<Juez> jueces;
-    private ArrayList<Extra> extras;
+    public ArrayList<Acciones> acciones;
+    public ArrayList<Fase> fases;
+    public ArrayList<Jugador> jugadores;
+    public ArrayList<Partido> partidos;
+    public ArrayList<Seleccion> selecciones;
+    public ArrayList<Director> directores;
+    public ArrayList<Juez> jueces;
+    public ArrayList<Extra> extras;
 
     private Fachada() {
          acciones=new ArrayList();
@@ -37,18 +37,14 @@ public class Fachada {
         return instancia;
     }
     
-    public boolean abrirMun(File a)
+    public boolean abrirMun(String a)
     {
         return Archivo.getInstancia().abrirArchivo(a);
     }
     
-    public boolean guardarMun(File a)
+    public boolean guardarMun(String a)
     {
         return Archivo.getInstancia().guardarArchivo(a);
-    }
-    
-    public void cargarDatos(Mundial datos){
-        //SE ENCARGA DE CARGAR LOS DATOS 
     }
     
     /*----------------------------------------------------------------------------------------------------------------------------------------*/

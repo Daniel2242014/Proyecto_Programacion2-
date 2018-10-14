@@ -20,7 +20,6 @@ public class Principal extends javax.swing.JFrame {
    
     public Principal() {
         initComponents();
-        Fachada.getInstancia().sistemaBase();
         setLocationRelativeTo(null);
         setResizable(false);
         display.setLayout(new BorderLayout());
@@ -57,21 +56,31 @@ public class Principal extends javax.swing.JFrame {
                 break;
             }
         }
-        if(JOptionPane.showConfirmDialog(null, "Seleccione un archivo para cargar los datos básicos,\nsi no lo tiene, seleccione cancelar", "Seleccione Archivo",2, JOptionPane.INFORMATION_MESSAGE)==2)
+        int selecc=JOptionPane.showConfirmDialog(null, "Seleccione un archivo para cargar los datos básicos,\nsi no lo tiene, seleccione cancelar", "Seleccione Archivo", JOptionPane.YES_NO_CANCEL_OPTION);
+        if(selecc==1)
         {
+            Fachada.getInstancia().sistemaBase();
             jButton8ActionPerformed(null);
             if(!a.isShowing())
             {
-                //CONTINUAR
+                JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
             }
         }
-        else
+        if(selecc==2)
         {
-            jButton5ActionPerformed(null);
-            if (!a.isShowing())
+            System.exit(0);
+        }
+        jButton5ActionPerformed(null);
+        if (!a.isShowing())
+        {
+            JOptionPane.showMessageDialog(null, "Se deberá crear un archivo con los datos básicos", "Crear nuevo", JOptionPane.INFORMATION_MESSAGE);
+            Fachada.getInstancia().sistemaBase();
+            jButton8ActionPerformed(null);
+            if(!a.isShowing())
             {
-                JOptionPane.showMessageDialog(null, "Se deberá crear un archivo con los datos básicos", "Crear nuevo", JOptionPane.INFORMATION_MESSAGE);
-                jButton8ActionPerformed(null);
+                JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
+                System.exit(0);
             }
         }
     }
@@ -414,7 +423,7 @@ public class Principal extends javax.swing.JFrame {
         a.setFileFilter(mun);
         if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile())) //Comprueba que el archivo se haya cargado en la clase Archivo
+            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que el archivo se haya cargado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al cargar el archvio, seleccione uno o asegúrese que éste sea *.mun", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
             }
@@ -455,12 +464,11 @@ public class Principal extends javax.swing.JFrame {
         a.setSelectedFile(f); //Setea el nombre
         if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile())) //Comprueba que se haya guardado en la clase Archivo
+            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que se haya guardado en la clase Archivo
             {
-                JOptionPane.showMessageDialog(null, "Error al gaurdar el archvio, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Error al guardar el archivo, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
