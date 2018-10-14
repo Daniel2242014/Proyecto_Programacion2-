@@ -3,7 +3,9 @@ import fachada.Fachada;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Mundial implements Serializable{
+public class Mundial implements Serializable
+{
+    //Mediante el funcionamiento interno de java, se crean referencias a los ArrayList de Fachada
     public ArrayList<Acciones> acciones;
     public ArrayList<Fase> fases;
     public ArrayList<Jugador> jugadores;
@@ -12,7 +14,7 @@ public class Mundial implements Serializable{
     public ArrayList<Director> directores;
     public ArrayList<Juez> jueces;
     public ArrayList<Extra> extras;
-    
+    //El constructor se encarga de pedir los datos a la clase Archivo, mediante Fachada, para su asignación a Fachada
     public Mundial(ArrayList<Acciones> a, ArrayList<Fase> f, ArrayList<Jugador> j, ArrayList<Partido> p, ArrayList<Seleccion> s, ArrayList<Director> d, ArrayList<Juez> jj, ArrayList<Extra> e)
     {
         this.acciones=a;
@@ -24,7 +26,8 @@ public class Mundial implements Serializable{
         this.jueces=jj;
         this.extras=e;
     }
-    public void cargarFachada()
+    //----------------- Carga de datos ----------------------
+    public void cargarFachada() //Asigna los datos para referenciarlos a Fachada
     {
         Fachada.getInstancia().acciones=this.acciones;
         Fachada.getInstancia().fases=this.fases;
