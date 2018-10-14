@@ -41,7 +41,7 @@ public class Fachada{
         return Archivo.getInstancia().abrirArchivo(a);
     }
     
-    public boolean guardarMun(String a) //Igual que el anterior
+    public boolean guardarMun(String a) //Igual que el anterior, pero inverso
     {
         return Archivo.getInstancia().guardarArchivo(a);
     }
