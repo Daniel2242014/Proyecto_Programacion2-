@@ -318,7 +318,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         });
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/arabia sauditaR.jpg"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/arabiaSauditaR.jpg"))); // NOI18N
         jButton3.setText("jButton1");
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -388,7 +388,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         jLabel7.setText("Australia");
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/comombiaR.jpg"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/colombiaR.png"))); // NOI18N
         jButton7.setText("jButton1");
         jButton7.setBorder(null);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -403,7 +403,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         jLabel8.setText("Colombia");
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/correaR.jpg"))); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/coreaR.jpg"))); // NOI18N
         jButton8.setText("jButton1");
         jButton8.setBorder(null);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -478,7 +478,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         jLabel13.setText("Croacia");
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
-        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/españaR.jpg"))); // NOI18N
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/espaniaR.jpg"))); // NOI18N
         jButton13.setText("jButton1");
         jButton13.setBorder(null);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -498,7 +498,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         });
 
         jButton15.setBackground(new java.awt.Color(255, 255, 255));
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/inglateraR.jpg"))); // NOI18N
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/inglaterraR.jpg"))); // NOI18N
         jButton15.setText("jButton1");
         jButton15.setBorder(null);
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -523,7 +523,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         jLabel16.setText("España");
 
         jButton16.setBackground(new java.awt.Color(255, 255, 255));
-        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/inslandiaR.jpg"))); // NOI18N
+        jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/islandiaR.jpg"))); // NOI18N
         jButton16.setText("jButton1");
         jButton16.setBorder(null);
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -728,7 +728,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
         });
 
         jButton71.setBackground(new java.awt.Color(255, 255, 255));
-        jButton71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/tunesR.jpg"))); // NOI18N
+        jButton71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/tunezR.jpg"))); // NOI18N
         jButton71.setText("jButton1");
         jButton71.setBorder(null);
         jButton71.addActionListener(new java.awt.event.ActionListener() {
@@ -934,7 +934,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
                                     .addComponent(jButton70, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 763, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -965,7 +965,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -985,7 +985,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton13)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -995,7 +995,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton18)
-                    .addComponent(jButton16)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton17))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1045,7 +1045,7 @@ public class Menu_seleciones extends javax.swing.JPanel {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton70)
-                    .addComponent(jButton71))
+                    .addComponent(jButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
