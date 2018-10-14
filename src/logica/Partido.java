@@ -1,8 +1,8 @@
 package logica;
+import java.io.Serializable;
+import java.util.ArrayList;  
 
-import java.util.ArrayList; //mira como se hace 
-
-public class Partido {
+public class Partido implements Serializable{
     private String fecha;
     private int tiempo_total;
     private int tiempo_agregado;

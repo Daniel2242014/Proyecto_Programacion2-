@@ -1,9 +1,9 @@
 package logica;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Extra
+public class Extra implements Serializable
 {
     private ArrayList<Acciones> eventos;
     private boolean terminar;

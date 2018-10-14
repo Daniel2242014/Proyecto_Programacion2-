@@ -1,5 +1,5 @@
 package logica;
-
+import fachada.Fachada;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -23,5 +23,16 @@ public class Mundial implements Serializable{
         this.directores=d;
         this.jueces=jj;
         this.extras=e;
+    }
+    public void cargarFachada()
+    {
+        Fachada.getInstancia().acciones=this.acciones;
+        Fachada.getInstancia().fases=this.fases;
+        Fachada.getInstancia().jugadores=this.jugadores;
+        Fachada.getInstancia().partidos=this.partidos;
+        Fachada.getInstancia().selecciones=this.selecciones;
+        Fachada.getInstancia().directores=this.directores;
+        Fachada.getInstancia().jueces=this.jueces;
+        Fachada.getInstancia().extras=this.extras;
     }
 }

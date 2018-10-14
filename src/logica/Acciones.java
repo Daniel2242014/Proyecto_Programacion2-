@@ -1,6 +1,7 @@
 package logica;
+import java.io.Serializable;
 import java.util.*;
-public class Acciones {
+public class Acciones implements Serializable{
   
     private Jugador personaje;
     private int amarilias, cant_goles, faltasInsignificantes;

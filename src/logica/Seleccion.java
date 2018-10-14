@@ -1,9 +1,9 @@
 package logica;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-public class Seleccion
+public class Seleccion implements Serializable
 {
     private String nombre;
     private int ranking_FIFA;

@@ -29,7 +29,8 @@ public class Archivo {
             Mundial m=new Mundial(Fachada.getInstancia().acciones, Fachada.getInstancia().fases, Fachada.getInstancia().jugadores, Fachada.getInstancia().partidos, Fachada.getInstancia().selecciones, Fachada.getInstancia().directores, Fachada.getInstancia().jueces, Fachada.getInstancia().extras);
             FileInputStream fis=new FileInputStream(ruta);
             ObjectInputStream ois=new ObjectInputStream(fis);
-            m=(Mundial) ois.readObject();
+            m=(Mundial) ois.readObject(); 
+            m.cargarFachada();
             fis.close();
             ois.close();
             return true;

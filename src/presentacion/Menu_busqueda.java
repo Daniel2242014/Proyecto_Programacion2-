@@ -173,6 +173,12 @@ public class Menu_busqueda extends javax.swing.JPanel {
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         // TODO add your handling code here:
+        //dani borra esto, lo puse para probar lo mio xxdxd
+        for(int i=0; i<5; i++)
+        {
+            System.out.println(fachada.Fachada.getInstancia().selecciones.get(i).getNombre());
+            System.out.println(fachada.Fachada.getInstancia().directores.get(i).getNombre());
+        }
     }//GEN-LAST:event_buscarActionPerformed
 
 

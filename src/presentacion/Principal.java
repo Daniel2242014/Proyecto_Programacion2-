@@ -24,7 +24,7 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         display.setLayout(new BorderLayout());
         mun=new FileNameExtensionFilter("Mundial","mun");
-        cargarArchivo();
+        cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa.
     }
     
     public void cargarPanel(JPanel j){
@@ -56,32 +56,38 @@ public class Principal extends javax.swing.JFrame {
                 break;
             }
         }
-        int selecc=JOptionPane.showConfirmDialog(null, "Seleccione un archivo para cargar los datos básicos,\nsi no lo tiene, seleccione cancelar", "Seleccione Archivo", JOptionPane.YES_NO_CANCEL_OPTION);
-        if(selecc==1)
+        int selecc=JOptionPane.showConfirmDialog(null, "Debe seleccionar un archivo del tipo *.mun para cargar los datos básicos\n¿Dispone de uno?", "Seleccione Archivo", JOptionPane.YES_NO_CANCEL_OPTION);
+        if(selecc==0)
         {
-            Fachada.getInstancia().sistemaBase();
-            jButton8ActionPerformed(null);
-            if(!a.isShowing())
+            jButton5ActionPerformed(null);
+            try
             {
-                JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
+                a.getSelectedFile().getAbsolutePath();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, "Debe abrir un archivo del tipo *.mun para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
                 System.exit(0);
             }
         }
-        if(selecc==2)
+        if (selecc==2)
         {
             System.exit(0);
         }
-        jButton5ActionPerformed(null);
-        if (!a.isShowing())
+        if(selecc==1)
         {
-            JOptionPane.showMessageDialog(null, "Se deberá crear un archivo con los datos básicos", "Crear nuevo", JOptionPane.INFORMATION_MESSAGE);
             Fachada.getInstancia().sistemaBase();
-            jButton8ActionPerformed(null);
-            if(!a.isShowing())
+            File f=new File("Mundial.mun"); //Da el nombre al archivo a ser guardado
+            a = new JFileChooser();
+            a.setFileFilter(mun);
+            a.setSelectedFile(f);
+            if (a.showSaveDialog(a) == JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
             {
                 JOptionPane.showMessageDialog(null, "Debe guardar el archivo para poder utilizar el programa", "Abortar", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
             }
+            Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath());
         }
     }
     
@@ -371,16 +377,13 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -423,7 +426,7 @@ public class Principal extends javax.swing.JFrame {
         a.setFileFilter(mun);
         if(a.showOpenDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().abrirMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que el archivo se haya cargado en la clase Archivo
+            if(!Fachada.getInstancia().abrirMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que el archivo se haya cargado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al cargar el archivo", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
             }
@@ -464,7 +467,7 @@ public class Principal extends javax.swing.JFrame {
         a.setSelectedFile(f); //Setea el nombre
         if(a.showSaveDialog(a)!=JFileChooser.CANCEL_OPTION) //Verifica que no se le de a la opción cancelar, para no seguir el flujo del programa
         {
-            if(!fachada.Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que se haya guardado en la clase Archivo
+            if(!Fachada.getInstancia().guardarMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que se haya guardado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al guardar el archivo, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
             }
@@ -480,6 +483,24 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Metal (Para que sea horriblemente java pero modificable)
+        {
+            if ("Metal".equals(info.getName())) 
+            {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
         this.cargarPanel(Menu_busqueda.getInstancia(this));
     }//GEN-LAST:event_jButton10ActionPerformed
 

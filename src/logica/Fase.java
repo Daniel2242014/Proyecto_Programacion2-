@@ -1,34 +1,35 @@
 package logica;
-    import java.util.ArrayList;
-    public class Fase { 
-        private ArrayList<Partido> lista = new ArrayList<>();  
-        private char letra_posicion;
-        private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
-        public final static  char GRUPO_A = 'a';
-        public final static char GRUPO_B = 'b';
-        public final static char GRUPO_C = 'c';
-        public final static char GRUPO_D = 'd';
-        public final static char GRUPO_E= 'e';
-        public final static char GRUPO_F = 'f';
-        public final static char GRUPO_G = 'g';
-        public final static char GRUPO_H = 'h';
-        public final static char OCTAVOS = '8';
-        public final static char CUARTOS = '4';
-        public final static char TERCER_Y_CUARTO  = '3';
-        public final static char SEMI_FINAL = '2';
-        public final static char FINAL = '1';
-        
-        public Fase(char r ){ 
-           this.lista = new ArrayList<>();
-           letra_posicion=r;
-           if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
-                   letra_posicion=='f'||letra_posicion=='g'||letra_posicion=='h'){
-               grupo_eliminacion=false;
-           }else{
-               grupo_eliminacion=true;
-           }
-           
-        }
+import java.io.Serializable;
+import java.util.ArrayList;
+public class Fase implements Serializable { 
+    private ArrayList<Partido> lista = new ArrayList<>();  
+    private char letra_posicion;
+    private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
+    public final static  char GRUPO_A = 'a';
+    public final static char GRUPO_B = 'b';
+    public final static char GRUPO_C = 'c';
+    public final static char GRUPO_D = 'd';
+    public final static char GRUPO_E= 'e';
+    public final static char GRUPO_F = 'f';
+    public final static char GRUPO_G = 'g';
+    public final static char GRUPO_H = 'h';
+    public final static char OCTAVOS = '8';
+    public final static char CUARTOS = '4';
+    public final static char TERCER_Y_CUARTO  = '3';
+    public final static char SEMI_FINAL = '2';
+    public final static char FINAL = '1';
+
+    public Fase(char r ){ 
+       this.lista = new ArrayList<>();
+       letra_posicion=r;
+       if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
+               letra_posicion=='f'||letra_posicion=='g'||letra_posicion=='h'){
+           grupo_eliminacion=false;
+       }else{
+           grupo_eliminacion=true;
+       }
+
+    }
 
     public ArrayList<Partido> getLista() {
         return lista;
