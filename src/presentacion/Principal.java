@@ -446,7 +446,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_AbrirActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Principal.getInstancia().cargarPanel(nuevoJugador.getInstancia());
+        Principal.getInstancia().cargarPanel(new nuevoJugador(null));
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -487,7 +487,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        Principal.getInstancia().cargarPanel(menuJugador.getInstancia());
+        Principal.getInstancia().cargarPanel(new menuJugador());
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -26,6 +26,10 @@ public class Seleccion implements Serializable
         
     }
     
+    public void eliminarJugador(Jugador j){
+        jugadores.remove(j);
+    }
+    
     public void agregarJugador(Jugador jug)
     {
         jugadores.add(jug);
@@ -34,6 +38,10 @@ public class Seleccion implements Serializable
     public Jugador devolverJugador(int a)
     {
         return jugadores.get(a);
+    }
+    
+    public ArrayList<Jugador> debolberJugadores(){
+        return jugadores;
     }
     
     public int cantidadJugadores()

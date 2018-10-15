@@ -5,16 +5,82 @@ import javax.swing.ImageIcon;
 import logica.*;
 
 public class Fachada{
+
+     private static Fachada instancia;
+    private ArrayList<Acciones> acciones;
+    private ArrayList<Fase> fases;
+    private ArrayList<Jugador> jugadores;
+    private ArrayList<Partido> partidos;
+    private ArrayList<Seleccion> selecciones;
+    private ArrayList<Director> directores;
+    private ArrayList<Juez> jueces;
+    private ArrayList<Extra> extras;
+    
+    public ArrayList<Acciones> getAcciones() {
+        return acciones;
+    }
+
+    public void setAcciones(ArrayList<Acciones> acciones) {
+        this.acciones = acciones;
+    }
+
+    public ArrayList<Fase> getFases() {
+        return fases;
+    }
+
+    public void setFases(ArrayList<Fase> fases) {
+        this.fases = fases;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public ArrayList<Partido> getPartidos() {
+        return partidos;
+    }
+
+    public void setPartidos(ArrayList<Partido> partidos) {
+        this.partidos = partidos;
+    }
+
+    public ArrayList<Seleccion> getSelecciones() {
+        return selecciones;
+    }
+
+    public void setSelecciones(ArrayList<Seleccion> selecciones) {
+        this.selecciones = selecciones;
+    }
+
+    public ArrayList<Director> getDirectores() {
+        return directores;
+    }
+
+    public void setDirectores(ArrayList<Director> directores) {
+        this.directores = directores;
+    }
+
+    public ArrayList<Juez> getJueces() {
+        return jueces;
+    }
+
+    public void setJueces(ArrayList<Juez> jueces) {
+        this.jueces = jueces;
+    }
+
+    public ArrayList<Extra> getExtras() {
+        return extras;
+    }
+
     //--------- Arraylists de toda la información del programa ---------
-    private static Fachada instancia;
-    public ArrayList<Acciones> acciones;
-    public ArrayList<Fase> fases;
-    public ArrayList<Jugador> jugadores;
-    public ArrayList<Partido> partidos;
-    public ArrayList<Seleccion> selecciones;
-    public ArrayList<Director> directores;
-    public ArrayList<Juez> jueces;
-    public ArrayList<Extra> extras;
+    public void setExtras(ArrayList<Extra> extras) {
+        this.extras = extras;
+    }
+   
 
     private Fachada() {
          acciones=new ArrayList();
@@ -44,6 +110,76 @@ public class Fachada{
     public boolean guardarMun(String a) //Igual que el anterior, pero inverso
     {
         return Archivo.getInstancia().guardarArchivo(a);
+    }
+    
+    
+    public int sigienteCodigo(){
+        int numeroAproximado = jugadores.size()+jueces.size()+directores.size(); 
+        /*TECNINACMENTE ESE DEBERIA SER EL SIGIENTE CODIGO VALIDO,
+        PERO PUEDE NO SERLO, POR ESO SE VERIFICA Y EN EL CASO DE NO SERVIR SE BUSCA UNO NUEVO*/
+        boolean j=true;
+        do{
+            j=true;
+            for(Jugador jug: jugadores){
+                if(jug.getCode()==numeroAproximado){
+                    j=false;
+                    numeroAproximado++;
+                }
+            }
+            for(Director direc: directores){
+                if(direc.getCode()==numeroAproximado){
+                    j=false;
+                    numeroAproximado++;
+                }
+            }
+            for(Juez jues: jueces){
+                if(jues.getCode()==numeroAproximado){
+                    j=false;
+                    numeroAproximado++;
+                }
+            }
+            
+        }while (!j);
+       return numeroAproximado;
+    }
+    
+    
+    public int numeroPersonas(){
+        return jugadores.size()+directores.size()+jueces.size();
+    }
+    
+    public Seleccion debolberSeleccionPorNombre(String nom){
+        for (Seleccion s: selecciones){
+            if(s.getNombre().equalsIgnoreCase(nom)){
+                return s;
+            }
+        }
+        return null;
+    }
+    
+    public void agregarJugador(Jugador j){
+       if(!jugadores.contains(j)){ 
+            jugadores.add(j);
+            this.debolberSeleccionPorNombre(j.getPais()).agregarJugador(j);
+       }else{
+           throw new ErrorException("No puede exsistir dos jugadores con el mismo codigo");
+       } 
+    }
+    
+    public void eliminarJugador(Jugador j){
+        this.debolberSeleccionPorNombre(j.getPais()).eliminarJugador(j);
+        jugadores.remove(j);
+    }
+    
+    public int posicionSeleccion(Seleccion s){
+        int posicion=0;
+        for(Seleccion se : selecciones){
+          if(se.equals(s)){
+              return posicion; 
+          }
+          posicion++; 
+        }
+        return -1;
     }
     
     //-------------------------------- METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE ---------------------------------------
