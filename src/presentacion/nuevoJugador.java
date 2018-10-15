@@ -44,9 +44,14 @@ public class nuevoJugador extends javax.swing.JPanel {
         }
         
         if(aModificar!=null){
+            titulo.setText("Modificar datos");
             nombre.setText(aModificar.getNombre());
             priPosicon.setSelectedItem(aModificar.getPrimeraPosicion());
-            segPosicion.setSelectedItem(aModificar.getSegundaPosicion());
+            if(aModificar.getSegundaPosicion()==null){
+                segPosicion.setSelectedIndex(3);
+            }else{
+                segPosicion.setSelectedItem(aModificar.getSegundaPosicion());
+            }
             numCamisa.setValue(aModificar.getNumeroCamisa());
             edad.setValue(aModificar.getEdad());
             club.setText(aModificar.getClub());
@@ -69,7 +74,7 @@ public class nuevoJugador extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         nombre = new javax.swing.JTextField();
@@ -97,10 +102,10 @@ public class nuevoJugador extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Crear jugador");
+        titulo.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        titulo.setForeground(new java.awt.Color(51, 51, 51));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Crear jugador");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
@@ -140,7 +145,7 @@ public class nuevoJugador extends javax.swing.JPanel {
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Fecha Nacimiento*");
+        jLabel11.setText("Fecha Debut*");
 
         segPosicion.setBackground(new java.awt.Color(255, 255, 255));
         segPosicion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -232,7 +237,7 @@ public class nuevoJugador extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,7 +299,7 @@ public class nuevoJugador extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(titulo)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,30 +388,51 @@ public class nuevoJugador extends javax.swing.JPanel {
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
         try{
-         String rutadirec;
-        if(ruta.getText().equalsIgnoreCase("")){
-            rutadirec="src/img/default.jpg";
+        if(aModificar==null){
+                
+                 String rutadirec;
+                if(ruta.getText().equalsIgnoreCase("")){
+                    rutadirec="src/img/default.jpg";
+                }else{
+                    rutadirec=ruta.getText();
+                }
+
+                Jugador j = new Jugador (nombre.getText(),(int)numCamisa.getValue(),String.valueOf(priPosicon.getSelectedItem()), (int)edad.getValue() ,String.valueOf(seleccion.getSelectedItem()),Fachada.getInstancia().sigienteCodigo(),new ImageIcon(rutadirec));
+                if(!altura.getText().equalsIgnoreCase("")){
+                    j.setAltura(Double.valueOf(altura.getText()));
+                }   
+               if(!String.valueOf(priPosicon.getSelectedItem()).equalsIgnoreCase("Arquero") || !String.valueOf(segPosicion.getSelectedItem()).equalsIgnoreCase("Sin determinar")){
+                   j.setSegundaPosicion(String.valueOf(segPosicion.getSelectedItem()));
+               }
+               j.setClub(club.getText());
+               j.setFechaDebut(String.valueOf(dia.getSelectedItem()) + " / " +  String.valueOf(mes.getSelectedItem()) + " / "  +String.valueOf(año.getSelectedItem()) );
+               j.setEdad((int)edad.getValue());
+               Fachada.getInstancia().agregarJugador(j);
+               JOptionPane.showMessageDialog(null, "Jugador cargado con exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+             
         }else{
-            rutadirec=ruta.getText();
-        }
-    
-        Jugador j = new Jugador (nombre.getText(),(int)numCamisa.getValue(),String.valueOf(priPosicon.getSelectedItem()), (int)edad.getValue() ,String.valueOf(seleccion.getSelectedItem()),Fachada.getInstancia().sigienteCodigo(),new ImageIcon(rutadirec));
-        if(!altura.getText().equalsIgnoreCase("")){
-            j.setAltura(Double.valueOf(altura.getText()));
-        }   
-       if(!String.valueOf(priPosicon.getSelectedItem()).equalsIgnoreCase("Arquero") || !String.valueOf(priPosicon.getSelectedItem()).equalsIgnoreCase("Sin determinar")){
-           j.setSegundaPosicion(String.valueOf(segPosicion.getSelectedItem()));
-       }
-       j.setClub(club.getText());
-       j.setFechaDebut(String.valueOf(dia.getSelectedItem()) + " / " +  String.valueOf(mes.getSelectedItem()) + " / "  +String.valueOf(año.getSelectedItem()) );
-       j.setEdad((int)edad.getValue());
-       Fachada.getInstancia().agregarJugador(j);
-       JOptionPane.showMessageDialog(null, "Jugador cargado con exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-     }catch(Exception e){
-         JOptionPane.showMessageDialog(null, "Alguno de los datos ingresados es incorecto", "Error", JOptionPane.ERROR_MESSAGE);
-         e.printStackTrace();
-     }
-     
+           
+            aModificar.setNombre(nombre.getText());
+            aModificar.setClub(club.getText());
+            aModificar.setPrimeraPosicion(String.valueOf(priPosicon.getSelectedItem()));
+             if(!String.valueOf(priPosicon.getSelectedItem()).equalsIgnoreCase("Arquero") || !String.valueOf(segPosicion.getSelectedItem()).equalsIgnoreCase("Sin determinar")){
+                 aModificar.setSegundaPosicion(String.valueOf(segPosicion.getSelectedItem()));
+             }
+              aModificar.setNumeroCamisa((int)numCamisa.getValue());
+              aModificar.setEdad((int)edad.getValue());
+              aModificar.setFechaDebut(String.valueOf(dia.getSelectedItem()) + " / " +  String.valueOf(mes.getSelectedItem()) + " / "  +String.valueOf(año.getSelectedItem()) );
+              aModificar.setPais(String.valueOf(seleccion.getSelectedItem()));
+              if(!ruta.getText().equalsIgnoreCase("Imagen cargada")){
+                   aModificar.setImg(new ImageIcon(ruta.getText()));
+              }
+              JOptionPane.showMessageDialog(null, "Infromacion Modificada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Alguno de los datos ingresados es incorecto", "Error", JOptionPane.ERROR_MESSAGE);
+                 e.printStackTrace();
+            }  
+             
+        
     }//GEN-LAST:event_ingresarActionPerformed
 
     private void priPosiconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priPosiconActionPerformed
@@ -426,7 +452,6 @@ public class nuevoJugador extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> dia;
     private javax.swing.JSpinner edad;
     private javax.swing.JButton ingresar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -445,5 +470,6 @@ public class nuevoJugador extends javax.swing.JPanel {
     private javax.swing.JTextField ruta;
     private javax.swing.JComboBox<String> segPosicion;
     private javax.swing.JComboBox<String> seleccion;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
