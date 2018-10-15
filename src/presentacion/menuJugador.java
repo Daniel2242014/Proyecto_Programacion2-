@@ -8,19 +8,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UnsupportedLookAndFeelException;
 import logica.Jugador;
+import logica.Seleccion;
 
 public class menuJugador extends JPanel {
     
-    private static menuJugador initi;
-    
-    public static menuJugador getInstancia(){
-        if(initi==null){
-            initi= new menuJugador();
-        }
-        return initi; 
-    }
-    
-    private menuJugador(){
+    public menuJugador(){
          for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) 
         {
             if ("Metal".equals(info.getName())) 
@@ -40,12 +32,19 @@ public class menuJugador extends JPanel {
             }
         }
        
-        this.setSize(800,250*Fachada.getInstancia().jugadores.size());
-        this.setLayout(new GridLayout(Fachada.getInstancia().jugadores.size(),1));
+        this.setSize(750,260*Fachada.getInstancia().numeroPersonas());
+        this.setLayout(new GridLayout(Fachada.getInstancia().numeroPersonas(),1));
         this.setBackground(Color.WHITE);
-        for (Jugador a:Fachada.getInstancia().jugadores){
-                this.add(new jugador(a));
-        }
+        for(Seleccion s: Fachada.getInstancia().getSelecciones()){
+          
+            for (Jugador a:s.debolberJugadores()){
+                    this.add(new Listajugador(a));
+            }
+        
+            this.add(new ListaDirector(s.getMaestro()));
+      
+        } 
+        
     }
     
 }

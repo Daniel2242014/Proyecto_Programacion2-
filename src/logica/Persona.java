@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 public class Persona implements Serializable {
 
     private int code,edad;
-    private String nombre,fechaNacimiento,pais;
+    private String nombre,pais;
     private ImageIcon img;
     
     public Persona (int code,int edad, String nombre, String pais, ImageIcon img){
@@ -43,13 +43,6 @@ public class Persona implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
 
     public String getPais() {
         return pais;
@@ -67,10 +60,20 @@ public class Persona implements Serializable {
         this.img = img;
     }
 
+    public boolean equals(Object o){
+        Persona p = (Persona) o;
+        if(this.code==p.getCode()){
+            return true;
+        }else{
+            return false;
+        }
+            
+    }
+    
     @Override
     public String toString() {
         return "code=" + code + "\n edad=" + edad + 
-                "\n nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento +
+                "\n nombre=" + nombre +
                 "\n pais=" + pais;
     }
     

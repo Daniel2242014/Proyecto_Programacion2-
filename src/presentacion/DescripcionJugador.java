@@ -3,10 +3,13 @@ package presentacion;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Jugador;
+import fachada.Fachada;
+import javax.swing.JOptionPane;
 
 
 public class DescripcionJugador extends javax.swing.JPanel {
 
+    Jugador integrante;
     
     public  DescripcionJugador(Jugador j) {
         initComponents();
@@ -21,6 +24,8 @@ public class DescripcionJugador extends javax.swing.JPanel {
         rojas.setText(String.valueOf(j.getRojasTotales()));
         amarilias.setText(String.valueOf(j.getAmarillasTotales()));
         faltas.setText(String.valueOf(j.getFaltasTotales()));
+        pais.setText(j.getPais());
+        integrante=j;
                
     }
 
@@ -29,6 +34,7 @@ public class DescripcionJugador extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         ss = new javax.swing.JPanel();
         imagen = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -50,6 +56,21 @@ public class DescripcionJugador extends javax.swing.JPanel {
         club = new javax.swing.JLabel();
         faltas = new javax.swing.JLabel();
         amarilias = new javax.swing.JLabel();
+        editar = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        pais = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         ss.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -69,11 +90,11 @@ public class DescripcionJugador extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Fecha debut");
+        jLabel5.setText("Fecha Debut");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("Nuemro de camisa");
+        jLabel6.setText("Pais");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
@@ -131,61 +152,111 @@ public class DescripcionJugador extends javax.swing.JPanel {
         amarilias.setForeground(new java.awt.Color(51, 51, 51));
         amarilias.setText("SIN DEFINIR");
 
+        editar.setBackground(new java.awt.Color(0, 153, 153));
+        editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        editar.setForeground(new java.awt.Color(255, 255, 255));
+        editar.setText("Editar");
+        editar.setBorder(null);
+        editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarActionPerformed(evt);
+            }
+        });
+
+        eliminar.setBackground(new java.awt.Color(255, 0, 0));
+        eliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        eliminar.setText("Eliminar");
+        eliminar.setBorder(null);
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("Nuemro de camisa");
+
+        pais.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        pais.setForeground(new java.awt.Color(51, 51, 51));
+        pais.setText("SIN DEFINIR");
+
         javax.swing.GroupLayout ssLayout = new javax.swing.GroupLayout(ss);
         ss.setLayout(ssLayout);
         ssLayout.setHorizontalGroup(
             ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ssLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ssLayout.createSequentialGroup()
+                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ssLayout.createSequentialGroup()
+                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(edad)
+                            .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(ssLayout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(fechaDebut))
+                                .addGroup(ssLayout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(club))))
+                        .addGap(69, 69, 69)))
                 .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ssLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9))
-                        .addGap(45, 45, 45)
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edad)
-                            .addComponent(fechaDebut)
-                            .addComponent(club))
-                        .addGap(95, 95, 95)
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel10)))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(segPosicion))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(priposicion))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addComponent(nombre)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(numcamisa))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pais)))
+                        .addGap(12, 12, 12))
                     .addGroup(ssLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
                         .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ssLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(nombre))
-                            .addGroup(ssLayout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(ssLayout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(segPosicion))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ssLayout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(priposicion))
-                                    .addGroup(ssLayout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(42, 42, 42)
-                                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rojas)
-                                            .addComponent(numcamisa)
-                                            .addComponent(faltas)
-                                            .addComponent(amarilias))))))))
-                .addGap(0, 44, Short.MAX_VALUE))
+                                .addComponent(jLabel11)
+                                .addGap(27, 27, 27)
+                                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(amarilias)
+                                    .addComponent(rojas)
+                                    .addComponent(faltas)))
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel8))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(24, 63, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ssLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13))
         );
         ssLayout.setVerticalGroup(
             ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ssLayout.createSequentialGroup()
                 .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ssLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ssLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(nombre)
@@ -199,40 +270,34 @@ public class DescripcionJugador extends javax.swing.JPanel {
                             .addComponent(segPosicion))
                         .addGap(37, 37, 37)
                         .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numcamisa)
+                            .addComponent(jLabel12))
+                        .addGap(30, 30, 30)
+                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(numcamisa)))
-                    .addGroup(ssLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(44, 44, 44)
-                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(ssLayout.createSequentialGroup()
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(fechaDebut))
-                        .addGap(39, 39, 39)
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(edad)))
-                    .addGroup(ssLayout.createSequentialGroup()
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ssLayout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(amarilias)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ssLayout.createSequentialGroup()
-                                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(rojas)
-                                    .addComponent(club)
-                                    .addComponent(jLabel9))
-                                .addGap(65, 65, 65)))
-                        .addGap(39, 39, 39)
-                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(faltas))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addComponent(pais))))
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rojas)
+                    .addComponent(jLabel8)
+                    .addComponent(club)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(fechaDebut)
+                    .addComponent(jLabel5)
+                    .addComponent(amarilias))
+                .addGap(32, 32, 32)
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(faltas)
+                    .addComponent(jLabel7)
+                    .addComponent(edad))
+                .addGap(18, 18, 18)
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -247,16 +312,32 @@ public class DescripcionJugador extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+       if(JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar?", "Advertencia", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE)==0){
+           Fachada.getInstancia().eliminarJugador(integrante);
+           JOptionPane.showMessageDialog(null, "Operacion concluida con exito", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+           Principal.getInstancia().cargarPanel(new menuJugador());
+       }
+        
+    }//GEN-LAST:event_eliminarActionPerformed
+
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+        Principal.getInstancia().cargarPanel(new nuevoJugador(integrante));
+    }//GEN-LAST:event_editarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel amarilias;
     private javax.swing.JLabel club;
     private javax.swing.JLabel edad;
+    private javax.swing.JButton editar;
+    private javax.swing.JButton eliminar;
     private javax.swing.JLabel faltas;
     private javax.swing.JLabel fechaDebut;
     private javax.swing.JLabel imagen;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -264,8 +345,10 @@ public class DescripcionJugador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel numcamisa;
+    private javax.swing.JLabel pais;
     private javax.swing.JLabel priposicion;
     private javax.swing.JLabel rojas;
     private javax.swing.JLabel segPosicion;
