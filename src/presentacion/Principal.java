@@ -14,6 +14,7 @@ public class Principal extends javax.swing.JFrame {
     public static JFileChooser a; //Ventana de guardado de Archivos
     private FileNameExtensionFilter mun; //Filtro por extensión 
     private static Principal initi;
+    private static boolean abrirB; //Comprobación interna de cargarArchivo
    
     
     public static Principal getInstancia(){
@@ -23,16 +24,17 @@ public class Principal extends javax.swing.JFrame {
         return initi;
     }
     
-    private  Principal() {
+    private Principal() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         display.setLayout(new BorderLayout());
         mun=new FileNameExtensionFilter("Mundial","mun"); //Se crea el filtro por extensión para el archivo
         cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa
+        abrirB=false;
     }
     
-    public   void cargarPanel(JPanel j){
+    public void cargarPanel(JPanel j){
         System.out.println(j);
         display.removeAll();
         display.add(j,BorderLayout.CENTER);
@@ -67,7 +69,9 @@ public class Principal extends javax.swing.JFrame {
         if(selecc==0)
         {
             //Opción abrir
+            abrirB=true; //Este boolean opera para cerrar el programa en caso de que no se pueda abrir el archivo
             AbrirActionPerformed(null); //Se llama al método abrir 
+            abrirB=false;
             try
             {
                 a.getSelectedFile().getAbsolutePath(); //Se comprueba que se haya cargado el archivo
@@ -122,7 +126,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        Busqueda = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
@@ -277,13 +281,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(197, 0, 0));
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscar.png"))); // NOI18N
-        jButton10.setBorder(null);
-        jButton10.setFocusable(false);
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        Busqueda.setBackground(new java.awt.Color(197, 0, 0));
+        Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscar.png"))); // NOI18N
+        Busqueda.setBorder(null);
+        Busqueda.setFocusable(false);
+        Busqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                BusquedaActionPerformed(evt);
             }
         });
 
@@ -326,7 +330,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -341,7 +345,7 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -441,6 +445,10 @@ public class Principal extends javax.swing.JFrame {
             if(!Fachada.getInstancia().abrirMun(a.getSelectedFile().getAbsolutePath())) //Comprueba que el archivo se haya cargado en la clase Archivo
             {
                 JOptionPane.showMessageDialog(null, "Error al cargar el archivo", "Error al cargar archivo", JOptionPane.ERROR_MESSAGE);
+                if(abrirB) //Comprueba el boolean de cargarArchivo 
+                {
+                    System.exit(0);
+                }
             }
         }
     }//GEN-LAST:event_AbrirActionPerformed
@@ -494,7 +502,7 @@ public class Principal extends javax.swing.JFrame {
         this.cargarPanel(Menu_seleciones.getInstancia());
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void BusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaActionPerformed
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Metal (Para que sea horriblemente java pero modificable)
         {
             if ("Metal".equals(info.getName())) 
@@ -513,8 +521,8 @@ public class Principal extends javax.swing.JFrame {
                 break;
             }
         }
-        this.cargarPanel(Menu_busqueda.getInstancia(this));
-    }//GEN-LAST:event_jButton10ActionPerformed
+        this.cargarPanel(Menu_busqueda.getInstancia(this)); //Carga el motor de búsqueda
+    }//GEN-LAST:event_BusquedaActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
@@ -559,11 +567,11 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Abrir;
+    private javax.swing.JButton Busqueda;
     private javax.swing.JButton Guardar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel display;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
