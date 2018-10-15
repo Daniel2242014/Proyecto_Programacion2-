@@ -13,8 +13,17 @@ import fachada.Fachada;
 public class Principal extends javax.swing.JFrame {
     public static JFileChooser a; //Ventana de guardado de Archivos
     private FileNameExtensionFilter mun; //Filtro por extensión 
+    private static Principal initi;
    
-    public Principal() {
+    
+    public static Principal getInstancia(){
+        if (initi==null){
+            initi = new Principal();
+        }
+        return initi;
+    }
+    
+    private  Principal() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -23,7 +32,7 @@ public class Principal extends javax.swing.JFrame {
         cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa
     }
     
-    public void cargarPanel(JPanel j){
+    public   void cargarPanel(JPanel j){
         System.out.println(j);
         display.removeAll();
         display.add(j,BorderLayout.CENTER);
@@ -402,7 +411,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-      this.cargarPanel(new Home());
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void AbrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirActionPerformed
@@ -437,7 +446,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_AbrirActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        Principal.getInstancia().cargarPanel(nuevoJugador.getInstancia());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -478,7 +487,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        Principal.getInstancia().cargarPanel(menuJugador.getInstancia());
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -543,7 +552,7 @@ public class Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                Principal.getInstancia().setVisible(true);
             }
         });
     }

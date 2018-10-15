@@ -6,15 +6,15 @@ import javax.swing.ImageIcon;
 public class Persona implements Serializable {
 
     private int code,edad;
-    private String apellido,nombre,fechaNacimiento,pais;
+    private String nombre,fechaNacimiento,pais;
     private ImageIcon img;
     
     public Persona (int code,int edad, String nombre, String pais, ImageIcon img){
         this.code=code;
         this.edad=edad;
-        this.nombre=nombre;
         this.pais=pais;
         this.img=img;
+        this.nombre=nombre;
     }
 
     public int getCode() {
@@ -33,13 +33,7 @@ public class Persona implements Serializable {
         this.edad = edad;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public String getNombre() {
         return nombre;
@@ -75,7 +69,7 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "code=" + code + "\n edad=" + edad + ", apellido=" + apellido + 
+        return "code=" + code + "\n edad=" + edad + 
                 "\n nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento +
                 "\n pais=" + pais;
     }

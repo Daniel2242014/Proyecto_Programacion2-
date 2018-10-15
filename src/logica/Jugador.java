@@ -6,11 +6,20 @@ import javax.swing.ImageIcon;
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
     private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
+
+    public int getNumeroCamisa() {
+        return numeroCamisa;
+    }
+
+    public void setNumeroCamisa(int numeroCamisa) {
+        this.numeroCamisa = numeroCamisa;
+    }
     private double altura;
   
     public Jugador(String nom,int numCamisa, String primPos,int edad, String pai, int code,ImageIcon img){
         super(code,edad,nom,pai,img);
         primeraPosicion=primPos;
+        this.numeroCamisa=numCamisa;
     }
 
     public int getRojasTotales() {

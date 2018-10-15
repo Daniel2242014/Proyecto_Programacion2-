@@ -298,5 +298,55 @@ public class Fachada{
         selecciones.add(selecSuiza);
         selecciones.add(selecTunez);
         selecciones.add(selecUruguay);
+        
+        /*String nom,int numCamisa, String primPos,int edad, String pai, int code,ImageIcon img*/
+        
+        Jugador uruguay_godin = new Jugador("Diego godin" , 3 ,"Defensa",31,"Uruguay",32,new ImageIcon("src/img/jugadores/Uruguay/dGodin.png"));
+        Jugador uruguay_muslera = new Jugador("Fernando MUSLERA" , 1 ,"Arquero",32,"Uruguay",34,new ImageIcon("src/img/jugadores/Uruguay/fmuslera.png"));
+        Jugador uruguay_Cavani = new Jugador("Edinson CAVANI" , 21 ,"Delantero",31,"Uruguay",33,new ImageIcon("src/img/jugadores/Uruguay/eCavani.png"));
+       
+        Jugador alemania_Ginter = new Jugador("Matthias GINTER" , 4 ,"Defensa",24,"Alemania",35,new ImageIcon("src/img/jugadores/Alemania/mGinter.png"));
+        Jugador alemania_Neuer = new Jugador("Manuel NEUER" , 1 ,"Arquero",32,"Alemania",36,new ImageIcon("src/img/jugadores/Alemania/mNeuer.png"));
+        Jugador alemania_gomez= new Jugador("Mario GOMEZ" , 23 ,"Delantero",33,"Alemania",37,new ImageIcon("src/img/jugadores/Alemania/mGomez.png"));
+       
+        Jugador arabia_AlMayouf= new Jugador("ABDULLAH ALMUAIOUF" , 1 ,"Arquero",31,"Arabia saudi",38,new ImageIcon("src/img/jugadores/Arabia Saudi/aAlmuaiouf.png"));
+        Jugador arabia_HAWSAWI= new Jugador("OSAMA HAWSAWI" , 3 ,"Defensa",34,"Arabia saudi",39,new ImageIcon("src/img/jugadores/Arabia Saudi/oHawsawi.png"));
+        Jugador arabia_ABU_RADIYAH= new Jugador("MUHANNAD ABU RADIYAH" , 20 ,"Delantero",32,"Arabia saudi",40,new ImageIcon("src/img/jugadores/Arabia Saudi/mAsiri.png"));
+        
+         Jugador argentina_Ansalidi= new Jugador("Cristian ANSALDI" , 4 ,"Defensa",32,"Argentina",41,new ImageIcon("src/img/jugadores/Argentina/cAnsalidi.png"));
+         Jugador argentina_Messi= new Jugador("Lionel MESSI" , 10 ,"Delantero",31,"Argentina",42,new ImageIcon("src/img/jugadores/Argentina/lMessi.png"));
+         Jugador argentina_Guzman= new Jugador("Nahuel GUZMAN" , 1 ,"Arquero",32,"Argentina",43,new ImageIcon("src/img/jugadores/Argentina/nGuzman.png"));
+         
+         jugadores.add(uruguay_godin);
+         jugadores.add(uruguay_muslera);
+         jugadores.add(uruguay_Cavani);
+         jugadores.add(alemania_Ginter );
+         jugadores.add(alemania_Neuer);
+         jugadores.add(alemania_gomez);
+         jugadores.add(arabia_AlMayouf);
+         jugadores.add(arabia_HAWSAWI);
+         jugadores.add(arabia_ABU_RADIYAH);
+         jugadores.add(argentina_Ansalidi);
+         jugadores.add(argentina_Messi);
+         jugadores.add(argentina_Guzman);
+         
+         selecUruguay.agregarJugador(uruguay_godin);
+         selecUruguay.agregarJugador(uruguay_Cavani);
+         selecUruguay.agregarJugador(uruguay_muslera);
+         
+         selecAlemania.agregarJugador(alemania_Ginter);
+         selecAlemania.agregarJugador(alemania_Neuer);
+         selecAlemania.agregarJugador(alemania_gomez);
+         
+         selecArabia.agregarJugador(arabia_ABU_RADIYAH);
+         selecArabia.agregarJugador(arabia_AlMayouf);
+         selecArabia.agregarJugador(arabia_HAWSAWI);
+         
+         selecArgentina.agregarJugador(argentina_Ansalidi);
+         selecArgentina.agregarJugador(argentina_Guzman);
+         selecArgentina.agregarJugador(argentina_Messi);
+         
+         
+        
     }
 }
