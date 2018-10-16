@@ -6,7 +6,7 @@ public class Menu_seleciones extends javax.swing.JPanel
 {
     private static Menu_seleciones initi; 
   
-    private  Menu_seleciones() 
+    private Menu_seleciones() 
     {
         initComponents();
     }
