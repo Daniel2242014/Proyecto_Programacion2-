@@ -6,7 +6,7 @@ import logica.*;
 
 public class Fachada{
 
-     private static Fachada instancia;
+    private static Fachada instancia;
     private ArrayList<Acciones> acciones;
     private ArrayList<Fase> fases;
     private ArrayList<Jugador> jugadores;

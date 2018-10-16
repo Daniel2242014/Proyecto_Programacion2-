@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/presentacion/Principal.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/presentacion/nuevoJugador.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/logica/Seleccion.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/fachada/Fachada.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/presentacion/Resultado.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/presentacion/Menu_busqueda.java</file>
-            <file>file:/D:/programacion/Proyecto_Programacion2-/src/logica/Jugador.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/persistencia/Archivo.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/logica/MotorDeBusqueda.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/presentacion/Menu_busqueda.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/presentacion/menuJugador.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/presentacion/Listajugador.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/logica/Mundial.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/logica/Acciones.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/fachada/Fachada.java</file>
+            <file>file:/C:/Users/agusa/Desktop/Proyecto_Programacion2-/src/presentacion/Principal.java</file>
         </group>
     </open-files>
 </project-private>

@@ -350,6 +350,8 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jScrollPane3.setAutoscrolls(true);
+
         display.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout displayLayout = new javax.swing.GroupLayout(display);
