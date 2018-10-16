@@ -453,6 +453,7 @@ public class Fachada{
          Jugador argentina_Messi= new Jugador("Lionel MESSI" , 10 ,"Delantero",31,"Argentina",42,new ImageIcon("src/img/jugadores/Argentina/lMessi.png"));
          Jugador argentina_Guzman= new Jugador("Nahuel GUZMAN" , 1 ,"Arquero",32,"Argentina",43,new ImageIcon("src/img/jugadores/Argentina/nGuzman.png"));
          
+        alemania_Ginter.setAltura(1.70);
          jugadores.add(uruguay_godin);
          jugadores.add(uruguay_muslera);
          jugadores.add(uruguay_Cavani);

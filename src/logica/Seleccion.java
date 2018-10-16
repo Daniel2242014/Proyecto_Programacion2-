@@ -19,11 +19,11 @@ public class Seleccion implements Serializable
 
     public Seleccion(String nombre,Director direc,String confederacion, ImageIcon img)
     {
+        this.img=img;
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
         this.confederacion=confederacion;
-        
     }
     
     public void eliminarJugador(Jugador j){
@@ -38,6 +38,14 @@ public class Seleccion implements Serializable
     public Jugador devolverJugador(int a)
     {
         return jugadores.get(a);
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    public void setImg(ImageIcon img) {
+        this.img = img;
     }
     
     public ArrayList<Jugador> debolberJugadores(){

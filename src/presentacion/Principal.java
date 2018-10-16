@@ -32,6 +32,7 @@ public class Principal extends javax.swing.JFrame {
         mun=new FileNameExtensionFilter("Mundial","mun"); //Se crea el filtro por extensión para el archivo
         cargarArchivo(); //Se encarga de solicitar archivo *.mun para iniciar el programa
         abrirB=false;
+        displayScroll.getVerticalScrollBar().setUnitIncrement(50); //Aumenta la velocidad del ScrollPane
     }
     
     public void cargarPanel(JPanel j){
@@ -130,7 +131,7 @@ public class Principal extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        displayScroll = new javax.swing.JScrollPane();
         display = new javax.swing.JPanel();
 
         jScrollPane2.setViewportView(jEditorPane1);
@@ -350,7 +351,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jScrollPane3.setAutoscrolls(true);
+        displayScroll.setAutoscrolls(true);
 
         display.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -365,7 +366,7 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 603, Short.MAX_VALUE)
         );
 
-        jScrollPane3.setViewportView(display);
+        displayScroll.setViewportView(display);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -377,7 +378,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3)))
+                    .addComponent(displayScroll)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,7 +388,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(displayScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -501,6 +502,24 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Windows (Para que no se vea horriblemente java)
+        {
+            if ("Metal".equals(info.getName())) 
+            {
+                try {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            }
+        }
         this.cargarPanel(Menu_seleciones.getInstancia());
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -573,6 +592,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton Guardar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel display;
+    private javax.swing.JScrollPane displayScroll;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -588,6 +608,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }
