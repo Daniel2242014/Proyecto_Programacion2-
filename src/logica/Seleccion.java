@@ -19,7 +19,7 @@ public class Seleccion implements Serializable
 
     public Seleccion(String nombre,Director direc,String confederacion, ImageIcon img)
     {
-        this.img=img;
+        this.img=img; //Faltaba esta linea y no cargaba la imagen, la agregue al crear la lista de seleccion y dejo de andar la opcion de abrir.
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
