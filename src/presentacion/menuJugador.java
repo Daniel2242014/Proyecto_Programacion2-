@@ -13,7 +13,7 @@ import logica.Seleccion;
 public class menuJugador extends JPanel {
     
     public menuJugador(){
-         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) 
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) 
         {
             if ("Metal".equals(info.getName())) 
             {
@@ -42,9 +42,6 @@ public class menuJugador extends JPanel {
             }
         
             this.add(new ListaDirector(s.getMaestro()));
-      
         } 
-        
     }
-    
 }

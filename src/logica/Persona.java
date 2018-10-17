@@ -7,9 +7,9 @@ public class Persona implements Serializable {
 
     private int code,edad;
     private String nombre,pais;
-    private ImageIcon img;
+    private String img;
     
-    public Persona (int code,int edad, String nombre, String pais, ImageIcon img){
+    public Persona (int code,int edad, String nombre, String pais, String img){
         this.code=code;
         this.edad=edad;
         this.pais=pais;
@@ -53,10 +53,14 @@ public class Persona implements Serializable {
     }
 
     public ImageIcon getImg() {
+        return new ImageIcon(img);
+    }
+    
+    public String rutaImg (){
         return img;
     }
 
-    public void setImg(ImageIcon img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

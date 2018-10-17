@@ -14,16 +14,16 @@ public class Seleccion implements Serializable
     private String confederacion;
     private ArrayList<Jugador> jugadores;
     private Director maestro;
-    private ImageIcon img;
+    private String img;
 
 
-    public Seleccion(String nombre,Director direc,String confederacion, ImageIcon img)
+    public Seleccion(String nombre,Director direc,String confederacion, String img)
     {
+        this.img=img; //Faltaba esta linea y no cargaba la imagen, la agregue al crear la lista de seleccion y dejo de andar la opcion de abrir.
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
         this.confederacion=confederacion;
-        
     }
     
     public void eliminarJugador(Jugador j){
@@ -38,6 +38,18 @@ public class Seleccion implements Serializable
     public Jugador devolverJugador(int a)
     {
         return jugadores.get(a);
+    }
+
+    public ImageIcon getImg() {
+        return new ImageIcon(img);
+    }
+    
+    public String getRutaImg(){
+        return img;
+    }
+
+    public void  setImg(String img) {
+        this.img = img;
     }
     
     public ArrayList<Jugador> debolberJugadores(){

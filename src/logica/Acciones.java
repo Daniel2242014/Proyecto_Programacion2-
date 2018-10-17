@@ -34,9 +34,9 @@ public class Acciones implements Serializable{
             this.amarilias = amarilias;
             if(this.amarilias==2){
                 this.roja=true;
-            }
-        }
-     }
+           }
+       }
+    }
 
     public int getCant_goles() {
         return cant_goles;

@@ -16,7 +16,7 @@ public class Jugador extends Persona {
     }
     private double altura;
   
-    public Jugador(String nom,int numCamisa, String primPos,int e, String pai, int code,ImageIcon img){
+    public Jugador(String nom,int numCamisa, String primPos,int e, String pai, int code,String img){
         super(code,e,nom,pai,img);
         primeraPosicion=primPos;
         this.numeroCamisa=numCamisa;
