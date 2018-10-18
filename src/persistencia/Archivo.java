@@ -42,12 +42,8 @@ public class Archivo {
     {
         try
         {
-<<<<<<< HEAD
-            if (!ruta.substring(ruta.length()-4, ruta.length()).equalsIgnoreCase(".mun"))//Comprueba la extensión al guardar, si esta es incorrecta; lo corrije
-            {
-=======
+            //Comprueba la extensión al guardar, si esta es incorrecta; lo corrije
             if (!ruta.substring(ruta.length()-4, ruta.length()).equalsIgnoreCase(".mun")){
->>>>>>> origin/master
                 ruta+=".mun";
             }
             FileOutputStream fis=new FileOutputStream(ruta);

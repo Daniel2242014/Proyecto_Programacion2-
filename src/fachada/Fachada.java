@@ -30,17 +30,6 @@ public class Fachada{
     private ArrayList<Seleccion> grupoH;
     //------------ Fin de ArrayLists de simulación -------
     
-    private Fachada() {
-         acciones=new ArrayList();
-         fases=new ArrayList();
-         jugadores=new ArrayList();
-         partidos=new ArrayList();
-         selecciones=new ArrayList();
-         directores=new ArrayList();
-         jueces=new ArrayList();
-         extras=new ArrayList();
-     }
-    
     public ArrayList<Acciones> getAcciones() {
         return acciones;
     }
@@ -135,12 +124,6 @@ public class Fachada{
         this.extras = extras;
     }
    
-<<<<<<< HEAD
-=======
-
-    
-    
->>>>>>> origin/master
     public static Fachada getInstancia() //Instancia de fachada
     {
         if (instancia == null) 
