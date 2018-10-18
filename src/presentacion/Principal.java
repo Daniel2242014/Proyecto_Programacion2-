@@ -554,7 +554,7 @@ public class Principal extends javax.swing.JFrame {
                 break;
             }
         }
-        this.cargarPanel(Menu_busqueda.getInstancia(this)); //Carga el motor de búsqueda
+        this.cargarPanel(new Menu_busqueda()); //Carga el motor de búsqueda
     }//GEN-LAST:event_BusquedaActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed

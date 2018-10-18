@@ -207,11 +207,12 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="Nombre del jugador"/>
                 <StringItem index="1" value="Numero de camisa "/>
                 <StringItem index="2" value="Por nombre de seleccion "/>
                 <StringItem index="3" value="Por edad "/>
+                <StringItem index="4" value="Nombre de las selecciones "/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

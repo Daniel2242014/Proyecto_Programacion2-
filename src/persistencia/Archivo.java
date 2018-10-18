@@ -1,10 +1,12 @@
 package persistencia;
 import logica.Mundial;
 import fachada.Fachada;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.ImageIcon;
 
 public class Archivo {
     private static Archivo instancia;
@@ -40,8 +42,12 @@ public class Archivo {
     {
         try
         {
+<<<<<<< HEAD
             if (!ruta.substring(ruta.length()-4, ruta.length()).equalsIgnoreCase(".mun"))//Comprueba la extensión al guardar, si esta es incorrecta; lo corrije
             {
+=======
+            if (!ruta.substring(ruta.length()-4, ruta.length()).equalsIgnoreCase(".mun")){
+>>>>>>> origin/master
                 ruta+=".mun";
             }
             FileOutputStream fis=new FileOutputStream(ruta);

@@ -30,6 +30,17 @@ public class Fachada{
     private ArrayList<Seleccion> grupoH;
     //------------ Fin de ArrayLists de simulación -------
     
+    private Fachada() {
+         acciones=new ArrayList();
+         fases=new ArrayList();
+         jugadores=new ArrayList();
+         partidos=new ArrayList();
+         selecciones=new ArrayList();
+         directores=new ArrayList();
+         jueces=new ArrayList();
+         extras=new ArrayList();
+     }
+    
     public ArrayList<Acciones> getAcciones() {
         return acciones;
     }
@@ -89,12 +100,47 @@ public class Fachada{
     public ArrayList<Extra> getExtras() {
         return extras;
     }
-
-    //--------- Arraylists de toda la información del programa ---------
+    
+    public ArrayList <Persona>  debolberPersonaPorNombre(String nombre){
+        ArrayList <Persona>  personas= new ArrayList();
+       for (Jugador juga: jugadores){
+             if(nombre.length()<=juga.getNombre().length()){
+                 if (juga.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
+                      personas.add(juga);
+                }
+           }
+       }
+       
+       for(Director direct: directores) {
+           if(nombre.length()<=direct.getNombre().length()){
+                 if(direct.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
+                    personas.add(direct);
+          
+                }
+            }
+       }
+       
+       for(Juez juez:jueces){
+           if(nombre.length()<=juez.getNombre().length()){
+                if(juez.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
+                     personas.add(juez);
+                  }
+           }
+       }
+       return personas;
+    }
+    
+    
     public void setExtras(ArrayList<Extra> extras) {
         this.extras = extras;
     }
    
+<<<<<<< HEAD
+=======
+
+    
+    
+>>>>>>> origin/master
     public static Fachada getInstancia() //Instancia de fachada
     {
         if (instancia == null) 
@@ -205,6 +251,18 @@ public class Fachada{
         }
         return -1;
     }
+    
+    public ArrayList <Jugador> debolberJugadoresPorNumeroCamisa(int index){
+        ArrayList <Jugador> elegidos = new ArrayList();
+        for(Jugador jug: jugadores){
+            if(jug.getNumeroCamisa()==index){
+                elegidos.add(jug);
+            }
+        }
+        return elegidos;
+    }
+    
+    
     
     //-------------------------------- METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE ---------------------------------------
     
