@@ -12,10 +12,21 @@ import logica.Persona;
 
 public class Menu_busqueda extends javax.swing.JPanel {
 
- 
+    public static final int BUSQUEDA_PERSONA_POR_NOMBRE=0;
+    public static final int BUSQUEDA_PERSONA_POR_NUMERO_CAMISA=1;
+    public static final int BUSQUEDA_PERSONA_POR_NOMBRE_SELECION=2;
+    public static final int BUSQUEDA_PERSONA_POR_EDAD=3;
+    public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE=4;
 
     public Menu_busqueda( ) {
         initComponents();
+    }
+    
+    public Menu_busqueda(String consulta, int tipo){
+        initComponents();
+        realizarConsulta(consulta, tipo);
+        criterio.setText(consulta);
+        this.tipoBusqueda.setSelectedIndex(tipo);
     }
 
     @SuppressWarnings("unchecked")
@@ -29,7 +40,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         resultados = new javax.swing.JPanel();
         criterio = new javax.swing.JTextField();
         buscar = new javax.swing.JButton();
-        tipo = new javax.swing.JComboBox<>();
+        tipoBusqueda = new javax.swing.JComboBox<>();
         ayuda = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -57,7 +68,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         );
         resultadosLayout.setVerticalGroup(
             resultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 483, Short.MAX_VALUE)
+            .addGap(0, 443, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(resultados);
@@ -75,8 +86,8 @@ public class Menu_busqueda extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         criterio.setBackground(new java.awt.Color(255, 255, 255));
@@ -94,18 +105,18 @@ public class Menu_busqueda extends javax.swing.JPanel {
             }
         });
 
-        tipo.setBackground(new java.awt.Color(255, 255, 255));
-        tipo.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        tipo.setForeground(new java.awt.Color(51, 51, 51));
-        tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camisa ", "Por nombre de seleccion ", "Por edad ", "Nombre de las selecciones " }));
-        tipo.setBorder(null);
-        tipo.addActionListener(new java.awt.event.ActionListener() {
+        tipoBusqueda.setBackground(new java.awt.Color(255, 255, 255));
+        tipoBusqueda.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        tipoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
+        tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camisa ", "Por nombre de seleccion ", "Por edad ", "Nombre de las selecciones " }));
+        tipoBusqueda.setBorder(null);
+        tipoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AccionSeleccionTipo(evt);
             }
         });
 
-        ayuda.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        ayuda.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         ayuda.setForeground(new java.awt.Color(255, 255, 255));
         ayuda.setText("Ayuda: ");
 
@@ -121,7 +132,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(criterio, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ayuda, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buscar))
@@ -138,7 +149,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(criterio, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(2, 2, 2)
                         .addComponent(ayuda, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(buscar))
@@ -160,7 +171,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AccionSeleccionTipo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionSeleccionTipo
-        if(tipo.getSelectedIndex()==3){
+        if(tipoBusqueda.getSelectedIndex()==3){
             ayuda.setText("AYUDA: Posibles formatos: 1) Edad (EJ 21) ,  2) Rango (EJ 22/28),  3) Edad en adelante (EJ: 22+)  4) Edad para atras (EJ 28-)");
             ayuda.setForeground(new Color(51,51,51));
         }else{
@@ -169,19 +180,69 @@ public class Menu_busqueda extends javax.swing.JPanel {
     }//GEN-LAST:event_AccionSeleccionTipo
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        this.realizarConsulta(criterio.getText(), tipoBusqueda.getSelectedIndex());
+    }//GEN-LAST:event_buscarActionPerformed
+
+    private void realizarConsulta(String conuslta, int tipo){
         ArrayList <JPanel> paneles = new ArrayList();
-        if(!criterio.getText().equalsIgnoreCase("")){
+        if(!conuslta.equalsIgnoreCase("")){
             
-            if(tipo.getSelectedIndex()==0){
-                for(Persona p:Fachada.getInstancia().debolberPersonaPorNombre(criterio.getText())){
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE){
+                for(Persona p:Fachada.getInstancia().debolberPersonaPorNombre(conuslta)){
                     paneles.add(new resultadoBusquedaPersona(p));
                 }
             }
             
-            if(tipo.getSelectedIndex()==1){
-                for (Jugador jug:Fachada.getInstancia().debolberJugadoresPorNumeroCamisa(Integer.valueOf(criterio.getText()))){
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NUMERO_CAMISA){
+                try{
+                for (Jugador jug:Fachada.getInstancia().debolberJugadoresPorNumeroCamisa(Integer.valueOf(conuslta))){
                     paneles.add(new resultadoBusquedaPersona(jug));
                 }
+                }catch (Exception e){
+                    JOptionPane.showMessageDialog(null, "Ingrese un entrada entera (un numero)", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE_SELECION){
+                for (Persona p: Fachada.getInstancia().debolberPersonasPorNombreSeleccion(conuslta)){
+                    paneles.add(new resultadoBusquedaPersona(p));
+                }
+            }
+            
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_EDAD){
+               try{
+                if(conuslta.contains("/")){
+                    int posicionSeparador=0;
+                    for(int i=0;i<conuslta.length();i++){
+                        if(conuslta.charAt(i)=='/'){
+                            posicionSeparador=i;
+                            break;
+                        }
+                    }
+                    int rango1=Integer.valueOf(conuslta.substring(0, posicionSeparador));
+                    int rango2=Integer.valueOf(conuslta.substring(posicionSeparador+1, conuslta.length()));
+                    for (Persona p:Fachada.getInstancia().debolberPersonasPorEdad(rango1, rango2, 1)){
+                        paneles.add(new resultadoBusquedaPersona(p));
+                    }
+                }else{
+                    if(conuslta.charAt(conuslta.length()-1)=='+'){
+                        for(Persona p: Fachada.getInstancia().debolberPersonasPorEdad(Integer.valueOf(conuslta.substring(0, conuslta.length()-1)), 0, 2)){
+                             paneles.add(new resultadoBusquedaPersona(p));
+                        }
+                    }else if (conuslta.charAt(conuslta.length()-1)=='-'){
+                         for(Persona p: Fachada.getInstancia().debolberPersonasPorEdad(Integer.valueOf(conuslta.substring(0, conuslta.length()-1)), 0, 3)){
+                             paneles.add(new resultadoBusquedaPersona(p));
+                         }
+                    }else{
+                        for(Persona p: Fachada.getInstancia().debolberPersonasPorEdad(Integer.valueOf(conuslta), 0, 0)){
+                             paneles.add(new resultadoBusquedaPersona(p));
+                         }
+                    }
+                }
+               }catch(Exception e){
+                   JOptionPane.showMessageDialog(null, "Error de sintaxis en la consulta, revise las sujerencias", "ERROR", JOptionPane.ERROR_MESSAGE);
+                   e.printStackTrace();
+               }
             }
             
             
@@ -197,14 +258,13 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 resultados.repaint();
                 this.repaint();
             }else{
-                JOptionPane.showMessageDialog(null, "La entrada es vacia", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Sin resultados", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
             
         }else{
             JOptionPane.showMessageDialog(null, "El campo que ingreso es vacio, ingrese un dato para buscar","ERROR", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_buscarActionPerformed
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ayuda;
@@ -215,6 +275,6 @@ public class Menu_busqueda extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel resultados;
-    private javax.swing.JComboBox<String> tipo;
+    private javax.swing.JComboBox<String> tipoBusqueda;
     // End of variables declaration//GEN-END:variables
 }

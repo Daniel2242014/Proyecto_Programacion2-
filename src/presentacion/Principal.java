@@ -36,7 +36,6 @@ public class Principal extends javax.swing.JFrame {
     }
     
     public void cargarPanel(JPanel j){
-        System.out.println(j);
         display.removeAll();
         display.add(j,BorderLayout.CENTER);
         display.repaint();

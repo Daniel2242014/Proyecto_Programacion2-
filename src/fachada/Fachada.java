@@ -90,36 +90,6 @@ public class Fachada{
         return extras;
     }
     
-    public ArrayList <Persona>  debolberPersonaPorNombre(String nombre){
-        ArrayList <Persona>  personas= new ArrayList();
-       for (Jugador juga: jugadores){
-             if(nombre.length()<=juga.getNombre().length()){
-                 if (juga.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
-                      personas.add(juga);
-                }
-           }
-       }
-       
-       for(Director direct: directores) {
-           if(nombre.length()<=direct.getNombre().length()){
-                 if(direct.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
-                    personas.add(direct);
-          
-                }
-            }
-       }
-       
-       for(Juez juez:jueces){
-           if(nombre.length()<=juez.getNombre().length()){
-                if(juez.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
-                     personas.add(juez);
-                  }
-           }
-       }
-       return personas;
-    }
-    
-    
     public void setExtras(ArrayList<Extra> extras) {
         this.extras = extras;
     }
@@ -235,6 +205,25 @@ public class Fachada{
         return -1;
     }
     
+    
+    /*MOTOR DE BUSQUEDA*/
+    
+    public ArrayList <Persona> debolberTodasLasPersonas(){
+        ArrayList <Persona> per= new ArrayList();
+        for (Jugador juga: jugadores){
+            per.add(juga);
+        }
+            
+        for(Director direct: directores) { 
+            per.add(direct);
+        }    
+            
+        for(Juez juez:jueces){
+            per.add(juez);
+        }
+        return per; 
+    }
+    
     public ArrayList <Jugador> debolberJugadoresPorNumeroCamisa(int index){
         ArrayList <Jugador> elegidos = new ArrayList();
         for(Jugador jug: jugadores){
@@ -243,6 +232,67 @@ public class Fachada{
             }
         }
         return elegidos;
+    }
+    
+ public ArrayList <Persona>  debolberPersonasPorNombreSeleccion (String nom){
+        ArrayList <Persona> pepin= new ArrayList();
+        for(Seleccion s: selecciones){
+            if(s.getNombre().length()>nom.length()){
+                if(nom.equalsIgnoreCase(s.getNombre().substring(0, nom.length()))){
+                    for(Persona ppp:s.getJugadores()){
+                        pepin.add(ppp);
+                    }
+                    pepin.add(s.getMaestro());
+                }
+            }
+        }
+     return pepin;
+    }
+ 
+    public ArrayList <Persona> debolberPersonasPorEdad(int edad,int edad2, int tipoBusqueda){
+        /*tipo de busqueda 0=busqueda simple, 1=rango, 2=de un numero en adelante, 3= de un numero hacia atras*/
+        ArrayList <Persona> per = new ArrayList();
+        if(tipoBusqueda==0){
+           for(Persona p:this.debolberTodasLasPersonas()){
+               if(p.getEdad()==edad){
+                   per.add(p);
+               }
+           }
+        }else if(tipoBusqueda==1){
+            for(Persona p:this.debolberTodasLasPersonas()){
+               if(p.getEdad()>=edad && p.getEdad()<=edad2){
+                   per.add(p);
+               }
+           }
+        }else if(tipoBusqueda==2){
+            for(Persona p:this.debolberTodasLasPersonas()){
+               if(p.getEdad()>edad){
+                   per.add(p);
+               }
+           }
+        }else{
+            for(Persona p:this.debolberTodasLasPersonas()){
+               if(p.getEdad()<edad){
+                   per.add(p);
+               }
+           }
+        }
+        
+        return per;
+    }
+ 
+     public ArrayList <Persona>  debolberPersonaPorNombre(String nombre){
+        ArrayList <Persona>  personas= new ArrayList();
+       
+       for(Persona per:this.debolberTodasLasPersonas()){
+           if(nombre.length()<=per.getNombre().length()){
+                if(per.getNombre().substring(0, nombre.length()).equalsIgnoreCase(nombre)){
+                     personas.add(per);
+                  }
+           }
+       }
+       
+       return personas;
     }
     
     

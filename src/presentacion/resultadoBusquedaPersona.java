@@ -22,6 +22,7 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
              rol.setText("Juez");
         }
         imagen.setIcon(new ImageIcon(p.getImg().getImage().getScaledInstance(150,150, Image.SCALE_DEFAULT)));
+        Pais.setText(p.getPais());
         personaje=p;
     }
 
@@ -35,6 +36,7 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
         nombre = new javax.swing.JLabel();
         rol = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        Pais = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -58,6 +60,10 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
             }
         });
 
+        Pais.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Pais.setForeground(new java.awt.Color(51, 51, 51));
+        Pais.setText("pais");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -71,7 +77,8 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
                     .addComponent(rol)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(460, 460, 460)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Pais))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -81,7 +88,9 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
                 .addComponent(nombre)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rol)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pais)
+                .addGap(7, 7, 7)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -113,6 +122,7 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Pais;
     private javax.swing.JLabel imagen;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
