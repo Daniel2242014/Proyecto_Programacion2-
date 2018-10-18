@@ -958,7 +958,7 @@ public class Fachada{
             grupoE.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO F
-            System.out.println("F");
+            /*System.out.println("F");
             UEFAcount=0;
             sortNum=sorteo.nextInt(2);
             grupoF.add(bomboA.get(sortNum));
@@ -1082,7 +1082,7 @@ public class Fachada{
                 sortNum=sorteo.nextInt(1);
             }
             grupoG.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
+            bomboD.remove(sortNum);*/
             //GRUPO H
             System.out.println("H");
             grupoH.add(bomboA.get(0));
@@ -1117,7 +1117,7 @@ public class Fachada{
             {
                 System.out.println(grupoE.get(i).getNombre());
             }
-            System.out.println("--------------------------");
+            /*System.out.println("--------------------------");
             for(int i=0; i<4; i++)
             {
                 System.out.println(grupoF.get(i).getNombre());
@@ -1126,7 +1126,7 @@ public class Fachada{
             for(int i=0; i<4; i++)
             {
                 System.out.println(grupoG.get(i).getNombre());
-            }
+            }*/
             System.out.println("--------------------------");
             for(int i=0; i<4; i++)
             {

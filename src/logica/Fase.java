@@ -19,7 +19,7 @@ public class Fase implements Serializable {
     public final static char SEMI_FINAL = '2';
     public final static char FINAL = '1';
 
-    public Fase(char r ){ 
+    public Fase(char r  ){ 
        this.lista = new ArrayList<>();
        letra_posicion=r;
        if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
