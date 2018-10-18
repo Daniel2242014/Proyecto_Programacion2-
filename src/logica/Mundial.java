@@ -6,14 +6,15 @@ import java.util.ArrayList;
 public class Mundial implements Serializable
 {
     //Mediante el funcionamiento interno de java, se crean referencias a los ArrayList de Fachada
-    public ArrayList<Acciones> acciones;
-    public ArrayList<Fase> fases;
-    public ArrayList<Jugador> jugadores;
-    public ArrayList<Partido> partidos;
-    public ArrayList<Seleccion> selecciones;
-    public ArrayList<Director> directores;
-    public ArrayList<Juez> jueces;
-    public ArrayList<Extra> extras;
+    /*SE CAMBIA A PRIVATE*/
+    private ArrayList<Acciones> acciones;
+    private ArrayList<Fase> fases;
+    private ArrayList<Jugador> jugadores;
+    private ArrayList<Partido> partidos;
+    private ArrayList<Seleccion> selecciones;
+    private ArrayList<Director> directores;
+    private ArrayList<Juez> jueces;
+    private ArrayList<Extra> extras;
     //El constructor se encarga de pedir los datos a la clase Archivo, mediante Fachada, para su asignación a Fachada
     public Mundial(ArrayList<Acciones> a, ArrayList<Fase> f, ArrayList<Jugador> j, ArrayList<Partido> p, ArrayList<Seleccion> s, ArrayList<Director> d, ArrayList<Juez> jj, ArrayList<Extra> e)
     {
@@ -29,13 +30,13 @@ public class Mundial implements Serializable
     //----------------- Carga de datos ----------------------
     public void cargarFachada() //Asigna los datos para referenciarlos a Fachada
     {
-        Fachada.getInstancia().acciones=this.acciones;
-        Fachada.getInstancia().fases=this.fases;
-        Fachada.getInstancia().jugadores=this.jugadores;
-        Fachada.getInstancia().partidos=this.partidos;
-        Fachada.getInstancia().selecciones=this.selecciones;
-        Fachada.getInstancia().directores=this.directores;
-        Fachada.getInstancia().jueces=this.jueces;
-        Fachada.getInstancia().extras=this.extras;
+        Fachada.getInstancia().setAcciones(this.acciones);
+        Fachada.getInstancia().setFases(this.fases);
+        Fachada.getInstancia().setJugadores(this.jugadores);
+        Fachada.getInstancia().setPartidos(this.partidos);
+        Fachada.getInstancia().setSelecciones(this.selecciones);
+        Fachada.getInstancia().setDirectores(this.directores);
+        Fachada.getInstancia().setJueces(this.jueces);
+        Fachada.getInstancia().setExtras(this.extras);
     }
 }

@@ -176,8 +176,8 @@ public class Menu_busqueda extends javax.swing.JPanel {
         //dani borra esto, lo puse para probar lo mio xxdxd
         for(int i=0; i<5; i++)
         {
-            System.out.println(fachada.Fachada.getInstancia().selecciones.get(i).getNombre());
-            System.out.println(fachada.Fachada.getInstancia().directores.get(i).getNombre());
+            System.out.println(fachada.Fachada.getInstancia().getSelecciones().get(i).getNombre());
+            System.out.println(fachada.Fachada.getInstancia().getDirectores().get(i).getNombre());
         }
     }//GEN-LAST:event_buscarActionPerformed
 

@@ -5,12 +5,22 @@ import javax.swing.ImageIcon;
 
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
-    private int edad,golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
+    private int golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
+
+    public int getNumeroCamisa() {
+        return numeroCamisa;
+    }
+
+    public void setNumeroCamisa(int numeroCamisa) {
+        this.numeroCamisa = numeroCamisa;
+    }
     private double altura;
   
-    public Jugador(String nom,int numCamisa, String primPos,int edad, String pai, int code,ImageIcon img){
-        super(code,edad,nom,pai,img);
+    public Jugador(String nom,int numCamisa, String primPos,int e, String pai, int code,String img){
+        super(code,e,nom,pai,img);
         primeraPosicion=primPos;
+        this.numeroCamisa=numCamisa;
+        fechaDebut="10/10/1990";
     }
 
     public int getRojasTotales() {
@@ -77,13 +87,7 @@ public class Jugador extends Persona {
     }
 
 
-    public int getEdad() {
-        return edad;
-    }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 
     public int getGolesTotales() {
         return golesTotales;
@@ -137,8 +141,7 @@ public class Jugador extends Persona {
     
     public String toString() {
         return  super.toString() +"\nprimeraPosicion=" + primeraPosicion + ", segundaPosicion=" + segundaPosicion 
-                +  "\nfechaDebut=" + fechaDebut  + ", club=" + club +  "\nedad="
-                + edad + ", golesTotales=" + golesTotales + "\nfaltasTotales=" 
+                +  "\nfechaDebut=" + fechaDebut  + ", club=" + club + ", golesTotales=" + golesTotales + "\nfaltasTotales=" 
                 + faltasTotales + ", altura=" + altura ;
     }
 

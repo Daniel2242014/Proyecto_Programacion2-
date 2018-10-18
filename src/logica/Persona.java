@@ -6,15 +6,15 @@ import javax.swing.ImageIcon;
 public class Persona implements Serializable {
 
     private int code,edad;
-    private String apellido,nombre,fechaNacimiento,pais;
-    private ImageIcon img;
+    private String nombre,pais;
+    private String img;
     
-    public Persona (int code,int edad, String nombre, String pais, ImageIcon img){
+    public Persona (int code,int edad, String nombre, String pais, String img){
         this.code=code;
         this.edad=edad;
-        this.nombre=nombre;
         this.pais=pais;
         this.img=img;
+        this.nombre=nombre;
     }
 
     public int getCode() {
@@ -33,13 +33,7 @@ public class Persona implements Serializable {
         this.edad = edad;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     public String getNombre() {
         return nombre;
@@ -49,13 +43,6 @@ public class Persona implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
 
     public String getPais() {
         return pais;
@@ -66,17 +53,31 @@ public class Persona implements Serializable {
     }
 
     public ImageIcon getImg() {
+        return new ImageIcon(img);
+    }
+    
+    public String rutaImg (){
         return img;
     }
 
-    public void setImg(ImageIcon img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
+    public boolean equals(Object o){
+        Persona p = (Persona) o;
+        if(this.code==p.getCode()){
+            return true;
+        }else{
+            return false;
+        }
+            
+    }
+    
     @Override
     public String toString() {
-        return "code=" + code + "\n edad=" + edad + ", apellido=" + apellido + 
-                "\n nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento +
+        return "code=" + code + "\n edad=" + edad + 
+                "\n nombre=" + nombre +
                 "\n pais=" + pais;
     }
     

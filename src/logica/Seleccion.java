@@ -14,26 +14,46 @@ public class Seleccion implements Serializable
     private String confederacion;
     private ArrayList<Jugador> jugadores;
     private Director maestro;
-    private ImageIcon img;
+    private String img;
 
 
-    public Seleccion(String nombre,Director direc,String confederacion, ImageIcon img)
+    public Seleccion(String nombre,Director direc,String confederacion, String img)
     {
+        this.img=img;
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
         this.confederacion=confederacion;
-        
+    }
+    
+    public void eliminarJugador(Jugador j){
+        jugadores.remove(j);
     }
     
     public void agregarJugador(Jugador jug)
     {
         jugadores.add(jug);
     }
-    
+
     public Jugador devolverJugador(int a)
     {
         return jugadores.get(a);
+    }
+
+    public ImageIcon getImg() {
+        return new ImageIcon(img);
+    }
+    
+    public String getRutaImg(){
+        return img;
+    }
+
+    public void  setImg(String img) {
+        this.img = img;
+    }
+    
+    public ArrayList<Jugador> debolberJugadores(){
+        return jugadores;
     }
     
     public int cantidadJugadores()

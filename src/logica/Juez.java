@@ -7,7 +7,7 @@ public class Juez extends Persona {
     
     private int targetasAmarilias,targetasRojas;
     
-    public Juez(int code,int edad, String nombre, String pais, ImageIcon img){
+    public Juez(int code,int edad, String nombre, String pais, String img){
         super(code,edad,nombre,pais,img);
     }
 
