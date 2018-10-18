@@ -20,7 +20,7 @@ public class Fase implements Serializable {
     public final static char SEMI_FINAL = '2';
     public final static char FINAL = '1';
 
-    public Fase(char r , ArrayList<Selecion> ){ 
+    public Fase(char r , ArrayList<Seleccion> lista ){ 
        this.lista = new ArrayList<>();
        letra_posicion=r;
        if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
@@ -29,9 +29,18 @@ public class Fase implements Serializable {
        }else{
            grupo_eliminacion=true;
        }
-
+       seleciones=lista;
     }
 
+    
+    public ArrayList<Seleccion> getSeleciones() {
+        return seleciones;
+    }
+
+    public void setSeleciones(ArrayList<Seleccion> seleciones) {
+        this.seleciones = seleciones;
+    }
+    
     public ArrayList<Partido> getLista() {
         return lista;
     }
@@ -58,7 +67,9 @@ public class Fase implements Serializable {
         
     
     public void agregarPartido(Partido part){
+         if(seleciones.contains(part.getEquipo1()) && seleciones.contains(part.getEquipo2())){
             lista.add(part);    
+         }
         }
        
         public Partido devolverPartido(int devpart){  
@@ -69,7 +80,7 @@ public class Fase implements Serializable {
             return lista.size();       
         }
        
-        public Seleccion[] devolverSelecciones(){  
+       /* public Seleccion[] devolverSelecciones(){  
             
              Seleccion [] arry; 
             
@@ -109,7 +120,10 @@ public class Fase implements Serializable {
             }
     
             return arry;
+            
+            
         }
+*/
       
    
         
@@ -261,7 +275,7 @@ public class Fase implements Serializable {
         
         public Seleccion[] SeleccionesGanadoras(boolean j){
           
-            Seleccion[] todas= this.devolverSelecciones();
+            Seleccion[] todas=(Seleccion[]) seleciones.toArray();
             Seleccion[] ganadoras= new Seleccion [todas.length/2];
             Seleccion aux;
             for(int i=0;i<todas.length;i++){   
@@ -298,7 +312,7 @@ public class Fase implements Serializable {
         }
         
           public Seleccion[] SeleccionesPerdedoras(){
-            Seleccion [] todas = this.devolverSelecciones();
+            Seleccion [] todas = (Seleccion[]) seleciones.toArray();
             Seleccion [] ganadoras = this.SeleccionesGanadoras(true);
             Seleccion [] perdedoras = new Seleccion[ganadoras.length];
             int contador=0;
