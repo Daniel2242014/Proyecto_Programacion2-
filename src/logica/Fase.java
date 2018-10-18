@@ -3,6 +3,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 public class Fase implements Serializable { 
     private ArrayList<Partido> lista = new ArrayList<>();  
+    private ArrayList<Seleccion> seleciones = new ArrayList();
     private char letra_posicion;
     private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
     public final static  char GRUPO_A = 'a';
@@ -19,7 +20,7 @@ public class Fase implements Serializable {
     public final static char SEMI_FINAL = '2';
     public final static char FINAL = '1';
 
-    public Fase(char r  ){ 
+    public Fase(char r , ArrayList<Selecion> ){ 
        this.lista = new ArrayList<>();
        letra_posicion=r;
        if(letra_posicion=='a'||letra_posicion=='b'||letra_posicion=='c'||letra_posicion=='d'||letra_posicion=='e'||
