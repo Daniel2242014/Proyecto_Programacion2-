@@ -7,14 +7,12 @@ import logica.*;
 public class Fachada{
 
     private static Fachada instancia;
-    private ArrayList<Acciones> acciones;
     private ArrayList<Fase> fases;
     private ArrayList<Jugador> jugadores;
-    private ArrayList<Partido> partidos;
     private ArrayList<Seleccion> selecciones;
     private ArrayList<Director> directores;
     private ArrayList<Juez> jueces;
-    private ArrayList<Extra> extras;
+
     //------------ ArrayLists de simulación --------------
     private ArrayList<Seleccion> bomboA;
     private ArrayList<Seleccion> bomboB;
@@ -30,13 +28,7 @@ public class Fachada{
     private ArrayList<Seleccion> grupoH;
     //------------ Fin de ArrayLists de simulación -------
     
-    public ArrayList<Acciones> getAcciones() {
-        return acciones;
-    }
-
-    public void setAcciones(ArrayList<Acciones> acciones) {
-        this.acciones = acciones;
-    }
+  
 
     public ArrayList<Fase> getFases() {
         return fases;
@@ -54,13 +46,6 @@ public class Fachada{
         this.jugadores = jugadores;
     }
 
-    public ArrayList<Partido> getPartidos() {
-        return partidos;
-    }
-
-    public void setPartidos(ArrayList<Partido> partidos) {
-        this.partidos = partidos;
-    }
 
     public ArrayList<Seleccion> getSelecciones() {
         return selecciones;
@@ -86,13 +71,6 @@ public class Fachada{
         this.jueces = jueces;
     }
 
-    public ArrayList<Extra> getExtras() {
-        return extras;
-    }
-    
-    public void setExtras(ArrayList<Extra> extras) {
-        this.extras = extras;
-    }
    
     public static Fachada getInstancia() //Instancia de fachada
     {
@@ -104,14 +82,11 @@ public class Fachada{
     }
 
     private Fachada() {
-        acciones = new ArrayList();
         fases = new ArrayList();
         jugadores = new ArrayList();
-        partidos = new ArrayList();
         selecciones = new ArrayList();
         directores = new ArrayList();
         jueces = new ArrayList();
-        extras = new ArrayList();
         bomboA=new ArrayList();
         bomboB=new ArrayList();
         bomboC=new ArrayList();

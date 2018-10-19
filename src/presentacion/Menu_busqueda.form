@@ -207,12 +207,19 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="12">
                 <StringItem index="0" value="Nombre del jugador"/>
                 <StringItem index="1" value="Numero de camisa "/>
                 <StringItem index="2" value="Por nombre de seleccion "/>
                 <StringItem index="3" value="Por edad "/>
-                <StringItem index="4" value="Nombre de las selecciones "/>
+                <StringItem index="4" value="Por altura"/>
+                <StringItem index="5" value="Por club"/>
+                <StringItem index="6" value="Por primera posicion"/>
+                <StringItem index="7" value="Por segunda posicion"/>
+                <StringItem index="8" value="Seleccion por nombre"/>
+                <StringItem index="9" value="Selecion por confederacion"/>
+                <StringItem index="10" value="Selecion por nombre director"/>
+                <StringItem index="11" value="Selecion por fase"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

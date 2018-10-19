@@ -16,7 +16,16 @@ public class Menu_busqueda extends javax.swing.JPanel {
     public static final int BUSQUEDA_PERSONA_POR_NUMERO_CAMISA=1;
     public static final int BUSQUEDA_PERSONA_POR_NOMBRE_SELECION=2;
     public static final int BUSQUEDA_PERSONA_POR_EDAD=3;
-    public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE=4;
+    public static final int BUSQUEDA_PERSONA_POR_ALTURA=4;
+    public static final int BUSQUEDA_PERSONA_POR_CLUB=5;
+    public static final int BUSQUEDA_PERSONA_POR_PRIMERA_POSICION=6;
+    public static final int BUSQUEDA_PERSONA_POR_SEGUNDA_POSICION=7;
+    public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE=8;
+    public static final int BUSQUEDA_SELECCIONES_POR_CONFEDERACION=9;
+    public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_DIRECTOR=10;
+    public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_FASE=11;
+    
+   
 
     public Menu_busqueda( ) {
         initComponents();
@@ -108,7 +117,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         tipoBusqueda.setBackground(new java.awt.Color(255, 255, 255));
         tipoBusqueda.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         tipoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
-        tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camisa ", "Por nombre de seleccion ", "Por edad ", "Nombre de las selecciones " }));
+        tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camisa ", "Por nombre de seleccion ", "Por edad ", "Por altura", "Por club", "Por primera posicion", "Por segunda posicion", "Seleccion por nombre", "Selecion por confederacion", "Selecion por nombre director", "Selecion por fase" }));
         tipoBusqueda.setBorder(null);
         tipoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,6 +199,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
             if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE){
                 for(Persona p:Fachada.getInstancia().debolberPersonaPorNombre(conuslta)){
                     paneles.add(new resultadoBusquedaPersona(p));
+                    
                 }
             }
             

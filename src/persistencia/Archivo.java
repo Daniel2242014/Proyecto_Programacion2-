@@ -21,7 +21,7 @@ public class Archivo {
     {
         try
         {
-            Mundial m=new Mundial(Fachada.getInstancia().getAcciones(), Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getPartidos(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces(), Fachada.getInstancia().getExtras()); //Crea un objeto del tipo Mundial para poder deserializar los datos para su correspondiente carga a Fachada
+            Mundial m=new Mundial( Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces()); //Crea un objeto del tipo Mundial para poder deserializar los datos para su correspondiente carga a Fachada
             FileInputStream fis=new FileInputStream(ruta); //Toma los datos del Archivo
             ObjectInputStream ois=new ObjectInputStream(fis); //Pasa los datos del archivo a un objeto
             m=(Mundial) ois.readObject(); //Asigna los datos del InputStream a un objeto Mundial, el cual se va a encargar de pasar los datos a Fachada
@@ -46,7 +46,7 @@ public class Archivo {
             }
             FileOutputStream fis=new FileOutputStream(ruta);
             ObjectOutputStream ois=new ObjectOutputStream(fis);
-            Mundial s=new Mundial(Fachada.getInstancia().getAcciones(), Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getPartidos(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces(), Fachada.getInstancia().getExtras());
+            Mundial s=new Mundial(Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces());
             ois.writeObject(s); //Vuelca los datos serializados al archivo *.mun 
             fis.close();
             ois.close();

@@ -557,11 +557,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_BusquedaActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        JOptionPane.showMessageDialog(rootPane, "FUERA DE PROPUESTA");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
+        Principal.getInstancia().cargarPanel(new Menu_Fase());
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
