@@ -14,9 +14,11 @@ public class Director extends Persona {
         descripcion=desc;
 
     }
+    
 
 
     public String getDescripcion() {
+        
         return descripcion;
     }
 

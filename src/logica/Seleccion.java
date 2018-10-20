@@ -24,6 +24,7 @@ public class Seleccion implements Serializable
         this.nombre=nombre;
         maestro=direc;
         this.confederacion=confederacion;
+       
     }
     
     public void eliminarJugador(Jugador j){

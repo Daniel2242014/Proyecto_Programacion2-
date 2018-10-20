@@ -15,16 +15,16 @@ public class Archivo {
             instancia=new Archivo();
         }
         return instancia;
+       
     }
     //------- MANEJO DE ARCHIVOS ----------
     public boolean abrirArchivo(String ruta) //Ambos métodos de manejo de archivos son del tipo boolean para el manejo de errores
     {
         try
         {
-            Mundial m=new Mundial( Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces()); //Crea un objeto del tipo Mundial para poder deserializar los datos para su correspondiente carga a Fachada
             FileInputStream fis=new FileInputStream(ruta); //Toma los datos del Archivo
             ObjectInputStream ois=new ObjectInputStream(fis); //Pasa los datos del archivo a un objeto
-            m=(Mundial) ois.readObject(); //Asigna los datos del InputStream a un objeto Mundial, el cual se va a encargar de pasar los datos a Fachada
+            Mundial m=(Mundial) ois.readObject(); //Asigna los datos del InputStream a un objeto Mundial, el cual se va a encargar de pasar los datos a Fachada
             m.cargarFachada(); //Llama al método de Mundial que carga los datos a Fachada
             fis.close();
             ois.close();
@@ -46,8 +46,7 @@ public class Archivo {
             }
             FileOutputStream fis=new FileOutputStream(ruta);
             ObjectOutputStream ois=new ObjectOutputStream(fis);
-            Mundial s=new Mundial(Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces());
-            ois.writeObject(s); //Vuelca los datos serializados al archivo *.mun 
+            ois.writeObject(new Mundial(Fachada.getInstancia().getFases(), Fachada.getInstancia().getJugadores(), Fachada.getInstancia().getSelecciones(), Fachada.getInstancia().getDirectores(), Fachada.getInstancia().getJueces())); //Vuelca los datos serializados al archivo *.mun 
             fis.close();
             ois.close();
             return true;
