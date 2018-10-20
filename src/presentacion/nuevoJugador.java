@@ -54,8 +54,8 @@ public class nuevoJugador extends javax.swing.JPanel {
             edad.setValue(aModificar.getEdad());
             club.setText(aModificar.getClub());
             año.setSelectedItem(aModificar.getFechaDebut().subSequence(6, 10));
-            mes.setSelectedItem(aModificar.getFechaDebut().subSequence(3, 5));
-            dia.setSelectedItem(aModificar.getFechaDebut().subSequence(0, 2));
+            mes.setSelectedItem(aModificar.getFechaDebut().subSequence(3, 5)); 
+            dia.setSelectedItem(aModificar.getFechaDebut().subSequence(0, 2)); 
             seleccion.setSelectedIndex(Fachada.getInstancia().posicionSeleccion(Fachada.getInstancia().debolberSeleccionPorNombre(aModificar.getPais())));
             altura.setText(String.valueOf(aModificar.getAltura()));
             ruta.setText(aModificar.rutaImg());//22/04/2018
@@ -113,7 +113,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         jLabel3.setText("Nombre* ");
         jLabel3.setFocusable(false);
 
-        nombre.setBackground(new java.awt.Color(255, 255, 255));
         nombre.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         nombre.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
 
@@ -152,19 +151,21 @@ public class nuevoJugador extends javax.swing.JPanel {
         jLabel11.setText("Fecha Debut*");
         jLabel11.setFocusable(false);
 
-        segPosicion.setBackground(new java.awt.Color(255, 255, 255));
         segPosicion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         segPosicion.setForeground(new java.awt.Color(51, 51, 51));
         segPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Defensa", "Volante", "Delantero", "Sin determinar" }));
         segPosicion.setEnabled(false);
         segPosicion.setFocusable(false);
+        segPosicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                segPosicionActionPerformed(evt);
+            }
+        });
 
-        seleccion.setBackground(new java.awt.Color(255, 255, 255));
         seleccion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         seleccion.setForeground(new java.awt.Color(51, 51, 51));
         seleccion.setFocusable(false);
 
-        priPosicon.setBackground(new java.awt.Color(255, 255, 255));
         priPosicon.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         priPosicon.setForeground(new java.awt.Color(51, 51, 51));
         priPosicon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arquero", "Defensa", "Volante", "Delantero" }));
@@ -185,23 +186,19 @@ public class nuevoJugador extends javax.swing.JPanel {
         edad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         edad.setFocusable(false);
 
-        club.setBackground(new java.awt.Color(255, 255, 255));
         club.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         club.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
 
-        mes.setBackground(new java.awt.Color(255, 255, 255));
         mes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         mes.setForeground(new java.awt.Color(51, 51, 51));
         mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
         mes.setFocusable(false);
 
-        dia.setBackground(new java.awt.Color(255, 255, 255));
         dia.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         dia.setForeground(new java.awt.Color(51, 51, 51));
         dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         dia.setFocusable(false);
 
-        año.setBackground(new java.awt.Color(255, 255, 255));
         año.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         año.setForeground(new java.awt.Color(51, 51, 51));
         año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2017", "2018", " " }));
@@ -242,7 +239,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         jLabel12.setText("Altura");
         jLabel12.setFocusable(false);
 
-        altura.setBackground(new java.awt.Color(255, 255, 255));
         altura.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         altura.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
 
@@ -505,6 +501,10 @@ public class nuevoJugador extends javax.swing.JPanel {
             segPosicion.setEnabled(true);
         }
     }//GEN-LAST:event_priPosiconActionPerformed
+
+    private void segPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_segPosicionActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_segPosicionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

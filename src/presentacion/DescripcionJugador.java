@@ -176,7 +176,7 @@ public class DescripcionJugador extends javax.swing.JPanel {
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Nuemro de camiseta");
+        jLabel12.setText("Numero de camiseta");
 
         pais.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         pais.setForeground(new java.awt.Color(51, 51, 51));
