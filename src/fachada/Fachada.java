@@ -13,19 +13,7 @@ public class Fachada{
     private ArrayList<Director> directores;
     private ArrayList<Juez> jueces;
 
-    //------------ ArrayLists de simulación --------------
-    private ArrayList<Seleccion> bomboA;
-    private ArrayList<Seleccion> bomboB;
-    private ArrayList<Seleccion> bomboC;
-    private ArrayList<Seleccion> bomboD;
-    private ArrayList<Seleccion> grupoA;
-    private ArrayList<Seleccion> grupoB;
-    private ArrayList<Seleccion> grupoC;
-    private ArrayList<Seleccion> grupoD;
-    private ArrayList<Seleccion> grupoE;
-    private ArrayList<Seleccion> grupoF;
-    private ArrayList<Seleccion> grupoG;
-    private ArrayList<Seleccion> grupoH;
+    
     //------------ Fin de ArrayLists de simulación -------
     
   
@@ -87,18 +75,7 @@ public class Fachada{
         selecciones = new ArrayList();
         directores = new ArrayList();
         jueces = new ArrayList();
-        bomboA=new ArrayList();
-        bomboB=new ArrayList();
-        bomboC=new ArrayList();
-        bomboD=new ArrayList();
-        grupoA=new ArrayList();
-        grupoB=new ArrayList();
-        grupoC=new ArrayList();
-        grupoD=new ArrayList();
-        grupoE=new ArrayList();
-        grupoF=new ArrayList();
-        grupoG=new ArrayList();
-        grupoH=new ArrayList();
+        
      }
     
     public boolean abrirMun(String a) //Llama al método de Archivo, tal como lo dice el patrón Facade
@@ -492,6 +469,7 @@ public class Fachada{
         Seleccion selecTunez=new Seleccion("Túnez", direcTunez, "AFC", "src/img/selecciones/tunezR.jpg");
         Seleccion selecUruguay=new Seleccion("Uruguay", direcUruguay, "CONMEBOL", "src/img/selecciones/uruguayR.jpg");
    
+        selecciones.add(selecRusia);
         selecciones.add(selecAlemania);
         selecciones.add(selecArgentina);
         selecciones.add(selecArabia);
@@ -517,7 +495,6 @@ public class Fachada{
         selecciones.add(selecPeru);
         selecciones.add(selecPolonia);
         selecciones.add(selecPortugal);
-        selecciones.add(selecRusia);
         selecciones.add(selecSenegal);
         selecciones.add(selecSerbia);
         selecciones.add(selecSuecia);
@@ -526,41 +503,7 @@ public class Fachada{
         selecciones.add(selecUruguay);
         //Carga de bombos---------
         //Bombo A / anfitrión
-        grupoA.add(selecRusia);
-        bomboA.add(selecArgentina);
-        bomboA.add(selecBrasil);
-        bomboA.add(selecPortugal);
-        bomboA.add(selecAlemania);
-        bomboA.add(selecBelgica);
-        bomboA.add(selecPolonia);
-        bomboA.add(selecFrancia);
-        //Bombo B
-        bomboB.add(selecEspania);
-        bomboB.add(selecInglaterra);
-        bomboB.add(selecColombia);
-        bomboB.add(selecMexico);
-        bomboB.add(selecUruguay);
-        bomboB.add(selecPeru);
-        bomboB.add(selecSuiza);
-        bomboB.add(selecCroacia);
-        //Bombo C
-        bomboC.add(selecIslandia);
-        bomboC.add(selecCostaRica);
-        bomboC.add(selecEgipto);
-        bomboC.add(selecIran);
-        bomboC.add(selecDinamarca);
-        bomboC.add(selecSuecia);
-        bomboC.add(selecTunez);
-        bomboC.add(selecSenegal);
-        //Bombo D
-        bomboD.add(selecSerbia);
-        bomboD.add(selecNigeria);
-        bomboD.add(selecJapon);
-        bomboD.add(selecPanama);
-        bomboD.add(selecCorea);
-        bomboD.add(selecArabia);
-        bomboD.add(selecMarruecos);
-        bomboD.add(selecAustralia);
+        
         //Fin carga de bombos------
         
         
@@ -614,14 +557,138 @@ public class Fachada{
          selecArgentina.agregarJugador(argentina_Ansalidi);
          selecArgentina.agregarJugador(argentina_Guzman);
          selecArgentina.agregarJugador(argentina_Messi);
+         
+   
+         Fase grupoA = new Fase(Fase.GRUPO_A );
+         Fase grupoB = new Fase(Fase.GRUPO_B );
+         Fase grupoC = new Fase(Fase.GRUPO_C );
+         Fase grupoD = new Fase(Fase.GRUPO_D );
+         Fase grupoE = new Fase(Fase.GRUPO_E );
+         Fase grupoF = new Fase(Fase.GRUPO_F );
+         Fase grupoG = new Fase(Fase.GRUPO_G );
+         Fase grupoH = new Fase(Fase.GRUPO_H );
+         
+         grupoA.getSeleciones().add(selecRusia);
+         grupoA.getSeleciones().add(selecArabia);
+         grupoA.getSeleciones().add(selecEgipto);
+         grupoA.getSeleciones().add(selecUruguay);
+         
+         grupoB.getSeleciones().add(selecPortugal);
+         grupoB.getSeleciones().add(selecEspania);
+         grupoB.getSeleciones().add(selecMarruecos);
+         grupoB.getSeleciones().add(selecIran);
+         
+         grupoC.getSeleciones().add(selecFrancia);
+         grupoC.getSeleciones().add(selecAustralia);
+         grupoC.getSeleciones().add(selecPeru);
+         grupoC.getSeleciones().add(selecDinamarca);
+         
+         grupoD.getSeleciones().add(selecArgentina);
+         grupoD.getSeleciones().add(selecIslandia);
+         grupoD.getSeleciones().add(selecCroacia);
+         grupoD.getSeleciones().add(selecNigeria);
+         
+         grupoE.getSeleciones().add(selecBrasil);
+         grupoE.getSeleciones().add(selecSuiza);
+         grupoE.getSeleciones().add(selecCostaRica);
+         grupoE.getSeleciones().add(selecSerbia);
+         
+         grupoF.getSeleciones().add(selecAlemania);
+         grupoF.getSeleciones().add(selecMexico);
+         grupoF.getSeleciones().add(selecSuecia);
+         grupoF.getSeleciones().add(selecCorea);
+         
+         grupoG.getSeleciones().add(selecBelgica);
+         grupoG.getSeleciones().add(selecPanama);
+         grupoG.getSeleciones().add(selecTunez);
+         grupoG.getSeleciones().add(selecInglaterra);
+         
+         grupoH.getSeleciones().add(selecPolonia);
+         grupoH.getSeleciones().add(selecSenegal);
+         grupoH.getSeleciones().add(selecColombia);
+         grupoH.getSeleciones().add(selecJapon);
+         
+         fases.add(grupoA);
+         fases.add(grupoB);
+         fases.add(grupoC);
+         fases.add(grupoD);
+         fases.add(grupoE);
+         fases.add(grupoF);
+         fases.add(grupoG);
+         fases.add(grupoH);
     }
+    
+    public void sorteoGrupo()
+    {
+        
+    }
+    
     public void simularDatos()
     {
-        Random sorteo=new Random();
+        
+        
+        ArrayList <ArrayList <Seleccion>> bombos= new ArrayList();
+                
+        
+        
+        bombos.get(0).add(selecciones.get(1));
+        bombos.get(0).add(selecciones.get(2));
+        bombos.get(0).add(selecciones.get(3));
+        bombos.get(0).add(selecciones.get(4));
+        bombos.get(0).add(selecciones.get(5));
+        bombos.get(0).add(selecciones.get(6));
+        bombos.get(0).add(selecciones.get(7));
+        
+        //Bombo B
+        bombos.get(1).add(selecciones.get(8));
+        bombos.get(1).add(selecciones.get(9));
+        bombos.get(1).add(selecciones.get(10));
+        bombos.get(1).add(selecciones.get(11));
+        bombos.get(1).add(selecciones.get(12));
+        bombos.get(1).add(selecciones.get(13));
+        bombos.get(1).add(selecciones.get(14));
+        bombos.get(1).add(selecciones.get(15));
+        
+        //Bombo C
+        bombos.get(2).add(selecciones.get(16));
+        bombos.get(2).add(selecciones.get(17));
+        bombos.get(2).add(selecciones.get(18));
+        bombos.get(2).add(selecciones.get(19));
+        bombos.get(2).add(selecciones.get(20));
+        bombos.get(2).add(selecciones.get(21));
+        bombos.get(2).add(selecciones.get(22));
+        bombos.get(2).add(selecciones.get(23));
+        
+        //Bombo D
+        bombos.get(3).add(selecciones.get(24));
+        bombos.get(3).add(selecciones.get(25));
+        bombos.get(3).add(selecciones.get(26));
+        bombos.get(3).add(selecciones.get(27));
+        bombos.get(3).add(selecciones.get(28));
+        bombos.get(3).add(selecciones.get(29));
+        bombos.get(3).add(selecciones.get(30));
+        bombos.get(3).add(selecciones.get(31));   
+        
+        Random r = new Random();
+        
+        for (int i=0; i<8; i++ ){
+            
+            for (int i2=0; i2<4; i2++){
+                if(i==0){
+                   fases.get(0).getSeleciones().add(selecciones.get(0));
+                }
+                
+                //TERMINAR 
+                
+            }
+        }
+        
+        
+        
+        /*Random sorteo=new Random(System.currentTimeMillis());
         if(!bomboA.isEmpty() && !bomboB.isEmpty() && !bomboC.isEmpty() && !bomboD.isEmpty())
         {
             //GRUPO A
-            System.out.println("A");
             int UEFAcount=0; //Contador hasta 2 porque un grupo puede contener 2 selecciones de UEFA
             int sortNum=sorteo.nextInt(7); //Numero aleatorio
             while(bomboB.get(sortNum).getConfederacion().equals(grupoA.get(0).getConfederacion())) //Comprueba que no se repitan
@@ -629,6 +696,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2) //Comprueba la repetición de la UEFA
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -643,11 +711,12 @@ public class Fachada{
             grupoA.add(bomboB.get(sortNum)); //Asigna el sorteo
             bomboB.remove(sortNum); //Quita el país del bombo para evitar problemas
             sortNum=sorteo.nextInt(7);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoA.get(1).getConfederacion()))
+            while(bomboC.get(sortNum).getConfederacion().equals(grupoA.get(1).getConfederacion() ))
             {
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -667,6 +736,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -680,8 +750,8 @@ public class Fachada{
             }
             grupoA.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
+            
             //GRUPO B
-            System.out.println("B");
             UEFAcount=0;
             sortNum=sorteo.nextInt(6);
             grupoB.add(bomboA.get(sortNum));
@@ -692,6 +762,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -711,6 +782,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -730,6 +802,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -744,7 +817,6 @@ public class Fachada{
             grupoB.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO C
-            System.out.println("C");
             UEFAcount=0;
             sortNum=sorteo.nextInt(5);
             grupoC.add(bomboA.get(sortNum));
@@ -755,6 +827,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -774,6 +847,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -793,6 +867,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -807,7 +882,6 @@ public class Fachada{
             grupoC.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO D
-            System.out.println("D");
             UEFAcount=0;
             sortNum=sorteo.nextInt(4);
             grupoD.add(bomboA.get(sortNum));
@@ -818,6 +892,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -837,6 +912,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -856,6 +932,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -870,7 +947,6 @@ public class Fachada{
             grupoD.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO E
-            System.out.println("E");
             UEFAcount=0;
             sortNum=sorteo.nextInt(3);
             grupoE.add(bomboA.get(sortNum));
@@ -881,6 +957,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -900,6 +977,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -919,6 +997,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -933,7 +1012,6 @@ public class Fachada{
             grupoE.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO F
-            /*System.out.println("F");
             UEFAcount=0;
             sortNum=sorteo.nextInt(2);
             grupoF.add(bomboA.get(sortNum));
@@ -944,6 +1022,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -963,6 +1042,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -982,6 +1062,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -996,7 +1077,6 @@ public class Fachada{
             grupoF.add(bomboD.get(sortNum));
             bomboD.remove(sortNum);
             //GRUPO G
-            System.out.println("G");
             UEFAcount=0;
             sortNum=sorteo.nextInt(1);
             grupoG.add(bomboA.get(sortNum));
@@ -1007,6 +1087,7 @@ public class Fachada{
                 if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -1026,6 +1107,7 @@ public class Fachada{
                 if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -1045,6 +1127,7 @@ public class Fachada{
                 if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
                 {
                     UEFAcount++;
+                    break;
                 }
                 else if(UEFAcount==2)
                 {
@@ -1057,9 +1140,8 @@ public class Fachada{
                 sortNum=sorteo.nextInt(1);
             }
             grupoG.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);*/
+            bomboD.remove(sortNum);
             //GRUPO H
-            System.out.println("H");
             grupoH.add(bomboA.get(0));
             bomboA.remove(0);
             grupoH.add(bomboB.get(0));
@@ -1092,7 +1174,7 @@ public class Fachada{
             {
                 System.out.println(grupoE.get(i).getNombre());
             }
-            /*System.out.println("--------------------------");
+            System.out.println("--------------------------");
             for(int i=0; i<4; i++)
             {
                 System.out.println(grupoF.get(i).getNombre());
@@ -1101,12 +1183,13 @@ public class Fachada{
             for(int i=0; i<4; i++)
             {
                 System.out.println(grupoG.get(i).getNombre());
-            }*/
+            }
             System.out.println("--------------------------");
             for(int i=0; i<4; i++)
             {
                 System.out.println(grupoH.get(i).getNombre());
             }
         }
+    }*/ 
     }
 }
