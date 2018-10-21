@@ -1,6 +1,6 @@
-create database ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti
+create database ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
 
-use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti
+use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
 
 
 create table Persona (
