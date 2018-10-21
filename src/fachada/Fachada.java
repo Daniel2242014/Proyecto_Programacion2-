@@ -469,45 +469,46 @@ public class Fachada{
         Seleccion selecTunez=new Seleccion("Túnez", direcTunez, "AFC", "src/img/selecciones/tunezR.jpg");
         Seleccion selecUruguay=new Seleccion("Uruguay", direcUruguay, "CONMEBOL", "src/img/selecciones/uruguayR.jpg");
    
+        //1º Bombo
         selecciones.add(selecRusia);
         selecciones.add(selecAlemania);
-        selecciones.add(selecArgentina);
-        selecciones.add(selecArabia);
-        selecciones.add(selecAustralia);
-        selecciones.add(selecBelgica);
         selecciones.add(selecBrasil);
-        selecciones.add(selecColombia);
-        selecciones.add(selecCorea);
-        selecciones.add(selecCostaRica);
-        selecciones.add(selecCroacia);
-        selecciones.add(selecDinamarca);
-        selecciones.add(selecEgipto);
-        selecciones.add(selecEspania);
+        selecciones.add(selecPortugal);
+        selecciones.add(selecArgentina);
+        selecciones.add(selecBelgica);  
+        selecciones.add(selecPolonia);
         selecciones.add(selecFrancia);
+       
+        //2º Bombo
+        selecciones.add(selecEspania);
+        selecciones.add(selecPeru);
+        selecciones.add(selecSuiza);
         selecciones.add(selecInglaterra);
-        selecciones.add(selecIran);
+        selecciones.add(selecColombia);
+        selecciones.add(selecCroacia);
+        selecciones.add(selecMexico);
+        selecciones.add(selecUruguay);
+        
+        //3º bombo
+        selecciones.add(selecDinamarca);
+        selecciones.add(selecSuecia);
         selecciones.add(selecIslandia);
+        selecciones.add(selecCostaRica);
+        selecciones.add(selecTunez);
+        selecciones.add(selecEgipto);
+        selecciones.add(selecSenegal);
+         selecciones.add(selecIran);
+         
+         
+        //4º bombo
+        selecciones.add(selecSerbia);
+        selecciones.add(selecNigeria);
         selecciones.add(selecJapon);
         selecciones.add(selecMarruecos);
-        selecciones.add(selecMexico);
-        selecciones.add(selecNigeria);
         selecciones.add(selecPanama);
-        selecciones.add(selecPeru);
-        selecciones.add(selecPolonia);
-        selecciones.add(selecPortugal);
-        selecciones.add(selecSenegal);
-        selecciones.add(selecSerbia);
-        selecciones.add(selecSuecia);
-        selecciones.add(selecSuiza);
-        selecciones.add(selecTunez);
-        selecciones.add(selecUruguay);
-        //Carga de bombos---------
-        //Bombo A / anfitrión
-        
-        //Fin carga de bombos------
-        
-        
-        
+        selecciones.add(selecCorea);
+        selecciones.add(selecArabia);
+        selecciones.add(selecAustralia);
         
         
         /*String nom,int numCamisa, String primPos,int edad, String pai, int code,ImageIcon img*/
@@ -618,578 +619,154 @@ public class Fachada{
          fases.add(grupoH);
     }
     
-    public void sorteoGrupo()
-    {
-        
-    }
+    
     
     public void simularDatos()
     {
-        
-        
-        ArrayList <ArrayList <Seleccion>> bombos= new ArrayList();
-                
-        
-        
-        bombos.get(0).add(selecciones.get(1));
-        bombos.get(0).add(selecciones.get(2));
-        bombos.get(0).add(selecciones.get(3));
-        bombos.get(0).add(selecciones.get(4));
-        bombos.get(0).add(selecciones.get(5));
-        bombos.get(0).add(selecciones.get(6));
-        bombos.get(0).add(selecciones.get(7));
-        
-        //Bombo B
-        bombos.get(1).add(selecciones.get(8));
-        bombos.get(1).add(selecciones.get(9));
-        bombos.get(1).add(selecciones.get(10));
-        bombos.get(1).add(selecciones.get(11));
-        bombos.get(1).add(selecciones.get(12));
-        bombos.get(1).add(selecciones.get(13));
-        bombos.get(1).add(selecciones.get(14));
-        bombos.get(1).add(selecciones.get(15));
-        
-        //Bombo C
-        bombos.get(2).add(selecciones.get(16));
-        bombos.get(2).add(selecciones.get(17));
-        bombos.get(2).add(selecciones.get(18));
-        bombos.get(2).add(selecciones.get(19));
-        bombos.get(2).add(selecciones.get(20));
-        bombos.get(2).add(selecciones.get(21));
-        bombos.get(2).add(selecciones.get(22));
-        bombos.get(2).add(selecciones.get(23));
-        
-        //Bombo D
-        bombos.get(3).add(selecciones.get(24));
-        bombos.get(3).add(selecciones.get(25));
-        bombos.get(3).add(selecciones.get(26));
-        bombos.get(3).add(selecciones.get(27));
-        bombos.get(3).add(selecciones.get(28));
-        bombos.get(3).add(selecciones.get(29));
-        bombos.get(3).add(selecciones.get(30));
-        bombos.get(3).add(selecciones.get(31));   
-        
-        Random r = new Random();
-        
-        for (int i=0; i<8; i++ ){
+        boolean reintento=false;
+        do{
+            reintento=false;
+            ArrayList <ArrayList <Seleccion>> bombos= new ArrayList();
             
-            for (int i2=0; i2<4; i2++){
-                if(i==0){
-                   fases.get(0).getSeleciones().add(selecciones.get(0));
-                }
+            bombos.add(new ArrayList <Seleccion>());
+            bombos.add(new ArrayList <Seleccion>());
+            bombos.add(new ArrayList <Seleccion>());
+            bombos.add(new ArrayList <Seleccion>());
+        
+            fases.get(0).limpiar();
+            fases.get(1).limpiar();
+            fases.get(2).limpiar();
+            fases.get(3).limpiar();
+            fases.get(4).limpiar();
+            fases.get(5).limpiar();
+            fases.get(6).limpiar();
+            fases.get(7).limpiar();
+        
+            bombos.get(0).add(selecciones.get(1));
+            bombos.get(0).add(selecciones.get(2));
+            bombos.get(0).add(selecciones.get(3));
+            bombos.get(0).add(selecciones.get(4));
+            bombos.get(0).add(selecciones.get(5));
+            bombos.get(0).add(selecciones.get(6));
+            bombos.get(0).add(selecciones.get(7));
+        
+            //Bombo B
+            bombos.get(1).add(selecciones.get(8));
+            bombos.get(1).add(selecciones.get(9));
+            bombos.get(1).add(selecciones.get(10));
+            bombos.get(1).add(selecciones.get(11));
+            bombos.get(1).add(selecciones.get(12));
+            bombos.get(1).add(selecciones.get(13));
+            bombos.get(1).add(selecciones.get(14));
+            bombos.get(1).add(selecciones.get(15));
+        
+            //Bombo C
+            bombos.get(2).add(selecciones.get(16));
+            bombos.get(2).add(selecciones.get(17));
+            bombos.get(2).add(selecciones.get(18));
+            bombos.get(2).add(selecciones.get(19));
+            bombos.get(2).add(selecciones.get(20));
+            bombos.get(2).add(selecciones.get(21));
+            bombos.get(2).add(selecciones.get(22));
+            bombos.get(2).add(selecciones.get(23));
+        
+            //Bombo D
+            bombos.get(3).add(selecciones.get(24));
+            bombos.get(3).add(selecciones.get(25));
+            bombos.get(3).add(selecciones.get(26));
+            bombos.get(3).add(selecciones.get(27));
+            bombos.get(3).add(selecciones.get(28));
+            bombos.get(3).add(selecciones.get(29));
+            bombos.get(3).add(selecciones.get(30));
+            bombos.get(3).add(selecciones.get(31));   
+        
+            Random r = new Random();
+        
+            System.out.println("Comiensa");
+           
+        
+        for (int i=0; i<8; i++ ){               
+           
+            if(i==0){
+                    fases.get(0).agregarSelecion(selecciones.get(0)); /*Carga rusia a la primera posicion del primer grupo*/
+              }else{
+                 int numalete=r.nextInt(bombos.get(0).size());
+                 fases.get(i).agregarSelecion(bombos.get(0).get(numalete));  /*Carga una selecion del bombo A al grupo A*/
+                 bombos.get(0).remove(numalete);
+             }
+            
+            for (int i2=1; i2<4; i2++){
+                boolean j; //boolean que informa si la selecion random es valida (no coiside con ninguna en confederacion con nnguna selecion
+                int contadorUEFA;
+                if(fases.get(0).devolverSeleccion(0).getConfederacion().equalsIgnoreCase("UEFA")){ //si detecta que en la primera posicion hay una selecion con la confederacion UEFA, aumenta el contador a 1 
+                       contadorUEFA =1; 
+                   }else{
+                        contadorUEFA=0;
+                   }
                 
-                //TERMINAR 
-                
+                   int numeroAletorio;
+                    Seleccion s;
+                    String nombreSeleccionFalla=""; //Seleccion que falla consecutivamente
+                    int numFallosConsecutivos=0;  //numero de fallos 
+                    do{            
+                        
+                         j=true; //por defecto se considera que una seleccion es correcta 
+                         
+                         numeroAletorio = r.nextInt( bombos.get(i2).size());
+                         s=bombos.get(i2).get(numeroAletorio);
+                         
+                         for(int i3=0; i3<fases.get(i).numeroSeleciones();i3++){ //se recore la seleciones ya cargadas 
+                             
+                            if(fases.get(i).devolverSeleccion(i3).getConfederacion().equalsIgnoreCase(s.getConfederacion()) && s.getConfederacion().equalsIgnoreCase("UEFA") && contadorUEFA<2){
+                               /*si ya hay una selecion UEFA pero no supero el limite de dos se le permite ingresar, pero se aumenta el contador, inpidiendo que otra se agrege */
+                                contadorUEFA++;
+                            }else if(fases.get(i).devolverSeleccion(i3).getConfederacion().equalsIgnoreCase(s.getConfederacion())){
+                                j=false; //se considera que la selecion no puede pasar porque su confederacion se repite 
+                                
+                                if(nombreSeleccionFalla.equalsIgnoreCase(s.getNombre())){
+                                    numFallosConsecutivos++; //En el caso que el error haya sido el mismo que el anterior, se aumenta el contador de fallas 
+                                }else{
+                                    nombreSeleccionFalla=s.getNombre(); //si el origen del fallo es otro se reinicia el contador y se cambia el origen del fallo anterior 
+                                    numFallosConsecutivos=0;
+                                }
+                                
+                                if(numFallosConsecutivos>=3){ //En el caso que ocurra consecitivamente 3 fallos se considera que entramos en un buble infinito
+                                    /*Generalmente un simulacion corecta se da 1 de cada 3 veces*/
+                                    j=true;
+                                    reintento=true; //notifica que permita terminar la simulacion, pero cuando lo haga el proseso se repetira 
+                                    System.out.println(nombreSeleccionFalla); //para ver los fallos, informacion del programador 
+                                    break; //rompe el bucle
+
+                                    /*En la mayoria de ocasiones puede ocurrir que la combinación de selecciones genere que la última selecion
+                                    de un bombo cosida en confederación con alguna de selecciones ya cargadas en un grupo,
+                                    en cuyo caso no se podrá concretar una simulación. Por lo tanto, cuendo ocurra esa excepción se 
+                                    procederá a repetir el proceso de simulación hasta obtener éxito.   */
+
+                                }
+                                System.out.println(fases.get(i).devolverSeleccion(i3).getNombre() + " "  +fases.get(i).devolverSeleccion(i3).getConfederacion() + "  /  " + s.getNombre() + " " + s.getConfederacion() + " / " + i + "  "+  i2 + "  / " + nombreSeleccionFalla + " " +  numFallosConsecutivos );
+                            }
+                        }
+                        if(reintento){
+                            break; // ya que se va a repetir la simulacion no perdemos tiempo en segui recoriendo las faces y bombos 
+                        } 
+                }while(!j); 
+                 fases.get(i).agregarSelecion(s); //si se supero todo los medio de verificacion de agrega a la fase y posterior mente se elimina de bombo  
+                 bombos.get(i2).remove(numeroAletorio);
             }
+        }
+        }while (reintento);
+        
+        for(int o=0;o<8;o++){ //se imprimen los resultados por consola 
+            System.out.println("Grupo " + o);
+            
+            for(int o2=0;o2<4;o2++){
+                System.out.println(fases.get(o).devolverSeleccion(o2).getNombre() + "   /  " + fases.get(o).devolverSeleccion(o2).getConfederacion());
+            }
+            
+            System.out.println("----------------------------------------------------");
         }
         
         
         
-        /*Random sorteo=new Random(System.currentTimeMillis());
-        if(!bomboA.isEmpty() && !bomboB.isEmpty() && !bomboC.isEmpty() && !bomboD.isEmpty())
-        {
-            //GRUPO A
-            int UEFAcount=0; //Contador hasta 2 porque un grupo puede contener 2 selecciones de UEFA
-            int sortNum=sorteo.nextInt(7); //Numero aleatorio
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoA.get(0).getConfederacion())) //Comprueba que no se repitan
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2) //Comprueba la repetición de la UEFA
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA")) //Sortea hasta que deje de ser UEFA
-                    {
-                        sortNum=sorteo.nextInt(7);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(7);
-            }
-            grupoA.add(bomboB.get(sortNum)); //Asigna el sorteo
-            bomboB.remove(sortNum); //Quita el país del bombo para evitar problemas
-            sortNum=sorteo.nextInt(7);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoA.get(1).getConfederacion() ))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(7);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(7);
-            }
-            grupoA.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(7);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoA.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(7);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(7);
-            }
-            grupoA.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            
-            //GRUPO B
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(6);
-            grupoB.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(6);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoB.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(6);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(6);
-            }
-            grupoB.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(6);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoB.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(6);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(6);
-            }
-            grupoB.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(6);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoB.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(6);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(6);
-            }
-            grupoB.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO C
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(5);
-            grupoC.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(5);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoC.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(5);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(5);
-            }
-            grupoC.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(5);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoC.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(5);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(5);
-            }
-            grupoC.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(5);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoC.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(5);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(5);
-            }
-            grupoC.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO D
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(4);
-            grupoD.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(4);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoD.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(4);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(4);
-            }
-            grupoD.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(4);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoD.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(4);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(4);
-            }
-            grupoD.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(4);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoD.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(4);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(4);
-            }
-            grupoD.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO E
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(3);
-            grupoE.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(3);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoE.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(3);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(3);
-            }
-            grupoE.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(3);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoE.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(3);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(3);
-            }
-            grupoE.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(3);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoE.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(3);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(3);
-            }
-            grupoE.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO F
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(2);
-            grupoF.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(2);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoF.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(2);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(2);
-            }
-            grupoF.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(2);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoF.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(2);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(2);
-            }
-            grupoF.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(2);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoF.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(2);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(2);
-            }
-            grupoF.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO G
-            UEFAcount=0;
-            sortNum=sorteo.nextInt(1);
-            grupoG.add(bomboA.get(sortNum));
-            bomboA.remove(sortNum);
-            sortNum=sorteo.nextInt(1);
-            while(bomboB.get(sortNum).getConfederacion().equals(grupoG.get(0).getConfederacion()))
-            {
-                if(bomboB.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboB.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(1);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(1);
-            }
-            grupoG.add(bomboB.get(sortNum));
-            bomboB.remove(sortNum);
-            sortNum=sorteo.nextInt(1);
-            while(bomboC.get(sortNum).getConfederacion().equals(grupoG.get(1).getConfederacion()))
-            {
-                if(bomboC.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboC.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(1);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(1);
-            }
-            grupoG.add(bomboC.get(sortNum));
-            bomboC.remove(sortNum);
-            sortNum=sorteo.nextInt(1);
-            while(bomboD.get(sortNum).getConfederacion().equals(grupoG.get(2).getConfederacion()))
-            {
-                if(bomboD.get(sortNum).getConfederacion().equals("UEFA") && UEFAcount<=2)
-                {
-                    UEFAcount++;
-                    break;
-                }
-                else if(UEFAcount==2)
-                {
-                    while(bomboD.get(sortNum).getConfederacion().equals("UEFA"))
-                    {
-                        sortNum=sorteo.nextInt(1);
-                    }
-                    break;
-                }
-                sortNum=sorteo.nextInt(1);
-            }
-            grupoG.add(bomboD.get(sortNum));
-            bomboD.remove(sortNum);
-            //GRUPO H
-            grupoH.add(bomboA.get(0));
-            bomboA.remove(0);
-            grupoH.add(bomboB.get(0));
-            bomboB.remove(0);
-            grupoH.add(bomboC.get(0));
-            bomboC.remove(0);
-            grupoH.add(bomboD.get(0));
-            bomboD.remove(0);
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoA.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoB.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoC.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoD.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoE.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoF.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoG.get(i).getNombre());
-            }
-            System.out.println("--------------------------");
-            for(int i=0; i<4; i++)
-            {
-                System.out.println(grupoH.get(i).getNombre());
-            }
-        }
-    }*/ 
     }
 }

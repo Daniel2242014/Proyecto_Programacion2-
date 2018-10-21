@@ -36,6 +36,22 @@ public class Fase implements Serializable {
     public ArrayList<Seleccion> getSeleciones() {
         return seleciones;
     }
+    
+    public void agregarSelecion(Seleccion s){
+        seleciones.add(s);
+    }
+    
+    public Seleccion devolverSeleccion (int index){
+        return seleciones.get(index);
+    }
+    
+    public void limpiar (){
+        seleciones.clear();
+    }
+    
+    public int numeroSeleciones (){
+        return seleciones.size();
+    }
 
     public void setSeleciones(ArrayList<Seleccion> seleciones) {
         this.seleciones = seleciones;
