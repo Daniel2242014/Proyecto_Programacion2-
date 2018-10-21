@@ -1,0 +1,215 @@
+create database ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti
+
+use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti
+
+
+create table Persona (
+codP varchar (15) not null,
+nom varchar (20) not null,
+apellido varchar (20) ,
+fechaNac date ,
+codeCiudad varchar (15) not null,
+constraint CP_Persona primary key (codP)
+);
+
+create table Integrante (
+codeP varchar (15) not null,
+Idr varchar (15) not null,
+nomS varchar (15),
+numCamiseta int,
+fechaInicio date,
+fechaFin date,
+constraint CP_Integrante primary key (codeP)
+);
+
+create table Rol (
+ID varchar (15) not null,
+descripcion varchar (15),
+constraint CP_Rol primary key (ID)
+);
+
+create table Seleccion (
+nomS varchar (15) not null,
+confederacion varchar (10),
+codePais varchar (15),
+constraint CP_Seleccion primary key (nomS)
+);
+
+create table Juega_un (
+IDintegrante varchar (15) not null,
+IDpartido varchar (15) not null,
+tiempoInicio int,
+tiempoFin int,
+constraint CP_Juega_un primary key (IDintegrante,IDpartido)
+);
+
+create table Accion (
+IDintegrante varchar (15) not null,
+IDpartido varchar (15) not null,
+momento varchar (15) not null,
+tipo varchar (15),
+constraint CP_Accion primary key (IDintegrante,IDpartido,momento)
+);
+
+create table Partido (
+ID varchar (15) not null,
+Fecha date,
+codeEstadio varchar (15),
+codigoFase varchar (15),
+constraint CP_Partido primary key (ID)
+);
+
+create table JugadoDurante (
+IDPartido varchar (15) not null,
+tipoTiempo varchar (15) not null,
+tiempoExtra int,
+constraint CP_JugadoDurante primary key (IDPartido,tipoTiempo)
+);
+
+create table Tiempo (
+ID varchar (15) not null,
+tiempoReglamentario int,
+descripcion varchar (15),
+constraint CP_Tiempo primary key (ID)
+);
+
+create table Estadio (
+ID varchar (15) not null,
+nombre varchar (15),
+capacidad int,
+añoConstruccion date,
+descripcion varchar (15),
+direccion varchar (15),
+codeCiudad varchar (15),
+constraint CP_Estadio primary key (ID)
+);
+
+create table JuegaPara (
+IDPersona varchar (15) not null,
+nomClub varchar (15) not null,
+paisClub varchar (15) not null,
+fechaInicio date,
+fechaFin date,
+constraint CP_JuegaPara primary key (IDPersona,nomClub,paisClub)
+);
+
+create table Club (
+nombre varchar (15) not null,
+codeCiudad varchar (15) not null,
+añoFundacion date,
+constraint CP_Club primary key (nombre,codeCiudad)
+);
+
+create table Juez (
+codePersona varchar (15) not null,
+fechaDebut date,
+constraint CP_Juez primary key (codePersona)
+);
+
+create table Arbitra (
+codeJuez varchar (15) not null,
+IDPartido varchar(15) not null,
+posicion int,
+constraint CP_Arbitra primary key (codeJuez,IDPartido)
+);
+
+create table Ciudad (
+ID varchar (15) not null,
+nombre varchar (15),
+superficie int,
+latitud double(10,2),
+longitud double(10,2),
+pais varchar (15),
+constraint CP_Ciudad primary key (ID)
+);
+
+create table Pais (
+ID varchar (15) not null,
+nombre varchar (15),
+superficie int,
+capital varchar (15),
+constraint CP_Pais primary key (ID)
+);
+
+create table Participa_en (
+IDSeleccion varchar (15) not null,
+IDFase varchar (15) not null,
+posicion int,
+constraint CP_Participa_en primary key (IDSeleccion,IDFase)
+);
+
+create table Fase (
+ID varchar (15) not null,
+nom varchar (15),
+tipo varchar (15),
+IDMundial varchar (15),
+constraint CP_Fase primary key (ID)
+);
+
+create table Mundial (
+ID varchar (15) not null,
+IDpais varchar (15),
+constraint CP_Mundial primary key (ID)
+);
+
+/*Formato (BORRAR) CE_nombretableOrigen_nomAtt_nomTablaDest_nomAtt*/
+
+alter table Persona add constraint CE_Persona_codeCiudad_Ciudad_ID foreign key (codeCiudad) references Ciudad (ID);
+
+alter table Integrante add constraint CE_Integrante_codeP_Integrante_codP foreign key (codeP) references Persona (codP);
+
+alter table Integrante add constraint CE_Integrante_Idr_Rol_ID foreign key (Idr) references Rol (ID);
+
+alter table Integrante add constraint CE_Integrante_nomS_Seleccion_nomS foreign key (nomS) references Seleccion (nomS);
+
+alter table Seleccion add constraint CE_Seleccion_codePais_Pais_ID foreign key (codePais) references Pais (ID);
+
+alter table Juega_un add constraint CE_Juega_un_IDintegrante_Integrante_codeP foreign key (IDintegrante) references Integrante (codeP);
+
+alter table Juega_un add constraint CE_Juega_un_IDpartido_Partido_codeEstadio foreign key (IDpartido) references Partido (ID);
+
+alter table Accion add constraint CE_Accion_IDIntegrante_Integrante_codeP foreign key (IDIntegrante) references Integrante (codeP);
+
+alter table Accion add constraint CE_Accion_IDpartido_Partido_codeEstadio foreign key (IDpartido) references Partido (ID);
+
+alter table Partido add constraint CE_Partido_codeEstadio_Estadio_ID foreign key (codeEstadio) references Estadio (ID);
+
+alter table Partido add constraint CE_Partido_codigoFase_Fase_ID foreign key (codigoFase) references Fase (ID);
+
+alter table JugadoDurante add constraint CE_JugadoDurante_IDpartido_Partido_ID foreign key (IDpartido) references Partido (ID);
+
+alter table Estadio add constraint CE_Estadio_codeCiudad_Ciudad_ID foreign key (codeCiudad) references Ciudad (ID);
+
+alter table JuegaPara add constraint CE_JuegaPara_IDPersona_integrante_codeP foreign key (IDPersona) references Integrante (codeP);
+
+alter table juegapara add constraint CE_juegaPara_nomClub_Club_nombre foreign key(nomClub) references Club(nombre); 
+
+alter table juegapara add constraint CE_juegaPara_paisClub_Pais_ID foreign key(paisClub) references pais(ID); 
+
+alter table club add constraint CE_club_codeciudad_Ciudad_ID foreign key(codeciudad) references ciudad(ID); 
+
+alter table arbitra add constraint CE_arbitra_codejuez_Juez_codePersona foreign key(codeJuez) references Juez(codePersona); 
+
+alter table arbitra add constraint CE_arbitra_IDPartido_Partido_ID foreign key(IDPartido) references Partido(ID); 
+
+alter table Ciudad add constraint CE_Ciudad_pais_Pais_ID foreign key(pais) references Pais(ID); 
+
+alter table Participa_en add constraint CE_Participa_en_IDSeleccion_Seleccion_nomS foreign key(IDSeleccion) references Seleccion(nomS); 
+
+alter table Participa_en add constraint CE_Participa_en_IDFase_Fase_ID foreign key(IDFase) references Fase(ID); 
+
+alter table Fase add constraint CE_Fase_IDMundial_Mundial_ID foreign key(IDMundial) references Mundial(ID); 
+
+alter table Mundial add constraint CE_Mundial_IDpais_Pais_ID foreign key(IDpais) references Pais(ID); 
+
+insert into pais values (0,"Brasil",8500,"Brasilia");
+
+insert into pais values (1,"Rusia",17,"Moscú");
+
+
+
+
+
+
+
+
