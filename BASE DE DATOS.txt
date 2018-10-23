@@ -78,7 +78,7 @@ ID varchar (30) not null,
 nombre varchar (15),
 capacidad int,
 añoConstruccion date,
-direccionvarchar (60),
+direccion varchar (60),
 codeCiudad varchar (15),
 constraint CP_Estadio primary key (ID)
 );
@@ -280,8 +280,6 @@ insert into ciudad values ("7","Medellin",382,6.25,-75.56,"4");
 insert into ciudad values ("8","Cali",619,3.437,-76.552,"4");
 
 insert into ciudad values ("9","Londres",1572,51.50,-0.1,"5");
-
-insert into ciudad values ("8","Cali",619,3.437,-76.552,"4");
 
 insert into ciudad values ("11","Liverpool",111,53.41,-2.97,"5");
 
