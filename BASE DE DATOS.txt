@@ -24,7 +24,7 @@ constraint CP_Integrante primary key (codeP)
 
 create table Rol (
 ID varchar (15) not null,
-descripcion varchar (15),
+descripcion varchar (30),
 constraint CP_Rol primary key (ID)
 );
 
@@ -74,12 +74,11 @@ constraint CP_Tiempo primary key (ID)
 );
 
 create table Estadio (
-ID varchar (15) not null,
+ID varchar (30) not null,
 nombre varchar (15),
 capacidad int,
 añoConstruccion date,
-descripcion varchar (15),
-direccion varchar (15),
+direccionvarchar (60),
 codeCiudad varchar (15),
 constraint CP_Estadio primary key (ID)
 );
@@ -149,6 +148,7 @@ constraint CP_Fase primary key (ID)
 create table Mundial (
 ID varchar (15) not null,
 IDpais varchar (15),
+año int,
 constraint CP_Mundial primary key (ID)
 );
 
@@ -202,14 +202,132 @@ alter table Fase add constraint CE_Fase_IDMundial_Mundial_ID foreign key(IDMundi
 
 alter table Mundial add constraint CE_Mundial_IDpais_Pais_ID foreign key(IDpais) references Pais(ID); 
 
-insert into pais values (0,"Brasil",8500,"Brasilia");
-
-insert into pais values (1,"Rusia",17,"Moscú");
 
 
+insert into pais values (0,"Brasil",8516,"Brasilia");
+
+insert into pais values (1,"Rusia",17100,"Moscú");
+
+insert into pais values ("2","Egipto",1000,"El Cairo");
+
+insert into pais values ("3","Uruguay",176,"Montevideo");
+
+insert into pais values ("4","Colmbia",1142,"Ivan Duque");
+
+insert into pais values ("5","Inglaterra",130,"Londes");
+
+insert into pais values ("6","Paises Bajos",41,"Amsterdam");
+
+insert into pais values ("7","Costa Rica",51,"San Jose");
+
+insert into pais values ("8","Chile",756,"Santiago");
+
+insert into pais values ("9","Australia",7692,"Canberra");
+
+
+insert into rol values ("0","Director");
+
+insert into rol values ("1","Arquero");
+
+insert into rol values ("2","Volante");
+
+insert into rol values ("3","Delantero");
+
+insert into rol values ("4","Defensa");
+
+insert into rol values ("5","Medico");
+
+
+insert into tiempo values ("0",90,"Primer Tiempo");
+
+insert into tiempo values ("1",90,"Segundo Tiempo");
+
+insert into tiempo values ("2",15,"Extra tiempo 1");
+
+insert into tiempo values ("3",15,"Extra tiempo 2");
+
+
+insert into mundial values ("0","0",2014);
+
+insert into mundial values ("1","1",2018);
+
+
+insert into fase values ("0","A","G","1");
+
+insert into fase values ("1","8","E","1");
+
+insert into fase values ("2","4","E","0");
+
+insert into fase values ("3","B","E","0");
+
+
+insert into ciudad values ("0","El Cairo",528,30.04,31.24,"2");
+
+insert into ciudad values ("1","Luxor",416,25.69,32.64,"2");
+
+insert into ciudad values ("2","Aljandira",2679,31.20,29.91,"2");
+
+insert into ciudad values ("3","Montevideo",200,-34.90,-56.18,"3");
+
+insert into ciudad values ("4","Colonia",525,-34.46,-57.83,"3");
+
+insert into ciudad values ("5","Salto",14,-31.38,-57.96,"3");
+
+insert into ciudad values ("6","Bogota",1775,4.61,-74.08,"4");
+
+insert into ciudad values ("7","Medellin",382,6.25,-75.56,"4");
+
+insert into ciudad values ("8","Cali",619,3.437,-76.552,"4");
+
+insert into ciudad values ("9","Londres",1572,51.50,-0.1,"5");
+
+insert into ciudad values ("8","Cali",619,3.437,-76.552,"4");
+
+insert into ciudad values ("11","Liverpool",111,53.41,-2.97,"5");
+
+insert into ciudad values ("12","Ámsterdam",219,52.37,4.88,"6");
+
+insert into ciudad values ("13","Rotterdam",325,51.9225,4.47,"6");
 
 
 
+insert into ciudad values ("14","La Haya",98,52.07,4.29,"6")
+
+insert into ciudad values ("15","San José",44,9.93,-84.0,"7");
+
+insert into ciudad values ("16","Alajuela ",8,10.01,-84.21,"7");
+
+insert into ciudad values ("17","Liberia ",561,10.63,-85.43,"7");
+
+insert into ciudad values ("18","Santiago Chile",641,-33.45,-70.64,"8");
+
+insert into ciudad values ("19","Concepción",221,-36.82,-73.04,"8");
+
+insert into ciudad values ("20","La Serena",1893,-29.90,-71.24,"8");
+
+insert into ciudad values ("22","Valdivia",1016,-39.81,-73.24,"8");
+
+insert into ciudad values ("21","Sídney",12368,-33.86,151.20,"9");
+
+insert into ciudad values ("23","Melbourne",9990,-37.81,144.96,"9");
+
+insert into ciudad values ("24","Brisbane",15826,-27.46,153.02,"9");
+
+insert into ciudad values ("25","Várzea Grande",938,-15.64,-56.13,"0");
+
+insert into ciudad values ("26","Salvador Bahía",693,-12.97,-38.51,"0");
+
+insert into ciudad values ("27","Ekaterimburgo",468,56.85,60.61,"1");
+
+insert into ciudad values ("28","Moscú",2.511,55.75,37.61,"1");
+
+insert into estadio values ("0","PantanalCuiabá",41.112,'2014-4-2', "Av. Agrícola Paes de Barros","25");
+
+insert into estadio values ("1","Fonte Nova Salvador",50.000,'2013-4-7', "Ladeira da Fonte das Pedras","26");
+
+insert into estadio values ("2","Otkrytie Arena",45.360,'2014-9-5', "Volokolamskoye sh., 69, Moskva","28");
+
+insert into estadio values ("3","Estadio Central Ekaterimburgo",35000,'2018-3-1', "Ulitsa Repina, 5, Yekaterinburg","27");
 
 
 
