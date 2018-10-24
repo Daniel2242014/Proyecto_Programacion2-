@@ -12,6 +12,7 @@ public class Fachada{
     private ArrayList<Seleccion> selecciones;
     private ArrayList<Director> directores;
     private ArrayList<Juez> jueces;
+    private ArrayList<ArrayList<Seleccion>> bombos; //Arraylist del estilo "multidimensional" para los bombos
 
     
     //------------ Fin de ArrayLists de simulación -------
@@ -75,7 +76,7 @@ public class Fachada{
         selecciones = new ArrayList();
         directores = new ArrayList();
         jueces = new ArrayList();
-        
+        bombos = new ArrayList();
      }
     
     public boolean abrirMun(String a) //Llama al método de Archivo, tal como lo dice el patrón Facade
@@ -262,7 +263,7 @@ public class Fachada{
                 + "de primera división, y tras un breve paso por el Örgryte IS, en 2011 se marchó al IFK "
                 + "Norrköping,1​ donde llegó su primer título como entrenador con la Allsvenskan y la "
                 + "Supercopa de Suecia, lo cual le llevó en la temporada siguiente a entrenar a la selección "
-                + "de fútbol de Suecia.", 58, "Janee Andersson", "Suecia", "src/img/default.jpg");
+                + "de fútbol de Suecia.", 5, "Janee Andersson", "Suecia", "src/img/default.jpg");
 
         Director direcRusia = new Director(1, "Antes de su nombramiento como seleccionador de Rusia en "
                 + "2016, había entrenado a clubes de Austria, Rusia y Polonia, donde conquistó con el Legia de"
@@ -497,7 +498,7 @@ public class Fachada{
         selecciones.add(selecTunez);
         selecciones.add(selecEgipto);
         selecciones.add(selecSenegal);
-         selecciones.add(selecIran);
+        selecciones.add(selecIran);
          
          
         //4º bombo
@@ -559,7 +560,7 @@ public class Fachada{
          selecArgentina.agregarJugador(argentina_Guzman);
          selecArgentina.agregarJugador(argentina_Messi);
          
-   
+         //Declaración de los grupos OFICIALES
          Fase grupoA = new Fase(Fase.GRUPO_A );
          Fase grupoB = new Fase(Fase.GRUPO_B );
          Fase grupoC = new Fase(Fase.GRUPO_C );
@@ -569,6 +570,7 @@ public class Fachada{
          Fase grupoG = new Fase(Fase.GRUPO_G );
          Fase grupoH = new Fase(Fase.GRUPO_H );
          
+         //Carga de grupos OFICIALES
          grupoA.getSeleciones().add(selecRusia);
          grupoA.getSeleciones().add(selecArabia);
          grupoA.getSeleciones().add(selecEgipto);
@@ -609,7 +611,8 @@ public class Fachada{
          grupoH.getSeleciones().add(selecColombia);
          grupoH.getSeleciones().add(selecJapon);
          
-         fases.add(grupoA);
+         //Carga de fases OFICIALES
+         fases.add(grupoA); 
          fases.add(grupoB);
          fases.add(grupoC);
          fases.add(grupoD);
@@ -621,18 +624,20 @@ public class Fachada{
     
     
     
-    public void simularDatos()
+    public void simularDatos() //Metodo que se encarga de simular todos los datos de Fases
     {
         boolean reintento=false;
-        do{
+        do
+        {
             reintento=false;
-            ArrayList <ArrayList <Seleccion>> bombos= new ArrayList();
+            //Se agregan los ArrayList de "bombos" al ArrayList "multidimensional"
+            bombos.add(new ArrayList <Seleccion>()); 
+            bombos.add(new ArrayList <Seleccion>());
+            bombos.add(new ArrayList <Seleccion>());
+            bombos.add(new ArrayList <Seleccion>());
             
-            bombos.add(new ArrayList <Seleccion>());
-            bombos.add(new ArrayList <Seleccion>());
-            bombos.add(new ArrayList <Seleccion>());
-            bombos.add(new ArrayList <Seleccion>());
-        
+            /*Se limpia el ArrayList de fases para que no haya conflictos a la hora de realizar la simulación varias veces
+            y para eliminar los datos OFICIALES*/
             fases.get(0).limpiar();
             fases.get(1).limpiar();
             fases.get(2).limpiar();
@@ -641,7 +646,7 @@ public class Fachada{
             fases.get(5).limpiar();
             fases.get(6).limpiar();
             fases.get(7).limpiar();
-        
+            //Carga de bombos - Bombo A
             bombos.get(0).add(selecciones.get(1));
             bombos.get(0).add(selecciones.get(2));
             bombos.get(0).add(selecciones.get(3));
@@ -649,7 +654,6 @@ public class Fachada{
             bombos.get(0).add(selecciones.get(5));
             bombos.get(0).add(selecciones.get(6));
             bombos.get(0).add(selecciones.get(7));
-        
             //Bombo B
             bombos.get(1).add(selecciones.get(8));
             bombos.get(1).add(selecciones.get(9));
@@ -659,7 +663,6 @@ public class Fachada{
             bombos.get(1).add(selecciones.get(13));
             bombos.get(1).add(selecciones.get(14));
             bombos.get(1).add(selecciones.get(15));
-        
             //Bombo C
             bombos.get(2).add(selecciones.get(16));
             bombos.get(2).add(selecciones.get(17));
@@ -669,7 +672,6 @@ public class Fachada{
             bombos.get(2).add(selecciones.get(21));
             bombos.get(2).add(selecciones.get(22));
             bombos.get(2).add(selecciones.get(23));
-        
             //Bombo D
             bombos.get(3).add(selecciones.get(24));
             bombos.get(3).add(selecciones.get(25));
@@ -679,94 +681,93 @@ public class Fachada{
             bombos.get(3).add(selecciones.get(29));
             bombos.get(3).add(selecciones.get(30));
             bombos.get(3).add(selecciones.get(31));   
+            //Fin de carga de bombos
+            Random r=new Random(System.currentTimeMillis()); //El currentTimeMillis es para sincronizar el random con el reloj interno del CPU en milisegundos, para que sea realmente aleatorio
         
-            Random r = new Random();
-        
-            System.out.println("Comiensa");
-           
-        
-        for (int i=0; i<8; i++ ){               
-           
-            if(i==0){
-                    fases.get(0).agregarSelecion(selecciones.get(0)); /*Carga rusia a la primera posicion del primer grupo*/
-              }else{
-                 int numalete=r.nextInt(bombos.get(0).size());
-                 fases.get(i).agregarSelecion(bombos.get(0).get(numalete));  /*Carga una selecion del bombo A al grupo A*/
-                 bombos.get(0).remove(numalete);
-             }
-            
-            for (int i2=1; i2<4; i2++){
-                boolean j; //boolean que informa si la selecion random es valida (no coiside con ninguna en confederacion con nnguna selecion
-                int contadorUEFA;
-                if(fases.get(0).devolverSeleccion(0).getConfederacion().equalsIgnoreCase("UEFA")){ //si detecta que en la primera posicion hay una selecion con la confederacion UEFA, aumenta el contador a 1 
-                       contadorUEFA =1; 
-                   }else{
+            for (int i=0; i<8; i++) //Empieza la carga de datos a los grupos
+            {               
+                if(i==0)
+                {
+                    fases.get(0).agregarSeleccion(selecciones.get(0)); //Carga Rusia a la primera posición del primer grupo, ya que es el anfitrión
+                }
+                else
+                {
+                    int numRandom=r.nextInt(bombos.get(0).size()); //Setea el Random con el tamaño del primer Bombo
+                    fases.get(i).agregarSeleccion(bombos.get(0).get(numRandom));  //Carga una selección del bombo A al grupo A
+                    bombos.get(0).remove(numRandom);
+                }
+                for (int j=1; j<4; j++)
+                {
+                    boolean randomVerif; //Boolean que informa si la selección aleatoria no coincide con ninguna confederación, a excepción de UEFA
+                    int contadorUEFA;
+                    if (fases.get(0).devolverSeleccion(0).getConfederacion().equals("UEFA"))
+                    { 
+                        //Si detecta que en la primera posición hay una selección con la confederación UEFA, aumenta el contador a 1 
+                        contadorUEFA =1; 
+                    }
+                    else
+                    {
                         contadorUEFA=0;
-                   }
-                
-                   int numeroAletorio;
+                    }
+                    int numeroRandom;
                     Seleccion s;
-                    String nombreSeleccionFalla=""; //Seleccion que falla consecutivamente
-                    int numFallosConsecutivos=0;  //numero de fallos 
-                    do{            
-                        
-                         j=true; //por defecto se considera que una seleccion es correcta 
-                         
-                         numeroAletorio = r.nextInt( bombos.get(i2).size());
-                         s=bombos.get(i2).get(numeroAletorio);
-                         
-                         for(int i3=0; i3<fases.get(i).numeroSeleciones();i3++){ //se recore la seleciones ya cargadas 
-                             
-                            if(fases.get(i).devolverSeleccion(i3).getConfederacion().equalsIgnoreCase(s.getConfederacion()) && s.getConfederacion().equalsIgnoreCase("UEFA") && contadorUEFA<2){
-                               /*si ya hay una selecion UEFA pero no supero el limite de dos se le permite ingresar, pero se aumenta el contador, inpidiendo que otra se agrege */
+                    String nombreSeleccionFalla=""; //Selección que falla muchas veces, se declara con comillas para evitar NullPointerException
+                    int falloRepeat=0;  //Número de fallos 
+                    do
+                    {            
+                        randomVerif=true; //Por defecto se considera que la selección es válida
+                        numeroRandom=r.nextInt(bombos.get(j).size());
+                        s=bombos.get(j).get(numeroRandom);
+
+                        for (int k=0; k<fases.get(i).numeroSeleciones();k++) //Se recorren las selecciones cargadas
+                        {
+                            if(fases.get(i).devolverSeleccion(k).getConfederacion().equals(s.getConfederacion()) && s.getConfederacion().equals("UEFA") && contadorUEFA<2) //Comprueba UEFA para agregar hasta 2 según las reglas
+                            {
                                 contadorUEFA++;
-                            }else if(fases.get(i).devolverSeleccion(i3).getConfederacion().equalsIgnoreCase(s.getConfederacion())){
-                                j=false; //se considera que la selecion no puede pasar porque su confederacion se repite 
-                                
-                                if(nombreSeleccionFalla.equalsIgnoreCase(s.getNombre())){
-                                    numFallosConsecutivos++; //En el caso que el error haya sido el mismo que el anterior, se aumenta el contador de fallas 
-                                }else{
-                                    nombreSeleccionFalla=s.getNombre(); //si el origen del fallo es otro se reinicia el contador y se cambia el origen del fallo anterior 
-                                    numFallosConsecutivos=0;
+                            }
+                            else if (fases.get(i).devolverSeleccion(k).getConfederacion().equals(s.getConfederacion()))
+                            {
+                                randomVerif=false; //Se cambia a false porque se repite la confederación
+                                    
+                                if(nombreSeleccionFalla.equals(s.getNombre())){
+                                    falloRepeat++; //En el caso que el error haya sido el mismo que el anterior, se aumenta el contador de fallas 
                                 }
-                                
-                                if(numFallosConsecutivos>=3){ //En el caso que ocurra consecitivamente 3 fallos se considera que entramos en un buble infinito
-                                    /*Generalmente un simulacion corecta se da 1 de cada 3 veces*/
-                                    j=true;
-                                    reintento=true; //notifica que permita terminar la simulacion, pero cuando lo haga el proseso se repetira 
-                                    System.out.println(nombreSeleccionFalla); //para ver los fallos, informacion del programador 
-                                    break; //rompe el bucle
-
-                                    /*En la mayoria de ocasiones puede ocurrir que la combinación de selecciones genere que la última selecion
-                                    de un bombo cosida en confederación con alguna de selecciones ya cargadas en un grupo,
-                                    en cuyo caso no se podrá concretar una simulación. Por lo tanto, cuendo ocurra esa excepción se 
-                                    procederá a repetir el proceso de simulación hasta obtener éxito.   */
-
+                                else
+                                {
+                                    nombreSeleccionFalla=s.getNombre(); //Si el origen del fallo es otro se resetea el contador, y se cambia el origen del fallo anterior 
+                                    falloRepeat=0;
                                 }
-                                System.out.println(fases.get(i).devolverSeleccion(i3).getNombre() + " "  +fases.get(i).devolverSeleccion(i3).getConfederacion() + "  /  " + s.getNombre() + " " + s.getConfederacion() + " / " + i + "  "+  i2 + "  / " + nombreSeleccionFalla + " " +  numFallosConsecutivos );
+
+                                if(falloRepeat>=3) //En el caso que ocurran 3 fallos se considera que entramos en un bucle infinito
+                                { 
+                                    randomVerif=true;
+                                    reintento=true; //Notifica que se permita terminar la simulacion, para volver a repetirla por fallo
+                                    break; //Rompe el bucle
+                                }
                             }
                         }
-                        if(reintento){
-                            break; // ya que se va a repetir la simulacion no perdemos tiempo en segui recoriendo las faces y bombos 
+                        if(reintento)
+                        {
+                            break; //Como falló arriba se resetea todo
                         } 
-                }while(!j); 
-                 fases.get(i).agregarSelecion(s); //si se supero todo los medio de verificacion de agrega a la fase y posterior mente se elimina de bombo  
-                 bombos.get(i2).remove(numeroAletorio);
+                    }
+                    while(!randomVerif); 
+                    //Se agrega la fase verificada y se elimina del bombo correspondiente
+                    fases.get(i).agregarSeleccion(s);  
+                    bombos.get(j).remove(numeroRandom);
+                }
             }
         }
-        }while (reintento);
-        
-        for(int o=0;o<8;o++){ //se imprimen los resultados por consola 
-            System.out.println("Grupo " + o);
-            
-            for(int o2=0;o2<4;o2++){
-                System.out.println(fases.get(o).devolverSeleccion(o2).getNombre() + "   /  " + fases.get(o).devolverSeleccion(o2).getConfederacion());
+        while (reintento);
+        //Se imprimen resultados por consola para verificar las reglas
+        for(int i=0;i<8;i++)
+        {
+            System.out.println("Grupo " + i);
+            for(int j=0;j<4;j++)
+            {
+                System.out.println(fases.get(i).devolverSeleccion(j).getNombre()+" - "+fases.get(i).devolverSeleccion(j).getConfederacion());
             }
-            
-            System.out.println("----------------------------------------------------");
+            System.out.println("-------------------");
         }
-        
-        
-        
     }
 }

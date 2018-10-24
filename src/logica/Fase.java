@@ -6,7 +6,7 @@ public class Fase implements Serializable {
     private ArrayList<Seleccion> seleciones = new ArrayList();
     private char letra_posicion;
     private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
-    public final static  char GRUPO_A = 'a';
+    public final static char GRUPO_A = 'a';
     public final static char GRUPO_B = 'b';
     public final static char GRUPO_C = 'c';
     public final static char GRUPO_D = 'd';
@@ -37,7 +37,7 @@ public class Fase implements Serializable {
         return seleciones;
     }
     
-    public void agregarSelecion(Seleccion s){
+    public void agregarSeleccion(Seleccion s){
         seleciones.add(s);
     }
     
