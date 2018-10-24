@@ -620,6 +620,7 @@ public class Fachada{
     
     public void simularDatos() //Metodo que se encarga de simular todos los datos de Fases
     {
+        presentacion.Principal.getInstancia().setAutoGuardado(true);
         boolean reintento=false;
         do
         {
