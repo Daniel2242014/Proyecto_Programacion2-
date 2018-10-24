@@ -99,26 +99,27 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        criterio.setBackground(new java.awt.Color(255, 255, 255));
         criterio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         criterio.setForeground(new java.awt.Color(51, 51, 51));
         criterio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
+        criterio.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         buscar.setBackground(new java.awt.Color(255, 255, 255));
         buscar.setForeground(new java.awt.Color(51, 51, 51));
         buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscarBuscador.png"))); // NOI18N
         buscar.setBorder(null);
+        buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActionPerformed(evt);
             }
         });
 
-        tipoBusqueda.setBackground(new java.awt.Color(255, 255, 255));
         tipoBusqueda.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         tipoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
-        tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camisa ", "Por nombre de seleccion ", "Por edad ", "Por altura", "Por club", "Por primera posicion", "Por segunda posicion", "Seleccion por nombre", "Selecion por confederacion", "Selecion por nombre director", "Selecion por fase" }));
+        tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camiseta", "Por nombre de seleccion ", "Por edad ", "Por altura", "Por club", "Por primera posicion", "Por segunda posicion", "Seleccion por nombre", "Selecion por confederacion", "Selecion por nombre director", "Selecion por fase" }));
         tipoBusqueda.setBorder(null);
+        tipoBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tipoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AccionSeleccionTipo(evt);
@@ -138,8 +139,9 @@ public class Menu_busqueda extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(criterio, javax.swing.GroupLayout.PREFERRED_SIZE, 542, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(criterio, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(tipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ayuda, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,7 +211,9 @@ public class Menu_busqueda extends javax.swing.JPanel {
                     paneles.add(new resultadoBusquedaPersona(jug));
                 }
                 }catch (Exception e){
-                    JOptionPane.showMessageDialog(null, "Ingrese un entrada entera (un numero)", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    Principal.getInstancia().estiloWindows();
+                    JOptionPane.showMessageDialog(null, "Ingrese un número entero", "Error", JOptionPane.ERROR_MESSAGE);
+                    Principal.getInstancia().estiloMetal();
                 }
             }
             
@@ -250,8 +254,9 @@ public class Menu_busqueda extends javax.swing.JPanel {
                     }
                 }
                }catch(Exception e){
-                   JOptionPane.showMessageDialog(null, "Error de sintaxis en la consulta, revise las sujerencias", "ERROR", JOptionPane.ERROR_MESSAGE);
-                   e.printStackTrace();
+                   Principal.getInstancia().estiloWindows();
+                   JOptionPane.showMessageDialog(null, "Error de sintaxis en la consulta, revise las sugerencias", "Error", JOptionPane.ERROR_MESSAGE);
+                   Principal.getInstancia().estiloMetal();
                }
             }
             
@@ -268,11 +273,15 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 resultados.repaint();
                 this.repaint();
             }else{
-                JOptionPane.showMessageDialog(null, "Sin resultados", "ERROR", JOptionPane.ERROR_MESSAGE);
+                Principal.getInstancia().estiloWindows();
+                JOptionPane.showMessageDialog(null, "Sin resultados", "Error", JOptionPane.ERROR_MESSAGE);
+                Principal.getInstancia().estiloMetal();
             }
             
         }else{
-            JOptionPane.showMessageDialog(null, "El campo que ingreso es vacio, ingrese un dato para buscar","ERROR", JOptionPane.ERROR_MESSAGE);
+            Principal.getInstancia().estiloWindows();
+            JOptionPane.showMessageDialog(null, "Ingrese un dato para buscar","Error", JOptionPane.ERROR_MESSAGE);
+            Principal.getInstancia().estiloMetal();
         }
     }
 

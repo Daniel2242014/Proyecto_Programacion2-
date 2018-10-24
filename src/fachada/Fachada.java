@@ -2,6 +2,7 @@ package fachada;
 import persistencia.Archivo;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.ImageIcon;
 import logica.*;
 
 public class Fachada{
@@ -13,7 +14,7 @@ public class Fachada{
     private ArrayList<Director> directores;
     private ArrayList<Juez> jueces;
     private ArrayList<ArrayList<Seleccion>> bombos; //Arraylist del estilo "multidimensional" para los bombos
-
+    private ImageIcon copa;
     
     //------------ Fin de ArrayLists de simulación -------
     public ArrayList<Fase> getFases() {
@@ -57,7 +58,10 @@ public class Fachada{
         this.jueces = jueces;
     }
 
-   
+    public ImageIcon getCopa() {
+        return copa;
+    }
+    
     public static Fachada getInstancia() //Instancia de fachada
     {
         if (instancia == null) 
@@ -74,6 +78,7 @@ public class Fachada{
         directores = new ArrayList();
         jueces = new ArrayList();
         bombos = new ArrayList();
+        copa=new ImageIcon("src/img/ganador.png");
      }
     
     public boolean abrirMun(String a) //Llama al método de Archivo, tal como lo dice el patrón Facade
@@ -433,38 +438,38 @@ public class Fachada{
        directores.add(direcTunez);
        directores.add(direcUruguay);
 
-       Seleccion selecAlemania=new Seleccion("Alemania", direcAlemania, "UEFA", "src/img/selecciones/alemaniaR.jpg");
-       Seleccion selecArgentina=new Seleccion("Argentina", direcArgentina, "CONMEBOL", "src/img/selecciones/argentinaR.jpg");
-       Seleccion selecArabia=new Seleccion("Arabia", direcArabia, "AFC", "src/img/selecciones/arabiaSauditaR.jpg");
-       Seleccion selecAustralia=new Seleccion("Australia", direcAustralia, "AFC", "src/img/selecciones/australiaR.jpg");
-       Seleccion selecBelgica=new Seleccion("Bélgica", direcBelgica, "UEFA", "src/img/selecciones/belgicaR.jpg");
-       Seleccion selecBrasil=new Seleccion("Brasil", direcBrasil, "CONMEBOL", "src/img/selecciones/brasilR.jpg");
-       Seleccion selecColombia=new Seleccion("Colombia", direcColombia, "CONMEBOL", "src/img/selecciones/colombiaR.jpg");
-       Seleccion selecCorea=new Seleccion("Corea", direcCorea, "AFC", "src/img/selecciones/coreaR.jpg");
-       Seleccion selecCostaRica=new Seleccion("Costa Rica", direcCostaRica, "CONMEBOL", "src/img/selecciones/costaRicaR.jpg");
-       Seleccion selecCroacia=new Seleccion("Croacia", direcCroacia, "UEFA", "src/img/selecciones/croaciaR.jpg");
-       Seleccion selecDinamarca=new Seleccion("Dinamarca", direcDinamarca, "UEFA", "src/img/selecciones/dinamarcaR.jpg");
-       Seleccion selecEgipto=new Seleccion("Egipto", direcEgipto, "CAF", "src/img/selecciones/egiptoR.jpg");
-       Seleccion selecEspania=new Seleccion("España", direcEspania, "UEFA", "src/img/selecciones/espaniaR.jpg");
-       Seleccion selecFrancia=new Seleccion("Francia", direcFrancia, "UEFA", "src/img/selecciones/franciaR.jpg");
-       Seleccion selecInglaterra=new Seleccion("Inglaterra", direcInglaterra, "UEFA", "src/img/selecciones/inglaterraR.jpg");
-       Seleccion selecIran=new Seleccion("Irán", direcIran, "AFC", "src/img/selecciones/iranR.jpg");
-       Seleccion selecIslandia=new Seleccion("Islandia", direcIslandia, "UEFA", "src/img/selecciones/islandiaR.jpg");
-       Seleccion selecJapon=new Seleccion("Japón", direcJapon, "AFC", "src/img/selecciones/japonR.jpg");
-       Seleccion selecMarruecos=new Seleccion("Marruecos", direcMarruecos, "CAF", "src/img/selecciones/marruecosR.jpg");
-       Seleccion selecMexico=new Seleccion("México", direcMexico, "CONCACAF", "src/img/selecciones/mexicoR.jpg");
-       Seleccion selecNigeria=new Seleccion("Nigeria", direcNigeria, "CAF", "src/img/selecciones/nigeriaR.jpg");
-       Seleccion selecPanama=new Seleccion("Panamá", direcPanama, "CONCACAF", "src/img/selecciones/panamaR.jpg");
-       Seleccion selecPeru=new Seleccion("Perú", direcPeru, "CONMEBOL", "src/img/selecciones/peruR.jpg");
-       Seleccion selecPolonia=new Seleccion("Polonia", direcPolonia, "UEFA", "src/img/selecciones/poloniaR.jpg");
-       Seleccion selecPortugal=new Seleccion("Portugal", direcPortugal, "UEFA", "src/img/selecciones/portugalR.jpg");
-       Seleccion selecRusia=new Seleccion("Rusia", direcRusia, "UEFA", "src/img/selecciones/rusiaR.jpg");
-       Seleccion selecSenegal=new Seleccion("Senegal", direcSenegal, "CAF", "src/img/selecciones/senegalR.jpg");
-       Seleccion selecSerbia=new Seleccion("Serbia", direcSerbia, "UEFA", "src/img/selecciones/serbiaR.jpg");
-       Seleccion selecSuecia=new Seleccion("Suecia", direcSuecia, "UEFA", "src/img/selecciones/sueciaR.jpg");
-       Seleccion selecSuiza=new Seleccion("Suiza", direcSuiza, "UEFA", "src/img/selecciones/suizaR.jpg");
-       Seleccion selecTunez=new Seleccion("Túnez", direcTunez, "AFC", "src/img/selecciones/tunezR.jpg");
-       Seleccion selecUruguay=new Seleccion("Uruguay", direcUruguay, "CONMEBOL", "src/img/selecciones/uruguayR.jpg");
+       Seleccion selecAlemania=new Seleccion("Alemania", direcAlemania, "UEFA", 'f', "src/img/selecciones/alemaniaR.jpg", "27/6/18");
+       Seleccion selecArgentina=new Seleccion("Argentina", direcArgentina, "CONMEBOL", 'd', "src/img/selecciones/argentinaR.jpg", "30/6/18");
+       Seleccion selecArabia=new Seleccion("Arabia", direcArabia, "AFC", 'a', "src/img/selecciones/arabiaSauditaR.jpg", "25/6/18");
+       Seleccion selecAustralia=new Seleccion("Australia", direcAustralia, "AFC", 'c', "src/img/selecciones/australiaR.jpg", "26/6/18");
+       Seleccion selecBelgica=new Seleccion("Bélgica", direcBelgica, "UEFA", 'g', "src/img/selecciones/belgicaR.jpg", "14/7/18");
+       Seleccion selecBrasil=new Seleccion("Brasil", direcBrasil, "CONMEBOL", 'e', "src/img/selecciones/brasilR.jpg", "6/7/18");
+       Seleccion selecColombia=new Seleccion("Colombia", direcColombia, "CONMEBOL", 'h', "src/img/selecciones/colombiaR.jpg", "3/7/18");
+       Seleccion selecCorea=new Seleccion("Corea", direcCorea, "AFC", 'f', "src/img/selecciones/coreaR.jpg", "27/6/18");
+       Seleccion selecCostaRica=new Seleccion("Costa Rica", direcCostaRica, "CONMEBOL", 'e', "src/img/selecciones/costaRicaR.jpg", "27/6/18");
+       Seleccion selecCroacia=new Seleccion("Croacia", direcCroacia, "UEFA", 'd', "src/img/selecciones/croaciaR.jpg", "15/7/18");
+       Seleccion selecDinamarca=new Seleccion("Dinamarca", direcDinamarca, "UEFA", 'c', "src/img/selecciones/dinamarcaR.jpg", "1/7/18");
+       Seleccion selecEgipto=new Seleccion("Egipto", direcEgipto, "CAF", 'a', "src/img/selecciones/egiptoR.jpg", "25/6/18");
+       Seleccion selecEspania=new Seleccion("España", direcEspania, "UEFA", 'b', "src/img/selecciones/espaniaR.jpg", "1/7/18");
+       Seleccion selecFrancia=new Seleccion("Francia", direcFrancia, "UEFA", 'c', "src/img/selecciones/franciaR.jpg", "");
+       Seleccion selecInglaterra=new Seleccion("Inglaterra", direcInglaterra, "UEFA", 'g', "src/img/selecciones/inglaterraR.jpg", "14/7/18");
+       Seleccion selecIran=new Seleccion("Irán", direcIran, "AFC", 'b', "src/img/selecciones/iranR.jpg", "25/6/18");
+       Seleccion selecIslandia=new Seleccion("Islandia", direcIslandia, "UEFA", 'd', "src/img/selecciones/islandiaR.jpg", "26/6/18");
+       Seleccion selecJapon=new Seleccion("Japón", direcJapon, "AFC", 'h', "src/img/selecciones/japonR.jpg", "2/7/18");
+       Seleccion selecMarruecos=new Seleccion("Marruecos", direcMarruecos, "CAF", 'b', "src/img/selecciones/marruecosR.jpg", "25/6/18");
+       Seleccion selecMexico=new Seleccion("México", direcMexico, "CONCACAF", 'f', "src/img/selecciones/mexicoR.jpg", "2/7/18");
+       Seleccion selecNigeria=new Seleccion("Nigeria", direcNigeria, "CAF", 'd', "src/img/selecciones/nigeriaR.jpg", "26/6/18");
+       Seleccion selecPanama=new Seleccion("Panamá", direcPanama, "CONCACAF", 'g', "src/img/selecciones/panamaR.jpg", "28/6/18");
+       Seleccion selecPeru=new Seleccion("Perú", direcPeru, "CONMEBOL", 'c', "src/img/selecciones/peruR.jpg", "26/6/18");
+       Seleccion selecPolonia=new Seleccion("Polonia", direcPolonia, "UEFA", 'h', "src/img/selecciones/poloniaR.jpg", "28/6/18");
+       Seleccion selecPortugal=new Seleccion("Portugal", direcPortugal, "UEFA", 'b', "src/img/selecciones/portugalR.jpg", "30/6/18");
+       Seleccion selecRusia=new Seleccion("Rusia", direcRusia, "UEFA", 'a', "src/img/selecciones/rusiaR.jpg", "7/7/18");
+       Seleccion selecSenegal=new Seleccion("Senegal", direcSenegal, "CAF", 'h', "src/img/selecciones/senegalR.jpg", "28/6/18");
+       Seleccion selecSerbia=new Seleccion("Serbia", direcSerbia, "UEFA", 'e', "src/img/selecciones/serbiaR.jpg", "27/6/18");
+       Seleccion selecSuecia=new Seleccion("Suecia", direcSuecia, "UEFA", 'f', "src/img/selecciones/sueciaR.jpg", "7/7/18");
+       Seleccion selecSuiza=new Seleccion("Suiza", direcSuiza, "UEFA", 'e', "src/img/selecciones/suizaR.jpg", "3/7/18");
+       Seleccion selecTunez=new Seleccion("Túnez", direcTunez, "AFC", 'g', "src/img/selecciones/tunezR.jpg", "28/6/18");
+       Seleccion selecUruguay=new Seleccion("Uruguay", direcUruguay, "CONMEBOL", 'a', "src/img/selecciones/uruguayR.jpg", "6/7/18");
 
        //1º Bombo
        selecciones.add(selecRusia);

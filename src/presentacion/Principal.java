@@ -130,6 +130,7 @@ public class Principal extends javax.swing.JFrame {
         simularGrupos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/simular.png"))); // NOI18N
         simularGrupos.setText("    Simular");
         simularGrupos.setBorder(null);
+        simularGrupos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         simularGrupos.setFocusable(false);
         simularGrupos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +144,7 @@ public class Principal extends javax.swing.JFrame {
         nuevoMundial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/nuevoMundial.png"))); // NOI18N
         nuevoMundial.setText(" Nuevo mundial");
         nuevoMundial.setBorder(null);
+        nuevoMundial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nuevoMundial.setFocusable(false);
         nuevoMundial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +158,7 @@ public class Principal extends javax.swing.JFrame {
         abrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/abrir.png"))); // NOI18N
         abrir.setText("    Abrir");
         abrir.setBorder(null);
+        abrir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         abrir.setFocusable(false);
         abrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,6 +172,7 @@ public class Principal extends javax.swing.JFrame {
         agregarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/nuevoJugador.png"))); // NOI18N
         agregarJugador.setText(" Agregar Jugador");
         agregarJugador.setBorder(null);
+        agregarJugador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregarJugador.setFocusable(false);
         agregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +186,7 @@ public class Principal extends javax.swing.JFrame {
         guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/guardar.png"))); // NOI18N
         guardar.setText("    Guardar");
         guardar.setBorder(null);
+        guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         guardar.setFocusable(false);
         guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +200,7 @@ public class Principal extends javax.swing.JFrame {
         botonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/salir.png"))); // NOI18N
         botonSalir.setText("    Salir");
         botonSalir.setBorder(null);
+        botonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonSalir.setFocusable(false);
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,6 +247,7 @@ public class Principal extends javax.swing.JFrame {
         salir.setForeground(new java.awt.Color(255, 255, 255));
         salir.setText("X");
         salir.setBorder(null);
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         salir.setFocusable(false);
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,6 +258,7 @@ public class Principal extends javax.swing.JFrame {
         selecciones.setBackground(new java.awt.Color(197, 0, 0));
         selecciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/selecion .png"))); // NOI18N
         selecciones.setBorder(null);
+        selecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         selecciones.setFocusable(false);
         selecciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -261,6 +269,7 @@ public class Principal extends javax.swing.JFrame {
         motorBusqueda.setBackground(new java.awt.Color(197, 0, 0));
         motorBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscar.png"))); // NOI18N
         motorBusqueda.setBorder(null);
+        motorBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         motorBusqueda.setFocusable(false);
         motorBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,6 +280,7 @@ public class Principal extends javax.swing.JFrame {
         partidos.setBackground(new java.awt.Color(197, 0, 0));
         partidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/partido.png"))); // NOI18N
         partidos.setBorder(null);
+        partidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         partidos.setFocusable(false);
         partidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,6 +291,7 @@ public class Principal extends javax.swing.JFrame {
         jugadores.setBackground(new java.awt.Color(197, 0, 0));
         jugadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/jugador.png"))); // NOI18N
         jugadores.setBorder(null);
+        jugadores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jugadores.setFocusable(false);
         jugadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -291,6 +302,7 @@ public class Principal extends javax.swing.JFrame {
         fases.setBackground(new java.awt.Color(197, 0, 0));
         fases.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/face.png"))); // NOI18N
         fases.setBorder(null);
+        fases.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         fases.setFocusable(false);
         fases.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,6 +315,7 @@ public class Principal extends javax.swing.JFrame {
         acercaDe.setForeground(new java.awt.Color(255, 255, 255));
         acercaDe.setText("i");
         acercaDe.setBorder(null);
+        acercaDe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         acercaDe.setFocusPainted(false);
         acercaDe.setFocusable(false);
         acercaDe.addActionListener(new java.awt.event.ActionListener() {
@@ -374,10 +387,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(panelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(panelScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)
-                        .addGap(0, 0, 0))))
+                    .addComponent(panelScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

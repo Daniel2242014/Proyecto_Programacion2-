@@ -1,14 +1,13 @@
 package presentacion;
 
 
-public class Menu_partidos extends javax.swing.JPanel {
+public class DescripcionFase extends javax.swing.JPanel {
 
-    
-    public Menu_partidos() {
+    public DescripcionFase() {
         initComponents();
     }
 
-  
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,4 +27,5 @@ public class Menu_partidos extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
 }

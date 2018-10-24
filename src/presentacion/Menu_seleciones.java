@@ -112,10 +112,12 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Alemania");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         argentina.setBackground(new java.awt.Color(255, 255, 255));
         argentina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/argentinaR.jpg"))); // NOI18N
         argentina.setBorder(null);
+        argentina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         argentina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 argentinaActionPerformed(evt);
@@ -126,6 +128,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         alemania.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/alemaniaR.jpg"))); // NOI18N
         alemania.setText("jButton1");
         alemania.setBorder(null);
+        alemania.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         alemania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alemaniaActionPerformed(evt);
@@ -136,6 +139,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         arabia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/arabiaSauditaR.jpg"))); // NOI18N
         arabia.setText("jButton1");
         arabia.setBorder(null);
+        arabia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         arabia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arabiaActionPerformed(evt);
@@ -146,21 +150,25 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Selecciones");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Argentina");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Arabia Saudita");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         brasil.setBackground(new java.awt.Color(255, 255, 255));
         brasil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/brasilR.jpg"))); // NOI18N
         brasil.setText("jButton1");
         brasil.setBorder(null);
+        brasil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         brasil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brasilActionPerformed(evt);
@@ -171,6 +179,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         australia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/australiaR.jpg"))); // NOI18N
         australia.setText("jButton1");
         australia.setBorder(null);
+        australia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         australia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 australiaActionPerformed(evt);
@@ -178,9 +187,10 @@ public class Menu_seleciones extends javax.swing.JPanel
         });
 
         belgica.setBackground(new java.awt.Color(255, 255, 255));
-        belgica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/beligicaR.jpg"))); // NOI18N
+        belgica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/belgicaR.jpg"))); // NOI18N
         belgica.setText("jButton1");
         belgica.setBorder(null);
+        belgica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         belgica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 belgicaActionPerformed(evt);
@@ -191,21 +201,25 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Bélgica");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Brasil");
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Australia");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         colombia.setBackground(new java.awt.Color(255, 255, 255));
         colombia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/colombiaR.png"))); // NOI18N
         colombia.setText("jButton1");
         colombia.setBorder(null);
+        colombia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         colombia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colombiaActionPerformed(evt);
@@ -216,11 +230,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Colombia");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         corea.setBackground(new java.awt.Color(255, 255, 255));
         corea.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/coreaR.jpg"))); // NOI18N
         corea.setText("jButton1");
         corea.setBorder(null);
+        corea.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         corea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coreaActionPerformed(evt);
@@ -231,11 +247,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Corea");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         costaRica.setBackground(new java.awt.Color(255, 255, 255));
         costaRica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/costaRicaR.jpg"))); // NOI18N
         costaRica.setText("jButton1");
         costaRica.setBorder(null);
+        costaRica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         costaRica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 costaRicaActionPerformed(evt);
@@ -246,11 +264,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Costa Rica");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         egipto.setBackground(new java.awt.Color(255, 255, 255));
         egipto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/egiptoR.jpg"))); // NOI18N
         egipto.setText("jButton1");
         egipto.setBorder(null);
+        egipto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         egipto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 egiptoActionPerformed(evt);
@@ -261,16 +281,19 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Egipto");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Dinamarca");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         dinamarca.setBackground(new java.awt.Color(255, 255, 255));
         dinamarca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/dinamarcaR.jpg"))); // NOI18N
         dinamarca.setText("jButton1");
         dinamarca.setBorder(null);
+        dinamarca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dinamarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dinamarcaActionPerformed(evt);
@@ -281,6 +304,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         croacia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/croaciaR.jpg"))); // NOI18N
         croacia.setText("jButton1");
         croacia.setBorder(null);
+        croacia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         croacia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 croaciaActionPerformed(evt);
@@ -291,11 +315,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel13.setForeground(new java.awt.Color(51, 51, 51));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Croacia");
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         espania.setBackground(new java.awt.Color(255, 255, 255));
         espania.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/espaniaR.jpg"))); // NOI18N
         espania.setText("jButton1");
         espania.setBorder(null);
+        espania.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         espania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 espaniaActionPerformed(evt);
@@ -306,6 +332,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         francia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/FranciaR.jpg"))); // NOI18N
         francia.setText("jButton1");
         francia.setBorder(null);
+        francia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         francia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 franciaActionPerformed(evt);
@@ -316,6 +343,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         inglaterra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/inglaterraR.jpg"))); // NOI18N
         inglaterra.setText("jButton1");
         inglaterra.setBorder(null);
+        inglaterra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         inglaterra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inglaterraActionPerformed(evt);
@@ -326,21 +354,25 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Inglaterra");
+        jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Francia");
+        jLabel15.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 51));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("España");
+        jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         islandia.setBackground(new java.awt.Color(255, 255, 255));
         islandia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/islandiaR.jpg"))); // NOI18N
         islandia.setText("jButton1");
         islandia.setBorder(null);
+        islandia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         islandia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 islandiaActionPerformed(evt);
@@ -351,6 +383,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         iran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/iranR.jpg"))); // NOI18N
         iran.setText("jButton1");
         iran.setBorder(null);
+        iran.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         iran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iranActionPerformed(evt);
@@ -361,6 +394,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         japon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/japonR.jpg"))); // NOI18N
         japon.setText("jButton1");
         japon.setBorder(null);
+        japon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         japon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 japonActionPerformed(evt);
@@ -371,21 +405,25 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Japón");
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 51));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Irán");
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel19.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 51, 51));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Islandia");
+        jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         marruecos.setBackground(new java.awt.Color(255, 255, 255));
         marruecos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/marruecosR.jpg"))); // NOI18N
         marruecos.setText("jButton1");
         marruecos.setBorder(null);
+        marruecos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         marruecos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 marruecosActionPerformed(evt);
@@ -396,6 +434,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         mexico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/mexicoR.jpg"))); // NOI18N
         mexico.setText("jButton1");
         mexico.setBorder(null);
+        mexico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mexico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mexicoActionPerformed(evt);
@@ -406,6 +445,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         nigeria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/nigeriaR.jpg"))); // NOI18N
         nigeria.setText("jButton1");
         nigeria.setBorder(null);
+        nigeria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nigeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nigeriaActionPerformed(evt);
@@ -416,21 +456,25 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel20.setForeground(new java.awt.Color(51, 51, 51));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Nigeria");
+        jLabel20.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(51, 51, 51));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("México");
+        jLabel21.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel22.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(51, 51, 51));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Marruecos");
+        jLabel22.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         polonia.setBackground(new java.awt.Color(255, 255, 255));
         polonia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/poloniaR.jpg"))); // NOI18N
         polonia.setText("jButton1");
         polonia.setBorder(null);
+        polonia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         polonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 poloniaActionPerformed(evt);
@@ -441,11 +485,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel23.setForeground(new java.awt.Color(51, 51, 51));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("Polonia");
+        jLabel23.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         peru.setBackground(new java.awt.Color(255, 255, 255));
         peru.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/peruR.jpg"))); // NOI18N
         peru.setText("jButton1");
         peru.setBorder(null);
+        peru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         peru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peruActionPerformed(evt);
@@ -456,11 +502,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel24.setForeground(new java.awt.Color(51, 51, 51));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("Perú");
+        jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         panama.setBackground(new java.awt.Color(255, 255, 255));
         panama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/panamaR.jpg"))); // NOI18N
         panama.setText("jButton1");
         panama.setBorder(null);
+        panama.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 panamaActionPerformed(evt);
@@ -471,11 +519,13 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel25.setForeground(new java.awt.Color(51, 51, 51));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("Panamá");
+        jLabel25.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         senegal.setBackground(new java.awt.Color(255, 255, 255));
         senegal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/senegalR.jpg"))); // NOI18N
         senegal.setText("jButton1");
         senegal.setBorder(null);
+        senegal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         senegal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senegalActionPerformed(evt);
@@ -486,6 +536,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         rusia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/rusiaR.jpg"))); // NOI18N
         rusia.setText("jButton1");
         rusia.setBorder(null);
+        rusia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rusia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rusiaActionPerformed(evt);
@@ -496,6 +547,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         portugal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/portugalR.jpg"))); // NOI18N
         portugal.setText("jButton1");
         portugal.setBorder(null);
+        portugal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         portugal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 portugalActionPerformed(evt);
@@ -506,6 +558,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         suiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/suizaR.jpg"))); // NOI18N
         suiza.setText("jButton1");
         suiza.setBorder(null);
+        suiza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         suiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suizaActionPerformed(evt);
@@ -516,6 +569,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         suecia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/sueciaR.jpg"))); // NOI18N
         suecia.setText("jButton1");
         suecia.setBorder(null);
+        suecia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         suecia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sueciaActionPerformed(evt);
@@ -526,6 +580,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         serbia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/serbiaR.jpg"))); // NOI18N
         serbia.setText("jButton1");
         serbia.setBorder(null);
+        serbia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         serbia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 serbiaActionPerformed(evt);
@@ -536,6 +591,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         uruguay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/uruguayR.jpg"))); // NOI18N
         uruguay.setText("jButton1");
         uruguay.setBorder(null);
+        uruguay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         uruguay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uruguayActionPerformed(evt);
@@ -546,6 +602,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         tunez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/tunezR.jpg"))); // NOI18N
         tunez.setText("jButton1");
         tunez.setBorder(null);
+        tunez.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tunez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tunezActionPerformed(evt);
@@ -556,41 +613,49 @@ public class Menu_seleciones extends javax.swing.JPanel
         jLabel63.setForeground(new java.awt.Color(51, 51, 51));
         jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel63.setText("Portugal");
+        jLabel63.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel64.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(51, 51, 51));
         jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel64.setText("Rusia");
+        jLabel64.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel65.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel65.setForeground(new java.awt.Color(51, 51, 51));
         jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel65.setText("Senegal");
+        jLabel65.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel66.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(51, 51, 51));
         jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel66.setText("Serbia");
+        jLabel66.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel67.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel67.setForeground(new java.awt.Color(51, 51, 51));
         jLabel67.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel67.setText("Suecia");
+        jLabel67.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel68.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel68.setForeground(new java.awt.Color(51, 51, 51));
         jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel68.setText("Suiza");
+        jLabel68.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel69.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(51, 51, 51));
         jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel69.setText("Túnez");
+        jLabel69.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel70.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel70.setForeground(new java.awt.Color(51, 51, 51));
         jLabel70.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel70.setText("Uruguay");
+        jLabel70.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

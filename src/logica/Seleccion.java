@@ -17,14 +17,15 @@ public class Seleccion implements Serializable
     private String img;
 
 
-    public Seleccion(String nombre,Director direc,String confederacion, String img)
+    public Seleccion(String nombre,Director direc,String confederacion, char letra, String img, String fecha)
     {
         this.img=img;
         this.jugadores=new ArrayList<>();
         this.nombre=nombre;
         maestro=direc;
+        this.letra_grupo=letra;
         this.confederacion=confederacion;
-       
+        this.fecha_salida=fecha;
     }
     
     public void eliminarJugador(Jugador j){

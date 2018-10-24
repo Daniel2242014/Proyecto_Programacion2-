@@ -36,6 +36,7 @@ public class ListaDirector extends javax.swing.JPanel {
         label3 = new javax.swing.JLabel();
         pais = new javax.swing.JLabel();
         detalle = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         ss.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,53 +76,62 @@ public class ListaDirector extends javax.swing.JPanel {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
+
         javax.swing.GroupLayout ssLayout = new javax.swing.GroupLayout(ss);
         ss.setLayout(ssLayout);
         ssLayout.setHorizontalGroup(
             ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ssLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ssLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(nombre))
-                    .addGroup(ssLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ssLayout.createSequentialGroup()
-                                .addComponent(label3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(edad))
-                            .addGroup(ssLayout.createSequentialGroup()
-                                .addComponent(label)
                                 .addGap(18, 18, 18)
-                                .addComponent(pais))))
-                    .addGroup(ssLayout.createSequentialGroup()
-                        .addGap(430, 430, 430)
-                        .addComponent(detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(nombre))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ssLayout.createSequentialGroup()
+                                        .addComponent(label3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(edad))
+                                    .addGroup(ssLayout.createSequentialGroup()
+                                        .addComponent(label)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(pais))))
+                            .addGroup(ssLayout.createSequentialGroup()
+                                .addGap(430, 430, 430)
+                                .addComponent(detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         ssLayout.setVerticalGroup(
             ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ssLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(nombre)
-                .addGap(26, 26, 26)
-                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edad)
-                    .addComponent(label3))
-                .addGap(21, 21, 21)
-                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label)
-                    .addComponent(pais))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-            .addGroup(ssLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ssLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(nombre)
+                        .addGap(26, 26, 26)
+                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(edad)
+                            .addComponent(label3))
+                        .addGap(21, 21, 21)
+                        .addGroup(ssLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label)
+                            .addComponent(pais))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(detalle, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(ssLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -145,6 +155,7 @@ public class ListaDirector extends javax.swing.JPanel {
     private javax.swing.JButton detalle;
     private javax.swing.JLabel edad;
     private javax.swing.JLabel imagen;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label3;
     private javax.swing.JLabel nombre;

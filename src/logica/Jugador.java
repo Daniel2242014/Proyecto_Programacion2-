@@ -1,8 +1,5 @@
 package logica;
 
-import java.awt.Image;
-import javax.swing.ImageIcon;
-
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
     private int golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
