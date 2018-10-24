@@ -291,6 +291,16 @@ public class Fachada{
                    pepin.add(s.getMaestro());
                }
            }
+           else
+           {
+               if(nom.equalsIgnoreCase(s.getNombre()))
+               {
+                    for(Persona ppp:s.getJugadores()){
+                        pepin.add(ppp);
+                    }
+                pepin.add(s.getMaestro());
+               }
+           }
         }
         return pepin;
     }
