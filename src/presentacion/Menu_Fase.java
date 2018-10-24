@@ -9,24 +9,7 @@ public class Menu_Fase extends javax.swing.JPanel {
 
     
     public Menu_Fase() {
-       for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) //Cambia el estilo a Metal (Para que sea horriblemente java pero modificable)
-        {
-            if ("Metal".equals(info.getName())) 
-            {
-                try {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (InstantiationException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IllegalAccessException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (UnsupportedLookAndFeelException ex) {
-                    Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                break;
-            }
-        }
+        Principal.getInstancia().estiloMetal();
         initComponents();
     }
 
