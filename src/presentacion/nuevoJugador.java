@@ -9,9 +9,11 @@ import logica.Seleccion;
 public class nuevoJugador extends javax.swing.JPanel {
     private Jugador aModificar;
 
+
     public nuevoJugador(Jugador j) {
         Principal.getInstancia().estiloMetal();
         aModificar = j;
+
         this.initComponents();
         System.out.println(Fachada.getInstancia().getSelecciones().size());
         for (Seleccion s : Fachada.getInstancia().getSelecciones()) {
@@ -157,6 +159,11 @@ public class nuevoJugador extends javax.swing.JPanel {
         seleccion.setForeground(new java.awt.Color(51, 51, 51));
         seleccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         seleccion.setFocusable(false);
+        seleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionActionPerformed(evt);
+            }
+        });
 
         priPosicion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         priPosicion.setForeground(new java.awt.Color(51, 51, 51));
@@ -419,7 +426,7 @@ public class nuevoJugador extends javax.swing.JPanel {
                 if ((double)altura.getValue()!=0) {
                     j.setAltura((double)altura.getValue());
                 }
-                if (!String.valueOf(priPosicion.getSelectedItem()).equalsIgnoreCase("Arquero") || !String.valueOf(segPosicion.getSelectedItem()).equalsIgnoreCase("Sin determinar")) {
+                if (!String.valueOf(priPosicion.getSelectedItem()).equalsIgnoreCase("Arquero") && segPosicion.getSelectedIndex()!=3) {
                     j.setSegundaPosicion(String.valueOf(segPosicion.getSelectedItem()));
                 }
                 j.setClub(club.getText());
@@ -437,16 +444,20 @@ public class nuevoJugador extends javax.swing.JPanel {
                 aModificar.setPrimeraPosicion(String.valueOf(priPosicion.getSelectedItem()));
                 if(aModificar.getPrimeraPosicion().equalsIgnoreCase(priPosicion.getSelectedItem().toString()))
                 {
-                    if (!String.valueOf(priPosicion.getSelectedItem()).equalsIgnoreCase("Arquero") && !String.valueOf(segPosicion.getSelectedItem()).equalsIgnoreCase("Sin determinar")) {
+                    if (!String.valueOf(priPosicion.getSelectedItem()).equalsIgnoreCase("Arquero") && segPosicion.getSelectedIndex()!=3) {
                         aModificar.setSegundaPosicion(String.valueOf(segPosicion.getSelectedItem()));
                     }
                 }
                 aModificar.setNumeroCamisa((int) numCamisa.getValue());
                 aModificar.setEdad((int) edad.getValue());
                 aModificar.setFechaDebut(String.valueOf(dia.getSelectedItem()) + " / " + String.valueOf(mes.getSelectedItem()) + " / " + String.valueOf(año.getSelectedItem()));
-                aModificar.setPais(String.valueOf(seleccion.getSelectedItem()));
+                
                 if (!ruta.getText().equalsIgnoreCase(aModificar.rutaImg())) {
                     aModificar.setImg(ruta.getText());
+                }
+                if(!aModificar.getPais().equalsIgnoreCase(String.valueOf(seleccion.getSelectedItem()))){
+                    aModificar.setPais(String.valueOf(seleccion.getSelectedItem()));
+                    Fachada.getInstancia().cambiarDeSelecion(aModificar);
                 }
                 Principal.getInstancia().estiloWindows();
                 Principal.getInstancia().setAutoGuardado(true);
@@ -480,6 +491,10 @@ public class nuevoJugador extends javax.swing.JPanel {
     private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_diaActionPerformed
+
+    private void seleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionActionPerformed
+     
+    }//GEN-LAST:event_seleccionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

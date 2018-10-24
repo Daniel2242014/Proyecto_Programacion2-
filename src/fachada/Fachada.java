@@ -160,9 +160,100 @@ public class Fachada{
         return -1;
     }
     
+    public Seleccion debolberSelecionDeUnJugador(Jugador j){
+         for(Seleccion opcion:selecciones){
+           if(opcion.getJugadores().contains(j)){
+               return opcion;
+           }
+       }
+         return null;
+    }
     
-    /*MOTOR DE BUSQUEDA*/
+   public void cambiarDeSelecion(Jugador j){
+       this.debolberSelecionDeUnJugador(j).getJugadores().remove(j);
+       this.debolberSeleccionPorNombre(j.getPais()).agregarJugador(j);  
+   }
     
+   public ArrayList<Jugador> devolverPorPosicion(String posicion, boolean tipo ){ //Tipo = true = primera posicion, false = segunda posicion
+       ArrayList <Jugador> elegidos = new ArrayList();
+        for(Jugador jug: jugadores){
+            if(jug.getPrimeraPosicion().equalsIgnoreCase(posicion) && tipo){
+                elegidos.add(jug);
+            }else if(jug.getSegundaPosicion()!=null && jug.getSegundaPosicion().equalsIgnoreCase(posicion) && !tipo){
+                elegidos.add(jug);
+            }
+        }
+        return elegidos;
+   } 
+   
+   public ArrayList<Seleccion> devolverSelecionPorNombre(String nom){
+       ArrayList <Seleccion> selec = new ArrayList();
+       for (Seleccion s: selecciones){
+           if(s.getNombre().length()>=nom.length()){
+               if(s.getNombre().substring(0, nom.length()).equalsIgnoreCase(nom) ){
+                   selec.add(s);
+               }
+           }
+       }
+       return selec;
+   }
+   
+    public ArrayList<Seleccion> devolverSelecionPorConfederacion(String confede){
+       ArrayList <Seleccion> selec = new ArrayList();
+       for (Seleccion s: selecciones){
+               if(s.getConfederacion().equalsIgnoreCase(confede) ){
+                   selec.add(s);        
+           }
+       }
+       return selec;
+   }
+    
+    public ArrayList<Seleccion> devolverSelecionPorNombreDirectorTecnico(String nom){
+       ArrayList <Seleccion> selec = new ArrayList();
+       for (Seleccion s: selecciones){
+               if(s.getMaestro().getNombre().equalsIgnoreCase(nom) ){
+                   selec.add(s);        
+           }
+       }
+       return selec;
+   }
+    
+      public ArrayList<Seleccion> devolverSelecionPorFase(String letra){
+       if(letra.length()==1){
+             for (Fase f: fases){
+                    if(f.getLetra_posicion()==letra.toLowerCase().charAt(0)){
+                           return f.getSeleciones();
+                    }
+            }
+       }
+       return new ArrayList<Seleccion> ();
+   }
+   
+   public ArrayList<Jugador> DevolverPorAltura(double al1, double alt2, int tipoBusqueda ){
+       ArrayList <Jugador> per = new ArrayList();
+        for(Jugador juga:jugadores){
+            if(tipoBusqueda==0){
+                    if(juga.getAltura()==al1){
+                        per.add(juga);             
+                      }
+             }else if(tipoBusqueda==1){         
+                    if(juga.getAltura()>=al1 && juga.getAltura()<=alt2){
+                        per.add(juga);      
+                     }
+             }else if(tipoBusqueda==2){ 
+                    if(juga.getAltura()>al1){
+                        per.add(juga);    
+                     }
+             }else{    
+                    if(juga.getAltura()<al1){
+                        per.add(juga);
+                    }     
+             }
+        }
+        return per;
+    }
+
+   
     public ArrayList <Persona> debolberTodasLasPersonas(){
         ArrayList <Persona> per= new ArrayList();
         for (Jugador juga: jugadores){
@@ -250,6 +341,20 @@ public class Fachada{
       return personas;
    }
 
+    public ArrayList<Jugador> devolverPorClub(String club){
+        ArrayList<Jugador> juga=new ArrayList();
+        for (Jugador j:jugadores){
+            if(j.getClub()==null && club==null){
+                juga.add(j);
+            }else if(j.getClub()==null){
+                
+            }else if(j.getClub().equalsIgnoreCase(club)){
+                juga.add(j);
+            }
+        }
+        return juga;
+    }
+    
    //-------------------------------- METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE ---------------------------------------
    public void sistemaBase() 
    { 

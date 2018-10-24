@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import logica.Jugador;
 import logica.Persona;
+import logica.Seleccion;
 
 
 public class Menu_busqueda extends javax.swing.JPanel {
@@ -182,9 +183,16 @@ public class Menu_busqueda extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AccionSeleccionTipo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AccionSeleccionTipo
+       ayuda.setForeground(new Color(51,51,51));
         if(tipoBusqueda.getSelectedIndex()==3){
             ayuda.setText("AYUDA: Posibles formatos: 1) Edad (EJ 21) ,  2) Rango (EJ 22/28),  3) Edad en adelante (EJ: 22+)  4) Edad para atras (EJ 28-)");
-            ayuda.setForeground(new Color(51,51,51));
+        }else if(tipoBusqueda.getSelectedIndex()==4){
+            ayuda.setText("AYUDA: Posibles formatos: 1) Altura (EJ 1.70) ,  2) Rango (EJ 1.52/1.70),  3) Altura en adelante (EJ: 1.80+)  4) Altura para atras (EJ 1.90-)");
+        }else if(tipoBusqueda.getSelectedIndex()==6 || tipoBusqueda.getSelectedIndex()==7){
+            ayuda.setText("AYUDA: Posibles busquedas : Arquero, Defensa, Volante y Delantero");
+            
+        }else if(tipoBusqueda.getSelectedIndex()==11){
+            ayuda.setText("AYUDA: Posibles busquedas : A,B,C,D,E,F,G,H (GRUPOS) y 8 (octabos), 4 (cuartos), 3 (3º y 2º puesto),2 (semifinal),1(final) (ELIMINATORIAS)");
         }else{
              ayuda.setForeground(Color.white);
         }
@@ -196,7 +204,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
 
     private void realizarConsulta(String conuslta, int tipo){
         ArrayList <JPanel> paneles = new ArrayList();
-        if(!conuslta.equalsIgnoreCase("")){
+        if(!conuslta.equalsIgnoreCase("") || tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_CLUB){
             
             if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE){
                 for(Persona p:Fachada.getInstancia().debolberPersonaPorNombre(conuslta)){
@@ -240,7 +248,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
                     }
                 }else{
                     if(conuslta.charAt(conuslta.length()-1)=='+'){
-                        for(Persona p: Fachada.getInstancia().debolberPersonasPorEdad(Integer.valueOf(conuslta.substring(0, conuslta.length()-1)), 0, 2)){
+                        for(Persona p: Fachada.getInstancia().debolberPersonasPorEdad( Integer.valueOf(conuslta.substring(0, conuslta.length()-1)), 0, 2) ){
                              paneles.add(new resultadoBusquedaPersona(p));
                         }
                     }else if (conuslta.charAt(conuslta.length()-1)=='-'){
@@ -259,6 +267,92 @@ public class Menu_busqueda extends javax.swing.JPanel {
                    Principal.getInstancia().estiloMetal();
                }
             }
+            
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_ALTURA){
+                try{
+                if(conuslta.contains("/")){
+                    int posicionSeparador=0;
+                    for(int i=0;i<conuslta.length();i++){
+                        if(conuslta.charAt(i)=='/'){
+                            posicionSeparador=i;
+                            break;
+                        }
+                    }
+                    double rango1=Double.parseDouble(conuslta.substring(0, posicionSeparador));
+                    double rango2=Double.parseDouble(conuslta.substring(posicionSeparador+1, conuslta.length()));
+                    for (Jugador juga:Fachada.getInstancia().DevolverPorAltura(rango1, rango2, 1)){
+                        paneles.add(new resultadoBusquedaPersona(juga));
+                    }
+                }else{
+                    if(conuslta.charAt(conuslta.length()-1)=='+'){
+                        for(Jugador juga:Fachada.getInstancia().DevolverPorAltura(Double.parseDouble(conuslta.substring(0, conuslta.length()-1)), 0, 2)){
+                             paneles.add(new resultadoBusquedaPersona(juga));
+                        }
+                    }else if (conuslta.charAt(conuslta.length()-1)=='-'){
+                         for(Jugador juga: Fachada.getInstancia().DevolverPorAltura(Double.parseDouble(conuslta.substring(0, conuslta.length()-1)), 0, 3)){
+                             paneles.add(new resultadoBusquedaPersona(juga));
+                         }
+                    }else{
+                        for(Jugador juga: Fachada.getInstancia().DevolverPorAltura(Double.parseDouble(conuslta), 0, 0)){
+                             paneles.add(new resultadoBusquedaPersona(juga));
+                         }
+                    }
+                }
+               }catch(Exception e){
+                   Principal.getInstancia().estiloWindows();
+                   JOptionPane.showMessageDialog(null, "Error de sintaxis en la consulta, revise las sugerencias", "Error", JOptionPane.ERROR_MESSAGE);
+                   Principal.getInstancia().estiloMetal();
+               }
+            }
+            
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_CLUB){
+                if(conuslta.equalsIgnoreCase("")){
+                        for (Jugador juga:Fachada.getInstancia().devolverPorClub(null)){ 
+                        paneles.add(new resultadoBusquedaPersona(juga));
+                 }
+                }else{
+                    for (Jugador juga:Fachada.getInstancia().devolverPorClub(conuslta)){
+                        paneles.add(new resultadoBusquedaPersona(juga));
+                    }
+                 }
+            }
+            
+            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_PRIMERA_POSICION){
+                for(Jugador juga:Fachada.getInstancia().devolverPorPosicion(conuslta, true)){
+                     paneles.add(new resultadoBusquedaPersona(juga));
+                }
+            }
+            
+             if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_SEGUNDA_POSICION){
+                for(Jugador juga:Fachada.getInstancia().devolverPorPosicion(conuslta, false)){
+                     paneles.add(new resultadoBusquedaPersona(juga));
+                }
+            }
+             
+             if(tipo==Menu_busqueda.BUSQUEDA_SELECCIONES_POR_NOMBRE){
+                  for(Seleccion selc:Fachada.getInstancia().devolverSelecionPorNombre(conuslta)){
+                     paneles.add(new resultadoBusquedaSeleccion(selc));
+                }
+             }
+             
+             if(tipo==Menu_busqueda.BUSQUEDA_SELECCIONES_POR_CONFEDERACION){
+                  for(Seleccion selc:Fachada.getInstancia().devolverSelecionPorConfederacion(conuslta)){
+                     paneles.add(new resultadoBusquedaSeleccion(selc));
+                }
+             }
+             
+             if(tipo==Menu_busqueda.BUSQUEDA_SELECCIONES_POR_NOMBRE_DIRECTOR){
+                  for(Seleccion selc:Fachada.getInstancia().devolverSelecionPorNombreDirectorTecnico(conuslta)){
+                     paneles.add(new resultadoBusquedaSeleccion(selc));
+                }
+             }
+             
+              if(tipo==Menu_busqueda.BUSQUEDA_SELECCIONES_POR_NOMBRE_FASE){
+                  for(Seleccion selc:Fachada.getInstancia().devolverSelecionPorFase(conuslta)){
+                     paneles.add(new resultadoBusquedaSeleccion(selc));
+                }
+             }
+             
             
             
             /*Carga paneles*/

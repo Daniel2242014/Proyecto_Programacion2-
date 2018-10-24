@@ -445,7 +445,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_simularGruposActionPerformed
 
     private void nuevoMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoMundialActionPerformed
-      
+             
     }//GEN-LAST:event_nuevoMundialActionPerformed
 
     private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed
@@ -485,6 +485,10 @@ public class Principal extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error al guardar el archivo, asegúrese que lo esté guardando en una ruta válida", "Error al guardar archivo", JOptionPane.ERROR_MESSAGE);
                 errorArchivo=true; //Setea error por si se usa autoguardado
             }
+            else
+            {
+                Principal.getInstancia().setAutoGuardado(false);
+            }    
         }
         else
             errorArchivo=true;

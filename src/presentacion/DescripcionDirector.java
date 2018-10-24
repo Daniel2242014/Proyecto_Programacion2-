@@ -15,6 +15,7 @@ public class DescripcionDirector extends javax.swing.JPanel {
         descripcion.setLineWrap(true);
         descripcion.setWrapStyleWord(true);
         descripcion.setText(d.getDescripcion());
+        nombre.setText(d.getNombre());
     }
 
     

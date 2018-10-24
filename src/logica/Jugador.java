@@ -3,7 +3,8 @@ package logica;
 public class Jugador extends Persona {
     private String primeraPosicion,segundaPosicion,fechaDebut,club;
     private int golesTotales,faltasTotales,rojasTotales,amarillasTotales,numeroCamisa;
-
+    private double altura;
+    
     public int getNumeroCamisa() {
         return numeroCamisa;
     }
@@ -11,7 +12,7 @@ public class Jugador extends Persona {
     public void setNumeroCamisa(int numeroCamisa) {
         this.numeroCamisa = numeroCamisa;
     }
-    private double altura;
+    
   
     public Jugador(String nom,int numCamisa, String primPos,int e, String pai, int code,String img){
         super(code,e,nom,pai,img);
