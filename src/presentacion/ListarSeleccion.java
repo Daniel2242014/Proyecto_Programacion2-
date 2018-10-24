@@ -8,7 +8,7 @@ public class ListarSeleccion extends javax.swing.JPanel
     public ListarSeleccion(Seleccion s) 
     {
         initComponents();
-        icon.setIcon(new ImageIcon(s.getImg().getImage().getScaledInstance(250, 170, Image.SCALE_DEFAULT)));
+        icon.setIcon(new ImageIcon(s.getImg().getImage().getScaledInstance(250, 170, Image.SCALE_DEFAULT))); //Setea la bandera
         nombre.setText(s.getNombre());
         cantJugador.setText(String.valueOf(s.getJugadores().size()));
         confederacion.setText(s.getConfederacion());
@@ -16,7 +16,7 @@ public class ListarSeleccion extends javax.swing.JPanel
         rankingFifa.setText(String.valueOf(s.getRanking_FIFA()));
         fechaSalida.setText(s.getFecha_salida());
         letraGrupo.setText(String.valueOf(s.getLetra_grupo()).toUpperCase());
-        if(s.getNombre().equals("Francia"))
+        if(s.getNombre().equals("Francia")) //Solo se considera francia como único ganador
         {
             fechaSalida.setText("-");
             ganador.setText("GANADOR DEL MUNDIAL");

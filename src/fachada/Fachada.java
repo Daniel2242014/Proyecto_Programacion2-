@@ -753,21 +753,42 @@ public class Fachada{
                     }
                     while(!randomVerif); 
                     //Se agrega la fase verificada y se elimina del bombo correspondiente
-                    fases.get(i).agregarSeleccion(s);  
+                    fases.get(i).agregarSeleccion(s); 
                     bombos.get(j).remove(numeroRandom);
                 }
             }
         }
         while (reintento);
+        //Array de letras para mostrar por consola
+        char[] letraMuestra=new char[8];
+        letraMuestra[0]='A';
+        letraMuestra[1]='B';
+        letraMuestra[2]='C';
+        letraMuestra[3]='D';
+        letraMuestra[4]='E';
+        letraMuestra[5]='F';
+        letraMuestra[6]='G';
+        letraMuestra[7]='H';
         //Se imprimen resultados por consola para verificar las reglas
         for(int i=0;i<8;i++)
         {
-            System.out.println("Grupo " + i);
+            System.out.println("Grupo " + letraMuestra[i]);
             for(int j=0;j<4;j++)
             {
                 System.out.println(fases.get(i).devolverSeleccion(j).getNombre()+" - "+fases.get(i).devolverSeleccion(j).getConfederacion());
             }
             System.out.println("-------------------");
+        }
+        //Se cargan las letras a las correspondientes selecciones
+        for(Fase f:fases)
+        {
+            for(Seleccion s:selecciones)
+            {
+                if(f.getSeleciones().contains(s))
+                {
+                    s.setLetra_grupo(f.getLetra_posicion());
+                }
+            }
         }
     }
 }

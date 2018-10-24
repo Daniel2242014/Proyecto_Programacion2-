@@ -26,7 +26,6 @@ public class Menu_seleciones extends javax.swing.JPanel
         {
             if(nombre.equals(a.getNombre()))
             {
-                System.out.println(nombre);
                 Principal.getInstancia().cargarPanel(new ListarSeleccion(a));
             }
         }

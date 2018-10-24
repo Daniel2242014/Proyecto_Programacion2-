@@ -441,8 +441,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void simularGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simularGruposActionPerformed
-        estiloWindows();
-        JOptionPane.showMessageDialog(rootPane, "EN CONSTRUCCION");
         Fachada.getInstancia().simularDatos();
     }//GEN-LAST:event_simularGruposActionPerformed
 
