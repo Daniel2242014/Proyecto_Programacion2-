@@ -559,7 +559,7 @@ public class Fachada{
        Seleccion selecAustralia=new Seleccion("Australia", direcAustralia, "AFC", 'c', "src/img/selecciones/australiaR.jpg", "26/6/18");
        Seleccion selecBelgica=new Seleccion("Bélgica", direcBelgica, "UEFA", 'g', "src/img/selecciones/belgicaR.jpg", "14/7/18");
        Seleccion selecBrasil=new Seleccion("Brasil", direcBrasil, "CONMEBOL", 'e', "src/img/selecciones/brasilR.jpg", "6/7/18");
-       Seleccion selecColombia=new Seleccion("Colombia", direcColombia, "CONMEBOL", 'h', "src/img/selecciones/colombiaR.jpg", "3/7/18");
+       Seleccion selecColombia=new Seleccion("Colombia", direcColombia, "CONMEBOL", 'h', "src/img/selecciones/colombiaR.png", "3/7/18");
        Seleccion selecCorea=new Seleccion("Corea", direcCorea, "AFC", 'f', "src/img/selecciones/coreaR.jpg", "27/6/18");
        Seleccion selecCostaRica=new Seleccion("Costa Rica", direcCostaRica, "CONMEBOL", 'e', "src/img/selecciones/costaRicaR.jpg", "27/6/18");
        Seleccion selecCroacia=new Seleccion("Croacia", direcCroacia, "UEFA", 'd', "src/img/selecciones/croaciaR.jpg", "15/7/18");

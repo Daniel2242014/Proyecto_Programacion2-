@@ -6,14 +6,14 @@ public class Fase implements Serializable {
     private ArrayList<Seleccion> seleciones = new ArrayList();
     private char letra_posicion;
     private boolean grupo_eliminacion; //false=grupo, true=eliminatoria
-    public final static char GRUPO_A = 'a';
-    public final static char GRUPO_B = 'b';
-    public final static char GRUPO_C = 'c';
-    public final static char GRUPO_D = 'd';
-    public final static char GRUPO_E= 'e';
-    public final static char GRUPO_F = 'f';
-    public final static char GRUPO_G = 'g';
-    public final static char GRUPO_H = 'h';
+    public final static char GRUPO_A = 'A';
+    public final static char GRUPO_B = 'B';
+    public final static char GRUPO_C = 'C';
+    public final static char GRUPO_D = 'D';
+    public final static char GRUPO_E = 'E';
+    public final static char GRUPO_F = 'F';
+    public final static char GRUPO_G = 'G';
+    public final static char GRUPO_H = 'H';
     public final static char OCTAVOS = '8';
     public final static char CUARTOS = '4';
     public final static char TERCER_Y_CUARTO  = '3';
