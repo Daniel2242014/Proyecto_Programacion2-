@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import fachada.Fachada;
+import javax.swing.JFrame;
 /**
  * 
  * @author Daniel Padrón - Agustín Pérez - Facundo Silvetti
@@ -387,7 +388,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(panelLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelSuperior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 837, Short.MAX_VALUE)))
+                    .addComponent(panelScroll)))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -544,10 +545,16 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_fasesActionPerformed
 
     private void acercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acercaDeActionPerformed
-        // TODO add your handling code here:
-        //this.cargarPanel(new acercaDe());//falta crear
+        //Se llama a la ventana de Acerca De
+        JFrame i = new JFrame("Acerca De..");
+        i.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        i.setResizable(false);
+        i.setSize(766, 258);
+        i.add(new acercaDe());
+        i.setVisible(true);
+        i.setLocationRelativeTo(Principal.getInstancia());
     }//GEN-LAST:event_acercaDeActionPerformed
-
+    
     public void setAutoGuardado(boolean autoGuardado) {
         this.autoGuardado = autoGuardado;
     }
