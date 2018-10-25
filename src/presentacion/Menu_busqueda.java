@@ -26,6 +26,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
     public static final int BUSQUEDA_SELECCIONES_POR_CONFEDERACION=9;
     public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_DIRECTOR=10;
     public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_FASE=11;
+    boolean avengers=false;
     /**
      * Constructor por defecto.
      */
@@ -229,9 +230,15 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 }
             }
             
-            if(tipo==Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE_SELECION){
-                for (Persona p: Fachada.getInstancia().debolberPersonasPorNombreSeleccion(conuslta)){
-                    paneles.add(new resultadoBusquedaPersona(p));
+            if (tipo == Menu_busqueda.BUSQUEDA_PERSONA_POR_NOMBRE_SELECION) {
+                if (conuslta.equalsIgnoreCase("Avengers")) {
+                        avengers=true;
+                        Principal.getInstancia().estiloWindows();
+                        JOptionPane.showMessageDialog(null, "Proyecto Avengers: Activado", "Proyecto Avengers", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    for (Persona p : Fachada.getInstancia().debolberPersonasPorNombreSeleccion(conuslta)) {
+                        paneles.add(new resultadoBusquedaPersona(p));
+                    }
                 }
             }
             
@@ -372,7 +379,11 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 this.repaint();
             }else{
                 Principal.getInstancia().estiloWindows();
-                JOptionPane.showMessageDialog(null, "Sin resultados", "Error", JOptionPane.ERROR_MESSAGE);
+                if (avengers==false) {
+                JOptionPane.showMessageDialog(null, "Sin resultados", "Error", JOptionPane.ERROR_MESSAGE);    
+                }else {
+                    fachada.Fachada.getInstancia().Avengers();
+                }
                 Principal.getInstancia().estiloMetal();
             }
             

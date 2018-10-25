@@ -914,5 +914,53 @@ public class Fachada{
                 }
             }
         }
+        
     }
+    public void Avengers()
+        {
+            this.limpiarArrays();
+            Director direcNickfury = new Director(99, "Clasificado", 65, "Nick Fury", "S.H.I.E.L.D.", "src/img/proyecto_avengers/NickFury.png");
+            Seleccion selecAvengers=new Seleccion("Avengers",direcNickfury, "SHIELD", 'a', "src/img/proyecto_avengers/Avengers.png", "27/6/18");
+            //1º Bombo
+            directores.add(direcNickfury);
+            selecciones.add(selecAvengers);
+            
+            Jugador avengers_IronMan = new Jugador("Tony Stark" , 1 ,"Delantero",53,"Avengers",99,"src/img/proyecto_avengers/TonyStark.png");
+            jugadores.add(avengers_IronMan);
+            selecAvengers.agregarJugador(avengers_IronMan);
+            
+            Jugador avengers_Hulk = new Jugador("Hulk" , 2 ,"Delantero",44,"Avengers",98,"src/img/proyecto_avengers/Hulk.png");
+            jugadores.add(avengers_Hulk);
+            selecAvengers.agregarJugador(avengers_Hulk);
+            
+            Jugador avengers_ViudaNegra = new Jugador("Viuda Negra" , 3 ,"Delantero",33,"Avengers",97,"src/img/proyecto_avengers/ViudaNegra.png");
+            jugadores.add(avengers_ViudaNegra);
+            selecAvengers.agregarJugador(avengers_ViudaNegra);
+            
+            Jugador avengers_CapitanAmerica = new Jugador("Capitan America" , 4 ,"Delantero",427,"Avengers",96,"src/img/proyecto_avengers/CapitanAmerica.png");
+            jugadores.add(avengers_CapitanAmerica);
+            selecAvengers.agregarJugador(avengers_CapitanAmerica);
+            
+            Jugador avengers_Thor = new Jugador("Thor" , 5 ,"Delantero",10000,"Avengers",95,"src/img/proyecto_avengers/Thor.png");
+            jugadores.add(avengers_Thor);
+            selecAvengers.agregarJugador(avengers_Thor);
+            
+            Jugador avengers_ClintBarton = new Jugador("Clint Barton" , 6 ,"Delantero",56,"Avengers",94,"src/img/proyecto_avengers/ClintBarton.png");
+            jugadores.add(avengers_ClintBarton);
+            selecAvengers.agregarJugador(avengers_ClintBarton);
+            
+            Jugador avengers_Loki = new Jugador("Loki" , 7 ,"Delantero",10000,"Avengers",93,"src/img/proyecto_avengers/Loki.png");
+            jugadores.add(avengers_Loki);
+            selecAvengers.agregarJugador(avengers_Loki);
+            
+            Jugador avengers_PhilCoulson = new Jugador("Phil Coulson" , 8 ,"Delantero",55,"Avengers",92,"src/img/proyecto_avengers/PhilCoulson.png");
+            jugadores.add(avengers_PhilCoulson);
+            selecAvengers.agregarJugador(avengers_PhilCoulson);
+            
+            Jugador avengers_StanLee = new Jugador("Stan Lee" , 9 ,"Delantero",999,"Avengers",91,"src/img/proyecto_avengers/StanLee.png");
+            jugadores.add(avengers_StanLee); 
+            selecAvengers.agregarJugador(avengers_StanLee);
+                               
+        }
 }
+
