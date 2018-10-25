@@ -10,7 +10,7 @@ public class DescripcionFase extends javax.swing.JPanel {
     Fase f;
     /**
      * Constructor específico que setea los datos gráficamente.
-     * @param Fase f 
+     * @param f Fase
      */
     public DescripcionFase(Fase f) {
         initComponents();
@@ -45,20 +45,29 @@ public class DescripcionFase extends javax.swing.JPanel {
         Seleccion3 = new javax.swing.JLabel();
         Seleccion4 = new javax.swing.JLabel();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         Titulo.setFont(new java.awt.Font("Arial", 1, 72)); // NOI18N
         Titulo.setForeground(new java.awt.Color(51, 51, 51));
         Titulo.setText("Grupo");
+        Titulo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Titulo.setFocusable(false);
 
         LetraGrupo.setFont(new java.awt.Font("Arial", 1, 72)); // NOI18N
         LetraGrupo.setForeground(new java.awt.Color(197, 0, 0));
         LetraGrupo.setText("S/D");
+        LetraGrupo.setFocusable(false);
 
         DosPuntos.setFont(new java.awt.Font("Arial", 1, 72)); // NOI18N
         DosPuntos.setForeground(new java.awt.Color(51, 51, 51));
         DosPuntos.setText(":");
+        DosPuntos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        DosPuntos.setFocusable(false);
 
+        Bandera1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bandera1.setFocusable(false);
         Bandera1.setPreferredSize(new java.awt.Dimension(295, 171));
         Bandera1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +75,8 @@ public class DescripcionFase extends javax.swing.JPanel {
             }
         });
 
+        Bandera2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bandera2.setFocusable(false);
         Bandera2.setPreferredSize(new java.awt.Dimension(295, 171));
         Bandera2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +84,8 @@ public class DescripcionFase extends javax.swing.JPanel {
             }
         });
 
+        Bandera3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bandera3.setFocusable(false);
         Bandera3.setPreferredSize(new java.awt.Dimension(295, 171));
         Bandera3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,6 +93,8 @@ public class DescripcionFase extends javax.swing.JPanel {
             }
         });
 
+        Bandera4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Bandera4.setFocusable(false);
         Bandera4.setPreferredSize(new java.awt.Dimension(295, 171));
         Bandera4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,18 +105,24 @@ public class DescripcionFase extends javax.swing.JPanel {
         Seleccion1.setFont(new java.awt.Font("Arial Black", 1, 42)); // NOI18N
         Seleccion1.setForeground(new java.awt.Color(51, 51, 51));
         Seleccion1.setText("NOMBRE1");
+        Seleccion1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Seleccion1.setFocusable(false);
 
         Seleccion2.setFont(new java.awt.Font("Arial Black", 1, 42)); // NOI18N
         Seleccion2.setForeground(new java.awt.Color(51, 51, 51));
         Seleccion2.setText("NOMBRE2");
+        Seleccion2.setFocusable(false);
 
         Seleccion3.setFont(new java.awt.Font("Arial Black", 1, 42)); // NOI18N
         Seleccion3.setForeground(new java.awt.Color(51, 51, 51));
         Seleccion3.setText("NOMBRE3");
+        Seleccion3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Seleccion3.setFocusable(false);
 
         Seleccion4.setFont(new java.awt.Font("Arial Black", 1, 42)); // NOI18N
         Seleccion4.setForeground(new java.awt.Color(51, 51, 51));
         Seleccion4.setText("NOMBRE4");
+        Seleccion4.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,12 +131,6 @@ public class DescripcionFase extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Seleccion3)
-                        .addGap(459, 459, 459))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Seleccion1)
-                        .addGap(459, 459, 459))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -137,7 +152,12 @@ public class DescripcionFase extends javax.swing.JPanel {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(Bandera2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(Bandera4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Seleccion4))))))
+                                    .addComponent(Seleccion4)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Seleccion3)
+                            .addComponent(Seleccion1))
+                        .addGap(459, 459, 459)))
                 .addGap(148, 148, 148))
         );
         jPanel1Layout.setVerticalGroup(

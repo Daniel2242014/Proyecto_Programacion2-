@@ -4,13 +4,13 @@ import javax.swing.ImageIcon;
 import logica.Jugador;
 /**
  * Clase que muestra gráficamente los datos de un objeto del tipo Jugador, para
- * luego ser mostrado en presentacion.Principal, panelScroll>displayInterno.
+ * luego ser mostrado en presentacion.Principal, panelScroll-displayInterno.
  */
 public class Listajugador extends javax.swing.JPanel {
     Jugador integrante;
     /**
      * Constructor específico que setea los datos gráficamente.
-     * @param Jugador j 
+     * @param j Jugador 
      */
     public Listajugador(Jugador j) {
         initComponents();
@@ -56,6 +56,8 @@ public class Listajugador extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        imagen.setFocusable(false);
+
         jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -63,77 +65,107 @@ public class Listajugador extends javax.swing.JPanel {
         label3.setForeground(new java.awt.Color(51, 51, 51));
         label3.setText("Edad");
         label3.setToolTipText("");
+        label3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label3.setFocusable(false);
 
         segundaPosicion.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         segundaPosicion.setForeground(new java.awt.Color(51, 51, 51));
         segundaPosicion.setText("///////");
         segundaPosicion.setToolTipText("");
+        segundaPosicion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        segundaPosicion.setFocusable(false);
 
         edad.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         edad.setForeground(new java.awt.Color(51, 51, 51));
         edad.setText("///////");
         edad.setToolTipText("");
+        edad.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        edad.setFocusable(false);
 
         label4.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         label4.setForeground(new java.awt.Color(51, 51, 51));
         label4.setText("Posición");
         label4.setToolTipText("");
+        label4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label4.setFocusable(false);
 
         primeraPosicion.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         primeraPosicion.setForeground(new java.awt.Color(51, 51, 51));
         primeraPosicion.setText("///////");
         primeraPosicion.setToolTipText("");
+        primeraPosicion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        primeraPosicion.setFocusable(false);
 
         altura.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         altura.setForeground(new java.awt.Color(51, 51, 51));
         altura.setText("///////");
         altura.setToolTipText("");
+        altura.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        altura.setFocusable(false);
 
         numeroCamisa.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         numeroCamisa.setForeground(new java.awt.Color(51, 51, 51));
         numeroCamisa.setText("///////");
         numeroCamisa.setToolTipText("");
+        numeroCamisa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        numeroCamisa.setFocusable(false);
 
         label5.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         label5.setForeground(new java.awt.Color(51, 51, 51));
         label5.setText("2º Posicion");
         label5.setToolTipText("");
+        label5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label5.setFocusable(false);
 
         pais.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         pais.setForeground(new java.awt.Color(51, 51, 51));
         pais.setText("///////");
         pais.setToolTipText("");
+        pais.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        pais.setFocusable(false);
 
         label7.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         label7.setForeground(new java.awt.Color(51, 51, 51));
         label7.setText("Pais");
         label7.setToolTipText("");
+        label7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label7.setFocusable(false);
 
         nombre.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         nombre.setForeground(new java.awt.Color(51, 51, 51));
         nombre.setText("///////");
         nombre.setToolTipText("");
+        nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        nombre.setFocusable(false);
 
         label.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         label.setForeground(new java.awt.Color(51, 51, 51));
         label.setText("Nombre");
         label.setToolTipText("");
+        label.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label.setFocusable(false);
 
         label2.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         label2.setForeground(new java.awt.Color(51, 51, 51));
         label2.setText("Numero de camiseta");
         label2.setToolTipText("");
+        label2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label2.setFocusable(false);
 
         label6.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
         label6.setForeground(new java.awt.Color(51, 51, 51));
         label6.setText("Altura");
         label6.setToolTipText("");
+        label6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        label6.setFocusable(false);
 
         jButton2.setBackground(new java.awt.Color(204, 0, 0));
         jButton2.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Detalles");
         jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

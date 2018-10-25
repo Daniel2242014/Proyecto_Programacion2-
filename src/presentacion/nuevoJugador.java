@@ -14,7 +14,7 @@ public class nuevoJugador extends javax.swing.JPanel {
     /**
      * Creción o modificación de objeto del tipo Jugador.
      * Si es null lo crea, y si se le pasa un objeto, lo modifica.
-     * @param Jugador j (objeto o null)
+     * @param j Jugador (objeto o null)
      */
     public nuevoJugador(Jugador j) {
         Principal.getInstancia().estiloMetal();
@@ -153,7 +153,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         segPosicion.setForeground(new java.awt.Color(51, 51, 51));
         segPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Defensa", "Volante", "Delantero", "Sin determinar" }));
         segPosicion.setEnabled(false);
-        segPosicion.setFocusable(false);
         segPosicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 segPosicionActionPerformed(evt);
@@ -163,7 +162,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         seleccion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         seleccion.setForeground(new java.awt.Color(51, 51, 51));
         seleccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        seleccion.setFocusable(false);
         seleccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 seleccionActionPerformed(evt);
@@ -174,7 +172,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         priPosicion.setForeground(new java.awt.Color(51, 51, 51));
         priPosicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arquero", "Defensa", "Volante", "Delantero" }));
         priPosicion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        priPosicion.setFocusable(false);
         priPosicion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priPosicionActionPerformed(evt);
@@ -184,12 +181,10 @@ public class nuevoJugador extends javax.swing.JPanel {
         numCamisa.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         numCamisa.setModel(new javax.swing.SpinnerNumberModel(1, 1, 23, 1));
         numCamisa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        numCamisa.setFocusable(false);
 
         edad.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         edad.setModel(new javax.swing.SpinnerNumberModel(24, 15, 36, 1));
         edad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        edad.setFocusable(false);
 
         club.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         club.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
@@ -204,13 +199,11 @@ public class nuevoJugador extends javax.swing.JPanel {
         mes.setForeground(new java.awt.Color(51, 51, 51));
         mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
         mes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mes.setFocusable(false);
 
         dia.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         dia.setForeground(new java.awt.Color(51, 51, 51));
         dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         dia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        dia.setFocusable(false);
         dia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 diaActionPerformed(evt);
@@ -221,14 +214,12 @@ public class nuevoJugador extends javax.swing.JPanel {
         año.setForeground(new java.awt.Color(51, 51, 51));
         año.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2017", "2018", " " }));
         año.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        año.setFocusable(false);
 
         ruta.setEditable(false);
         ruta.setBackground(new java.awt.Color(255, 255, 255));
         ruta.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         ruta.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 51)));
         ruta.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        ruta.setFocusable(false);
 
         buscar.setBackground(new java.awt.Color(255, 255, 255));
         buscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -265,7 +256,6 @@ public class nuevoJugador extends javax.swing.JPanel {
         altura.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         altura.setModel(new javax.swing.SpinnerNumberModel(1.5d, 1.0d, 3.0d, 0.1d));
         altura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        altura.setFocusable(false);
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
@@ -289,10 +279,8 @@ public class nuevoJugador extends javax.swing.JPanel {
                                     .addGroup(panelPrincipalLayout.createSequentialGroup()
                                         .addGap(51, 51, 51)
                                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                                .addComponent(nombre)
-                                                .addGap(6, 6, 6))
-                                            .addComponent(club)))))
+                                            .addComponent(club)
+                                            .addComponent(nombre)))))
                             .addGroup(panelPrincipalLayout.createSequentialGroup()
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -300,7 +288,7 @@ public class nuevoJugador extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                                        .addComponent(priPosicion, 0, 246, Short.MAX_VALUE)
+                                        .addComponent(priPosicion, 0, 250, Short.MAX_VALUE)
                                         .addGap(19, 19, 19)
                                         .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -384,7 +372,7 @@ public class nuevoJugador extends javax.swing.JPanel {
                     .addComponent(ruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

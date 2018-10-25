@@ -2,11 +2,17 @@ package fachada;
 import persistencia.Archivo;
 import java.util.ArrayList;
 import java.util.Random;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import logica.*;
-
+import presentacion.Principal;
+/**
+ * Clase encargada de interconectar Lógica, persistencia y presentación según
+ * el patrón de trabajo Facade.
+ * En esta clase se encuentran varios de los métodos mas relevantes, como el de
+ * simularDatos, entre otros.
+ */
 public class Fachada{
-
     private static Fachada instancia;
     private ArrayList<Fase> fases;
     private ArrayList<Jugador> jugadores;
@@ -15,53 +21,10 @@ public class Fachada{
     private ArrayList<Juez> jueces;
     private ArrayList<ArrayList<Seleccion>> bombos; //Arraylist del estilo "multidimensional" para los bombos
     private ImageIcon copa;
-    
-    //------------ Fin de ArrayLists de simulación -------
-    public ArrayList<Fase> getFases() {
-        return fases;
-    }
-
-    public void setFases(ArrayList<Fase> fases) {
-        this.fases = fases;
-    }
-
-    public ArrayList<Jugador> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(ArrayList<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-
-
-    public ArrayList<Seleccion> getSelecciones() {
-        return selecciones;
-    }
-
-    public void setSelecciones(ArrayList<Seleccion> selecciones) {
-        this.selecciones = selecciones;
-    }
-
-    public ArrayList<Director> getDirectores() {
-        return directores;
-    }
-
-    public void setDirectores(ArrayList<Director> directores) {
-        this.directores = directores;
-    }
-
-    public ArrayList<Juez> getJueces() {
-        return jueces;
-    }
-
-    public void setJueces(ArrayList<Juez> jueces) {
-        this.jueces = jueces;
-    }
-
-    public ImageIcon getCopa() {
-        return copa;
-    }
-    
+    /**
+     * Instancia
+     * @return Instancia
+     */
     public static Fachada getInstancia() //Instancia de fachada
     {
         if (instancia == null) 
@@ -70,7 +33,9 @@ public class Fachada{
         }
         return instancia;
     }
-
+    /**
+     * Constructor por defecto
+     */
     private Fachada() {
         fases = new ArrayList();
         jugadores = new ArrayList();
@@ -128,9 +93,8 @@ public class Fachada{
         selecciones.clear();
         directores.clear();
         jueces.clear();
-        
     }
-    
+
     public int numeroPersonas(){
         return jugadores.size()+directores.size()+jueces.size();
     }
@@ -372,6 +336,51 @@ public class Fachada{
             }
         }
         return juga;
+    }
+    
+    public ArrayList<Fase> getFases() {
+        return fases;
+    }
+
+    public void setFases(ArrayList<Fase> fases) {
+        this.fases = fases;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+
+    public ArrayList<Seleccion> getSelecciones() {
+        return selecciones;
+    }
+
+    public void setSelecciones(ArrayList<Seleccion> selecciones) {
+        this.selecciones = selecciones;
+    }
+
+    public ArrayList<Director> getDirectores() {
+        return directores;
+    }
+
+    public void setDirectores(ArrayList<Director> directores) {
+        this.directores = directores;
+    }
+
+    public ArrayList<Juez> getJueces() {
+        return jueces;
+    }
+
+    public void setJueces(ArrayList<Juez> jueces) {
+        this.jueces = jueces;
+    }
+
+    public ImageIcon getCopa() {
+        return copa;
     }
     
    //-------------------------------- METODOS QUE OPERAN CON LOS DATOS DIRECTAMENTE ---------------------------------------
@@ -921,9 +930,20 @@ public class Fachada{
             this.limpiarArrays();
             Director direcNickfury = new Director(99, "Clasificado", 65, "Nick Fury", "S.H.I.E.L.D.", "src/img/proyecto_avengers/NickFury.png");
             Seleccion selecAvengers=new Seleccion("Avengers",direcNickfury, "SHIELD", 'a', "src/img/proyecto_avengers/Avengers.png", "27/6/18");
-            //1º Bombo
+            
             directores.add(direcNickfury);
             selecciones.add(selecAvengers);
+            Random rd=new Random();
+            int colorxd=rd.nextInt(7);
+            Color[] colores=new Color[7];
+            colores[0]=Color.RED;
+            colores[1]=Color.ORANGE;
+            colores[2]=Color.YELLOW;
+            colores[3]=Color.GREEN;
+            colores[4]=Color.CYAN;
+            colores[5]=Color.BLUE;
+            colores[6]=Color.magenta;
+            Principal.getInstancia().coloresXd(colores[colorxd]);
             
             Jugador avengers_IronMan = new Jugador("Tony Stark" , 1 ,"Delantero",53,"Avengers",99,"src/img/proyecto_avengers/TonyStark.png");
             jugadores.add(avengers_IronMan);
@@ -960,6 +980,7 @@ public class Fachada{
             Jugador avengers_StanLee = new Jugador("Stan Lee" , 9 ,"Delantero",999,"Avengers",91,"src/img/proyecto_avengers/StanLee.png");
             jugadores.add(avengers_StanLee); 
             selecAvengers.agregarJugador(avengers_StanLee);
+            Principal.getInstancia().irJugadores();
                                
         }
 }

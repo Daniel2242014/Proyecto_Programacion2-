@@ -10,7 +10,7 @@ public class resultadoBusquedaSeleccion extends javax.swing.JPanel {
     Seleccion integrante;
     /**
      * Constructor específico que se encarga de setear los datos graficamente
-     * @param Selección s 
+     * @param s Selección
      */
     public resultadoBusquedaSeleccion(Seleccion s) {
         initComponents();
@@ -30,20 +30,31 @@ public class resultadoBusquedaSeleccion extends javax.swing.JPanel {
         rol = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        setFocusable(false);
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        imagen.setFocusable(false);
 
         nombre.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         nombre.setForeground(new java.awt.Color(51, 51, 51));
         nombre.setText("Nombre");
+        nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        nombre.setFocusable(false);
 
         rol.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         rol.setForeground(new java.awt.Color(51, 51, 51));
         rol.setText("Seleccion");
+        rol.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        rol.setFocusable(false);
 
         jButton1.setBackground(new java.awt.Color(153, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Detalles ");
         jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

@@ -5,9 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
+/**
+ * Capa persistencia, manejo directo de archivos.
+ */
 public class Archivo {
     private static Archivo instancia;
+    /**
+     * Instancia
+     * @return Instancia
+     */
     public static Archivo getInstancia() //Instancia de Archivo
     {
         if (instancia==null)

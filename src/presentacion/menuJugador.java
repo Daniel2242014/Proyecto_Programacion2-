@@ -7,7 +7,7 @@ import logica.Seleccion;
 /**
  * Clase que se encarga de cargar jugadores y directores al panel correspondiente
  * en la clase Listajugador y Listajugador, para luego ser mostrados en el
- * panelScroll>displayInterno de presentacion.Principal.
+ * panelScroll-displayInterno de presentacion.Principal.
  */
 public class menuJugador extends javax.swing.JPanel {
     /**

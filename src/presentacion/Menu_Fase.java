@@ -33,12 +33,17 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        setFocusable(false);
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(197, 0, 0));
         jButton1.setFont(new java.awt.Font("Arial Black", 1, 44)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("FINAL");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
         jButton1.setPreferredSize(new java.awt.Dimension(720, 100));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +55,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Arial Black", 1, 44)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("SEMIFINAL");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusable(false);
         jButton2.setPreferredSize(new java.awt.Dimension(340, 100));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +68,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton3.setFont(new java.awt.Font("Arial Black", 1, 44)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("3ro & 4to");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setFocusable(false);
         jButton3.setPreferredSize(new java.awt.Dimension(340, 100));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +81,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton4.setFont(new java.awt.Font("Arial Black", 1, 44)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("CUARTOS");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setFocusable(false);
         jButton4.setPreferredSize(new java.awt.Dimension(340, 100));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +94,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton5.setFont(new java.awt.Font("Arial Black", 1, 44)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("OCTAVOS");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setFocusable(false);
         jButton5.setPreferredSize(new java.awt.Dimension(340, 100));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,9 +105,12 @@ public class Menu_Fase extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 72)); // NOI18N
         jLabel1.setText("FASE");
+        jLabel1.setFocusable(false);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 64)); // NOI18N
         jLabel2.setText("GRUPOS:");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jLabel2.setFocusable(false);
 
         jButton6.setBackground(new java.awt.Color(197, 0, 0));
         jButton6.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
@@ -102,6 +118,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton6.setText("A");
         jButton6.setToolTipText("");
         jButton6.setActionCommand("GrupoA");
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.setFocusable(false);
         jButton6.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +132,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("B");
         jButton7.setActionCommand("GrupoB");
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.setFocusable(false);
         jButton7.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,6 +146,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("C");
         jButton8.setActionCommand("GrupoC");
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton8.setFocusable(false);
         jButton8.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +160,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("D");
         jButton9.setActionCommand("GrupoD");
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.setFocusable(false);
         jButton9.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,6 +173,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton10.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("E");
+        jButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton10.setFocusable(false);
         jButton10.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +186,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton11.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("F");
+        jButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton11.setFocusable(false);
         jButton11.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +199,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton12.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
         jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("G");
+        jButton12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton12.setFocusable(false);
         jButton12.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,6 +212,8 @@ public class Menu_Fase extends javax.swing.JPanel {
         jButton13.setFont(new java.awt.Font("Arial Black", 1, 40)); // NOI18N
         jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("H");
+        jButton13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton13.setFocusable(false);
         jButton13.setPreferredSize(new java.awt.Dimension(180, 100));
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,7 +239,7 @@ public class Menu_Fase extends javax.swing.JPanel {
                                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

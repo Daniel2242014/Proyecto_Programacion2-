@@ -125,6 +125,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         argentina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selecciones/argentinaR.jpg"))); // NOI18N
         argentina.setBorder(null);
         argentina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        argentina.setFocusable(false);
         argentina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 argentinaActionPerformed(evt);
@@ -136,6 +137,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         alemania.setText("jButton1");
         alemania.setBorder(null);
         alemania.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        alemania.setFocusable(false);
         alemania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alemaniaActionPerformed(evt);
@@ -147,6 +149,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         arabia.setText("jButton1");
         arabia.setBorder(null);
         arabia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        arabia.setFocusable(false);
         arabia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arabiaActionPerformed(evt);
@@ -176,6 +179,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         brasil.setText("jButton1");
         brasil.setBorder(null);
         brasil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        brasil.setFocusable(false);
         brasil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brasilActionPerformed(evt);
@@ -187,6 +191,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         australia.setText("jButton1");
         australia.setBorder(null);
         australia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        australia.setFocusable(false);
         australia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 australiaActionPerformed(evt);
@@ -198,6 +203,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         belgica.setText("jButton1");
         belgica.setBorder(null);
         belgica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        belgica.setFocusable(false);
         belgica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 belgicaActionPerformed(evt);
@@ -227,6 +233,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         colombia.setText("jButton1");
         colombia.setBorder(null);
         colombia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        colombia.setFocusable(false);
         colombia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 colombiaActionPerformed(evt);
@@ -244,6 +251,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         corea.setText("jButton1");
         corea.setBorder(null);
         corea.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        corea.setFocusable(false);
         corea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coreaActionPerformed(evt);
@@ -261,6 +269,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         costaRica.setText("jButton1");
         costaRica.setBorder(null);
         costaRica.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        costaRica.setFocusable(false);
         costaRica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 costaRicaActionPerformed(evt);
@@ -278,6 +287,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         egipto.setText("jButton1");
         egipto.setBorder(null);
         egipto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        egipto.setFocusable(false);
         egipto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 egiptoActionPerformed(evt);
@@ -301,6 +311,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         dinamarca.setText("jButton1");
         dinamarca.setBorder(null);
         dinamarca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dinamarca.setFocusable(false);
         dinamarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dinamarcaActionPerformed(evt);
@@ -312,6 +323,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         croacia.setText("jButton1");
         croacia.setBorder(null);
         croacia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        croacia.setFocusable(false);
         croacia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 croaciaActionPerformed(evt);
@@ -329,6 +341,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         espania.setText("jButton1");
         espania.setBorder(null);
         espania.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        espania.setFocusable(false);
         espania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 espaniaActionPerformed(evt);
@@ -340,6 +353,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         francia.setText("jButton1");
         francia.setBorder(null);
         francia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        francia.setFocusable(false);
         francia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 franciaActionPerformed(evt);
@@ -351,6 +365,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         inglaterra.setText("jButton1");
         inglaterra.setBorder(null);
         inglaterra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        inglaterra.setFocusable(false);
         inglaterra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inglaterraActionPerformed(evt);
@@ -380,6 +395,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         islandia.setText("jButton1");
         islandia.setBorder(null);
         islandia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        islandia.setFocusable(false);
         islandia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 islandiaActionPerformed(evt);
@@ -391,6 +407,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         iran.setText("jButton1");
         iran.setBorder(null);
         iran.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iran.setFocusable(false);
         iran.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iranActionPerformed(evt);
@@ -402,6 +419,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         japon.setText("jButton1");
         japon.setBorder(null);
         japon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        japon.setFocusable(false);
         japon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 japonActionPerformed(evt);
@@ -431,6 +449,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         marruecos.setText("jButton1");
         marruecos.setBorder(null);
         marruecos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        marruecos.setFocusable(false);
         marruecos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 marruecosActionPerformed(evt);
@@ -442,6 +461,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         mexico.setText("jButton1");
         mexico.setBorder(null);
         mexico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mexico.setFocusable(false);
         mexico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mexicoActionPerformed(evt);
@@ -453,6 +473,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         nigeria.setText("jButton1");
         nigeria.setBorder(null);
         nigeria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nigeria.setFocusable(false);
         nigeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nigeriaActionPerformed(evt);
@@ -482,6 +503,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         polonia.setText("jButton1");
         polonia.setBorder(null);
         polonia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        polonia.setFocusable(false);
         polonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 poloniaActionPerformed(evt);
@@ -499,6 +521,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         peru.setText("jButton1");
         peru.setBorder(null);
         peru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        peru.setFocusable(false);
         peru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peruActionPerformed(evt);
@@ -516,6 +539,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         panama.setText("jButton1");
         panama.setBorder(null);
         panama.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panama.setFocusable(false);
         panama.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 panamaActionPerformed(evt);
@@ -533,6 +557,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         senegal.setText("jButton1");
         senegal.setBorder(null);
         senegal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        senegal.setFocusable(false);
         senegal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 senegalActionPerformed(evt);
@@ -544,6 +569,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         rusia.setText("jButton1");
         rusia.setBorder(null);
         rusia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rusia.setFocusable(false);
         rusia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rusiaActionPerformed(evt);
@@ -555,6 +581,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         portugal.setText("jButton1");
         portugal.setBorder(null);
         portugal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        portugal.setFocusable(false);
         portugal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 portugalActionPerformed(evt);
@@ -566,6 +593,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         suiza.setText("jButton1");
         suiza.setBorder(null);
         suiza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suiza.setFocusable(false);
         suiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 suizaActionPerformed(evt);
@@ -577,6 +605,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         suecia.setText("jButton1");
         suecia.setBorder(null);
         suecia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suecia.setFocusable(false);
         suecia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sueciaActionPerformed(evt);
@@ -588,6 +617,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         serbia.setText("jButton1");
         serbia.setBorder(null);
         serbia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        serbia.setFocusable(false);
         serbia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 serbiaActionPerformed(evt);
@@ -599,6 +629,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         uruguay.setText("jButton1");
         uruguay.setBorder(null);
         uruguay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        uruguay.setFocusable(false);
         uruguay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uruguayActionPerformed(evt);
@@ -610,6 +641,7 @@ public class Menu_seleciones extends javax.swing.JPanel
         tunez.setText("jButton1");
         tunez.setBorder(null);
         tunez.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tunez.setFocusable(false);
         tunez.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tunezActionPerformed(evt);
@@ -697,7 +729,6 @@ public class Menu_seleciones extends javax.swing.JPanel
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -822,13 +853,17 @@ public class Menu_seleciones extends javax.swing.JPanel
                         .addGap(24, 24, 24)
                         .addComponent(brasil, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(288, 288, 288))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(alemania)

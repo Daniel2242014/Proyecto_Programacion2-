@@ -12,7 +12,7 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
     Persona personaje;
     /**
      * Constructor específico que setea los datos a la parte gráfica
-     * @param Persona p
+     * @param p Persona
      */
     public resultadoBusquedaPersona(Persona p) {
         initComponents();
@@ -45,18 +45,26 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        imagen.setFocusable(false);
+
         nombre.setFont(new java.awt.Font("Arial", 1, 30)); // NOI18N
         nombre.setForeground(new java.awt.Color(51, 51, 51));
         nombre.setText("Nombre");
+        nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        nombre.setFocusable(false);
 
         rol.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         rol.setForeground(new java.awt.Color(51, 51, 51));
         rol.setText("Rol");
+        rol.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        rol.setFocusable(false);
 
         jButton1.setBackground(new java.awt.Color(153, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Detalles ");
         jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -66,6 +74,8 @@ public class resultadoBusquedaPersona extends javax.swing.JPanel {
         Pais.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Pais.setForeground(new java.awt.Color(51, 51, 51));
         Pais.setText("pais");
+        Pais.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Pais.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

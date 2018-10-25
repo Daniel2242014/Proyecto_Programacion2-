@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import fachada.Fachada;
+import java.awt.Color;
 import javax.swing.JFrame;
 /**
  * Clase principal del programa, se encarga de cargar la parte gráfica
@@ -52,8 +53,9 @@ public class Principal extends javax.swing.JFrame {
     }
     /**
      * 
-     * Se encarga de actualizar los datos internos en panelScroll>displayInterno
+     * Se encarga de actualizar los datos internos en panelScroll-displayInterno
      * a medida que corre el flujo del programa.
+     * @param j JPanel
      */
     public void cargarPanel(JPanel j){ //Se cargan los diferentes paneles dentro del ScrollPane
         displayInterno.removeAll();
@@ -533,7 +535,12 @@ public class Principal extends javax.swing.JFrame {
         else
             errorArchivo=true;
     }//GEN-LAST:event_guardarActionPerformed
-
+    
+    public void irJugadores()
+    {
+        jugadoresActionPerformed(null);
+    }
+        
     private void jugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugadoresActionPerformed
         Principal.getInstancia().cargarPanel(new menuJugador());
     }//GEN-LAST:event_jugadoresActionPerformed
@@ -624,4 +631,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton selecciones;
     private javax.swing.JButton simularGrupos;
     // End of variables declaration//GEN-END:variables
+    
+    public void coloresXd(Color c)
+    {
+        panelLateral.setBackground(c.darker());
+        simularGrupos.setBackground(c.darker());
+        nuevoMundial.setBackground(c.darker());
+        abrir.setBackground(c.darker());
+        agregarJugador.setBackground(c.darker());
+        guardar.setBackground(c.darker());
+        botonSalir.setBackground(c.darker().darker());
+        panelSuperior.setBackground(c);
+        salir.setBackground(c);
+        selecciones.setBackground(c);
+        motorBusqueda.setBackground(c);
+        partidos.setBackground(c);
+        jugadores.setBackground(c);
+        fases.setBackground(c);
+        acercaDe.setBackground(c);
+    }
 }

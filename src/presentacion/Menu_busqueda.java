@@ -36,8 +36,8 @@ public class Menu_busqueda extends javax.swing.JPanel {
     }
     /**
      * Constructor específico para consultas internas.
-     * @param consulta
-     * @param tipo 
+     * @param consulta Dato a buscar
+     * @param tipo Tipo de consulta definida por las constantes de la clase
      */
     public Menu_busqueda(String consulta, int tipo){
         initComponents();
@@ -77,6 +77,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         contenedorScroll.setBackground(new java.awt.Color(255, 255, 255));
 
         resultados.setBackground(new java.awt.Color(255, 255, 255));
+        resultados.setFocusable(false);
 
         javax.swing.GroupLayout resultadosLayout = new javax.swing.GroupLayout(resultados);
         resultados.setLayout(resultadosLayout);
@@ -117,6 +118,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/img/buscarBuscador.png"))); // NOI18N
         buscar.setBorder(null);
         buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buscar.setFocusable(false);
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActionPerformed(evt);
@@ -128,6 +130,7 @@ public class Menu_busqueda extends javax.swing.JPanel {
         tipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre del jugador", "Numero de camiseta", "Por nombre de seleccion ", "Por edad ", "Por altura", "Por club", "Por primera posicion", "Por segunda posicion", "Seleccion por nombre", "Selecion por confederacion", "Selecion por nombre director", "Selecion por fase" }));
         tipoBusqueda.setBorder(null);
         tipoBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tipoBusqueda.setFocusable(false);
         tipoBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AccionSeleccionTipo(evt);
@@ -364,8 +367,6 @@ public class Menu_busqueda extends javax.swing.JPanel {
                 }
              }
              
-            
-            
             /*Carga paneles*/
             if(paneles.size()!=0){
                 resultados.removeAll();

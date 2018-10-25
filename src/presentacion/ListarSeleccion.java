@@ -4,14 +4,14 @@ import logica.Seleccion;
 import javax.swing.ImageIcon;
 /**
  * Clase que se encarga de cargar los datos correspondientes de un objeto del 
- * tipo Selección en el panelScroll>displayInterno en presentacion.Principal.
+ * tipo Selección en el panelScroll-displayInterno en presentacion.Principal.
  */
 public class ListarSeleccion extends javax.swing.JPanel 
 {
     private Seleccion ss;
     /**
      * Constructor específico que setea los datos a mostrar.
-     * @param Seleccion s 
+     * @param s Selección
      */
     public ListarSeleccion(Seleccion s) 
     {

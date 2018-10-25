@@ -4,13 +4,13 @@ import javax.swing.ImageIcon;
 import logica.Director;
 /**
  * Clase encargada de mostrar gráficamente el contenido de un objeto del tipo 
- * Director en presentacion.Principal, panelScroll>displayInterno.
+ * Director en presentacion.Principal, panelScroll-displayInterno.
  */
 public class ListaDirector extends javax.swing.JPanel {
     Director integrante; 
     /**
      * Constructor específico que se encarga de setear los datos gráficamente.
-     * @param Director r 
+     * @param r Director 
      */
     public ListaDirector(Director r) {
         initComponents();
@@ -36,38 +36,50 @@ public class ListaDirector extends javax.swing.JPanel {
         detalle = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        setFocusable(false);
+
         ss.setBackground(new java.awt.Color(255, 255, 255));
+
+        imagen.setFocusable(false);
 
         label.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label.setForeground(new java.awt.Color(51, 51, 51));
         label.setText("Pais");
         label.setToolTipText("");
+        label.setFocusable(false);
 
         nombre.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         nombre.setForeground(new java.awt.Color(51, 51, 51));
         nombre.setText("Nombre");
         nombre.setToolTipText("");
+        nombre.setFocusable(false);
 
         edad.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         edad.setForeground(new java.awt.Color(51, 51, 51));
         edad.setText("////////////////");
         edad.setToolTipText("");
+        edad.setFocusable(false);
 
         label3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         label3.setForeground(new java.awt.Color(51, 51, 51));
         label3.setText("Edad");
         label3.setToolTipText("");
+        label3.setFocusable(false);
 
         pais.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         pais.setForeground(new java.awt.Color(51, 51, 51));
         pais.setText("////////////////");
         pais.setToolTipText("");
+        pais.setFocusable(false);
 
         detalle.setBackground(new java.awt.Color(204, 0, 0));
         detalle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         detalle.setForeground(new java.awt.Color(255, 255, 255));
         detalle.setText("Detalles");
         detalle.setBorder(null);
+        detalle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        detalle.setFocusable(false);
         detalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 detalleActionPerformed(evt);

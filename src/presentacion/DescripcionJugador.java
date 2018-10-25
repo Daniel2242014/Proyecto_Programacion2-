@@ -12,7 +12,7 @@ public class DescripcionJugador extends javax.swing.JPanel {
     Jugador integrante;
     /**
      * Costructor específico que setea los datos gráficamente.
-     * @param Jugador j 
+     * @param j Jugador 
      */
     public DescripcionJugador(Jugador j) {
         initComponents();
@@ -75,17 +75,24 @@ public class DescripcionJugador extends javax.swing.JPanel {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        setFocusable(false);
+
         ss.setBackground(new java.awt.Color(255, 255, 255));
+        ss.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         imagen.setBackground(new java.awt.Color(102, 102, 102));
+        imagen.setFocusable(false);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Segunda posicion");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         nombre.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         nombre.setForeground(new java.awt.Color(51, 51, 51));
         nombre.setText("Nombre");
+        nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
@@ -94,6 +101,7 @@ public class DescripcionJugador extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Fecha Debut");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
@@ -102,10 +110,12 @@ public class DescripcionJugador extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Edad");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Rojas totales");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
@@ -114,18 +124,22 @@ public class DescripcionJugador extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Faltas totales");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Amarilias totales");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         segPosicion.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         segPosicion.setForeground(new java.awt.Color(51, 51, 51));
         segPosicion.setText("SIN DEFINIR");
+        segPosicion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         numcamisa.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         numcamisa.setForeground(new java.awt.Color(51, 51, 51));
         numcamisa.setText("SIN DEFINIR");
+        numcamisa.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         priposicion.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         priposicion.setForeground(new java.awt.Color(51, 51, 51));
@@ -134,32 +148,40 @@ public class DescripcionJugador extends javax.swing.JPanel {
         fechaDebut.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         fechaDebut.setForeground(new java.awt.Color(51, 51, 51));
         fechaDebut.setText("SIN DEFINIR");
+        fechaDebut.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         rojas.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         rojas.setForeground(new java.awt.Color(51, 51, 51));
         rojas.setText("SIN DEFINIR");
+        rojas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         edad.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         edad.setForeground(new java.awt.Color(51, 51, 51));
         edad.setText("SIN DEFINIR");
+        edad.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         club.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         club.setForeground(new java.awt.Color(51, 51, 51));
         club.setText("SIN DEFINIR");
+        club.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         faltas.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         faltas.setForeground(new java.awt.Color(51, 51, 51));
         faltas.setText("SIN DEFINIR");
+        faltas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         amarilias.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         amarilias.setForeground(new java.awt.Color(51, 51, 51));
         amarilias.setText("SIN DEFINIR");
+        amarilias.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         editar.setBackground(new java.awt.Color(0, 153, 153));
         editar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         editar.setForeground(new java.awt.Color(255, 255, 255));
         editar.setText("Editar");
         editar.setBorder(null);
+        editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editar.setFocusable(false);
         editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editarActionPerformed(evt);
@@ -171,6 +193,8 @@ public class DescripcionJugador extends javax.swing.JPanel {
         eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Eliminar");
         eliminar.setBorder(null);
+        eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminar.setFocusable(false);
         eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eliminarActionPerformed(evt);
@@ -180,10 +204,12 @@ public class DescripcionJugador extends javax.swing.JPanel {
         jLabel12.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Numero de camiseta");
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         pais.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         pais.setForeground(new java.awt.Color(51, 51, 51));
         pais.setText("SIN DEFINIR");
+        pais.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         javax.swing.GroupLayout ssLayout = new javax.swing.GroupLayout(ss);
         ss.setLayout(ssLayout);
