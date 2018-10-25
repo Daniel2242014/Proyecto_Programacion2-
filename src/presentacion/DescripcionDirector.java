@@ -1,12 +1,16 @@
-
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Director;
-
+/**
+ * Muestra los datos de un objeto del tipo Director para mostrar en el menú 
+ * de jugadores.
+ */
 public class DescripcionDirector extends javax.swing.JPanel {
-
+    /**
+     * Constructor específico, se cargan los datos del objeto a la parte gráfica.
+     * @param Director d 
+     */
     public DescripcionDirector(Director d) {
         initComponents();
         imagen.setIcon(new ImageIcon(d.getImg().getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT)));
@@ -17,7 +21,6 @@ public class DescripcionDirector extends javax.swing.JPanel {
         descripcion.setText(d.getDescripcion());
         nombre.setText(d.getNombre());
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

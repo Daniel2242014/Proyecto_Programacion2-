@@ -1,16 +1,19 @@
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Director;
 import logica.Jugador;
 import logica.Persona;
-
-
+/**
+ * Se encarga de mostrar gráficamente los datos de un objeto Persona
+ * mediante el motor de búsqueda
+ */
 public class resultadoBusquedaPersona extends javax.swing.JPanel {
-
     Persona personaje;
-   
+    /**
+     * Constructor específico que setea los datos a la parte gráfica
+     * @param Persona p
+     */
     public resultadoBusquedaPersona(Persona p) {
         initComponents();
         nombre.setText(p.getNombre());

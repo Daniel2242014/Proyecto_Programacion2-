@@ -1,15 +1,17 @@
-
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Seleccion;
-
-
+/**
+ * Se encarga de mostrar gráficamente los datos de un objeto Selección
+ * mediante el motor de búsqueda
+ */
 public class resultadoBusquedaSeleccion extends javax.swing.JPanel {
-
     Seleccion integrante;
-    
+    /**
+     * Constructor específico que se encarga de setear los datos graficamente
+     * @param Selección s 
+     */
     public resultadoBusquedaSeleccion(Seleccion s) {
         initComponents();
         imagen.setIcon(new ImageIcon(s.getImg().getImage().getScaledInstance(145, 145, Image.SCALE_DEFAULT)));

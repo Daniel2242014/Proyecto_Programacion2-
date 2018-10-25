@@ -1,5 +1,4 @@
 package presentacion;
-
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import fachada.Fachada;
@@ -9,8 +8,11 @@ import javax.swing.JPanel;
 import logica.Jugador;
 import logica.Persona;
 import logica.Seleccion;
-
-
+/**
+ * 
+ * Se encarga de realizar las diferentes consultas mediante la entrada del
+ * Usuario o del mismo programa internamente, con sus respectivos criterios.
+ */
 public class Menu_busqueda extends javax.swing.JPanel {
     public static final int BUSQUEDA_PERSONA_POR_NOMBRE=0;
     public static final int BUSQUEDA_PERSONA_POR_NUMERO_CAMISA=1;
@@ -24,12 +26,18 @@ public class Menu_busqueda extends javax.swing.JPanel {
     public static final int BUSQUEDA_SELECCIONES_POR_CONFEDERACION=9;
     public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_DIRECTOR=10;
     public static final int BUSQUEDA_SELECCIONES_POR_NOMBRE_FASE=11;
-
+    /**
+     * Constructor por defecto.
+     */
     public Menu_busqueda() {
         initComponents();
         displayScroll.getVerticalScrollBar().setUnitIncrement(50); //Aumenta la velocidad del ScrollPane
     }
-    
+    /**
+     * Constructor específico para consultas internas.
+     * @param consulta
+     * @param tipo 
+     */
     public Menu_busqueda(String consulta, int tipo){
         initComponents();
         realizarConsulta(consulta, tipo);

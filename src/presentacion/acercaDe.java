@@ -1,8 +1,14 @@
 package presentacion;
 import java.awt.Image;
 import javax.swing.ImageIcon;
-
+/**
+ * 
+ * Información del programa; integrantes, profesor, instituto y fecha.
+ */
 public class acercaDe extends javax.swing.JPanel {
+    /**
+     * Constructor por defecto.
+     */
     public acercaDe() {
         initComponents();
         ImageIcon back=new ImageIcon("src/img/acercaDe.jpg");

@@ -1,16 +1,24 @@
 package presentacion;
 import fachada.Fachada;
 import logica.Seleccion;
-
+/**
+ * Clase que contiene todos los objetos de Seleccion que participan en el 
+ * mundial Rusia 2018
+ */
 public class Menu_seleciones extends javax.swing.JPanel 
 {
     private static Menu_seleciones initi; 
-  
+    /**
+     * Costructor por defecto
+     */
     private Menu_seleciones() 
     {
         initComponents();
     }
-
+    /**
+     * Instancia de clase (patrón Singleton)
+     * @return Instancia
+     */
     public static Menu_seleciones getInstancia()
     {
         if (initi==null)

@@ -1,17 +1,20 @@
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Jugador;
 import fachada.Fachada;
 import javax.swing.JOptionPane;
-
-
+/**
+ * Se encarga de mostrar de una forma detallada todos los datos de un objeto
+ * del tipo Jugador.
+ */
 public class DescripcionJugador extends javax.swing.JPanel {
-
     Jugador integrante;
-    
-    public  DescripcionJugador(Jugador j) {
+    /**
+     * Costructor específico que setea los datos gráficamente.
+     * @param Jugador j 
+     */
+    public DescripcionJugador(Jugador j) {
         initComponents();
         imagen.setIcon(new ImageIcon(j.getImg().getImage().getScaledInstance(330, 330, Image.SCALE_DEFAULT)));
         nombre.setText(j.getNombre());

@@ -11,23 +11,32 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import fachada.Fachada;
 import javax.swing.JFrame;
 /**
- * 
+ * Clase principal del programa, se encarga de cargar la parte gráfica
+ * y de cargar sus diferentes componentes a las respectivas funciones 
+ * del programa.
  * @author Daniel Padrón - Agustín Pérez - Facundo Silvetti
  */
 public class Principal extends javax.swing.JFrame {
+    
     public static JFileChooser a; //Ventana de guardado de Archivos
     private FileNameExtensionFilter mun; //Filtro por extensión 
     private static Principal initi;
     private boolean autoGuardado=false;
     private boolean errorArchivo=false;
     
+    /**
+     * Instancia de clase.
+     * @return Instancia
+     */
     public static Principal getInstancia(){
         if (initi==null){
             initi = new Principal();
         }
         return initi;
     }
-    
+    /**
+     * Constructor por defecto.
+     */
     private Principal() {
         initComponents();
         setLocationRelativeTo(null);
@@ -41,7 +50,11 @@ public class Principal extends javax.swing.JFrame {
         panelScroll.getVerticalScrollBar().setUnitIncrement(50); //Aumenta la velocidad del ScrollPane
         errorArchivo=false;
     }
-    
+    /**
+     * 
+     * Se encarga de actualizar los datos internos en panelScroll>displayInterno
+     * a medida que corre el flujo del programa.
+     */
     public void cargarPanel(JPanel j){ //Se cargan los diferentes paneles dentro del ScrollPane
         displayInterno.removeAll();
         displayInterno.add(j,BorderLayout.CENTER);

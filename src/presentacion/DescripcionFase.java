@@ -2,12 +2,16 @@ package presentacion;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Fase;
-import fachada.Fachada;
-import javax.swing.JOptionPane;
-
+/**
+ * Muestra gráficamente el contenido de cada objeto Fase y sus objetos del tipo 
+ * selección correspondientes tanto desde sistemaBase como de simularDatos.
+ */
 public class DescripcionFase extends javax.swing.JPanel {
     Fase f;
-
+    /**
+     * Constructor específico que setea los datos gráficamente.
+     * @param Fase f 
+     */
     public DescripcionFase(Fase f) {
         initComponents();
         this.f=f;

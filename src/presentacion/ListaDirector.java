@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Director;
-
-
+/**
+ * Clase encargada de mostrar gráficamente el contenido de un objeto del tipo 
+ * Director en presentacion.Principal, panelScroll>displayInterno.
+ */
 public class ListaDirector extends javax.swing.JPanel {
-
     Director integrante; 
-    
+    /**
+     * Constructor específico que se encarga de setear los datos gráficamente.
+     * @param Director r 
+     */
     public ListaDirector(Director r) {
         initComponents();
         imagen.setIcon(new ImageIcon(r.getImg().getImage().getScaledInstance(238, 238, Image.SCALE_DEFAULT)));

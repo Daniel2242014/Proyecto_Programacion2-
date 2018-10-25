@@ -1,14 +1,17 @@
-
 package presentacion;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import logica.Jugador;
-
-
+/**
+ * Clase que muestra gráficamente los datos de un objeto del tipo Jugador, para
+ * luego ser mostrado en presentacion.Principal, panelScroll>displayInterno.
+ */
 public class Listajugador extends javax.swing.JPanel {
     Jugador integrante;
-    
+    /**
+     * Constructor específico que setea los datos gráficamente.
+     * @param Jugador j 
+     */
     public Listajugador(Jugador j) {
         initComponents();
         imagen.setIcon(new ImageIcon(j.getImg().getImage().getScaledInstance(240,240, Image.SCALE_DEFAULT)));

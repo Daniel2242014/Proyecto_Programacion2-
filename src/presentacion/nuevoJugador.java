@@ -5,11 +5,17 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import logica.Jugador;
 import logica.Seleccion;
-
+/**
+ * 
+ * Clase encargada de la creación o modficación de un objeto del tipo jugador.
+ */
 public class nuevoJugador extends javax.swing.JPanel {
     private Jugador aModificar;
-
-
+    /**
+     * Creción o modificación de objeto del tipo Jugador.
+     * Si es null lo crea, y si se le pasa un objeto, lo modifica.
+     * @param Jugador j (objeto o null)
+     */
     public nuevoJugador(Jugador j) {
         Principal.getInstancia().estiloMetal();
         aModificar = j;
@@ -40,7 +46,6 @@ public class nuevoJugador extends javax.swing.JPanel {
             altura.setValue(aModificar.getAltura());
             ruta.setText(aModificar.rutaImg());//22/04/2018
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -464,12 +469,9 @@ public class nuevoJugador extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Infromacion Modificada", "Informacion", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
-            e.printStackTrace();
             Principal.getInstancia().estiloWindows();
             JOptionPane.showMessageDialog(null, "Alguno de los datos ingresados es incorecto", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-
     }//GEN-LAST:event_ingresarActionPerformed
 
     private void priPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priPosicionActionPerformed
@@ -481,22 +483,16 @@ public class nuevoJugador extends javax.swing.JPanel {
     }//GEN-LAST:event_priPosicionActionPerformed
 
     private void segPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_segPosicionActionPerformed
-         // TODO add your handling code here:
     }//GEN-LAST:event_segPosicionActionPerformed
 
     private void clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clubActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_clubActionPerformed
 
     private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_diaActionPerformed
 
     private void seleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionActionPerformed
-     
     }//GEN-LAST:event_seleccionActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSpinner altura;
     private javax.swing.JComboBox<String> año;
