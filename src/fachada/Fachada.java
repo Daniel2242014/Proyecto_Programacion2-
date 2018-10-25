@@ -922,6 +922,7 @@ public class Fachada{
             Director direcNickfury = new Director(99, "Clasificado", 65, "Nick Fury", "S.H.I.E.L.D.", "src/img/proyecto_avengers/NickFury.png");
             Seleccion selecAvengers=new Seleccion("Avengers",direcNickfury, "SHIELD", 'a', "src/img/proyecto_avengers/Avengers.png", "27/6/18");
             //1º Bombo
+            directores.add(direcNickfury);
             selecciones.add(selecAvengers);
             
             Jugador avengers_IronMan = new Jugador("Tony Stark" , 1 ,"Delantero",53,"Avengers",99,"src/img/proyecto_avengers/TonyStark.png");
