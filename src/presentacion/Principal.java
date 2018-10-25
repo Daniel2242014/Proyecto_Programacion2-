@@ -445,7 +445,33 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_simularGruposActionPerformed
 
     private void nuevoMundialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoMundialActionPerformed
-             
+        //Se eliminan todos los datos actuales, se carga sistemaBase (datos OFICIALES) y se limpian los paneles
+        if(autoGuardado)
+        {
+            estiloWindows();
+            if(JOptionPane.showConfirmDialog(null, "Guarde su trabajo actual para continuar", "Nuevo", JOptionPane.OK_CANCEL_OPTION)==0)
+            {
+                guardarActionPerformed(null);
+                Fachada.getInstancia().limpiarArrays();
+                Fachada.getInstancia().sistemaBase();
+                displayInterno.removeAll();
+                displayInterno.repaint();
+                displayInterno.updateUI();
+                this.repaint();
+                setAutoGuardado(true);
+            }
+            estiloMetal();
+        }
+        else
+        {
+            Fachada.getInstancia().limpiarArrays();
+            Fachada.getInstancia().sistemaBase();
+            displayInterno.removeAll();
+            displayInterno.repaint();
+            displayInterno.updateUI();
+            this.repaint();
+            setAutoGuardado(true);
+        }
     }//GEN-LAST:event_nuevoMundialActionPerformed
 
     private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed

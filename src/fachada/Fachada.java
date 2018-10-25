@@ -121,6 +121,15 @@ public class Fachada{
        return numeroAproximado;
     }
     
+    public void limpiarArrays()
+    {
+        fases.clear();
+        jugadores.clear();
+        selecciones.clear();
+        directores.clear();
+        jueces.clear();
+        
+    }
     
     public int numeroPersonas(){
         return jugadores.size()+directores.size()+jueces.size();
