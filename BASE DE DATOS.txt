@@ -1,9 +1,5 @@
 create database ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
-
-use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
-
-
-create table Persona (
+use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;create table Persona (
 codP varchar (15) not null,
 nom varchar (20) not null,
 apellido varchar (20) ,
@@ -43,12 +39,13 @@ tiempoFin int,
 constraint CP_Juega_un primary key (IDintegrante,IDpartido)
 );
 
-create table Accion (
+create table AccionJugada (
 IDintegrante varchar (15) not null,
 IDpartido varchar (15) not null,
 momento varchar (15) not null,
-tipo varchar (15),
-constraint CP_Accion primary key (IDintegrante,IDpartido,momento)
+idAccion varchar (15),
+Tiempo varchar(15),
+constraint CP_AccionJugada primary key (IDintegrante,IDpartido,momento,idAccion)
 );
 
 create table Partido (
@@ -75,7 +72,7 @@ constraint CP_Tiempo primary key (ID)
 
 create table Estadio (
 ID varchar (30) not null,
-nombre varchar (15),
+nombre varchar (30),
 capacidad int,
 añoConstruccion date,
 direccion varchar (60),
@@ -152,6 +149,12 @@ año int,
 constraint CP_Mundial primary key (ID)
 );
 
+create table Accion (
+ID varchar (15) not null,
+Descripcion varchar (30),
+constraint CP_Accion primary key (ID)
+);
+
 /*Formato (BORRAR) CE_nombretableOrigen_nomAtt_nomTablaDest_nomAtt*/
 
 alter table Persona add constraint CE_Persona_codeCiudad_Ciudad_ID foreign key (codeCiudad) references Ciudad (ID);
@@ -168,9 +171,13 @@ alter table Juega_un add constraint CE_Juega_un_IDintegrante_Integrante_codeP fo
 
 alter table Juega_un add constraint CE_Juega_un_IDpartido_Partido_codeEstadio foreign key (IDpartido) references Partido (ID);
 
-alter table Accion add constraint CE_Accion_IDIntegrante_Integrante_codeP foreign key (IDIntegrante) references Integrante (codeP);
+alter table AccionJugada add constraint CE_AccionJugada_IDIntegrante_Integrante_codeP foreign key (IDIntegrante) references Integrante (codeP);
 
-alter table Accion add constraint CE_Accion_IDpartido_Partido_codeEstadio foreign key (IDpartido) references Partido (ID);
+alter table AccionJugada add constraint CE_AccionJugada_IDpartido_Accion_ID foreign key (idAccion) references Accion (ID);
+
+alter table AccionJugada add constraint CE_AccionJugada_tiempo_Tiempo_ID foreign key(tiempo) references Tiempo(ID); 
+
+alter table AccionJugada add constraint CE_AccionJugada_IDpartido_Partido_ID foreign key(IDpartido) references partido(ID); 
 
 alter table Partido add constraint CE_Partido_codeEstadio_Estadio_ID foreign key (codeEstadio) references Estadio (ID);
 
@@ -201,6 +208,7 @@ alter table Participa_en add constraint CE_Participa_en_IDFase_Fase_ID foreign k
 alter table Fase add constraint CE_Fase_IDMundial_Mundial_ID foreign key(IDMundial) references Mundial(ID); 
 
 alter table Mundial add constraint CE_Mundial_IDpais_Pais_ID foreign key(IDpais) references Pais(ID); 
+
 
 
 
@@ -289,7 +297,7 @@ insert into ciudad values ("13","Rotterdam",325,51.9225,4.47,"6");
 
 
 
-insert into ciudad values ("14","La Haya",98,52.07,4.29,"6")
+insert into ciudad values ("14","La Haya",98,52.07,4.29,"6");
 
 insert into ciudad values ("15","San José",44,9.93,-84.0,"7");
 
@@ -327,5 +335,4 @@ insert into estadio values ("2","Otkrytie Arena",45.360,'2014-9-5', "Volokolamsk
 
 insert into estadio values ("3","Estadio Central Ekaterimburgo",35000,'2018-3-1', "Ulitsa Repina, 5, Yekaterinburg","27");
 
-
-
+ 
