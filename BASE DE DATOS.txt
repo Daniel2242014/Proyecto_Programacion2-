@@ -34,8 +34,8 @@ constraint CP_Seleccion primary key (nomS)
 create table Juega_un (
 IDintegrante varchar (15) not null,
 IDpartido varchar (15) not null,
-tiempoInicio int,
-tiempoFin int,
+tiempoInicio varchar (15),
+tiempoFin varchar (15),
 constraint CP_Juega_un primary key (IDintegrante,IDpartido)
 );
 
@@ -50,7 +50,7 @@ constraint CP_AccionJugada primary key (IDintegrante,IDpartido,momento,idAccion)
 
 create table Partido (
 ID varchar (15) not null,
-Fecha date,
+FyH DATETIME,
 codeEstadio varchar (15),
 codigoFase varchar (15),
 constraint CP_Partido primary key (ID)
@@ -83,7 +83,7 @@ constraint CP_Estadio primary key (ID)
 create table JuegaPara (
 IDPersona varchar (15) not null,
 nomClub varchar (15) not null,
-paisClub varchar (15) not null,
+CiudadClub varchar (15) not null,
 fechaInicio date,
 fechaFin date,
 constraint CP_JuegaPara primary key (IDPersona,nomClub,paisClub)
@@ -191,7 +191,7 @@ alter table JuegaPara add constraint CE_JuegaPara_IDPersona_integrante_codeP for
 
 alter table juegapara add constraint CE_juegaPara_nomClub_Club_nombre foreign key(nomClub) references Club(nombre); 
 
-alter table juegapara add constraint CE_juegaPara_paisClub_Pais_ID foreign key(paisClub) references pais(ID); 
+alter table juegapara add constraint CE_juegaPara_CiudadClub_Ciudad_ID foreign key(CiudadClub) references Ciudad(ID); 
 
 alter table club add constraint CE_club_codeciudad_Ciudad_ID foreign key(codeciudad) references ciudad(ID); 
 
@@ -263,6 +263,8 @@ insert into tiempo values ("2",15,"Extra tiempo 1");
 
 insert into tiempo values ("3",15,"Extra tiempo 2");
 
+insert into tiempo values ("4",null,"Penales");
+
 
 
 insert into mundial values ("0","0",2014);
@@ -278,6 +280,14 @@ insert into fase values ("1","8","E","1");
 insert into fase values ("2","4","E","0");
 
 insert into fase values ("3","B","E","0");
+
+insert into fase values("4","H","G","1" );
+
+insert into fase values("5","G","G","1" );
+
+insert into fase values("6","B","G","0" );
+
+insert into fase values("7","D","G","0" );
 
 
 
@@ -485,7 +495,7 @@ insert into juez values ("51", "2003/07/14");
 
 insert into seleccion values ("Uruguay","Conmebol","3");
 
-insert into seleccion values ("Egipto","NiIdea","2");
+insert into seleccion values ("Egipto","CAF","2");
 
 insert into seleccion values ("Colombia","Conmebol","4");
 
@@ -521,7 +531,7 @@ insert into club values ("Barcelona", "33", "1899/11/29");
 insert into club values ("Real Madrid", "34", "1902/03/06");
 
 
-insert into integrante values ("1","0","Uruguay",null, "1988/01/01", "2022/12/31");
+insert into integrante values ("1","0","Uruguay",null, "1988/01/01", null);
 
 insert into integrante values ("0","0","Egipto",null,  "2015/03/01", "2018/01/01");
 
@@ -623,3 +633,80 @@ insert into integrante values ("45","2","Paises Bajos",11, "2003/04/30", null);
 insert into integrante values ("46","2","Paises Bajos",10, "2003/04/30", null);
 
 insert into integrante values ("47","2","Paises Bajos",15, "2004/09/03", "2017/05/17");
+
+insert into accion values ("0", "GOL a favor");
+
+insert into accion values ("1", "GOL a en contra");
+
+insert into accion values ("2", "Penal");
+
+insert into accion values ("3", "Tarjeta Roja");
+
+insert into accion values ("4", "Tarjeta Amarilia");
+
+
+insert into partido values("0",'2014/7/5 17:00:00', "1" , "2");
+	
+insert into partido values("1",'2014/6/13 18:00:00', "0" , "3");
+
+insert into partido values("2",'2018/7/3 21:00:00', "2" , "1");
+
+insert into partido values("3",'2018/6/15 17:00:00', "3" , "0");
+
+
+insert into arbitra values("51", "0",1);
+
+insert into arbitra values("50", "1",1);
+
+insert into arbitra values("49", "2",1);
+
+insert into arbitra values("48", "3",1);
+
+
+insert into jugadoDurante values("0","0", 3);
+
+insert into jugadoDurante values("0","1", 2);
+
+insert into jugadoDurante values("0","2", 1);
+
+insert into jugadoDurante values("0","3", 1);
+
+insert into jugadoDurante values("0","4", null);
+
+insert into jugadoDurante values("1","0", 6);
+
+insert into jugadoDurante values("1","1", 4);
+
+insert into jugadoDurante values("2","0", 3);
+
+insert into jugadoDurante values("2","1", 5);
+
+insert into jugadoDurante values("2","2", 1);
+
+insert into jugadoDurante values("2","3", 4);
+
+insert into jugadoDurante values("2","4", null);
+
+insert into jugadoDurante values("3","0", 5);
+
+insert into jugadoDurante values("3","1", 7);
+
+
+insert into Participa_en values("Egipto","0", 3 );
+
+insert into Participa_en values("Uruguay","0", 4 );
+
+insert into Participa_en values("Colombia","4", 3 );
+
+insert into Participa_en values("Inglaterra","5", 4 );
+
+insert into Participa_en values("Chile","3", 3 );
+
+insert into Participa_en values("Australia","3", 4 );
+
+insert into Participa_en values("Paises Bajos","3", 2 );
+
+insert into Participa_en values("Costa Rica","6", 4 );
+
+
+
