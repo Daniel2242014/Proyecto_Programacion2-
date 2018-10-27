@@ -86,7 +86,7 @@ nomClub varchar (15) not null,
 CiudadClub varchar (15) not null,
 fechaInicio date,
 fechaFin date,
-constraint CP_JuegaPara primary key (IDPersona,nomClub,paisClub)
+constraint CP_JuegaPara primary key (IDPersona,nomClub,CiudadClub)
 );
 
 create table Club (
@@ -189,9 +189,8 @@ alter table Estadio add constraint CE_Estadio_codeCiudad_Ciudad_ID foreign key (
 
 alter table JuegaPara add constraint CE_JuegaPara_IDPersona_integrante_codeP foreign key (IDPersona) references Integrante (codeP);
 
-alter table juegapara add constraint CE_juegaPara_nomClub_Club_nombre foreign key(nomClub) references Club(nombre); 
+alter table juegapara add constraint CE_juegaPara_nomClub_Club_nombre foreign key(nomClub,CiudadClub) references Club(nombre,codeCiudad); 
 
-alter table juegapara add constraint CE_juegaPara_CiudadClub_Ciudad_ID foreign key(CiudadClub) references Ciudad(ID); 
 
 alter table club add constraint CE_club_codeciudad_Ciudad_ID foreign key(codeciudad) references ciudad(ID); 
 
