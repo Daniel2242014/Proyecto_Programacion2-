@@ -211,7 +211,6 @@ alter table Mundial add constraint CE_Mundial_IDpais_Pais_ID foreign key(IDpais)
 
 
 
-
 insert into pais values (0,"Brasil",8516,"Brasilia");
 
 insert into pais values (1,"Rusia",17100,"Moscú");
@@ -232,6 +231,15 @@ insert into pais values ("8","Chile",756,"Santiago");
 
 insert into pais values ("9","Australia",7692,"Canberra");
 
+insert into pais values ("10","Estados Unidos",9834,"Washington DC");
+
+insert into pais values ("11","Costa de Marfil",322,"Yamusukro");
+
+insert into pais values ("12","Uzbekistan",447,"Taskent");
+
+insert into pais values ("13","Espania",505,"Madrid");
+
+
 
 insert into rol values ("0","Director");
 
@@ -246,6 +254,7 @@ insert into rol values ("4","Defensa");
 insert into rol values ("5","Medico");
 
 
+
 insert into tiempo values ("0",90,"Primer Tiempo");
 
 insert into tiempo values ("1",90,"Segundo Tiempo");
@@ -255,9 +264,11 @@ insert into tiempo values ("2",15,"Extra tiempo 1");
 insert into tiempo values ("3",15,"Extra tiempo 2");
 
 
+
 insert into mundial values ("0","0",2014);
 
 insert into mundial values ("1","1",2018);
+
 
 
 insert into fase values ("0","A","G","1");
@@ -267,6 +278,7 @@ insert into fase values ("1","8","E","1");
 insert into fase values ("2","4","E","0");
 
 insert into fase values ("3","B","E","0");
+
 
 
 insert into ciudad values ("0","El Cairo",528,30.04,31.24,"2");
@@ -289,13 +301,13 @@ insert into ciudad values ("8","Cali",619,3.437,-76.552,"4");
 
 insert into ciudad values ("9","Londres",1572,51.50,-0.1,"5");
 
+insert into ciudad values ("10", "Washington DC",177,38,-77.01,"10");
+
 insert into ciudad values ("11","Liverpool",111,53.41,-2.97,"5");
 
 insert into ciudad values ("12","Ámsterdam",219,52.37,4.88,"6");
 
 insert into ciudad values ("13","Rotterdam",325,51.9225,4.47,"6");
-
-
 
 insert into ciudad values ("14","La Haya",98,52.07,4.29,"6");
 
@@ -327,6 +339,17 @@ insert into ciudad values ("27","Ekaterimburgo",468,56.85,60.61,"1");
 
 insert into ciudad values ("28","Moscú",2.511,55.75,37.61,"1");
 
+insert into ciudad values ("29", "Canberra",814,-35,149.12,"9");
+
+insert into ciudad values ("31", "Yamusukro",3,8,5,"11");
+
+insert into ciudad values ("32", "Taskent",334,41,69,"12");
+
+insert into ciudad values ("33", "Barcelona",101,40,4,"13");
+
+insert into ciudad values ("34", "Madrid",604,40,4,"13");
+
+
 insert into estadio values ("0","PantanalCuiabá",41.112,'2014-4-2', "Av. Agrícola Paes de Barros","25");
 
 insert into estadio values ("1","Fonte Nova Salvador",50.000,'2013-4-7', "Ladeira da Fonte das Pedras","26");
@@ -336,3 +359,266 @@ insert into estadio values ("2","Otkrytie Arena",45.360,'2014-9-5', "Volokolamsk
 insert into estadio values ("3","Estadio Central Ekaterimburgo",35000,'2018-3-1', "Ulitsa Repina, 5, Yekaterinburg","27");
 
  
+
+insert into persona values ( "1", "Oscar", "Tabarez", "1947/03/03", "3" );
+
+insert into persona values ( "2", "Jose", "Gimenez", "1995/01/20", "4" );
+
+insert into persona values ( "3", "Lucas", "Torreira", "1996/02/11", "5" );
+
+insert into persona values ( "4", "Cristian", "Rodriguez", "1985/09/30", "3" );
+
+insert into persona values ( "5", "Martin", "Caceres", "1987/03/07", "4" );
+
+insert into persona values ( "6", "Edinson", "Cavani", "1987/02/14", "5" );
+
+
+insert into persona values ( "0", "Hector", "Cuper", "1955/11/16", "0" );
+
+insert into persona values ( "7", "Trezeget", "SinApellido", "1994/10/01", "1" );
+
+insert into persona values ( "8", "Abdalla", "Said", "1985/07/13", "2" );
+
+insert into persona values ( "9", "Ramadan", "Sobhi", "1997/01/23", "0" );
+
+insert into persona values ( "10", "Mahmoud", "Kahraba", "1994/03/13", "1" );
+
+insert into persona values ( "11", "Sam", "Morsy", "1991/09/10", "2" );
+
+
+insert into persona values ( "12", "Southgate", "Gareth", "1970/09/03", "9" );
+
+insert into persona values ( "13", "Marcus", "Rashford", "1997/10/31", "10" );
+
+insert into persona values ( "14", "Jaime", "Vardy", "1987/01/11", "11" );
+
+insert into persona values ( "15", "Jordan", "Henderson", "1990/04/17", "9" );
+
+insert into persona values ( "16", "Jesse", "Lingard", "1992/12/15", "10" );
+
+insert into persona values ( "17", "Harry", "Maguire", "1993/03/05", "11" );
+
+
+insert into persona values ( "18", "Jose", "Pekerman", "1949/09/03", "6" );
+
+insert into persona values ( "19", "Carlos", "Bacca", "1986/09/08", "7" );
+
+insert into persona values ( "20", "Jefferson", "Lerma", "1994/10/25", "8" );
+
+insert into persona values ( "21", "Yerry", "Mina", "1994/09/23", "6" );
+
+insert into persona values ( "22", "Davinson", "Sanchez", "1996/06/12", "7" );
+
+insert into persona values ( "23", "David", "Ospina", "1988/08/31", "8" );
+
+
+insert into persona values ( "24", "Jorge", "Sampaoli", "1960/03/13", "18" );
+
+insert into persona values ( "25", "Mauricio", "Pinilla", "1984/02/04", "19" );
+
+insert into persona values ( "26", "Eduardo", "Vargas", "1989/11/20", "20" );
+
+insert into persona values ( "27", "Jean", "Beausejour", "1984/06/01", "18" );
+
+insert into persona values ( "28", "Alexis", "Sanchez", "1988/12/19", "19" );
+
+insert into persona values ( "29", "Jorge", "Valdivia", "1983/10/19", "20" );
+
+
+insert into persona values ( "30", "Ange", "Postecoglou", "1965/08/27", "29" );
+
+insert into persona values ("31", "Ryan", "McGowan", "1989/08/15", "29");
+
+insert into persona values ("32", "Ivan", "Franjic", "1987/09/10", "29");
+
+insert into persona values ("33", "Mathew", "Ryan", "1992/04/08", "29");
+
+insert into persona values ("34", "Tim", "Cahill", "1979/12/06", "29");
+
+insert into persona values ("35", "Matthew", "Spiranovic", "1988/06/27", "29");
+
+
+insert into persona values ("36", "Jorge", "Pinto", "1952/12/16", "15");
+
+insert into persona values ("37", "Dave", "Myrie", "1988/06/01", "16");
+
+insert into persona values ("38", "Cristian", "Gamboa", "1989/10/24", "17");
+
+insert into persona values ("39", "Junior", "Diaz", "1983/09/12", "15");
+
+insert into persona values ("40", "Celso", "Borges", "1988/05/27", "16");
+
+insert into persona values ("41", "Christian", "Bolanios", "1984/05/17", "17");
+
+
+insert into persona values ("42", "Louis", "Van Gaal", "1951/08/08", "12");
+
+insert into persona values ("43", "Klaas-Jan", "Huntelaar", "1983/08/12", "13");
+
+insert into persona values ("44", "Bruno", "Martins Indi", "1992/02/08", "14");
+
+insert into persona values ("45", "Arjen", "Robben", "1984/01/23", "12");
+
+insert into persona values ("46", "Wesley", "Sneijder", "1984/06/09", "13");
+
+insert into persona values ("47", "Dirk", "Kuyt", "1980/07/22", "14");
+
+
+
+insert into persona values ("48", "Kuipers", "Bjorn", "1973/03/28", "12");
+
+insert into persona values ("49", "Mark", "Geiger", "1974/08/25", "10");
+
+insert into persona values ("50", "Doue", "Noumandiez", "1973/03/28", "31");
+
+insert into persona values ("51", "Ravshan", "Irmatov", "1977/08/09", "32");
+
+
+insert into juez values ("48", "2006/08/03");
+
+insert into juez values ("49", "2003/05/10");
+
+insert into juez values ("50", "2004/11/17");
+
+insert into juez values ("51", "2003/07/14");
+
+
+insert into seleccion values ("Uruguay","Conmebol","3");
+
+insert into seleccion values ("Egipto","NiIdea","2");
+
+insert into seleccion values ("Colombia","Conmebol","4");
+
+insert into seleccion values ("Inglaterra","UEFA","5");
+
+insert into seleccion values ("Chile","Conmebol","8");
+
+insert into seleccion values ("Australia","OFC","9");
+
+insert into seleccion values ("Paises Bajos","UEFA","6");
+
+insert into seleccion values ("Costa Rica","Concacaf","7");
+
+
+insert into club values ("Boston River", "3", "1939/02/20");
+
+insert into club values ("Zamalek", "0", "1911/01/05");
+
+insert into club values ("Atletico", "8", "2015/12/15");
+
+insert into club values ("Arsenal", "9", "1886/01/01");
+
+insert into club values ("UniDChile", "18", "1927/05/24");
+
+insert into club values ("Sydney Swans", "21", "1874/01/01");
+
+insert into club values ("AjaxAmsterdam", "12", "1900/03/18");
+
+insert into club values ("Saprissa", "7", "1935/01/01");
+
+insert into club values ("Barcelona", "33", "1899/11/29");
+
+insert into club values ("Real Madrid", "34", "1902/03/06");
+
+
+insert into integrante values ("1","0","Uruguay",99, "1988/01/01", "2022/01/01");
+
+insert into integrante values ("0","0","Egipto",99,  "2015/03/01", "2018/01/01");
+
+insert into integrante values ("12","0", "Inglaterra",99, "2016/09/27", "2018/12/31");
+
+insert into integrante values ("18","0","Colombia", 99, "2012/01/01","2018/12/31");
+
+insert into integrante values ("24","0","Chile",99, "2012/12/03", "2016/01/19");
+
+insert into integrante values ("30","0","Australia",99, "2013/01/01", "2017/12/31");
+
+insert into integrante values ("36","0","Costa Rica",99, "2004/01/01", "2014/12/31");
+
+insert into integrante values ("42","0","Paises Bajos",99, "2000/01/01", "2014/12/31");
+
+insert into integrante values ("2","4","Uruguay",2, "2013/09/10", "2018/12/31");
+
+insert into integrante values ("3","2","Uruguay",14, "2018/03/23", "2018/12/31");
+
+insert into integrante values ("4","2","Uruguay",7, "2004/01/01", "2018/12/31");
+
+insert into integrante values ("5","4","Uruguay",22, "2007/09/12", "2018/12/31");
+
+insert into integrante values ("6","3","Uruguay",21, "2008/02/06", "2018/12/31");
+
+
+insert into integrante values ("7","2","Egipto",21, "2014/01/01", "2018/12/31");
+
+insert into integrante values ("8","2","Egipto",19, "2008/01/01", "2018/12/31");
+
+insert into integrante values ("9","3","Egipto",14, "2015/01/01", "2018/12/31");
+
+insert into integrante values ("10","3","Egipto",11, "2018/05/25", "2018/12/31");
+
+insert into integrante values ("11","2","Egipto",5, "2016/08/30", "2018/12/31");
+
+
+insert into integrante values ("13","3","Inglaterra",19, "2016/05/27", "2018/12/31");
+
+insert into integrante values ("14","3","Inglaterra",11, "2015/06/07", "2018/12/31");
+
+insert into integrante values ("15","2","Inglaterra",8, "2010/01/01", "2018/12/31");
+
+insert into integrante values ("16","2","Inglaterra",7, "2015/01/01", "2018/12/31");
+
+insert into integrante values ("17","4","Inglaterra",6, "2017/01/01", "2018/12/31");
+
+insert into integrante values ("19","3","Colombia",7, "2010/01/01", "2018/12/31");
+
+insert into integrante values ("20","2","Colombia",16, "2017/11/10", "2018/12/31");
+
+insert into integrante values ("21","4","Colombia",13, "2016/06/06", "2018/12/31");
+
+insert into integrante values ("22","4","Colombia",23, "2016/11/16", "2018/12/31");
+
+insert into integrante values ("23","1","Colombia",1, "2011/06/06", "2018/12/31");
+
+
+insert into integrante values ("25","3","Chile",9, "2003/03/30", "2018/12/31");
+
+insert into integrante values ("26","3","Chile",11, "2009/11/04", "2018/12/31");
+
+insert into integrante values ("27","2","Chile",15, "2004/02/19", "2018/12/31");
+
+insert into integrante values ("28","3","Chile",7, "2006/04/27", "2018/12/31");
+
+insert into integrante values ("29","2","Chile",10, "2004/02/19", "2018/12/31");
+
+
+insert into integrante values ("31","4","Australia",19, "2008/01/01", "2018/12/31");
+
+insert into integrante values ("32","2","Australia",2, "2012/12/03", "2018/12/31");
+
+insert into integrante values ("33","1","Australia",1, "2012/12/05", "2018/12/31");
+
+insert into integrante values ("34","3","Australia",4, "2004/03/30", "2018/12/31");
+
+insert into integrante values ("35","4","Australia",6, "2008/05/23", "2018/12/31");
+
+
+insert into integrante values ("37","2","Costa Rica",8, "2010/11/17", "2018/12/31");
+
+insert into integrante values ("38","2","Costa Rica",16, "2010/01/26", "2018/12/31");
+
+insert into integrante values ("39","4","Costa Rica",15, "2003/09/07", "2018/12/31");
+
+insert into integrante values ("40","2","Costa Rica",5, "2008/06/22", "2018/12/31");
+
+insert into integrante values ("41","2","Costa Rica",7, "2005/05/24", "2018/12/31");
+
+
+insert into integrante values ("43","3","Paises Bajos",19, "2006/01/01", "2014/12/31");
+
+insert into integrante values ("44","4","Paises Bajos",4, "2012/08/15", "2018/12/31");
+
+insert into integrante values ("45","2","Paises Bajos",11, "2003/04/30", "2018/12/31");
+
+insert into integrante values ("46","2","Paises Bajos",10, "2003/04/30", "2018/12/31");
+
+insert into integrante values ("47","2","Paises Bajos",15, "2004/09/03", "2017/05/17");
