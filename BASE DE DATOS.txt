@@ -359,11 +359,11 @@ insert into ciudad values ("33", "Barcelona",101,40,4,"13");
 insert into ciudad values ("34", "Madrid",604,40,4,"13");
 
 
-insert into estadio values ("0","PantanalCuiabá",41.112,'2014-4-2', "Av. Agrícola Paes de Barros","25");
+insert into estadio values ("0","PantanalCuiabá",41112,'2014-4-2', "Av. Agrícola Paes de Barros","25");
 
-insert into estadio values ("1","Fonte Nova Salvador",50.000,'2013-4-7', "Ladeira da Fonte das Pedras","26");
+insert into estadio values ("1","Fonte Nova Salvador",50000,'2013-4-7', "Ladeira da Fonte das Pedras","26");
 
-insert into estadio values ("2","Otkrytie Arena",45.360,'2014-9-5', "Volokolamskoye sh., 69, Moskva","28");
+insert into estadio values ("2","Otkrytie Arena",45360,'2014-9-5', "Volokolamskoye sh., 69, Moskva","28");
 
 insert into estadio values ("3","Estadio Central Ekaterimburgo",35000,'2018-3-1', "Ulitsa Repina, 5, Yekaterinburg","27");
 
@@ -416,7 +416,7 @@ insert into persona values ( "20", "Jefferson", "Lerma", "1994/10/25", "8" );
 
 insert into persona values ( "21", "Yerry", "Mina", "1994/09/23", "6" );
 
-insert into persona values ( "22", "Davinson", "Sanchez", "1996/06/12", "7" );
+insert into persona values ( "22", "Carlos", "Sanchez", "1996/06/12", "7" );
 
 insert into persona values ( "23", "David", "Ospina", "1988/08/31", "8" );
 
@@ -637,11 +637,13 @@ insert into accion values ("0", "GOL a favor");
 
 insert into accion values ("1", "GOL a en contra");
 
-insert into accion values ("2", "Penal");
+insert into accion values ("2", "Penal acertado");
 
 insert into accion values ("3", "Tarjeta Roja");
 
 insert into accion values ("4", "Tarjeta Amarilia");
+
+insert into accion values ("5" , "Penal fallado");	
 
 
 insert into partido values("0",'2014/7/5 17:00:00', "1" , "2");
@@ -714,7 +716,7 @@ insert into juega_un values("47","0","0","120");
 
 insert into juega_un values("45","0","0","120");
 
-insert into juega_un values("44","0","0","106")
+insert into juega_un values("44","0","0","106");
 
 insert into juega_un values("46","0","0","120");
 
@@ -783,7 +785,7 @@ insert into juega_un values("11","3","50","120");
 
 insert into juega_un values("4","3","59","120");
 
-insert into juega_un values("5","3","0","120")
+insert into juega_un values("5","3","0","120");
 
 insert into juega_un values("2","3","0","120");
 
@@ -791,10 +793,46 @@ insert into juega_un values("6","3","0","120");
 
 insert into juega_un values("3","3","87","120");
 
-	
 
+insert into accionJugada values("47","0","5","2","4");
 
+insert into accionJugada values("44","0","64","4","1");
 
+insert into accionJugada values("45","0","2","2","4");
+
+insert into accionJugada values("43","0","111","4","3");
+
+insert into accionJugada values("46","0","3","2","4");
+
+insert into accionJugada values("40","0","1","2","4");
+
+insert into accionJugada values("41","0","4","2","4");
+
+insert into accionJugada values("39","0","1","4","0");	
+
+insert into accionJugada values("27","1","90+2","0","1");
+
+insert into accionJugada values("28","1","12","0","0");
+
+insert into accionJugada values("29","1","14","0","0");
+
+insert into accionJugada values("34","1","35","0","0");
+
+insert into accionJugada values("34","1","44","4","0");
+
+insert into accionJugada values("22","2","54","4","1");
+
+insert into accionJugada values("21","2","90+3","0","1");
+
+insert into accionJugada values("19","2","64","4","1");
+
+insert into accionJugada values("15","2","56","4","1");
+
+insert into accionJugada values("16","2","69","4","1");
+
+insert into accionJugada values("11","3","90+6","4","1");
+
+insert into accionJugada values("2","3","89","0","1");
 
 
 
