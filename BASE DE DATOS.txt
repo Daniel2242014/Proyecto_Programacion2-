@@ -834,7 +834,82 @@ insert into accionJugada values("11","3","90+6","4","1");
 
 insert into accionJugada values("2","3","89","0","1");
 
+insert into juegapara values("2","Boston River", "3", "2015/04/11", "2015/11/11" );
 
+insert into juegapara values("3","Zamalek", "0", "2008/05/15", "2014/09/23" );
 
+insert into juegapara values("4","Atletico", "8", "2001/12/11", null );
 
+insert into juegapara values("5","Arsenal", "9", "2009/10/11", "2017/07/16" );
 
+insert into juegapara values("6","UniDChile", "18", "2010/06/06", null );
+
+insert into juegapara values("7","Sydney Swans", "21", "2014/04/14", null );
+
+insert into juegapara values("8","AjaxAmsterdam", "12", "2015/04/11", "2015/11/11" );
+
+insert into juegapara values("9","Saprissa", "7", "2008/05/15", "2014/09/23" );
+
+insert into juegapara values("10","Barcelona", "33", "2001/12/11", null );
+
+insert into juegapara values("11","Real Madrid", "34", "2009/10/11", "2017/07/16" );
+
+insert into juegapara values("13","Boston River", "3", "2010/06/06", null );
+
+insert into juegapara values("14","Zamalek", "0", "2014/04/14", null );
+
+insert into juegapara values("15","Atletico", "8", "2003/02/14", null );
+
+insert into juegapara values("16","Arsenal", "9", "2008/05/15", "2014/09/23" );
+
+insert into juegapara values("17","UniDChile", "18", "2001/12/11", null );
+
+insert into juegapara values("19","Sydney Swans", "21", "2009/10/11", "2017/07/16");
+
+insert into juegapara values("20","AjaxAmsterdam", "12", "2010/06/06", null );
+
+insert into juegapara values("21","Saprissa", "7", "2014/04/14", null );
+
+insert into juegapara values("22","Barcelona", "33", "2003/02/14", null );
+
+insert into juegapara values("23","Real Madrid", "34", "2008/05/15", "2014/09/23" );
+
+insert into juegapara values("25","Boston River", "3", "2001/12/11", null );
+
+insert into juegapara values("26","Zamalek", "0", "2009/10/11", "2017/07/16" );
+
+insert into juegapara values("27","Atletico", "8", "2010/06/06", null );
+
+insert into juegapara values("28","Arsenal", "9", "2014/04/14", null );
+
+insert into juegapara values("29","UniDChile", "18", "2003/02/14", null );
+
+insert into juegapara values("31","Sydney Swans", "21", "2008/05/15", "2014/09/23" );
+
+insert into juegapara values("32","AjaxAmsterdam", "12", "2001/12/11", null );
+
+insert into juegapara values("33","Saprissa", "7", "2009/10/11", "2017/07/16" );
+
+insert into juegapara values("34","Barcelona", "33", "2016/06/23", null);
+
+insert into juegapara values("35","Real Madrid", "34", "2009/10/11" , "2017/07/16" );
+
+insert into juegapara values("37","Boston River", "3", "2008/05/15", "2014/09/23");
+
+insert into juegapara values("38","Zamalek", "0", "2003/02/14", null);
+
+insert into juegapara values("39","Atletico", "8", "2001/12/11", null);
+
+insert into juegapara values("40","Arsenal", "9", "2016/06/23", null);
+
+insert into juegapara values("41","UniDChile", "18", "2009/10/11" , "2017/07/16");
+
+insert into juegapara values("43","Sydney Swans", "21", "2015/04/11" , "2015/11/11");
+
+insert into juegapara values("44","AjaxAmsterdam", "12", "2016/06/23", null);
+
+insert into juegapara values("45","Saprissa", "7", "2015/04/11" , "2015/11/11" );
+
+insert into juegapara values("46","Barcelona", "33", "2008/05/15", "2014/09/23");
+
+insert into juegapara values("47","Real Madrid", "34", "2016/06/23", null);
