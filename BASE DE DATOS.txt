@@ -1,5 +1,6 @@
 create database ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
-use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;create table Persona (
+use ProyectoBBDD2_Daniel_Padron_Agustin_Perez_Facundo_Silvetti;
+create table Persona (
 codP varchar (15) not null,
 nom varchar (20) not null,
 apellido varchar (20) ,
@@ -28,7 +29,8 @@ create table Seleccion (
 nomS varchar (15) not null,
 confederacion varchar (10),
 codePais varchar (15),
-constraint CP_Seleccion primary key (nomS)
+constraint CP_Seleccion primary key (nomS),
+constraint verfi_confederacion check (confederacion in ("CAF","OFC","UEFA","Conmebol","Concacaf","AFC"))
 );
 
 create table Juega_un (
@@ -131,7 +133,8 @@ create table Participa_en (
 IDSeleccion varchar (15) not null,
 IDFase varchar (15) not null,
 posicion int,
-constraint CP_Participa_en primary key (IDSeleccion,IDFase)
+constraint CP_Participa_en primary key (IDSeleccion,IDFase), 
+constraint Verfi_Participa_En check (posicion between 1 and 4)
 );
 
 create table Fase (
@@ -139,7 +142,9 @@ ID varchar (15) not null,
 nom varchar (15),
 tipo varchar (15),
 IDMundial varchar (15),
-constraint CP_Fase primary key (ID)
+constraint CP_Fase primary key (ID),
+constraint verfic_nom check (nom in ("A","B","C","D","E","F","G","H")), 
+constraint verfic_tipo check (tpo in ("E","G"))
 );
 
 create table Mundial (
@@ -254,9 +259,9 @@ insert into rol values ("5","Medico");
 
 
 
-insert into tiempo values ("0",90,"Primer Tiempo");
+insert into tiempo values ("0",45,"Primer Tiempo");
 
-insert into tiempo values ("1",90,"Segundo Tiempo");
+insert into tiempo values ("1",45,"Segundo Tiempo");
 
 insert into tiempo values ("2",15,"Extra tiempo 1");
 
@@ -278,7 +283,7 @@ insert into fase values ("1","8","E","1");
 
 insert into fase values ("2","4","E","0");
 
-insert into fase values ("3","B","E","0");
+insert into fase values ("3","B","G","0");
 
 insert into fase values("4","H","G","1" );
 
